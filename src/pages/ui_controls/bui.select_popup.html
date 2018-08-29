@@ -1,0 +1,148 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">选择列表-弹出</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<div class="section-title">动态绑定</div>
+		<div id="select" class="bui-btn bui-box">
+			<div class="span1">请选择区域</div>
+			<i class="icon-listright"></i>
+		</div>
+		
+		<div class="section-title">自定义结构绑定,select分组</div>
+		<div id="select2" class="bui-btn bui-box">
+			<div class="span2">请选择区域</div>
+			<i class="icon-listright"></i>
+		</div>
+		<div class="bui-panel">
+			<div class="bui-panel-head"><strong>动态绑定示例:</strong></div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>html:</h4>
+					<xmp>
+<div id="select" class="bui-select bui-box">
+	<div class="span1"></div>
+	<i class="icon-listright"></i>
+</div>
+				 	</xmp>
+					<h4>js:</h4>
+					<xmp>
+var uiSelect = bui.select({
+	trigger:"#select",
+	title: "请选择区域",
+	data: [{
+		"name":"广东",
+		"value":"11"
+	},{"name":"广西",
+		"value":"22"
+	}]
+	
+})
+
+				 	</xmp>
+			 	</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="bui-panel">
+			<div class="bui-panel-head"><strong>静态绑定示例:</strong></div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>html:</h4>
+					<xmp>
+<div id="select" class="bui-select bui-box">
+	<div class="span1"></div>
+	<i class="icon-listright"></i>
+</div>
+
+<!-- select 静态弹出自定义框 放在body层-->
+<div id="select-dialog" class="bui-dialog" style="display:none;">
+  <div class="bui-dialog-head bui-box-align-middle">
+  	<div class="span1">请选择区域</div>
+  	<div class="bui-btn primary round">确定</div>
+  </div>
+  <div class="bui-dialog-main">
+    <div class="bui-list">
+      <div class="bui-btn-title">
+      	南方
+      </div>
+      <div class="bui-btn bui-btn-line bui-box">
+      	<i class="icon-face"></i>
+        <div class="span1">广东</div>
+        <input id="check-1" type="checkbox" class="bui-choose" value="11" text="广东">
+      </div>
+      <div class="bui-btn bui-btn-line bui-box">
+      	<i class="icon-face"></i>
+        <div class="span1">广西</div>
+        <input id="check-2" type="checkbox" class="bui-choose" value="22" text="广西">
+      </div>
+    </div>
+  </div>
+</div>
+				 	</xmp>
+					<h4>js:</h4>
+					<xmp>
+var uiSelect2 = bui.select({
+	id:"#select-dialog",
+	trigger:"#select2",
+	type:"checkbox",
+	callback: function (argument) {
+		uiSelect2.hide();
+	}
+});
+
+				 	</xmp>
+			 	</div>
+			</div>
+		</div>
+
+	</main>
+</div>
+
+<!-- select 静态弹出自定义框 放在body层-->
+<div id="select-dialog" class="bui-dialog" style="display:none;" >
+  <div class="bui-dialog-head bui-box-align-middle">
+  	<div class="span1">请选择区域</div>
+  	<div id="makeSure" class="bui-btn primary round">确定</div>
+  </div>
+  <div class="bui-dialog-main">
+    <div class="bui-list">
+      <div class="bui-btn-title">
+      	南方
+      </div>
+      <div class="bui-btn bui-btn-line bui-box">
+      	<i class="icon-face"></i>
+        <div class="span1">广东</div>
+        <input id="check-1" type="checkbox" class="bui-choose" value="11" text="广东">
+      </div>
+      <div class="bui-btn bui-btn-line bui-box">
+      	<i class="icon-face"></i>
+        <div class="span1">广西</div>
+        <input id="check-2" type="checkbox" class="bui-choose" value="22" text="广西">
+      </div>
+      <div class="bui-btn-title">
+      	北方
+      </div>
+      <div class="bui-btn bui-btn-line bui-box">
+      	<i class="icon-face"></i>
+        <div class="span1">北京</div>
+        <input id="check-3" type="checkbox" class="bui-choose" value="33" text="北京">
+      </div>
+      <div class="bui-btn bui-btn-line bui-box">
+      	<i class="icon-face"></i>
+        <div class="span1">南京</div>
+        <input id="check-4" type="checkbox" class="bui-choose" value="44" text="南京">
+      </div>
+
+    </div>
+  </div>
+</div>

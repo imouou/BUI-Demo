@@ -1,0 +1,45 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">折叠面板</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<h3 class="section-title">折叠面板</h3>
+		<div id="panel" class="bui-panel">
+			<div class="bui-panel-head bui-box"><div class="span1">折叠面板</div><i class="icon-listdown"></i></div>
+			<div class="bui-panel-main">
+				<div class="container">我是面板里面的内容</div>
+			</div>
+		</div>
+
+		<div class="bui-panel">
+			<div class="bui-panel-head">代码示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>html:</h4>
+					<xmp>
+<div id="panel" class="bui-panel">
+  <div class="bui-panel-head">折叠面板</div>
+  <div class="bui-panel-main">
+    我是面板里面的内容
+  </div>
+</div>
+			 		</xmp>
+					<h4>js:</h4>
+					<xmp>
+var uiAccordion = bui.accordion({
+	id:"#panel",
+	handle: ".bui-panel-head", 
+	target: ".bui-panel-main"
+});
+			 		</xmp>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>

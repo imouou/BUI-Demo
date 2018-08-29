@@ -1,0 +1,65 @@
+
+    <style>
+
+        #uiSwipeDown {
+            height:100%;
+        }
+        #uiSwipeDown .swipedown {
+            /*让滑动的目标显示*/
+            -webkit-transform: translate(0,0);
+            transform: translate(0,0);
+            z-index: 0;
+        }
+        .todo {
+            z-index: 10;
+            height: 100%;
+            background: #fff;
+            /* 参数 initDistance:150; */
+            -webkit-transform: translate(0,1.5rem);
+            transform: translate(0,1.5rem);
+        }
+    </style>
+    <div class="bui-page" style="background:#ff3300;">
+        <header class="bui-bar">
+            <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+            </div>
+            <div class="bui-bar-main">上下交互场景</div>
+            <div class="bui-bar-right">
+            </div>
+        </header>
+        <main>
+            <div id="uiSwipeDown" class="wrap">
+                <!-- 侧滑菜单 -->
+                <div class="swipedown">
+                    <img src="images/date.png" alt="">
+                </div>
+                <!-- 侧滑菜单 -->
+                <div class="todo" style="height:440px;overflow-y: auto;">
+                    
+                    <div class="container-xy">
+                        小提示: 该例子可以在手机中拖动
+                    </div>  
+                    <ul class="bui-list">
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                        <li class="bui-btn">待办事项1</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>

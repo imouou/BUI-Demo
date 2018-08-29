@@ -1,0 +1,103 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">焦点图切换</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<div id="slide" class="bui-slide">
+			<div class="bui-slide-main">
+				<ul>
+					<li>
+						<div style="background: yellow;width:100%;height: 100%;"></div>
+						<div class="bui-slide-title">我是图片标题1</div>
+					</li>
+					<li>
+						<div style="background: orange;width:100%;height: 100%;"></div>
+						<div class="bui-slide-title">我是图片标题2</div>
+					</li>
+					<li>
+						<div style="background: red;width:100%;height: 100%;"></div>
+						<div class="bui-slide-title">我是图片标题3</div>
+					</li>
+				</ul>
+			</div>
+			<div class="bui-slide-head">
+				<ul >
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div>
+        <div class="container-xy">
+            小提示: 该例子可以在手机中拖动
+        </div>	
+		<div class="bui-fluid-space">
+			<div class="span6">
+				<div id="prev" class="bui-btn">上一页</div>
+			</div>
+			<div class="span6">
+				<div id="next" class="bui-btn">下一页</div>
+			</div>
+			<div class="span6">
+				<div id="start" class="bui-btn">自动播放</div>
+			</div>
+			<div class="span6">
+				<div id="stop" class="bui-btn">停止播放</div>
+			</div>
+			<div class="span6">
+				<div id="lock" class="bui-btn">不允许拖动</div>
+			</div>
+			<div class="span6">
+				<div id="unlock" class="bui-btn">允许拖动</div>
+			</div>
+			<div class="span6">
+				<div id="to" class="bui-btn">跳到第2个</div>
+			</div>
+			<div class="span6">
+				<div id="fullscreen" class="bui-btn">全屏</div>
+			</div>
+		</div>
+		<div class="bui-panel">
+			<div class="bui-panel-head">示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>html:</h4>
+						
+					<xmp>
+<div id="slide" class="bui-slide">
+  <div class="bui-slide-main">
+    <ul>
+      <li>
+        <img src="slideshow.png" alt="">
+        <div class="bui-slide-title">
+          标题
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="bui-slide-head">
+    <ul>
+      <li>1</li>
+    </ul>
+  </div>
+</div>				
+					</xmp>	
+					<h4>js:</h4>
+					<xmp>
+var uiSlide = bui.slide({
+    id:"#slide",
+    height:160
+})
+			 		</xmp>
+					
+				</div>
+			</div>
+		</div>
+	</main>
+</div>

@@ -1,0 +1,58 @@
+﻿<style>
+    .cross-slide .active,
+    .cross-slide .li-prev,
+    .cross-slide .li-next {
+        transition: transform 400ms;
+        -webkit-transition: transform 400ms;
+    }
+    .cross-slide .li-prev {
+        transform: translateX(.8rem);
+        -webkit-transform: translateX(.8rem);
+    }
+    .cross-slide .li-next {
+        transform: translateX(-.8rem);
+        -webkit-transform: translateX(-.8rem);
+    }
+    .cross-slide .active {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    .cross-img {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">跨屏焦点图切换</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<div id="slide" class="bui-slide cross-slide">
+			<div class="bui-slide-main">
+				<ul>
+					<li>
+						<div class="cross-img">
+                            <img src="images/pic2.png" alt="">                  
+                        </div>
+					</li>
+					<li>
+                        <div class="cross-img">
+                            <img src="images/pic2.png" alt="">                  
+                        </div>
+					</li>
+					<li>
+                        <div class="cross-img">
+                            <img src="images/pic2.png" alt="">                  
+                        </div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+</div>

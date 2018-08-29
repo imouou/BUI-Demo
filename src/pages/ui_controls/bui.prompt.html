@@ -1,0 +1,83 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">输入对话框</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<h3 class="section-title">输入对话框</h3>
+
+		<div class="bui-panel">
+			<div class="bui-panel-head">示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>js:</h4>
+					<xmp>
+//引用控件
+bui.prompt("请输入您的名字",function(ui){
+    var text = $(this).text();
+    if( text == "取消"){
+        ui.close();
+    }else{
+        if( ui.value() ){
+            // 获取输入的值
+            bui.hint("您好,"+ui.value());
+            ui.close();
+        }else{
+            bui.hint("名字不能为空");
+        }
+    }
+})
+			 		</xmp>
+					
+				</div>
+			</div>
+		</div>
+		<h3 class="section-title">表单校验例子</h3>
+
+		<div class="bui-panel">
+			<div class="bui-panel-head">示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>js:</h4>
+					<xmp>
+bui.prompt({
+    content:"请输入手机号码",
+    callback: function(ui){ 
+        var text = $(this).text(); 
+        console.log(ui.value())
+        if(text == "确定" && checkMobile(ui.value())){ 
+            ui.close();
+        }
+    },
+    onChange: function (ui) {
+        // 校验
+        if( checkMobile(ui.value()) ){
+            this.value = ui.value();
+        }else{
+            this.value = '';
+        }
+    }
+})
+
+// 校验是否是手机号码
+function isMobile(str) {
+  var re = /^1\d{10}$/
+  if (re.test(str)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+			 		</xmp>
+					
+				</div>
+			</div>
+		</div>
+
+	</main>
+</div>

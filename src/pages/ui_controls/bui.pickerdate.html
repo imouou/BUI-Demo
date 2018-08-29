@@ -1,0 +1,68 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">日期控件</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<h3 class="section-title">1. 弹窗日期带按钮</h3>
+		<input type="text" id="datepicker_input" readonly class="bui-input">
+
+		<div class="bui-box">
+			<div class="span1">
+		<div id="show1" class="bui-btn">显示年月日时分秒</div>
+			</div>
+			<div class="span1">
+		<div id="show2" class="bui-btn">显示个位不要零</div>
+			</div>
+		</div>
+		<div class="bui-box">
+			<div class="span1">
+		<div id="show3" class="bui-btn">显示日期</div>
+			</div>
+			<div class="span1">
+		<div id="show4" class="bui-btn">显示固定分秒</div>
+			</div>
+		</div>
+
+		<h3 class="section-title">2. 没有弹窗的日期</h3>
+		<input type="text" id="datepicker_input2" readonly class="bui-input">
+
+		<!-- 没有弹窗的日期 -->
+		<div id="datepicker"></div>
+		<div class="bui-panel">
+			<div class="bui-panel-head"><strong>示例:</strong></div>
+			<div class="bui-panel-main">
+				<div class="container">
+				<h4>html:</h4>
+				<xmp>
+<input type="text" id="datepicker_input" readonly>
+			 	</xmp>
+				<h4>js:</h4>
+				<xmp>
+// 1. 弹窗带按钮
+var input = $("#datepicker_input");
+var uiPickerdate = bui.pickerdate({
+	handle:"#datepicker_input",
+	onChange: function(value) {
+		input.val(value);
+	}
+});
+// 2. 不弹窗
+var input2 = $("#datepicker_input2");
+var uiPickerdate = bui.pickerdate({
+	id:"#datepicker_input2",
+	onChange: function(value) {
+		input2.val(value);
+	}
+});
+			 	</xmp>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>

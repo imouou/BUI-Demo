@@ -1,0 +1,39 @@
+﻿
+<div class="bui-page">
+	<header id="bar" class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">获取页面参数</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		
+		<div id="btn" class="bui-btn">
+			点击获取页面参数
+		</div>
+		<div class="bui-panel">
+			<div class="bui-panel-head"><strong>示例:</strong></div>
+			<div class="bui-panel-main">
+				<div class="container">
+				<h4>js:</h4>
+				<xmp>
+// 获取页面参数 1.3.1 版本推荐
+var getParams = bui.getPageParams();
+getParams.done(function(result){
+	bui.alert(result)
+})
+
+// 1.3.1 以下需要在回调里面使用
+bui.getPageParams(function(result){
+	bui.alert(result);
+});
+
+			 	</xmp>
+				</div>
+
+			</div>
+		</div>
+	</main>
+</div>

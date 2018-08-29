@@ -1,0 +1,111 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">焦点图切换</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+
+		<div id="slidePic" class="bui-slide">
+			<div class="bui-slide-main">
+				<ul>
+					<li>
+						<div class="bui-box-space">
+							<div class="span1">
+								<div style="background: yellow;height: 120px;"></div>
+							</div>
+							<div class="span1">
+								<div style="background: orange;height: 120px;"></div>
+							</div>
+							<div class="span1">
+								<div style="background: red;height: 120px;"></div>
+							</div>
+						</div>
+						
+					</li>
+					<li>
+						<div class="bui-box-space">
+                            <div class="span1">
+                                <div style="background: yellow;height: 120px;"></div>
+                            </div>
+                            <div class="span1">
+                                <div style="background: orange;height: 120px;"></div>
+                            </div>
+                            <div class="span1">
+                                <div style="background: red;height: 120px;"></div>
+                            </div>
+						</div>
+					</li>
+					<li>
+						<div class="bui-box-space">
+                            <div class="span1">
+                                <div style="background: yellow;height: 120px;"></div>
+                            </div>
+                            <div class="span1">
+                                <div style="background: orange;height: 120px;"></div>
+                            </div>
+                            <div class="span1">
+                                <div style="background: red;height: 120px;"></div>
+                            </div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="bui-slide-head">
+				<ul >
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="bui-panel">
+			<div class="bui-panel-head">示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>html:</h4>
+						
+					<xmp>
+<div id="slide" class="bui-slide">
+  <div class="bui-slide-main">
+    <ul>
+      <li>
+        <div class="bui-box-space">
+            <div class="span1">
+                <div style="background: yellow;height: 120px;"></div>
+            </div>
+            <div class="span1">
+                <div style="background: orange;height: 120px;"></div>
+            </div>
+            <div class="span1">
+                <div style="background: red;height: 120px;"></div>
+            </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="bui-slide-head">
+    <ul>
+      <li>1</li>
+    </ul>
+  </div>
+</div>				
+					</xmp>	
+					<h4>js:</h4>
+					<xmp>
+var uiSlide = bui.slide({
+    id:"#slide",
+    height:120
+})
+			 		</xmp>
+					
+				</div>
+			</div>
+		</div>
+	</main>
+</div>

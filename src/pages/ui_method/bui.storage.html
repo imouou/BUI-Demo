@@ -1,0 +1,59 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">bui.storage 数组存储字符串</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<div class="bui-fluid">
+			<div class="span4">
+				<div id="setOne" class="bui-btn">新增数据</div>
+			</div>
+			<div class="span4">
+				<div id="removeOne" class="bui-btn">删除数据</div>
+			</div>
+			<div class="span4">
+				<div id="clear" class="bui-btn">清除数据</div>
+			</div>
+			<div class="span12">
+				<div id="getOne" class="bui-btn">获取数据</div>
+			</div>
+		</div>
+		<div class="bui-panel">
+			<div class="bui-panel-head">代码示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>js:</h4>
+					<xmp>
+// 保存2条数据
+var storage = bui.storage(2);
+    storage.set("username","王伟深");
+
+$("#setOne").on("click",function(argument) {
+    storage.set("username","区柏荣");
+})
+$("#removeOne").on("click",function(argument) {
+    storage.remove("username","区柏荣");
+})
+$("#getOne").on("click",function(argument) {
+    // 获取数据
+    var data = storage.get("username");
+     // 默认只存储一条数据,所以第一条数据会被覆盖
+    bui.alert(data);
+})
+    
+
+$("#clear").on("click",function(argument) {
+    storage.clear();
+})
+			 		</xmp>
+				</div>
+			</div>
+		</div>
+	
+	</main>
+</div>

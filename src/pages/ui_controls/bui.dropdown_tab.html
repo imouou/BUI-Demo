@@ -1,0 +1,136 @@
+<style>
+  .bui-dropdown .sidenav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f7f8f9;
+    z-index: 10;
+    width:2rem;
+  }
+  .bui-dropdown .sidenav .bui-btn-menu {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    background: #f7f8f9;
+  }
+  .bui-dropdown .sidenav .bui-btn-menu.active {
+    color: #1daafc;
+    background: #fff;
+  }
+  .bui-dropdown .bui-tab {
+    margin-left: 2rem;
+    background: #fff;
+  }
+  .bui-dropdown .bui-dropdown-content .bui-btn {
+    border-bottom: 0;
+  }
+  .bui-dropdown .bui-dropdown-content .bui-list .active {
+    color: #1daafc;
+    background: none;
+  }
+  .bui-dropdown .bui-dropdown-content .bui-btn i{
+    color: #fff;
+  }
+  .bui-dropdown .bui-dropdown-content .bui-list .active i{
+    color: #09bb07;
+  }
+  .bui-dropdown .bui-tab-main > ul > li{
+    
+  }
+</style>
+  
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left" style="overflow:visible;">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+
+		</div>
+		<div class="bui-bar-main">
+			分类下拉
+		</div>
+
+		<!-- 这个样式要设置才会看到二级菜单 -->
+		<div class="bui-bar-right" style="overflow:visible;">
+			
+		</div>
+	</header>
+	<main class="main">
+		<div id="uiDoropdown" class="bui-dropdown" >
+			<div class="bui-btn bui-box" >
+                <div class="span1">下拉菜单</div>
+				<i class="icon-dropdown"></i>
+			</div>
+            <div class="bui-dropdown-content">
+                <!-- bui-navbar 在按钮有多个的情况有用, 如果没有会是自适应的按钮 -->
+                <ul id="tabSideNav" class="sidenav">
+                    <li class="bui-btn-menu active">分类1</li>
+                    <li class="bui-btn-menu ">分类2</li>
+                </ul>
+                <div id="tabSide" class="bui-tab">
+                    <div class="bui-tab-main">
+                        <ul>
+                            <li>
+                                <ul class="bui-list">
+                                    <!-- 默认激活第一个 -->
+                                    <li class="bui-btn bui-box active" value="11">
+                                        <div class="span1">商品1</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="22">
+                                        <div class="span1">商品2</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="33">
+                                        <div class="span1">商品3</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="bui-list">
+                                    <li class="bui-btn bui-box" value="44">
+                                        <div class="span1">商品4</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="55">
+                                        <div class="span1">商品5</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="66">
+                                        <div class="span1">商品6</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="77">
+                                        <div class="span1">商品7</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="88">
+                                        <div class="span1">商品8</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="99">
+                                        <div class="span1">商品9</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="10">
+                                        <div class="span1">商品10</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                    <li class="bui-btn bui-box" value="111">
+                                        <div class="span1">商品11</div>
+                                        <i class="icon-check"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+			
+		</div>
+		
+
+	</main>
+</div>

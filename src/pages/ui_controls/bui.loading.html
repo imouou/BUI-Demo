@@ -1,0 +1,45 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">loading</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<h3 class="section-title">loading</h3>
+
+		<div class="bui-box-space">
+		    <div class="span1"><div class="bui-btn" id="show">显示</div></div>
+		    <div class="span1"><div class="bui-btn" id="hide">隐藏</div></div>
+		    <div class="span1"><div class="bui-btn" id="remove">移除</div></div>
+		</div>
+		<div class="bui-box-space">
+		    <div class="span1"><div class="bui-btn" id="text">修改文本</div></div>
+		    <div class="span1"><div class="bui-btn" id="showRing">显示圈圈</div></div>
+		    <div class="span1"><div class="bui-btn" id="hideRing">隐藏圈圈</div></div>
+		</div>
+		<div class="bui-box-space">
+		    <div class="span1"><div class="bui-btn" id="pause">停止滚动</div></div>
+		    <div class="span1"><div class="bui-btn" id="start">开始滚动</div></div>
+		</div>
+		<div id="loading" class="bui-panel">
+			<div class="bui-panel-head">示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<xmp>
+//引用控件
+var uiLoading = bui.loading();
+// 开启进度条
+uiLoading.start();
+
+			 		</xmp>
+					
+				</div>
+			</div>
+		</div>
+		
+	</main>
+</div>

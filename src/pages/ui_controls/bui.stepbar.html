@@ -1,0 +1,47 @@
+﻿
+<div class="bui-page">
+	<header class="bui-bar">
+		<div class="bui-bar-left">
+			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+		</div>
+		<div class="bui-bar-main">步骤条</div>
+		<div class="bui-bar-right">
+		</div>
+	</header>
+	<main>
+		<!-- 纵向 -->
+		<div id="step" class="bui-stepbar"></div>
+		
+		<div class="bui-panel">
+			<div class="bui-panel-head">示例:</div>
+			<div class="bui-panel-main">
+				<div class="container">
+					<h4>html:</h4>
+					<xmp>
+<div id="step" class="bui-stepbar"></div>			
+					</xmp>	
+					<h4>js:</h4>
+					<xmp>
+//初始化控件
+var uiStepbar = bui.stepbar({
+  id: "#step",
+  data: [{
+    title: "预立项申请",
+    subtitle: "2016-04-2 10:30",
+    content: "成功创建申请,已经提交至XX部门经理审批,请耐心等待"
+  },{
+    title: "立项审批",
+    subtitle: "2016-04-21 10:30",
+    content: "审批完成,资料递交中"
+  }]
+});
+
+//激活第2步
+uiStepbar.value(1);		
+					</xmp>	
+					
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
