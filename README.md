@@ -4,11 +4,15 @@ BUI 控件演示
 ## 使用说明
 ```
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/imouou/BUI-Demo
+
 # Go into the repository
-cd electron-quick-start
+cd BUI-Demo
+
 # Install dependencies
 npm install
-# Run the app
+
+# preview
 npm start
+
 ```
