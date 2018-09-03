@@ -3,7 +3,7 @@
     // 快速初始化
     var uiSlide = bui.slide({
         id:"#slide",
-        height:600,
+        height:900,
         // 如果焦点图的高度要保持跟设计稿一致,需要设置zoom:true
         bufferEffect: true,
         zoom: true

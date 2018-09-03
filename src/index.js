@@ -2,8 +2,6 @@
 var sitePath = "http://www.easybui.com",
     siteDir = sitePath + "/demo/json/";
 
-
-
 // 设置当前应用模式
 bui.isWebapp = true;
 
@@ -19,6 +17,7 @@ bui.ready(function () {
     router.init({
         id: "#bui-router",
         progress: true,
+        firstAnimate: true,
         // webapp部署的时候改为true, 这样物理刷新缓存还在
         reloadCache: false
     })

@@ -8,6 +8,28 @@
     $("#btnSelect").on("click",function () {
 
         uiUpload.add({
+            // "from": "camera",
+            "onSuccess": function (val,data) {
+                // $output.text(val);
+                console.log(val);
+                // 展示本地图片
+                this.toBase64({
+                    onSuccess: function (url) {
+                    $("#output").append('<img src="'+url+'" alt="" style="width:100%;"/>')
+                   
+                    }
+                });
+
+                // 也可以直接调用start上传图片
+            }
+        })
+
+    })
+    // 选择图片文件
+    $("#btnSelectCamera").on("click",function () {
+
+        uiUpload.add({
+            "from": "camera",
             "onSuccess": function (val,data) {
                 // $output.text(val);
                 console.log(val);

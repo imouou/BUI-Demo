@@ -66,11 +66,11 @@ var config = {
             // 源文件目录
             root: sourcePath,
             // 源文件样式目录
-            css: sourcePath+'/css',
+            css: [sourcePath+'/css',,'!'+sourcePath+'/api/**'],
             // style.css 源文件目录
             scss: sourcePath+'/scss/**/*.scss',
             // 源文件图片目录
-            images: sourcePath+'/**/*.{png,jpg,gif,ico}',
+            images: [sourcePath+'/**/*.{png,jpg,gif,ico}','!'+sourcePath+'/api/**'],
         },
         // 编译的输出路径
         build: sourceBuild,
@@ -85,8 +85,8 @@ var config = {
         watcher : {
             rootRule: sourcePath+'/**',
             scssRule: [sourcePath+'/**/*.scss','!'+sourcePath+'/scss/**/_*.scss'],
-            jsRule: [sourcePath+'/**/*.js','!'+sourcePath+'/js/bui.js','!'+sourcePath+'/js/zepto.js','!'+sourcePath+'/js/platform/**/*.js','!'+sourcePath+'/js/plugins/**/*.js','!'+sourcePath+'/**/*.min.js'],
-            htmlRule: [sourcePath+'/**/*.html'],
+            jsRule: [sourcePath+'/**/*.js','!'+sourcePath+'/js/bui.js','!'+sourcePath+'/js/zepto.js','!'+sourcePath+'/js/platform/**/*.js','!'+sourcePath+'/js/plugins/**/*.js','!'+sourcePath+'/**/*.min.js','!'+sourcePath+'/api/**'],
+            htmlRule: [sourcePath+'/**/*.html',,'!'+sourcePath+'/api/**'],
         }
 }
 
@@ -108,7 +108,7 @@ function getNetwork() {
 
 // 获取随机端口
 function getRandomPort() {
-    let random = Math.random()*10000;
+    let random = Math.random()*10000+1000;
     let randomPort = parseInt(random);
 
     return randomPort;
@@ -233,7 +233,7 @@ gulp.task('move-bui', function () {
 });
 // move all file except pages/js/** .sass .md 
 gulp.task('move',function () {
-    return gulp.src([config.source.root+'/**','!**/*.{html,css,scss,less,md,png,jpg,gif,ico}','!'+config.source.root+'/scss'])
+    return gulp.src([config.source.root+'/**','!**/*.{html,css,scss,less,md,png,jpg,gif,ico}','!'+config.source.root+'/scss','!'+config.source.root+'/api/**'])
         .pipe(changed(config.watcher.rootRule))
         .pipe(gulp.dest(config.output.root));
 });

@@ -29,7 +29,7 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.4.6 20180801</p>
+            <p class="off-left" style="font-size:12px;">API for BUI 1.4.7 20180831</p>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -81,8 +81,6 @@
             
                 <li><a href="../classes/bui.emitter.html">bui.emitter</a></li>
             
-                <li><a href="../classes/bui.file.html">bui.file</a></li>
-            
                 <li><a href="../classes/bui.fileselect.html">bui.fileselect</a></li>
             
                 <li><a href="../classes/bui.getPageParams.html">bui.getPageParams</a></li>
@@ -107,15 +105,11 @@
             
                 <li><a href="../classes/bui.mask.html">bui.mask</a></li>
             
-                <li><a href="../classes/bui.number.html">bui.number</a></li>
-            
                 <li><a href="../classes/bui.pickerdate.html">bui.pickerdate</a></li>
             
                 <li><a href="../classes/bui.platform.html">bui.platform</a></li>
             
                 <li><a href="../classes/bui.prompt.html">bui.prompt</a></li>
-            
-                <li><a href="../classes/bui.pullrefresh.html">bui.pullrefresh</a></li>
             
                 <li><a href="../classes/bui.rating.html">bui.rating</a></li>
             
@@ -133,23 +127,17 @@
             
                 <li><a href="../classes/bui.select.html">bui.select</a></li>
             
-                <li><a href="../classes/bui.sidebar.html">bui.sidebar</a></li>
-            
-                <li><a href="../classes/bui.slide.html">bui.slide</a></li>
-            
                 <li><a href="../classes/bui.stepbar.html">bui.stepbar</a></li>
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
             
-                <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
+                <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
                 <li><a href="../classes/bui.timer.html">bui.timer</a></li>
             
                 <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
-            
-                <li><a href="../classes/bui.unit.html">bui.unit</a></li>
             
                 <li><a href="../classes/bui.upload.html">bui.upload</a></li>
             
@@ -402,6 +390,21 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[height]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.4.7新增 默认: 0 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[cache]</code>
                                     <span class="type">Boolean</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -480,8 +483,7 @@
 <p> js: 
  // 把路由实例化给 window.router
   window.router = bui.router();</p>
-<p>  // 这里监听 pageinit 的方式, 而不是在 bui.ready 里面</p>
-<p>  bui.on(&quot;pageinit&quot;,function(){
+<p>  bui.ready(function(){
     // 路由初始化
     router.init({
         id: &quot;#bui-router&quot;
@@ -708,7 +710,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1905"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1905</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1909"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1909</code></a>
         
         </p>
 
@@ -980,7 +982,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1863"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1863</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1867"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1867</code></a>
         
         </p>
 
@@ -1064,7 +1066,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1877"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1877</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1881"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1881</code></a>
         
         </p>
 
@@ -1160,7 +1162,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1603"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1603</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1607"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1607</code></a>
         
         </p>
 
@@ -1253,7 +1255,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1624"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1624</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1628"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1628</code></a>
         
         </p>
 
@@ -1557,7 +1559,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1935"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1935</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1939"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1939</code></a>
         
         </p>
 
@@ -1662,7 +1664,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1658"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1658</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1662"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1662</code></a>
         
         </p>
 
@@ -2132,7 +2134,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1789"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1789</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1793"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1793</code></a>
         
         </p>
 
@@ -2424,7 +2426,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1547"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1547</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1551"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1551</code></a>
         
         </p>
 
@@ -2503,7 +2505,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1574"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1574</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1578"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1578</code></a>
         
         </p>
 
@@ -2641,7 +2643,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1837"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1837</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1841"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1841</code></a>
         
         </p>
 
@@ -2738,7 +2740,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1815"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1815</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_core_bui.router.js.html#l1819"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;core&#x2F;bui.router.js:1819</code></a>
         
         </p>
 

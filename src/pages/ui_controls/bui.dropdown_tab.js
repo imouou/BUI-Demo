@@ -2,7 +2,10 @@
 
     var uiMask = bui.mask({
       appendTo: router.$(".main"),
-      zIndex: 1
+      zIndex: 1,
+      callback: function (argument) {
+        uiDoropdown.hide();
+      }
     });
     var tabSide = null;
     //下拉菜单在底部相对父层宽度
@@ -16,6 +19,7 @@
         callback: function (e) {
             $(".bui-list li").removeClass("active");
             $(this).addClass("active");
+            uiDoropdown.hide();
         }
     })
 

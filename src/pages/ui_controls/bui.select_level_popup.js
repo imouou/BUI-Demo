@@ -50,11 +50,7 @@
                 // 激活第一个城市
                 chineseCities.city = chineseCities.province[index]["city"];
                 citySelect.option("data",chineseCities.city);
-                citySelect.active(0);
-                // 激活第一个区域
-                chineseCities.area = chineseCities.city[0]["area"]||[];
-                areaSelect.option("data",chineseCities.area)
-                areaSelect.active(0);
+                
                 // 显示城市选择
                 citySelect.show();
         })
@@ -68,7 +64,7 @@
                 chineseCities.area = chineseCities.city[index]["area"] || [];
                 areaSelect.option("data",chineseCities.area)
                 // 激活第一个区域
-                areaSelect.active(0);
+                // areaSelect.active(0);
                 // 显示地区选择
                 areaSelect.show();
 

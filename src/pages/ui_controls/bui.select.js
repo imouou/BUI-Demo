@@ -7,7 +7,7 @@
             type:"checkbox",
             data: [{
                 "name":"广东",
-                "value":"11"
+                "value":"11",
             },{"name":"广西",
                 "value":"22"
             },{

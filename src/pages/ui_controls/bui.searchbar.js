@@ -19,7 +19,7 @@
             if( uiList ){
                 
                 //点击搜索清空数据
-                $("#scrollSearch .bui-list").html('');
+                uiList.empty();
                 // 重新初始化数据
                 uiList.init({
                     page: 1,
@@ -51,13 +51,6 @@
                     }
                 });
 
-                // 监听刷新事件,把最后一条数据清空
-                uiList.on("refreshbefore",function () {
-
-                    uiList.option("data",{
-                            "lastid":""
-                        });
-                })
 
             }
 

@@ -16,7 +16,7 @@
     $('#success').on("click",function  (argument) {
         bui.confirm({
             "title": "",
-            "content":'<div class="bui-box-center"><h3><i class="icon-success success"></i></h3><p>提交成功</p></div>',
+            "content":'<div class="bui-box-center"><h3><i class="icon-successfill success"></i></h3><p>提交成功</p></div>',
             "buttons":[{name:"确定",className:"primary-reverse"}]
         });
     })

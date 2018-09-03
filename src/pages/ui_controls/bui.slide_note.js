@@ -3,7 +3,7 @@
     // 快速初始化
     var uiSlide = bui.slide({
         id:"#slideNote",
-        height:60,
+        height:100,
         autoplay: true,
         zoom: true,
         direction: "y"

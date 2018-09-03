@@ -4,7 +4,7 @@
     var citySelect = null,
         citySelect2 = null;
     // 绑定数据
-    loader.import("js/plugins/citys.js",function () {
+    loader.import("json/citys.js",function () {
         
         // 普通初始化
         citySelect = bui.levelselect({
@@ -18,6 +18,9 @@
             }
         })
 
+        // citySelect.on("change",function (e) {
+        //     console.log(this)
+        // })
         // 设置值
         citySelect2 = bui.levelselect({
             data: citys,

@@ -4,12 +4,13 @@
     var dialog = bui.dialog({
             id: "#actionsheet",
             position:"bottom",
+            effect:"fadeInUp",
             onMask: function (argument) {
                 dialog.close();
             }
         });
     
-    $('#btnOpen').on("click",function (argument) {
+    router.$('#btnOpen').on("click",function (argument) {
         dialog.open();
     })
 })
