@@ -3,11 +3,8 @@ loader.define(function(require,exports,module) {
             id: "#scrollList",
             url: siteDir+"userlist.json",
             pageSize:9,
-            height:300,
             template: template,
-            data: {
-                args: { id: 123}
-            },
+            data: {},
             //如果分页的字段名不一样,通过field重新定义
             field: {
                 page: "page",
@@ -35,14 +32,20 @@ loader.define(function(require,exports,module) {
                 // }
             }
         });
-
-        
+    
     //生成模板
     function template (data) {
         var html = "";
         $.each(data,function(index, el) {
-
-            html += "<li class='bui-btn' href='pages/ui_controls/bui.list.html?id=123'><i class='icon-facefill'></i>"+el.name+"</li>";
+            html +=`<li class="bui-btn bui-box">
+                <div class="bui-thumbnail bui-sub" data-sub="新品"><img src="images/list-img1.png" alt=""></div>
+                <div class="span1">
+                    <h3 class="item-title">幸福西饼生日蛋糕</h3>
+                    <p class="item-text">天河区岑村</p>
+                    <p class="item-text">3公里</p>
+                </div>
+                <span class="price"><i>￥</i>50</span>
+            </li>`
         });
 
         return html;

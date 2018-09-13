@@ -9,56 +9,11 @@
 		</div>
 	</header>
 	<main>
-		<h3 class="section-title">内容提醒框</h3>
-		<div id="btnTop" class="bui-btn">内容提醒框</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head">示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-					<xmp>
-
-bui.confirm("消息提醒",function (e){
-  console.log("你点击了"+$(this).text())
-});
-			 		</xmp>
-					
-				</div>
-			</div>
-		</div>
-		<h3 class="section-title">带图标提醒</h3>
-		<div id="success" class="bui-btn">点击打开成功提醒</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head">示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-					<xmp>
-bui.confirm({
-	"title": "",
-	"content":'<div class="bui-box-center"><h3><i class="icon-success"></i></h3><p>提交成功</p></div>',
-	"buttons":[{name:"确定",className:"primary-reverse"}]
-});
-			 		</xmp>
-					
-				</div>
-			</div>
-		</div>
-		<h3 class="section-title">带标题居中提醒</h3>
-		<div id="fail" class="bui-btn">点击打开标题提醒</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head">示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-					<xmp>
-bui.confirm({
-	"title": "",
-	"content":'<div class="bui-box-center"><h3><i class="icon-errorfill"></i>温馨提醒</h3><p>提交成功</p></div>',
-	"buttons":[{name:"取消",className:""},{name:"确定",className:"primary-reverse"}]
-});
-			 		</xmp>
-					
-				</div>
-			</div>
+		<div class="bui-box-space container-y">
+			<div class="span1"><div id="btnTop" class="bui-btn">打开内容提醒框</div></div>
+			<div class="span1"><div id="success" class="bui-btn">打开图标提醒</div></div>
 		</div>
 		
+		<img src="images/placeholder-page.png" alt="占位图">
 	</main>
 </div>

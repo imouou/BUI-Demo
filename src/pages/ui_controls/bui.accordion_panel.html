@@ -9,37 +9,41 @@
 		</div>
 	</header>
 	<main>
-		<h3 class="section-title">折叠面板</h3>
-		<div id="panel" class="bui-panel">
-			<div class="bui-panel-head bui-box"><div class="span1">折叠面板</div><i class="icon-listdown"></i></div>
-			<div class="bui-panel-main">
-				<div class="container">我是面板里面的内容</div>
-			</div>
-		</div>
-
+		<!-- 控件结构 -->
 		<div class="bui-panel">
-			<div class="bui-panel-head">代码示例:</div>
+			<div class="bui-panel-head bui-box-center"><div class="span1">京东服务</div><i class="icon-accordion"></i></div>
 			<div class="bui-panel-main">
-				<div class="container">
-					<h4>html:</h4>
-					<xmp>
-<div id="panel" class="bui-panel">
-  <div class="bui-panel-head">折叠面板</div>
-  <div class="bui-panel-main">
-    我是面板里面的内容
-  </div>
-</div>
-			 		</xmp>
-					<h4>js:</h4>
-					<xmp>
-var uiAccordion = bui.accordion({
-	id:"#panel",
-	handle: ".bui-panel-head", 
-	target: ".bui-panel-main"
-});
-			 		</xmp>
+				<!-- 示例搜索过滤 -->
+				<div class="bui-filter bui-fluid-space-3">
+				    <div class="span1">
+					    <div class="bui-check">
+					        <input id="uid" type="radio" name="service"><label for="uid">京东物流</label>
+					    </div>
+				    </div>
+				    <div class="span1">
+					    <div class="bui-check">
+					        <input id="uid2" type="radio" name="service"><label for="uid2">货到付款</label>
+					    </div>
+				    </div>
+				    <div class="span1">
+					    <div class="bui-check">
+					        <input id="uid3" type="radio" name="service" checked><label for="uid3">仅看有货</label>
+					    </div>
+				    </div>
+				    <div class="span1">
+					    <div class="bui-check">
+					        <input id="uid4" type="radio" name="service"><label for="uid4">促销</label>
+					    </div>
+				    </div>
+				    <div class="span1">
+					    <div class="bui-check">
+					        <input id="uid5" type="radio" name="service"><label for="uid5">新品</label>
+					    </div>
+				    </div>
 				</div>
 			</div>
 		</div>
+
+
 	</main>
 </div>

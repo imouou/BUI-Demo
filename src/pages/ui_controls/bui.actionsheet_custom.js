@@ -1,6 +1,6 @@
 ﻿loader.define(function(require,exports,module) {
 
-    //静态自定义对话框
+    //自定义弹出菜单初始化
     var dialog = bui.dialog({
             id: "#actionsheet",
             position:"bottom",
@@ -10,7 +10,7 @@
             }
         });
     
-    router.$('#btnOpen').on("click",function (argument) {
+    router.$('#btnOpen2').on("click",function (argument) {
         dialog.open();
     })
 })

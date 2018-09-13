@@ -4,14 +4,11 @@
     var tab = bui.tab({
         id:"#tabFoot",
         menu:"#tabFootNav",
+        // animate: false,
     })
 
     var uiSlideTab = bui.tab({
         id:"#uiSlideTabChild",
     })
 
-    // 滚动到顶部
-    $(".btn-scrolltop").on("click",function(e){
-        document.querySelector("#scrollMain").scrollTop = 0;
-    })
 })

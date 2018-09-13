@@ -8,6 +8,6 @@
             menu:"#tabSideNav",
             width: tabWidth,
             direction: "y",
-            animate: false,
+            animate: false
         })
 })

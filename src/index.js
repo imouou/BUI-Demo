@@ -17,7 +17,7 @@ bui.ready(function () {
     router.init({
         id: "#bui-router",
         progress: true,
-        firstAnimate: true,
+        // firstAnimate: true,
         // webapp部署的时候改为true, 这样物理刷新缓存还在
         reloadCache: false
     })
@@ -46,7 +46,19 @@ function bind() {
     router.on("back",function (e) {
         var pid = e.target.pid;
 
-        console.log(pid)
+    })
+
+
+    // demo生成源码
+    router.on("load",function (e) {
+        $("#"+e.target.id).find(".bui-page > .bui-bar > .bui-bar-right").append('<a class="bui-btn preview-source">源码</a>')
+    })
+    $("#bui-router").on("click",".preview-source",function (e) {
+        var hash = window.location.hash,
+            rule = /^#.+\?/ig,
+            wenhaoIndex = hash.indexOf("?") ,
+            url = wenhaoIndex > -1 ? hash.substring(1,wenhaoIndex) : hash.substr(1);
+        window.open('http://www.easybui.com/demo/source.html?url='+url+'&code=html,js,result')
     })
 
 }

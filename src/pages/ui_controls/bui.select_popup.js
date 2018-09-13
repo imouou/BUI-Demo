@@ -51,7 +51,6 @@
             buttons: []
         });
 
-
 // 自定义确定按钮事件
 router.$("#makeSure").on("click",function () {
       console.log(uiSelect2.value())

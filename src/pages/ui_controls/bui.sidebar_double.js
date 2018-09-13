@@ -2,7 +2,8 @@
 
     //示例代码
     var uiSidebar = bui.sidebar({
-        id: "#sidebarDoubleWrap"
+        id: "#sidebarDoubleWrap",
+        width: 644,
     });
 
     $("#menu1").on("click",function () {

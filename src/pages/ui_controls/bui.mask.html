@@ -4,50 +4,20 @@
 		<div class="bui-bar-left">
 			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
 		</div>
-		<div class="bui-bar-main">遮罩控件</div>
+		<div class="bui-bar-main">遮罩</div>
 		<div class="bui-bar-right">
 		</div>
 	</header>
 	<main>
-		<h3 class="section-title">遮罩控件</h3>
-		<div class="bui-box-space">
+		<div class="bui-box-space container-y">
 		    <div class="span1"><div class="bui-btn" id="add">添加</div></div>
 		    <div class="span1"><div class="bui-btn" id="remove">移除</div></div>
 		    <div class="span1"><div class="bui-btn" id="show">显示</div></div>
 		    <div class="span1"><div class="bui-btn" id="hide">隐藏</div></div>
 		</div>
+		<!-- 遮罩示例位置 -->
 		<div id="mask" class="bui-panel">
-			<div class="bui-panel-head">示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-					<xmp>
-// 默认是自动触发, 这样可以只实例化一个 appendTo 为空则添加在整个页面
-var uiMask = bui.mask({
-	appendTo: "#mask",
-	autoTrigger: false
-});
-
-//添加
-$('#add').on("click",function (argument) {
-	uiMask.add();
-})
-//移除
-$('#remove').on("click",function (argument) {
-	uiMask.remove();
-})
-//显示
-$('#show').on("click",function (argument) {
-	uiMask.show();
-})
-//隐藏
-$('#hide').on("click",function (argument) {
-	uiMask.hide();
-})
-			 		</xmp>
-					
-				</div>
-			</div>
+			<img src="images/placeholder-page.png" alt="占位图">
 		</div>
-		
 	</main>
 </div>

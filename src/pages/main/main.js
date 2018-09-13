@@ -1,5 +1,5 @@
 /**
- * 底部导航TAB模板
+ * 导航TAB模板
  * 默认模块名: main
  * @return {[object]}  [ 返回一个对象 ]
  */
@@ -16,11 +16,8 @@ loader.define(function(require,exports,module) {
     function navTab() {
         
         //menu在tab外层,menu需要传id
-        var tab = bui.slide({
+        var tab = bui.tab({
             id:"#tabDynamic",
-            menu:"#tabDynamicNav",
-            children:".bui-tab-main ul",
-            scroll: true,
             animate: false,
             // 1: 声明是动态加载的tab
             autoload: true,
@@ -34,29 +31,17 @@ loader.define(function(require,exports,module) {
 
             switch(index){
                 case 0:
-                loader.require(["pages/main/home"])
+                loader.require(["pages/main/controls"])
                 break;
                 case 1:
-                loader.require(["pages/ui/index"])
+                loader.require(["pages/main/form"])
                 break;
                 case 2:
-                loader.require(["pages/ui_method/index"])
-                break;
-                case 3:
-                loader.require(["pages/ui_event/index"])
+                loader.require(["pages/main/method"])
                 break;
             }
 
-        }).to(0)
-
-        // 检测版本更新
-        bui.checkVersion({
-            id: "#checkUpdate",
-            url: siteDir + "bui_version_bingotouch.json",
-            currentVersionCode: "20180118",
-            currentVersion: "1.4.1"
-        });
-
+        }).to(0);
 
     }
 
