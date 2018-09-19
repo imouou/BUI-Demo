@@ -4,6 +4,7 @@
     var uiSlide = bui.slide({
         id:"#slide",
         height:380,
+        autopage: true
     })
 
 })

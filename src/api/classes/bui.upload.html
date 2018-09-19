@@ -29,7 +29,7 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.4.7 20180831</p>
+            <p class="off-left" style="font-size:12px;">API for BUI 1.5.0</p>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -81,6 +81,8 @@
             
                 <li><a href="../classes/bui.emitter.html">bui.emitter</a></li>
             
+                <li><a href="../classes/bui.file.html">bui.file</a></li>
+            
                 <li><a href="../classes/bui.fileselect.html">bui.fileselect</a></li>
             
                 <li><a href="../classes/bui.getPageParams.html">bui.getPageParams</a></li>
@@ -90,6 +92,8 @@
                 <li><a href="../classes/bui.hint.html">bui.hint</a></li>
             
                 <li><a href="../classes/bui.init.html">bui.init</a></li>
+            
+                <li><a href="../classes/bui.input.html">bui.input</a></li>
             
                 <li><a href="../classes/bui.levelselect.html">bui.levelselect</a></li>
             
@@ -105,11 +109,15 @@
             
                 <li><a href="../classes/bui.mask.html">bui.mask</a></li>
             
+                <li><a href="../classes/bui.number.html">bui.number</a></li>
+            
                 <li><a href="../classes/bui.pickerdate.html">bui.pickerdate</a></li>
             
                 <li><a href="../classes/bui.platform.html">bui.platform</a></li>
             
                 <li><a href="../classes/bui.prompt.html">bui.prompt</a></li>
+            
+                <li><a href="../classes/bui.pullrefresh.html">bui.pullrefresh</a></li>
             
                 <li><a href="../classes/bui.rating.html">bui.rating</a></li>
             
@@ -127,9 +135,15 @@
             
                 <li><a href="../classes/bui.select.html">bui.select</a></li>
             
+                <li><a href="../classes/bui.sidebar.html">bui.sidebar</a></li>
+            
+                <li><a href="../classes/bui.slide.html">bui.slide</a></li>
+            
                 <li><a href="../classes/bui.stepbar.html">bui.stepbar</a></li>
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
+            
+                <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
@@ -138,6 +152,8 @@
                 <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
+            
+                <li><a href="../classes/bui.unit.html">bui.unit</a></li>
             
                 <li><a href="../classes/bui.upload.html">bui.upload</a></li>
             
@@ -202,7 +218,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
         </div>
     
 
@@ -277,7 +293,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
         
         </p>
 
@@ -666,7 +682,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l155"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:155</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l155"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:155</code></a>
         
         </p>
 
@@ -751,13 +767,28 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[mediaType]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 文件的类型, 原生只支持图片上传  picture | video | allmedia ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[from]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
-                                    <p>[ 图片来源, 默认来自 photo(相册) | camera(相机) | savephoto(来自保存的相册) ]</p>
+                                    <p>[ 1.4.7新增, 默认 &quot;&quot; 从相册选 | &quot;camera&quot; 相机拍照 | &quot;camcorder&quot; 录像, 需要配合 mediaType  参数 原生: 默认来自 photo(相册) | camera(相机) | savephoto(来自保存的相册) ]</p>
 
                                 </div>
 
@@ -870,7 +901,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l204"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:204</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l205"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:205</code></a>
         
         </p>
 
@@ -934,7 +965,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l240"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:240</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l241"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:241</code></a>
         
         </p>
 
@@ -1002,7 +1033,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l185"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:185</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l186"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:186</code></a>
         
         </p>
 
@@ -1078,7 +1109,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l254"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:254</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l255"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:255</code></a>
         
         </p>
 
@@ -1177,7 +1208,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l313"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:313</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l314"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:314</code></a>
         
         </p>
 
@@ -1253,7 +1284,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l218"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:218</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l219"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:219</code></a>
         
         </p>
 
@@ -1405,7 +1436,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l433"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:433</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l434"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:434</code></a>
         
         </p>
 

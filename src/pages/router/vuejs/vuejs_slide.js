@@ -9,7 +9,7 @@ loader.define(function() {
 
         // vue 的数据
         var pageVue = new Vue({
-          el: pageDom,
+          el: router.currentPage(),
           data: {
             slideItems: []
           },
@@ -24,9 +24,8 @@ loader.define(function() {
                 this.$nextTick(function(){
                     // 初始化焦点图
                     var uiSlideVue = bui.slide({
-                          id: slideDom,
-                          height:200,
-                          autopage: true
+                          id: router.$(".slide-vue"),
+                          height:300
                       })
                 })
             }

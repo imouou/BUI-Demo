@@ -1,7 +1,6 @@
 // 网站配置
 var sitePath = "http://www.easybui.com",
     siteDir = sitePath + "/demo/json/";
-
 // 设置当前应用模式
 bui.isWebapp = true;
 
@@ -13,6 +12,8 @@ bui.isWebapp = true;
 window.router = bui.router();
 
 bui.ready(function () {
+
+
     // 第3步: 初始化路由
     router.init({
         id: "#bui-router",
@@ -24,6 +25,7 @@ bui.ready(function () {
 
     // 绑定事件
     bind();
+      
 
 })
 

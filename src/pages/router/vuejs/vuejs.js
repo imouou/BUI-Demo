@@ -10,7 +10,7 @@ loader.define(function() {
 
         // 绑定list的数据
         var listApp = new Vue({
-          el: scrollListVue,
+          el: router.currentPage(),
           data: {
             datas: []
           },

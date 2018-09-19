@@ -4,7 +4,6 @@
     var uiPullRefresh;
         uiPullRefresh = bui.pullrefresh({
             id: "#pullrefresh",
-            height:300,
             onRefresh : getData
         });
 
@@ -20,13 +19,13 @@
         var _self = this;
 
         bui.ajax({
-            url: siteDir+"userlist.json",
+            url: siteDir+"shop.json",
             data: {
                 pageindex:1,
                 pagesize:4
             }
         }).done(function(res) {
-            var html = template(res.data);
+            var html = templateList(res.data);
 
             $("#pullrefreshList").html(html);
 
@@ -41,13 +40,37 @@
         })
     }
 
-    //生成模板
-    function template (data) {
+    //生成列表模板
+    function templateList (data) {
         var html = "";
+        $.each(data,function(index, el) {
 
-        $(data).each(function(index, el) {
+            // 处理角标状态
+            var sub = '' , subClass = '' ;
+            switch(el.status){
+                case 1:
+                sub = '新品';
+                subClass = 'bui-sub';
+                break;
+                case 2:
+                sub = '热门';
+                subClass = 'bui-sub danger';
+                break;
+                default: 
+                sub = '';
+                subClass = '';
+                break;
+            }
 
-            html += '<li class="bui-btn"><i class="icon-facefill"></i>'+el.name+'</li>';
+            html +=`<li class="bui-btn bui-box">
+                <div class="bui-thumbnail ${subClass}" data-sub="${sub}"><img src="${el.image}" alt=""></div>
+                <div class="span1">
+                    <h3 class="item-title">${el.name}</h3>
+                    <p class="item-text">${el.address}</p>
+                    <p class="item-text">${el.distance}</p>
+                </div>
+                <span class="price"><i>￥</i>${el.price}</span>
+            </li>`
         });
 
         return html;

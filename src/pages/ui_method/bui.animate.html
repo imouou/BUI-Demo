@@ -52,35 +52,6 @@
 		<div class="bui-box">
 			<div class="span1"><div id="stop" class="bui-btn">还原动画</div></div>
 		</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-
-				<h4>html:</h4>
-				<xmp>
-<div id="btn1" class="bui-btn">
-  触发动画
-</div>
-<div id="bar1">我是动画元素</div>
-			 	</xmp>
-				<h4>js:</h4>
-				<xmp>
-var uiAnimate =	bui.animate("#bar1");
-
-$("#btn1").on("click",function () {
-// stop 是为了清空之前的动画,在初始化位置位移,如果不要stop,则是继续位移,可以一直执行
-  uiAnimate.stop().left(100).start(function () {
-    this.skewX(10).start(function () {
-      this.left(200).start()
-    });
-  })
-})
-			 	</xmp>
-				</div>
-
-			</div>
-		</div>
 	</main>
 </div>
 </body>

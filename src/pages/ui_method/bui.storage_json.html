@@ -23,39 +23,6 @@
 				<div id="getOne" class="bui-btn">获取数据</div>
 			</div>
 		</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head">代码示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-					<h4>js:</h4>
-					<xmp>
-
-
-// 可以保存2条数据
-var storage = bui.storage(2);
-    //初始化第1条数据
-    storage.set("userinfo",{"id":"n1","name":"王伟深"},"id");
-
-$("#setOne").on("click",function(argument) {
-    //增加第2条数据
-    storage.set("userinfo",{"id":"n2","name":"区柏荣"},"id");
-})
-$("#removeOne").on("click",function(argument) {
-    //删除一条 name==王伟深 的数据
-    storage.remove("userinfo","王伟深","name");
-})
-$("#getOne").on("click",function(argument) {
-    // 获取多条数据
-    var data = storage.get("userinfo");
-    bui.alert(data);
-})
-$("#clear").on("click",function(argument) {
-    storage.clear();
-})
-			 		</xmp>
-				</div>
-			</div>
-		</div>
 	
 	</main>
 </div>

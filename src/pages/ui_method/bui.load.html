@@ -17,36 +17,14 @@
 			</dt>
 		</dl>
 		
-		<div class="bui-panel">
-			<div class="bui-panel-head">代码示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-                    <h4>html:</h4>
-                    <xmp>
-<div class="bui-btn">页面跳转</div>
-                    </xmp>
-					<h4>js:</h4>
-					<xmp>
-$("#load").on("click",function (argument) {
-  bui.load({
-    url: "bui.load.html",
-    param: {
-      "id": "123"
-    }
-  })
-})
-			 		</xmp>
-				</div>
-			</div>
-		</div>
-		<div class="section-title">第2种绑定跳转 (推荐一个页面只需要执行一次)</div>
+		<div class="section-title">第2种绑定跳转 (href属性跳转,首页已经绑定)</div>
 		
 		<ul id="list" class="bui-list">
-		  <li href="pages/ui_controls/bui.btn.html" class="bui-btn bui-box" >
+		  <li href="pages/ui_method/bui.getPageParams.html" class="bui-btn bui-box" >
 		  	<div class="span1">bui.btn 不带参数跳转</div>
 			<i class="icon-listright"></i>
 		  </li>
-		  <li href="pages/ui_controls/bui.btn.html" param='{"id":"222"}' class="bui-btn bui-box" >
+		  <li href="pages/ui_method/bui.getPageParams.html?id=222" class="bui-btn bui-box" >
 		    <div class="span1">bui.btn 带参数跳转</div>
 			<i class="icon-listright"></i>
 		  </li>

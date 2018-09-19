@@ -29,7 +29,7 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.4.7 20180831</p>
+            <p class="off-left" style="font-size:12px;">API for BUI 1.5.0</p>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -81,6 +81,8 @@
             
                 <li><a href="../classes/bui.emitter.html">bui.emitter</a></li>
             
+                <li><a href="../classes/bui.file.html">bui.file</a></li>
+            
                 <li><a href="../classes/bui.fileselect.html">bui.fileselect</a></li>
             
                 <li><a href="../classes/bui.getPageParams.html">bui.getPageParams</a></li>
@@ -90,6 +92,8 @@
                 <li><a href="../classes/bui.hint.html">bui.hint</a></li>
             
                 <li><a href="../classes/bui.init.html">bui.init</a></li>
+            
+                <li><a href="../classes/bui.input.html">bui.input</a></li>
             
                 <li><a href="../classes/bui.levelselect.html">bui.levelselect</a></li>
             
@@ -105,11 +109,15 @@
             
                 <li><a href="../classes/bui.mask.html">bui.mask</a></li>
             
+                <li><a href="../classes/bui.number.html">bui.number</a></li>
+            
                 <li><a href="../classes/bui.pickerdate.html">bui.pickerdate</a></li>
             
                 <li><a href="../classes/bui.platform.html">bui.platform</a></li>
             
                 <li><a href="../classes/bui.prompt.html">bui.prompt</a></li>
+            
+                <li><a href="../classes/bui.pullrefresh.html">bui.pullrefresh</a></li>
             
                 <li><a href="../classes/bui.rating.html">bui.rating</a></li>
             
@@ -127,9 +135,15 @@
             
                 <li><a href="../classes/bui.select.html">bui.select</a></li>
             
+                <li><a href="../classes/bui.sidebar.html">bui.sidebar</a></li>
+            
+                <li><a href="../classes/bui.slide.html">bui.slide</a></li>
+            
                 <li><a href="../classes/bui.stepbar.html">bui.stepbar</a></li>
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
+            
+                <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
@@ -138,6 +152,8 @@
                 <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
+            
+                <li><a href="../classes/bui.unit.html">bui.unit</a></li>
             
                 <li><a href="../classes/bui.upload.html">bui.upload</a></li>
             
@@ -202,7 +218,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:6</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:6</code></a>
         </div>
     
 
@@ -282,7 +298,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:6</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:6</code></a>
         
         </p>
 
@@ -540,13 +556,45 @@
 
             <div class="example-content">
                 <p>   html:</p>
-<pre class="code prettyprint"><code>      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
+<pre class="code prettyprint"><code> 示例结构1: 动态渲染
+      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
             &lt;li&gt;
                 &lt;div class=&quot;bui-btn&quot;&gt;
                     菜单
                 &lt;/div&gt;
             &lt;/li&gt;
-        &lt;/ul&gt;</code></pre>
+        &lt;/ul&gt;
+
+示例结构2: 禁止渲染
+      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
+        &lt;!-- 设置status属性可以避免渲染菜单 --&gt;
+        &lt;li status=&quot;1&quot;&gt;
+          &lt;div class=&quot;bui-btn bui-box&quot;&gt;
+            &lt;div class=&quot;span1&quot;&gt;不渲染&lt;/div&gt;
+            &lt;i class=&quot;icon-listright&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+示例结构3: 静态渲染,可以允许左右都有按钮
+      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
+        &lt;li status=&quot;1&quot;&gt;
+          &lt;div class=&quot;bui-btn bui-box&quot; href=&quot;pages/ui_controls/bui.listview.html&quot; param=&#39;{&quot;id&quot;:&quot;123&quot;}&#39;&gt;
+            &lt;div class=&quot;span1&quot;&gt;静态渲染-左右菜单&lt;/div&gt;
+            &lt;span class=&quot;bui-badges&quot;&gt;荐&lt;/span&gt;
+            &lt;i class=&quot;icon-listright&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;bui-listview-menu swipeleft&quot; data-moving=&quot;240&quot;&gt;
+              &lt;div class=&quot;bui-btn primary&quot;&gt;置顶&lt;/div&gt;
+              &lt;div class=&quot;bui-btn primary&quot;&gt;修改&lt;/div&gt;
+              &lt;div class=&quot;bui-btn danger&quot;&gt;删除&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;bui-listview-menu swiperight&quot;&gt;
+              &lt;div class=&quot;bui-btn primary&quot;&gt;修改&lt;/div&gt;
+              &lt;div class=&quot;bui-btn danger&quot;&gt;删除&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;</code></pre>
 <p>   js: </p>
 <pre class="code prettyprint"><code>    // 初始化
     var uiListview = bui.listview({ 
@@ -724,7 +772,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l244"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:244</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l276"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:276</code></a>
         
         </p>
 
@@ -807,7 +855,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l285"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:285</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l317"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:317</code></a>
         
         </p>
 
@@ -884,7 +932,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l343"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:343</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l375"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:375</code></a>
         
         </p>
 
@@ -988,7 +1036,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l117"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:117</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l149"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:149</code></a>
         
         </p>
 
@@ -1070,7 +1118,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l303"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:303</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l335"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:335</code></a>
         
         </p>
 
@@ -1155,7 +1203,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l390"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:390</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l422"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:422</code></a>
         
         </p>
 
@@ -1274,7 +1322,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l323"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:323</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l355"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:355</code></a>
         
         </p>
 
@@ -1351,7 +1399,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l375"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:375</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l407"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:407</code></a>
         
         </p>
 
@@ -1444,7 +1492,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l438"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:438</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l470"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:470</code></a>
         
         </p>
 
@@ -1541,7 +1589,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.listview.js.html#l418"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.listview.js:418</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l450"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:450</code></a>
         
         </p>
 

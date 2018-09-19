@@ -1,30 +1,19 @@
 ﻿loader.define(function(require,exports,module) {
 
+    // 评分
     var uiRating = bui.rating({
             id: "#rating",
             value: 3
         });
 
-        // uiRating.on("change",function (val) {
-        //  console.log(val)
-        // })
+    // 展示
+    var uiRating3 = bui.rating({
+        id: "#rating3",
+        disabled: true,
+        value: 4
+    });
 
-        var uiRating2 = bui.rating({
-            id: "#rating2",
-            half: true,
-            value: 3.7
-        });
+    // 展示星星的百分比
+    // uiRating3.show(3.4);
 
-        var uiRating3 = bui.rating({
-            id: "#rating3"
-        });
-
-        // 展示星星的
-        uiRating3.show(3.4);
-
-        // uiRating.option("half",true)
-        //禁止评分
-        // uiRating.disabled();
-        // 取评分值
-        // uiRating.value();
 })

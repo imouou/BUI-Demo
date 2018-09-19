@@ -1,7 +1,24 @@
 ﻿loader.define(function(require,exports,module) {
 
-    var uiList;
-    
+    var uiList = bui.list({
+            id: "#scrollSearch",
+            url: siteDir + "shop.json",
+            field: {
+                data:"data"
+            },
+            data: {
+                "keyword":''
+            },
+            page:1,
+            pageSize:5,
+            onRefresh: onRefresh,
+            onLoad: onLoad,
+            template: templateList,
+            callback: function(argument) {
+                console.log($(this).text())
+            }
+        });
+
     // var n = 0;
     //搜索条的初始化
     var uiSearchbar = bui.searchbar({
@@ -25,61 +42,55 @@
                     page: 1,
                     data: {
                         "keyword":keyword
-                    },
-                    onRefresh: onRefresh,
-                    onLoad: onLoad
-                });
-                
-            }else{
-                // 列表初始化
-                uiList = bui.list({
-                    id: "#scrollSearch",
-                    url: siteDir + "userlist.json",
-                    field: {
-                        data:"data"
-                    },
-                    data: {
-                        "keyword":keyword
-                    },
-                    page:1,
-                    pageSize:9,
-                    onRefresh: onRefresh,
-                    onLoad: onLoad,
-                    template: template,
-                    callback: function(argument) {
-                        console.log($(this).text())
                     }
                 });
-
-
+                
             }
-
-            // 下拉刷新
-            function onRefresh() {
-                // 修改请求的时候关键词的改变
-                uiList.option("data",{
-                    "keyword":keyword
-                });
-            }
-            // 上拉加载
-            function onLoad(argument) {
-                // 修改请求的时候关键词的改变
-                uiList.option("data",{
-                    "keyword":keyword
-                });
-            }
-            
         }
 
     });
-        
-// 列表生成模板
-    function template (data) {
-        var html = "";
 
+    // 下拉刷新
+    function onRefresh(keyword) {
+        
+    }
+    // 上拉加载
+    function onLoad(keyword) {
+        
+    }
+    
+        
+    //生成列表模板
+    function templateList (data) {
+        var html = "";
         $.each(data,function(index, el) {
 
-            html += '<li class="bui-btn"><i class="icon-facefill"></i>'+el.name+'</li>';
+            // 处理角标状态
+            var sub = '' , subClass = '' ;
+            switch(el.status){
+                case 1:
+                sub = '新品';
+                subClass = 'bui-sub';
+                break;
+                case 2:
+                sub = '热门';
+                subClass = 'bui-sub danger';
+                break;
+                default: 
+                sub = '';
+                subClass = '';
+                break;
+            }
+
+            html +=`<li class="bui-btn bui-box">
+                <div class="bui-thumbnail ${subClass}" data-sub="${sub}"><img src="${el.image}" alt=""></div>
+                <div class="span1">
+                    <h3 class="item-title">${el.name}</h3>
+                    <p class="item-text">${el.address}</p>
+                    <p class="item-text">${el.distance}</p>
+                </div>
+                <span class="price"><i>￥</i>${el.price}</span>
+            </li>`
         });
 
         return html;

@@ -32,4 +32,34 @@
     })
 
 
+    // 左边出来对话框
+    var uiDialogLeft = bui.dialog({
+            id:"#dialogLeft",
+            effect: "fadeInLeft",
+            position: "left",
+            fullscreen: true,
+            buttons: []
+        });
+
+    router.$('#btnOpenLeft').on("click",function () {
+        uiDialogLeft.open();
+    })
+    router.$("#makeSure2").on("click",function () {
+        uiDialogLeft.close();
+    });
+
+
+    // 左边出来对话框
+    var uiDialogDown = bui.dialog({
+            id:"#dialogDown",
+            effect: "fadeInUp",
+            position: "bottom",
+            fullscreen: false,
+            buttons: []
+        });
+
+    router.$('#btnOpenDown').on("click",function () {
+        uiDialogDown.open();
+    })
+
 })

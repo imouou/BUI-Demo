@@ -34,8 +34,8 @@
             height: 200,
             popup: false,
             title: "所在地区",
-            visibleNum: 3,
-            level: 3,
+            visibleNum: 2,
+            level: 2,
             field:{
                 name: "n",
                 data: ["c","a"],

@@ -2,20 +2,20 @@
 
     var $output = $("#output");
 
+    // 拍照上传
+    var $facePhoto = $("#facePhoto");
     var uiUpload = bui.upload();
     
-    // 选择图片文件
-    $("#btnSelect").on("click",function () {
+    $(".bui-upload .bui-btn").on("click",function () {
 
         uiUpload.add({
-            // "from": "camera",
+            "from": "camera",
             "onSuccess": function (val,data) {
                 // $output.text(val);
-                console.log(val);
                 // 展示本地图片
                 this.toBase64({
                     onSuccess: function (url) {
-                    $("#output").append('<img src="'+url+'" alt="" style="width:100%;"/>')
+                        $facePhoto.prepend(templatePhoto(url))
                    
                     }
                 });
@@ -25,11 +25,19 @@
         })
 
     })
+
+    function templatePhoto(url) {
+        return `<div class="span1">
+                <div class="bui-upload-thumbnail"><img src="${url}" alt="" /></div>
+            </div>`
+    }
+
+
     // 选择图片文件
-    $("#btnSelectCamera").on("click",function () {
+    $("#btnSelect").on("click",function () {
 
         uiUpload.add({
-            "from": "camera",
+            "from": "",
             "onSuccess": function (val,data) {
                 // $output.text(val);
                 console.log(val);

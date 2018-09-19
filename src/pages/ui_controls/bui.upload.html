@@ -1,9 +1,5 @@
 ﻿
 <style>
-    .bui-list .bui-btn i {
-        font-size: 0.4rem;
-        margin-right: 0.2rem;
-    }
     output {
         word-break: break-all;
     }
@@ -16,11 +12,21 @@
 		<div class="bui-bar-left">
 			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
 		</div>
-		<div class="bui-bar-main">上传文件</div>
+		<div class="bui-bar-main">文件上传</div>
 		<div class="bui-bar-right">
 		</div>
 	</header>
 	<main>
+        <div class="section-title">
+            拍照上传:
+        </div>
+        <div id="facePhoto" class="bui-upload bui-fluid-space-4">
+            <div class="span1">
+                <div class="bui-btn">
+                    <i class="icon-plus large"></i>
+                </div>
+            </div>
+        </div>
         <div class="section-title">
             上传:
         </div>
@@ -29,10 +35,7 @@
                 <div class="bui-btn" id="btnSelect">选择文件</div>
             </div>
             <div class="span1">
-                <div class="bui-btn" id="btnSelectCamera">拍照</div>
-            </div>
-            <div class="span1">
-                <div class="bui-btn" id="getSelect">获取文件信息</div>
+                <div class="bui-btn" id="getSelect">获取信息</div>
             </div>
         </div>
         <div class="bui-box-space">

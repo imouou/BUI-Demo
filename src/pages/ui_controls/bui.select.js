@@ -1,7 +1,7 @@
 ﻿loader.define(function(require,exports,module) {
 
     //动态绑定
-    uiSelectCustom = bui.select({
+    var uiSelectCustom = bui.select({
             id:"#selectCustom",
             popup: false,
             type:"checkbox",
@@ -40,21 +40,10 @@
 
     $("#queding").on("click",function (argument) {
 
-        console.log(uiSelectCustom.value() );
+        console.log(uiSelectCustom.text() );
     })
 
-    uiSelectCustom.on("change",function (e) {
-        console.log(uiSelectCustom.value())
-    })
-
-
-    // uiSelectCustom.value("广东");
-    // uiSelectCustom.active("0");
-    // uiSelectCustom.value("广东");
-
-    // console.log(uiSelectCustom.value())
-
-    //多选 静态态绑定
+    //静态态绑定
     var uiSelectCustom2 = bui.select({
             id:"#selectCustom2",
             popup: false,
