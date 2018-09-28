@@ -1,4 +1,6 @@
 loader.define(function(require,exports,module) {
-    bui.accordion();
+    bui.accordion({
+        id:"#method"
+    });
 
 })

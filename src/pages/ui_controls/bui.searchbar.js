@@ -11,11 +11,39 @@
             },
             page:1,
             pageSize:5,
-            onRefresh: onRefresh,
-            onLoad: onLoad,
-            template: templateList,
-            callback: function(argument) {
-                console.log($(this).text())
+            template: function (data) {
+                var html = "";
+                data.map(function(el, index) {
+
+                    // 处理角标状态
+                    var sub = '' , subClass = '' ;
+                    switch(el.status){
+                        case 1:
+                        sub = '新品';
+                        subClass = 'bui-sub';
+                        break;
+                        case 2:
+                        sub = '热门';
+                        subClass = 'bui-sub danger';
+                        break;
+                        default: 
+                        sub = '';
+                        subClass = '';
+                        break;
+                    }
+
+                    html +=`<li class="bui-btn bui-box">
+                        <div class="bui-thumbnail ${subClass}" data-sub="${sub}"><img src="${el.image}" alt=""></div>
+                        <div class="span1">
+                            <h3 class="item-title">${el.name}</h3>
+                            <p class="item-text">${el.address}</p>
+                            <p class="item-text">${el.distance}公里</p>
+                        </div>
+                        <span class="price"><i>￥</i>${el.price}</span>
+                    </li>`
+                });
+
+                return html;
             }
         });
 
@@ -23,15 +51,15 @@
     //搜索条的初始化
     var uiSearchbar = bui.searchbar({
         id:"#searchbar",
-        onInput: function(ui,keyword) {
+        onInput: function(e,keyword) {
             //实时搜索
             // console.log(++n)
         },
-        onRemove: function(ui,keyword) {
+        onRemove: function(e,keyword) {
             //删除关键词需要做什么其它处理
             // console.log(keyword);
         },
-        callback: function (ui,keyword) {
+        callback: function (e,keyword) {
             
             if( uiList ){
                 
@@ -49,50 +77,5 @@
         }
 
     });
-
-    // 下拉刷新
-    function onRefresh(keyword) {
-        
-    }
-    // 上拉加载
-    function onLoad(keyword) {
-        
-    }
     
-        
-    //生成列表模板
-    function templateList (data) {
-        var html = "";
-        $.each(data,function(index, el) {
-
-            // 处理角标状态
-            var sub = '' , subClass = '' ;
-            switch(el.status){
-                case 1:
-                sub = '新品';
-                subClass = 'bui-sub';
-                break;
-                case 2:
-                sub = '热门';
-                subClass = 'bui-sub danger';
-                break;
-                default: 
-                sub = '';
-                subClass = '';
-                break;
-            }
-
-            html +=`<li class="bui-btn bui-box">
-                <div class="bui-thumbnail ${subClass}" data-sub="${sub}"><img src="${el.image}" alt=""></div>
-                <div class="span1">
-                    <h3 class="item-title">${el.name}</h3>
-                    <p class="item-text">${el.address}</p>
-                    <p class="item-text">${el.distance}</p>
-                </div>
-                <span class="price"><i>￥</i>${el.price}</span>
-            </li>`
-        });
-
-        return html;
-    }
 })

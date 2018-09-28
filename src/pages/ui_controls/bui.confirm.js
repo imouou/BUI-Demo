@@ -2,12 +2,12 @@
 
     // 文字提醒
     $('#btnTop').on("click",function  (argument) {
-        bui.confirm("消息确认框",function (argument) {
+        bui.confirm("消息确认框",function (e) {
             //this 是指点击的按钮
-            var text = $(this).text();
+            var text = $(e.target).text();
 
             if( text == "确定"){
-                console.log("你点击了"+$(this).text())
+                console.log("你点击了"+$(e.target).text())
             }
         });
         

@@ -1,5 +1,14 @@
 ﻿loader.define(function(require,exports,module) {
 
+    // 快速初始化
+    var uiSlide = bui.slide({
+        id:"#slide",
+        height:380,
+        autopage: true,
+        fullscreen: true,
+        // autoplay: true
+    })
+    
     // 倒计时
     var timer = bui.timer({
         target: ".bui-btn-jump",
@@ -14,14 +23,6 @@
 
     timer.start()
 
-    // 快速初始化
-    var uiSlide = bui.slide({
-        id:"#slide",
-        height:380,
-        autopage: true,
-        fullscreen: true,
-        // autoplay: true
-    })
     // 退出全屏
     router.$("#enter").on("click",function (e) {
         uiSlide.option("fullscreen",false);

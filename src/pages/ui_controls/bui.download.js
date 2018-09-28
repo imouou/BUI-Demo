@@ -1,5 +1,5 @@
 ﻿loader.define(function(require,exports,module) {
-
+    // 以下示例为 bingotouch 独有,其它平台不要用
     var $output = $("#output");
 
     loader.import(["js/platform/cordova.js","js/platform/bingotouch.js"],function(){

@@ -5,14 +5,31 @@
         id:"#slide",
         height:300,
         autopage: true,
+        loop: true,
+        cross: true
     })
-    uiSlide.on("to",function (index) {
-        var prevIndex = index -1;
-        var nextIndex = index +1;
-        $(this).removeClass("bui-cross-prev")
-                .removeClass("bui-cross-next")
-        $(this).prev().addClass("bui-cross-prev");
-        $(this).next().addClass("bui-cross-next");
-    }).to(0);
 
+    
+    router.$("#prev").on("click",function () {
+        uiSlide.prev();
+    })
+    router.$("#next").on("click",function () {
+        uiSlide.next();
+    })
+    router.$("#autoplay").on("change",function () {
+        var isChecked = $(this).is(":checked");
+        if( isChecked ){
+            uiSlide.start();
+        }else{
+            uiSlide.stop();
+        }
+    })
+    router.$("#unlock").on("change",function () {
+        var isChecked = $(this).is(":checked");
+        if( isChecked ){
+            uiSlide.unlock();
+        }else{
+            uiSlide.lock();
+        }
+    })
 })

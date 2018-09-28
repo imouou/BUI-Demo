@@ -27,4 +27,7 @@
     router.$(".step2").on("click",function (argument) {
         uiStepbar.next();
     })
+    router.$(".btn-prev-step").on("click",function (argument) {
+        uiStepbar.prev();
+    })
 })

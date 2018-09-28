@@ -4,14 +4,15 @@
             id: "#listview",
             data: [{ "text": "置顶", "classname":"primary"},{ "text": "删除", "classname":"danger"}],
             position:"right",   //默认就是右边,所以可以不用传
-            callback: function (e,ui) {
+            callback: function (e) {
                 // this 为滑动出来的操作按钮
-                var $this = $(this);
+                var $this = $(e.target);
+
                 var text = $this.text();
                     if( text == '删除' ){
-                        bui.confirm("确定要删除吗",function () {
+                        bui.confirm("确定要删除吗",function (e) {
                             //this 是指点击的按钮
-                            var text2 = $(this).text();
+                            var text2 = $(e.target).text();
                             if( text2 == "确定"){
                                 // 执行删除整行操作
                                 $this.parents("li").fadeOut(300,function () {
@@ -21,7 +22,7 @@
                         })
                     }
                 // 不管做什么操作,先关闭按钮,不然会导致第一次点击无效.
-                ui.close();
+                this.close();
             }
         });
 

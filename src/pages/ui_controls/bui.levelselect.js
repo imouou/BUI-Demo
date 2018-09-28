@@ -19,7 +19,7 @@
         })
 
         // citySelect.on("change",function (e) {
-        //     console.log(this)
+        //     console.log(e.target)
         // })
         // 设置值
         citySelect2 = bui.levelselect({
@@ -35,14 +35,13 @@
         })
 
 
-        // citySelect.on("change",function (argument) {
-        //     console.log($(this).val())
-        // })
-
     })
 
     $("#chooseCity").on("click",function () {
         citySelect.show();
+    })
+    $("header").on("click",function () {
+        citySelect.value();
     })
     $("#chooseCity2").on("click",function () {
         citySelect2.show();

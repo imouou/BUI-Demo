@@ -10,7 +10,9 @@
         margin-bottom: .1rem;
       }
       p {
-        font-size: .32rem;
+        font-size: .26rem;
+        letter-spacing: 1px;
+        font-weight: 300;
       }
     }
     
@@ -47,12 +49,20 @@
         }
     }
     .bui-accordion {
-
+        i {
+            color: #999;
+        }
         .bui-btn {
-            color: #333;
+            color: #666;
         }
         > .bui-btn {
             color: #666;
+        }
+        .active {
+            color: #39a4ff;
+            i {
+                color: #39a4ff;
+            }
         }
     }
     /*.bui-accordion {
@@ -141,4 +151,23 @@
 .price {
     font-size: .36rem;
     color: #FF6701;
+}
+
+.controls-btn {
+    background: #fff;
+    margin:0;
+    padding: .3rem .2rem;
+    border-top: 1px solid #efefef;
+}
+.controls-btn .bui-btn {
+    margin-bottom: .2rem;
+}
+
+.stepbar {
+    .bui-list {
+        margin-bottom: .1rem;
+    }
+    .tips {
+        margin-bottom: .5rem;
+    }
 }

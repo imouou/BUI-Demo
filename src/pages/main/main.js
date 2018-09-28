@@ -26,8 +26,7 @@ loader.define(function(require,exports,module) {
         tab.lock();
 
         // 2: 监听加载后的事件
-        tab.on("to",function (res) {
-            var index = $(this).index();
+        tab.on("to",function (index) {
 
             switch(index){
                 case 0:

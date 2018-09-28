@@ -49,7 +49,7 @@
     });
 
 
-    // 左边出来对话框
+    // 底部出来对话框
     var uiDialogDown = bui.dialog({
             id:"#dialogDown",
             effect: "fadeInUp",

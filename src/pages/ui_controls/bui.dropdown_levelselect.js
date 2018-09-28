@@ -1,5 +1,7 @@
 ﻿loader.define(function(require,exports,module) {
 
+    var citySelect;
+
     var uiMask = bui.mask({
       appendTo: router.$(".main"),
       zIndex: 1,
@@ -19,7 +21,7 @@
         relative: true,
         callback: function (e) {
           
-            uiDoropdown.hide();
+            this.hide();
         }
     })
     // 绑定数据
@@ -35,7 +37,7 @@
             popup: false,
             title: "所在地区",
             visibleNum: 2,
-            level: 2,
+            level: 3,
             field:{
                 name: "n",
                 data: ["c","a"],
@@ -57,5 +59,11 @@
         uiMask.hide();  
     })
 
+    router.$(".select-val").on("click",function (e) {
+
+        citySelect.prev();
+
+        e.stopPropagation()
+    })
 
 })

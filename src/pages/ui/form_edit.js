@@ -56,10 +56,7 @@
 
     // 选择数量
     var uiNumber = bui.number({
-        id: '#uiNumber',
-        value: 1,
-        min: 1,
-        max: 10
+        id: '#uiNumber'
     });
     //动态绑定
     var uiSelect = bui.select({
@@ -93,6 +90,7 @@
         citySelect = bui.levelselect({
             data: citys,
             title: "所在地区",
+            log: true,
             trigger: ".selected-val",
             level: 3,
             field:{

@@ -13,8 +13,7 @@ loader.define(function(require,exports,module) {
 
             callback: function (argument) {
                 
-            },
-            height:300
+            }
         });
 
     //刷新数据
@@ -32,7 +31,7 @@ loader.define(function(require,exports,module) {
         var command = command || "append";
 
         bui.ajax({
-            url: siteDir + "userlist.json",
+            url: siteDir+"shop.json",
             data: {
                 pageindex:page,
                 pagesize:pagesize
@@ -42,8 +41,7 @@ loader.define(function(require,exports,module) {
             //生成html
             var html = template( res.data );
                 
-            $("#scrollList")[command](html);
-            $("#scrollList")[0].scrollHeight = $("#scrollList").height();
+            router.$("#scrollList")[command](html);
 
             // 更新分页信息,如果高度不足会自动请求下一页
             uiScroll.updateCache(page,res.data);
@@ -59,14 +57,38 @@ loader.define(function(require,exports,module) {
     }
 
     //生成模板
-    function template (data) {
-
+    function template(data) {
         var html = "";
+        data.map(function(el, index) {
 
-        $.each(data,function(index, el) {
+            // 处理角标状态
+            var sub = '' , subClass = '' ;
+            switch(el.status){
+                case 1:
+                sub = '新品';
+                subClass = 'bui-sub';
+                break;
+                case 2:
+                sub = '热门';
+                subClass = 'bui-sub danger';
+                break;
+                default: 
+                sub = '';
+                subClass = '';
+                break;
+            }
 
-            html += '<li class="bui-btn"><i class="icon-facefill"></i>'+el.name+'</li>';
+            html +=`<li class="bui-btn bui-box">
+                <div class="bui-thumbnail ${subClass}" data-sub="${sub}"><img src="${el.image}" alt=""></div>
+                <div class="span1">
+                    <h3 class="item-title">${el.name}</h3>
+                    <p class="item-text">${el.address}</p>
+                    <p class="item-text">${el.distance}公里</p>
+                </div>
+                <span class="price"><i>￥</i>${el.price}</span>
+            </li>`
         });
+
         return html;
     }
 })

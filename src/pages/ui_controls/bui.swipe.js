@@ -21,4 +21,8 @@
             uiMask.hide();
         })
 
+        uiSwipe.on("swipeleft",function (argument) {
+            console.log("swipeleft")
+        })
+
 })

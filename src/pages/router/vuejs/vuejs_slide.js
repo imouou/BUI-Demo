@@ -9,7 +9,7 @@ loader.define(function() {
 
         // vue 的数据
         var pageVue = new Vue({
-          el: router.currentPage(),
+          el: pageDom,
           data: {
             slideItems: []
           },

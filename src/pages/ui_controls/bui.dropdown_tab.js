@@ -20,8 +20,8 @@
         relative: false,
         callback: function (e) {
           // 控制多个分类只能选择一个
-            $(".bui-dropdown .bui-tab .bui-list li").removeClass("active");
-            $(this).addClass("active");
+            $(".bui-dropdown .bui-tab-main .bui-list li").removeClass("active");
+            $(e.target).addClass("active");
             uiDoropdown.hide();
         }
     })

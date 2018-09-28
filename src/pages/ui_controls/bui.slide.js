@@ -1,20 +1,22 @@
 ﻿loader.define(function(require,exports,module) {
 
     // 快速初始化
+    
     var uiSlide = bui.slide({
         id:"#slide",
         height:380,
         autopage: true,
-        // autoplay: true
+        loop: true
     })
+    
 
-    $("#prev").on("click",function () {
+    router.$("#prev").on("click",function () {
         uiSlide.prev();
     })
-    $("#next").on("click",function () {
+    router.$("#next").on("click",function () {
         uiSlide.next();
     })
-    $("#autoplay").on("change",function () {
+    router.$("#autoplay").on("change",function () {
         var isChecked = $(this).is(":checked");
         if( isChecked ){
             uiSlide.start();
@@ -22,15 +24,12 @@
             uiSlide.stop();
         }
     })
-    $("#unlock").on("change",function () {
+    router.$("#unlock").on("change",function () {
         var isChecked = $(this).is(":checked");
         if( isChecked ){
             uiSlide.unlock();
         }else{
             uiSlide.lock();
         }
-    })
-    $("#to").on("click",function () {
-        uiSlide.to(1);
     })
 })

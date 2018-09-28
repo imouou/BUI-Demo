@@ -8,7 +8,7 @@
 		<div class="bui-bar-right">
 		</div>
 	</header>
-	<main id="main">
+	<main>
 		<div id="scroll" class="bui-scroll">
 			<div class="bui-scroll-head"></div>
 			<div class="bui-scroll-main">
@@ -17,58 +17,5 @@
 			</div>
 			<div class="bui-scroll-foot"></div>
 		</div>
-        <div class="container-xy">
-            <p>小提示: 该例子可以在手机中拖动</p>
-            <p>这个控件主要用于特殊需求定制, 如果你仅仅只是需要加载跟刷新功能, 可以使用更简单的 bui.list , 分页什么都已经做好, 只需传接口跟模板</p>
-        </div>
-        <div class="bui-panel">
-            <div class="bui-panel-head"><strong>示例:</strong></div>
-            <div class="bui-panel-main">
-                <div class="container">
-                <h4>html:</h4>
-                <xmp>
-<div id="scroll" class="bui-scroll">
-  <div class="bui-scroll-head"></div>
-  <div class="bui-scroll-main">
-    <ul id="scrollList" class="bui-list">
-    </ul>
-  </div>
-  <div class="bui-scroll-foot"></div>
-</div>
-                </xmp>
-                <h4>js:</h4>
-                <xmp>
-//初始化scroll
-var uiScroll = bui.scroll({
-    id: "#scroll",
-    children: ".bui-list",
-    page:1,
-    pageSize:5,
-    onRefresh: refresh,
-    onLoad: getData
-})
-
-//刷新数据
-function refresh () {
-    var page = 1;
-    var pagesize = 5;
-    getData(page,pagesize,"html");
-}
-
-//新增下一页数据
-function getData(page,pagesize,command){
-  var command = command || "append";
-  
-  // 更新分页信息,如果高度不足会自动请求下一页
-  uiScroll.updateCache(page,res.data);
-
-  // 刷新的时候返回位置
-  uiScroll.reverse();
-
-}
-                </xmp>
-                </div>
-            </div>
-        </div>
 	</main>
 </div>

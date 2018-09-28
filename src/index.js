@@ -11,7 +11,7 @@ bui.isWebapp = true;
 // 路由初始化给全局变量,必须是router
 window.router = bui.router();
 
-bui.ready(function () {
+bui.ready(function() {
 
 
     // 第3步: 初始化路由
@@ -25,7 +25,7 @@ bui.ready(function () {
 
     // 绑定事件
     bind();
-      
+
 
 })
 
@@ -36,33 +36,32 @@ bui.ready(function () {
 function bind() {
 
     // 绑定应用的所有按钮有href跳转, 增加多个按钮监听则在hangle加逗号分开.
-    bui.btn({id:"#bui-router",handle:".bui-btn"}).load();
+    bui.btn({ id: "#bui-router", handle: ".bui-btn" }).load();
 
     // 统一绑定应用所有的后退按钮
-    $("#bui-router").on("click",".btn-back",function (e) {
+    $("#bui-router").on("click", ".btn-back", function(e) {
         // 支持后退多层,支持回调
         bui.back();
     })
 
     // 监听全局后退事件处理
-    router.on("back",function (e) {
+    router.on("back", function(e) {
         var pid = e.target.pid;
 
     })
 
 
     // demo生成源码
-    router.on("load",function (e) {
-        $("#"+e.target.id).find(".bui-page > .bui-bar > .bui-bar-right").append('<a class="bui-btn preview-source">源码</a>')
+    router.on("complete", function(e) {
+
+        $("#" + e.target.id).find(".bui-page > .bui-bar > .bui-bar-right").append('<a class="bui-btn preview-source">源码</a>')
     })
-    $("#bui-router").on("click",".preview-source",function (e) {
+    $("#bui-router").on("click", ".preview-source", function(e) {
         var hash = window.location.hash,
             rule = /^#.+\?/ig,
-            wenhaoIndex = hash.indexOf("?") ,
-            url = wenhaoIndex > -1 ? hash.substring(1,wenhaoIndex) : hash.substr(1);
-        window.open('http://www.easybui.com/demo/source.html?url='+url+'&code=html,js,result')
+            wenhaoIndex = hash.indexOf("?"),
+            url = wenhaoIndex > -1 ? hash.substring(1, wenhaoIndex) : hash.substr(1);
+        window.open('http://www.easybui.com/demo/source.html?url=' + url + '&code=html,js,result')
     })
 
 }
-
-

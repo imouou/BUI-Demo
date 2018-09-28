@@ -1,15 +1,4 @@
-﻿<style>
-    .controls-btn {
-        background: #fff;
-        margin:0;
-        padding: .3rem .2rem;
-        border-top: 1px solid #efefef;
-    }
-    .controls-btn .bui-btn {
-        margin-bottom: .2rem;
-    }
-
-</style>
+﻿
 <div class="bui-page">
 	<header class="bui-bar">
 		<div class="bui-bar-left">
@@ -20,16 +9,16 @@
 		</div>
 	</header>
 	<main>
-		<div id="slide" class="bui-slide">
+		<div id="slide" class="bui-slide bui-slide-skin01">
 			<div class="bui-slide-main">
 				<ul>
 					<li>
 						<img src="images/banner01.png" alt="占位图">
 					</li>
-                    <li>
+                    <li style="display: none;">
                         <img src="images/banner02.png" alt="占位图">
                     </li>
-					<li>
+					<li style="display: none;">
                         <img src="images/banner03.png" alt="占位图">
 					</li>
 				</ul>
@@ -39,28 +28,21 @@
             小提示: 该例子可以在手机中拖动
         </div>	
         <ul class="bui-list">
-            <li class="bui-btn bui-box">
-                <div class="span1"><label for="autoplay">自动播放</label></div>
+            <li class="bui-btn bui-box clearactive">
+                <div class="span1">自动播放</div>
                 <input id="autoplay" type="checkbox" class="bui-switch" name="play" value="">
             </li>
-            <li class="bui-btn bui-box">
-                <div class="span1"><label for="unlock">允许拖动</label></div>
+            <li class="bui-btn bui-box clearactive">
+                <div class="span1">允许拖动</div>
                 <input id="unlock" type="checkbox" class="bui-switch" name="drag" checked value="">
             </li>
         </ul>
-		
         <div class="bui-fluid-space controls-btn">
             <div class="span6">
                 <div id="prev" class="bui-btn ring small">上一页</div>
             </div>
             <div class="span6">
                 <div id="next" class="bui-btn ring small">下一页</div>
-            </div>
-            <div class="span6">
-                <div id="to" class="bui-btn ring small">跳到第2个</div>
-            </div>
-            <div class="span6">
-                <div id="fullscreen" class="bui-btn ring large">全屏</div>
             </div>
         </div>
 

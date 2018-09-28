@@ -17,49 +17,37 @@
 		</div>
 	</header>
 	<main>
+        <!-- 上传示例 -->
         <div class="section-title">
-            拍照上传:
+            上传:
         </div>
-        <div id="facePhoto" class="bui-upload bui-fluid-space-4">
+        <div id="buiPhoto" class="bui-upload bui-fluid-space-4">
             <div class="span1">
-                <div class="bui-btn">
+                <div id="btnUpload" class="bui-btn">
                     <i class="icon-plus large"></i>
                 </div>
             </div>
         </div>
-        <div class="section-title">
-            上传:
-        </div>
-        <div class="bui-box-space">
-            <div class="span1">
-                <div class="bui-btn" id="btnSelect">选择文件</div>
+        
+        <!-- 操作示例 -->
+        <div class="container-y">
+            
+            <div class="bui-box-space">
+                <div class="span1">
+                    <div class="bui-btn" id="removeSelect">删除选择</div>
+                </div>
+                <div class="span1">
+                    <div class="bui-btn" id="removeAllSelect">删除所有选择</div>
+                </div>
             </div>
-            <div class="span1">
-                <div class="bui-btn" id="getSelect">获取信息</div>
+            <div class="bui-box-space">
+                <div class="span1">
+                    <div class="bui-btn" id="upload">上传文件</div>
+                </div>
+                <div class="span1">
+                    <div class="bui-btn" id="stopUpload">停止上传</div>
+                </div>
             </div>
-        </div>
-        <div class="bui-box-space">
-            <div class="span1">
-                <div class="bui-btn" id="removeSelect">删除选择</div>
-            </div>
-            <div class="span1">
-                <div class="bui-btn" id="removeAllSelect">删除所有选择</div>
-            </div>
-        </div>
-        <div class="bui-box-space">
-            <div class="span1">
-                <div class="bui-btn" id="upload">上传文件</div>
-            </div>
-            <div class="span1">
-                <div class="bui-btn" id="stopUpload">停止上传</div>
-            </div>
-        </div>
-        <div class="section-title">
-            结果:
-        </div>
-        <div class="container-xy">
-            <output id="output">
-            </output>
         </div>
 	</main>
 </div>

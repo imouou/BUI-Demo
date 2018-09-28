@@ -5,6 +5,7 @@
         id:"#slideNote",
         height:100,
         autoplay: true,
+        loop: true,
         zoom: true,
         direction: "y"
     })

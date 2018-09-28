@@ -14,5 +14,4 @@
         relative: false
     })
 
-    return pageview;
 })

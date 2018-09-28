@@ -30,7 +30,7 @@
             $("#pullrefreshList").html(html);
 
             //还原刷新前状态
-            _self.reverse();
+            uiPullRefresh.reverse();
 
         }).fail(function (res) {
 

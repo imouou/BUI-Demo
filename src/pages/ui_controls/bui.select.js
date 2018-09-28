@@ -5,24 +5,31 @@
             id:"#selectCustom",
             popup: false,
             type:"checkbox",
+            direction: "right",
             data: [{
                 "name":"广东",
+                "image":"images/face.png",
                 "value":"11",
             },{"name":"广西",
+                "image":"images/face.png",
                 "value":"22"
             },{
                 "name":"上海",
+                "image":"images/face.png",
                 "value":"33"
             },{"name":"北京",
+                "image":"images/face.png",
                 "value":"44"
             },{
                 "name":"深圳",
+                "image":"images/face.png",
                 "value":"55"
             },{"name":"南京",
+                "image":"images/face.png",
                 "value":"66"
             }],
-            onChange: function (module,index) {
-                // console.log($(this).val())
+            onChange: function (e) {
+                
             }
         });
 
@@ -48,8 +55,8 @@
             id:"#selectCustom2",
             popup: false,
             type:"checkbox",
-            onChange: function (module,index) {
-                // console.log($(this).val())
+            onChange: function (e) {
+                
             }
         });
 
