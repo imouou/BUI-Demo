@@ -2,12 +2,12 @@
   "distServer": {
     "root": "dist",
     "livereload": true,
-    "port": 5045
+    "port": 4949
   },
   "devServer": {
     "root": "src",
     "livereload": false,
-    "port": 5043
+    "port": 4947
   },
   "proxy": {
     "/demo": {

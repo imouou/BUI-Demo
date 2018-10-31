@@ -213,4 +213,10 @@
             $("#selectList4-value").text(val)
         })
 
+    // 修复ios 光标跟着一起滚动问题
+    if( bui.platform.isIos() ){
+        router.$("main").on("scroll",function () {
+             $('input').toggleClass('focus-fixed');
+         })
+    }
 })

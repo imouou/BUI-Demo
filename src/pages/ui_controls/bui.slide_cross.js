@@ -8,7 +8,6 @@
         loop: true,
         cross: true
     })
-
     
     router.$("#prev").on("click",function () {
         uiSlide.prev();

@@ -11,7 +11,7 @@
             console.log(val)
         })
         
-        //单个设置值
+        //批量设置值
         $('#setValue').on("click",function (argument) {
 
             var val = uiNumber.value(9);

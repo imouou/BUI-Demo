@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.5.0</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -142,6 +144,8 @@
                 <li><a href="../classes/bui.stepbar.html">bui.stepbar</a></li>
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
+            
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
             
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
@@ -348,7 +352,7 @@
                     
 
                     <div class="param-description">
-                        <p>[内置的效果, showIn(无动画) | fadeIn | fadeInLeft | fadeInRight | fadeInDown | fadeInUp | zoomIn | bounceIn | rotateIn | flipInX | flipInY]</p>
+                        <p>[内置的效果, none (无动画) | showIn | fadeIn | fadeInLeft | fadeInRight | fadeInDown | fadeInUp | zoomIn | bounceIn | rotateIn | flipInX | flipInY]</p>
 
                     </div>
 
@@ -364,7 +368,7 @@
                     
 
                     <div class="param-description">
-                        <p>[ 是否按顺序出场, 默认:false (从哪进,就从哪出) | true (从进来的方向出) ]</p>
+                        <p>[ 是否按顺序出场, 默认:false (从哪进,就从哪出) -&gt;进 &lt;-出 | true (顺着进来的方向出) -&gt;进 -&gt;出 ]</p>
 
                     </div>
 
@@ -676,7 +680,7 @@
                     
 
                     <div class="param-description">
-                        <p>指定动画效果</p>
+                        <p>指定单次隐藏动画效果</p>
 
                     </div>
 
@@ -1070,7 +1074,7 @@
                     
 
                     <div class="param-description">
-                        <p>指定动画效果</p>
+                        <p>指定单次显示动画效果</p>
 
                     </div>
 

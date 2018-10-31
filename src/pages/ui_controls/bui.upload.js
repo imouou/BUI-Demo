@@ -18,13 +18,15 @@
             uiUpload.add({
                 "from": "camera",
                 "onSuccess": function (val,data) {
-                    // 展示本地图片
-                    this.toBase64({
-                        onSuccess: function (url) {
-                            $facePhoto.prepend(templatePhoto(url))
+                    var url = window.URL.createObjectURL(val[0]);
+                    $facePhoto.prepend(templatePhoto(url))
+                    // 展示base64本地图片
+                    // this.toBase64({
+                    //     onSuccess: function (url) {
+                    //         $facePhoto.prepend(templatePhoto(url))
                        
-                        }
-                    });
+                    //     }
+                    // });
 
 
                     // 也可以直接调用start上传图片
@@ -37,13 +39,15 @@
             uiUpload.add({
                 "from": "",
                 "onSuccess": function (val,data) {
-                    // 展示本地图片
-                    this.toBase64({
-                        onSuccess: function (url) {
-                            $facePhoto.prepend(templatePhoto(url))
+                    var url = window.URL.createObjectURL(val[0]);
+                    $facePhoto.prepend(templatePhoto(url))
+                    // 展示base64本地图片
+                    // this.toBase64({
+                    //     onSuccess: function (url) {
+                    //         $facePhoto.prepend(templatePhoto(url))
                        
-                        }
-                    });
+                    //     }
+                    // });
 
 
                     // 也可以直接调用start上传图片
@@ -117,5 +121,6 @@
         uiUpload.stop();
 
     })
+
 
 })

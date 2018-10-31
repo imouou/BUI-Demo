@@ -3,7 +3,6 @@ var sitePath = "http://www.easybui.com",
     siteDir = sitePath + "/demo/json/";
 // 设置当前应用模式
 bui.isWebapp = true;
-
 // 去除微信调试模块缓存
 // window.loader = bui.loader({
 //     cache: false
@@ -12,7 +11,6 @@ bui.isWebapp = true;
 window.router = bui.router();
 
 bui.ready(function() {
-
 
     // 第3步: 初始化路由
     router.init({
@@ -23,10 +21,9 @@ bui.ready(function() {
         reloadCache: false
     })
 
+
     // 绑定事件
     bind();
-
-
 })
 
 /**
@@ -43,13 +40,6 @@ function bind() {
         // 支持后退多层,支持回调
         bui.back();
     })
-
-    // 监听全局后退事件处理
-    router.on("back", function(e) {
-        var pid = e.target.pid;
-
-    })
-
 
     // demo生成源码
     router.on("complete", function(e) {

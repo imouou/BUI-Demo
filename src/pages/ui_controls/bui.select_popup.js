@@ -21,6 +21,7 @@
             },{"name":"南京",
                 "value":"66"
             }],
+            value: ["广东","上海"],
             //如果需要点击再进行操作,增加按钮
             buttons: [{name:"重置",className:""},{name:"确定",className:"primary-reverse"}],
             callback: function (e) {

@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.5.0</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -143,6 +145,8 @@
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
             
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
+            
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
@@ -236,7 +240,7 @@
 <div class="box intro">
     <div class="oui-fluid">
   <div class="span8">
-    <h2>级联列表</h2>
+    <h2>级联选择</h2>
     <h3>预览地址: <a href="../../index.html#pages/ui_controls/bui.levelselect.html" target="_blank">demo</a></h3>
     <h3>方法说明:</h3>
 <a href="../classes/bui.select.html#method_show" class="crosslink">show</a>: 选中第几个数据 <br>
@@ -365,7 +369,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[触发弹出框的按钮样式名]</p>
+                                    <p>[触发弹出框的按钮样式名,层级有多少,这个样式就有多少个]</p>
 
                                 </div>
 
@@ -610,7 +614,14 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>js:
+                <pre class="code prettyprint"><code>   html:
+   &lt;div class=&quot;bui-box&quot;&gt;
+       &lt;!-- .selected-val 跟你层级个数保持一致 --&gt;
+       &lt;div class=&quot;selected-val&quot;&gt;&lt;/div&gt;
+       &lt;div class=&quot;selected-val&quot;&gt;&lt;/div&gt;
+       &lt;div class=&quot;selected-val&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;</code></pre>
+<p>js:
        // <a href="http://www.easybui.com/demo/json/citys.js">http://www.easybui.com/demo/json/citys.js</a></p>
 <pre class="code prettyprint"><code>   // 普通初始化
    var citySelect = bui.levelselect({
@@ -677,7 +688,28 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_next">next</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_prev">prev</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_show">show</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_to">to</a>
 
                                 
                                 
@@ -769,7 +801,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l319"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:319</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l385"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:385</code></a>
         
         </p>
 
@@ -795,6 +827,140 @@
             <div class="example-content">
                 <pre class="code prettyprint"><code>       //显示菜单
        citySelect.hide();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_next" class="method item">
+    <h3 class="name"><code>next</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l356"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:356</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>下一个,1.5 新增</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       //下一个
+       citySelect.next();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_prev" class="method item">
+    <h3 class="name"><code>prev</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l342"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:342</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>上一个,1.5 新增</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       //上一个
+       citySelect.prev();</code></pre>
 
             </div>
         </div>
@@ -836,7 +1002,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l305"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:305</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l371"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:371</code></a>
         
         </p>
 
@@ -862,6 +1028,73 @@
             <div class="example-content">
                 <pre class="code prettyprint"><code>       //显示菜单
        citySelect.show();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_to" class="method item">
+    <h3 class="name"><code>to</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l327"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:327</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>跳转到第几层 ,1.5 新增</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       //跳转
+       citySelect.to(1);</code></pre>
 
             </div>
         </div>
@@ -903,7 +1136,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l357"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:357</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l423"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:423</code></a>
         
         </p>
 
@@ -928,10 +1161,14 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>       //取值
-       citySelect.value();
+       var value = citySelect.value();
+
+       // 返回 [{name:&quot;广东&quot;,value:&quot;广州市&quot;,index:&quot;0&quot;}]
 
        //设置值
-       citySelect.value([&quot;广东&quot;,&quot;广州市&quot;,&quot;天河区&quot;]);</code></pre>
+       citySelect.value([&quot;广东&quot;,&quot;广州市&quot;,&quot;天河区&quot;]);
+
+       citySelect.value([{value:&quot;广东&quot;},{value:&quot;广州市&quot;},{value:&quot;天河区&quot;}]);</code></pre>
 
             </div>
         </div>
@@ -981,7 +1218,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l494"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:494</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l569"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:569</code></a>
         
         </p>
 
@@ -1076,7 +1313,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l467"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:467</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l542"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:542</code></a>
         
         </p>
 
@@ -1173,7 +1410,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l447"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:447</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l522"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:522</code></a>
         
         </p>
 

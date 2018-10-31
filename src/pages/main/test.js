@@ -1,38 +1,35 @@
-loader.define(function(require,exports,module){
-    
-    // 数字条 js 初始化:
-    var uiNumber = bui.number({
-      id: '#uiNumber',
-      value: 5,
-      min: 1,
-      max: 10,
-    })
-    // 评分星星 js 初始化:
-    var uiRating = bui.rating({
-        id: "#uiRating",
-        value: 3
-    });  
-                    
+loader.define({
+    beforeCreate: function () {
+        console.log("before create",this)
+    },
+    created: function () {
+        console.log("created",this)
+    },
+    beforeLoad: function () {
+        console.log("before load",this)
+    },
+    loaded: function (e,ex,mod) {
+        console.log("loaded")
+        this.actionSheet =  bui.actionsheet({
+            trigger: "#btnOpen",
+            appendTo: ".bui-page",
+            buttons: [{ name: "分享到微博", value: "weibo" }, { name: "分享到微信", value: "weixin" }, { name: "分享到QQ", value: "QQ" }],
+            callback: function(e) {
 
-var uiFileSelect = bui.fileselect();
-        
-// 选择图片文件
-$("#select").on("click",function (argument) {
+                var val = $(e.target).attr("value");
 
-    uiFileSelect.add({
-        "onSuccess": function (val,data) {
-            // .text(val);
-            // 插入本地图片
-            this.toBase64({
-                onSuccess: function (url) {
-                $("#output").append('<img src="'+url+'" alt="" />')
+                if (val == "cancel") {
+                    this.hide();
                 }
-            });
-        }
-    })
-
-})
-
-
-
+            }
+        })
+        // loader.destroy(mod.moduleName);
+    },
+    beforeDestroy: function () {
+        console.log("before destroy",this)
+        this.actionSheet.destroy(true);
+    },
+    destroyed: function () {
+        console.log("destroyed",this)
+    }
 })

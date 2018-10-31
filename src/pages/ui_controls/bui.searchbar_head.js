@@ -85,8 +85,7 @@
                             });
 
                             return html;
-                        }
-                    }),
+                    },
                     callback: function(argument) {
                         console.log($(this).text())
                     }

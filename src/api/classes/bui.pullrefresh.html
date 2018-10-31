@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.5.0</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -142,6 +144,8 @@
                 <li><a href="../classes/bui.stepbar.html">bui.stepbar</a></li>
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
+            
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
             
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
@@ -553,11 +557,11 @@
             console.log(res);
 
             //请求成功以后还原位置
-            _self.reverse();
+            uiPullRefresh.reverse();
 
         }).fail(function (res) {
             //请求失败以后改为点击加载
-            _self.fail();
+            uiPullRefresh.fail();
 
         })
     }</code></pre>

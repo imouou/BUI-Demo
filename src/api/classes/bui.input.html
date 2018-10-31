@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.5.0</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -143,6 +145,8 @@
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
             
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
+            
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
@@ -241,9 +245,9 @@
     <h2>输入框交互</h2>
     <h3>预览地址: <a href="../../index.html#pages/ui_controls/bui.input.html" target="_blank">demo</a></h3>
     <h3>方法说明:</h3>
-bui.input/search: 单独调用搜索方法 <br>
+    <a href="../classes/bui.input.html#method_value" class="crosslink">value</a>: 获取值 <br>
   </div>
-  <div class="span4"><a href="../../index.html#pages/ui_controls/bui.searchbar.html" target="_blank"><img src="http://www.easybui.com/static/images/controls/bui-searchbar_low.gif" alt="控件预览"/></a></div>
+  <div class="span4"></div>
 </div>
 </div>
 
@@ -503,10 +507,10 @@ bui.input/search: 单独调用搜索方法 <br>
 
    var uiInput = bui.input({
        id: &quot;.password-input&quot;,
-       callback: function () {
+       callback: function (e) {
            // 点击删除按钮清空
            $(&quot;#password&quot;).val(&#39;&#39;);
-           $(this).hide();
+           $(e.target).hide();
        }
    })</code></pre>
 
@@ -1233,7 +1237,7 @@ bui.input/search: 单独调用搜索方法 <br>
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>       uiSearchbar.off(&quot;show&quot;);</code></pre>
+                <pre class="code prettyprint"><code>       uiInput.off(&quot;input&quot;);</code></pre>
 
             </div>
         </div>
@@ -1328,7 +1332,7 @@ bui.input/search: 单独调用搜索方法 <br>
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>       uiSearchbar.on(&quot;show&quot;,function () {
+                <pre class="code prettyprint"><code>       uiInput.on(&quot;input&quot;,function () {
            // 点击的菜单
            console.log(this);
        });</code></pre>

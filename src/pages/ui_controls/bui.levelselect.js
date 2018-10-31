@@ -1,6 +1,5 @@
 ﻿loader.define(function(require,exports,module) {
 
-
     var citySelect = null,
         citySelect2 = null;
     // 绑定数据
@@ -14,13 +13,11 @@
             level: 3,
             field:{
                 name: "n",
+                // value: "n",
                 data: ["c","a"],
             }
         })
 
-        // citySelect.on("change",function (e) {
-        //     console.log(e.target)
-        // })
         // 设置值
         citySelect2 = bui.levelselect({
             data: citys,
@@ -29,19 +26,19 @@
             level: 3,
             field:{
                 name: "n",
+                // value: "n",
                 data: ["c","a"],
             },
             value: ["广东","广州市","天河区"]
         })
-
 
     })
 
     $("#chooseCity").on("click",function () {
         citySelect.show();
     })
-    $("header").on("click",function () {
-        citySelect.value();
+    $("#getValue").on("click",function () {
+        console.dir(citySelect2.value())
     })
     $("#chooseCity2").on("click",function () {
         citySelect2.show();

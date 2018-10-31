@@ -31,7 +31,7 @@
             onChange: function (e) {
                 
             }
-        });
+        })
 
     $("#selectAll").on("click",function (argument) {
         uiSelectCustom.selectAll();
