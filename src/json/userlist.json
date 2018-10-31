@@ -1,0 +1,78 @@
+{
+    "data": [
+        {
+            "uid": "2",
+            "name": "区柏荣",
+            "image": null,
+            "phone": "13800138000",
+            "email": "oubr@bingosoft.net",
+            "createtime": "1402731722"
+        },
+		{
+            "uid": "1",
+            "name": "王伟深",
+            "image": null,
+            "phone": "13800138000",
+            "email": "wangwsh@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "3",
+            "name": "邝德如",
+            "image": null,
+            "phone": "13800138000",
+            "email": "kuangdr@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "4",
+            "name": "范菊",
+            "image": null,
+            "phone": null,
+            "email": "fanju@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "5",
+            "name": "唐竹晗",
+            "image": null,
+            "phone": null,
+            "email": "tangzh@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "6",
+            "name": "杨俊标",
+            "image": null,
+            "phone": null,
+            "email": "yangjb@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "7",
+            "name": "丁涛宁",
+            "image": null,
+            "phone": null,
+            "email": "dingtn@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "8",
+            "name": "梁炬荣",
+            "image": null,
+            "phone": null,
+            "email": "liangjr@bingosoft.net",
+            "createtime": "1402731722"
+        },
+        {
+            "uid": "9",
+            "name": "王钦洲",
+            "image": null,
+            "phone": null,
+            "email": "wangqz@bingosoft.net",
+            "createtime": "1402731722"
+        }
+    ],
+    "info": "获取成功",
+    "status": 0
+}

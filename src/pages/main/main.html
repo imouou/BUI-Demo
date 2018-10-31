@@ -1,40 +1,31 @@
 <!-- 这里还是一个标准的BUI页面 -->
-<div class="bui-page">
-    <header class="bui-bar">
-        <div class="bui-bar-left">
-        </div>
-        <div class="bui-bar-main">BUI Demo</div>
-        <div class="bui-bar-right">
-            <div class="bui-btn" id="checkUpdate"><i class="icon">&#xe655;</i></div>
-        </div>
-    </header>
+<div class="bui-page page-home">
     <main>
+        <div class="intro">
+            <h1>BUI</h1>
+            <p>BUI 是一个开放式的UI交互框架, 用于快速定制开发WebApp,微信公众号,还可以开发混合移动应用( 例如: Bingotouch, Link, Cordova, DCloud, ApiCloud, Appcan ) 等第三方平台.</p>
+        </div>
         <div id="tabDynamic" class="bui-tab">
+            <div class="bui-tab-head">
+                <ul class="bui-nav xlarge">
+                    <li class="bui-btn active" href="pages/main/controls.html">控件</li>
+                    <li class="bui-btn" href="pages/main/form.html">表单</li>
+                    <li class="bui-btn" href="pages/main/method.html">方法</li>
+                </ul>
+            </div>
             <div class="bui-tab-main">
                 <ul>
                     <li>
-                        <!-- 首页 -->
+                        <!-- 控件 -->
                     </li>
-                    <li>
-                        <!-- 新闻tab -->
+                    <li style="display: none;">
+                        <!-- 表单 -->
                     </li>
-                    <li>
-                        <!-- 图片tab -->
-                    </li>
-                    <li>
-                        <!-- 设置tab -->
+                    <li style="display: none;">
+                        <!-- 方法 -->
                     </li>
                 </ul>
-        
             </div>
         </div>
     </main>
-    <footer>
-        <ul id="tabDynamicNav" class="bui-nav">
-            <li class="bui-btn bui-box-vertical active" href="pages/main/home.html"><i class="icon">&#xe66c;</i><div class="span1">控件</div></li>
-            <li class="bui-btn bui-box-vertical" href="pages/ui/index.html"><i class="icon">&#xe680;</i><div class="span1">布局</div></li>
-            <li class="bui-btn bui-box-vertical" href="pages/ui_method/index.html"><i class="icon">&#xe65c;</i><div class="span1">方法</div></li>
-            <li class="bui-btn bui-box-vertical" href="pages/ui_event/index.html"><i class="icon">&#xe622;</i><div class="span1">事件</div></li>
-        </ul>
-    </footer>
 </div>

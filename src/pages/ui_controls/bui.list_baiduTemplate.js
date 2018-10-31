@@ -22,7 +22,6 @@
 
                 },
                 callback: function (e) {
-                    console.log($(this))
                     // 点击整行的时候执行
                 }
             });

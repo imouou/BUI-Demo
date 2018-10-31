@@ -4,7 +4,11 @@
         // 下拉菜单有遮罩的情况
         var uiMask = bui.mask({
             appendTo:"#main",
-            zIndex:9
+            zIndex:9,
+            callback: function(){
+                barRight.hide();
+                barMain.hide();
+            }
         });
 
         //下拉菜单 在顶部右边

@@ -1,10 +1,9 @@
 ﻿loader.define(function(require,exports,module) {
 
-
     var citySelect = null,
         citySelect2 = null;
     // 绑定数据
-    loader.import("js/plugins/citys.js",function () {
+    loader.import("json/citys.js",function () {
         
         // 普通初始化
         citySelect = bui.levelselect({
@@ -14,6 +13,7 @@
             level: 3,
             field:{
                 name: "n",
+                // value: "n",
                 data: ["c","a"],
             }
         })
@@ -26,20 +26,19 @@
             level: 3,
             field:{
                 name: "n",
+                // value: "n",
                 data: ["c","a"],
             },
             value: ["广东","广州市","天河区"]
         })
 
-
-        // citySelect.on("change",function (argument) {
-        //     console.log($(this).val())
-        // })
-
     })
 
     $("#chooseCity").on("click",function () {
         citySelect.show();
+    })
+    $("#getValue").on("click",function () {
+        console.dir(citySelect2.value())
     })
     $("#chooseCity2").on("click",function () {
         citySelect2.show();

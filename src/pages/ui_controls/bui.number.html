@@ -9,71 +9,34 @@
 		</div>
 	</header>
 	<main>
-		<h3 class="section-title">动态绑定</h3>
-		<div id="number" class="bui-number"></div><br>
-		<div class="bui-box">
-			<div class="span1">
-		<div id="setValue" class="bui-btn">设置值</div>
-			</div>
-			<div class="span1">
-		<div id="getValue" class="bui-btn">获取值</div>
-			</div>
-		</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-				<h4>html:</h4>
-				<xmp>
-<div id="number" class="bui-number"></div>
-			 	</xmp>
-				<h4>js:</h4>
-				<xmp>
-var uiNumber = bui.number({
-	id: '#number',
-	value: 5,
-	min: 1,
-	max: 10
-})
-			 	</xmp>
+		<ul class="bui-list">
+			<li class="bui-btn-title">动态创建</li>
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">产品1</div>
+				<div class="span1"></div>
+				<div><div class="bui-number" id="product01" ></div></div>
+			</li>
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">产品2</div>
+				<div class="span1"></div>
+				<div><div class="bui-number" id="product02" ></div></div>
+			</li>
+		</ul>
+		<div class="container-y">
+			<div class="bui-box-space">
+				<div class="span1">
+					<div id="setValue" class="bui-btn">批量设置值</div>
+				</div>
+				<div class="span1">
+					<div id="getValue" class="bui-btn">获取一个值</div>
 				</div>
 			</div>
-		</div>
-		<h3 class="section-title">静态绑定</h3>
-			
-		<div id="number2" class="bui-number">
-			<div class="bui-number-prev"><i class="icon-minus"></i></div>
-            <input type="text" value="2"/>
-             <div class="bui-number-next"><i class="icon-plus"></i></div>
-		</div>
-           
-
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-				<h4>html:</h4>
-				<xmp>
-<div id="number2" class="bui-number">
-  <div class="bui-number-prev">
-  	<i class="icon-minus"></i>
-  </div>
-  <input type="text" value="2"/>
-  <div class="bui-number-next">
-    <i class="icon-plus"></i>
-  </div>
-</div>
-			 	</xmp>
-				<h4>js:</h4>
-				<xmp>
-var uiNumber2 = bui.number({
-	id: '#number2',
-	value: 5,
-	min: 1,
-	max: 10,
-	render: false,
-})
-			 	</xmp>
+			<div class="bui-box-space">
+				<div class="span1">
+					<div id="setValues" class="bui-btn">设置多个值</div>
+				</div>
+				<div class="span1">
+					<div id="getValues" class="bui-btn">获取多个值</div>
 				</div>
 			</div>
 		</div>

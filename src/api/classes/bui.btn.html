@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.4.6 20180801</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -93,6 +95,8 @@
             
                 <li><a href="../classes/bui.init.html">bui.init</a></li>
             
+                <li><a href="../classes/bui.input.html">bui.input</a></li>
+            
                 <li><a href="../classes/bui.levelselect.html">bui.levelselect</a></li>
             
                 <li><a href="../classes/bui.list.html">bui.list</a></li>
@@ -141,7 +145,11 @@
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
             
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
+            
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
+            
+                <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
                 <li><a href="../classes/bui.timer.html">bui.timer</a></li>
             
@@ -214,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.btn.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.btn.js:8</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:8</code></a>
         </div>
     
 
@@ -288,7 +296,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.btn.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.btn.js:8</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:8</code></a>
         
         </p>
 
@@ -330,7 +338,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[控件id]</p>
+                                    <p>[页面id]</p>
 
                                 </div>
 
@@ -345,52 +353,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[点击区域]</p>
-
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[progress]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    <p>[是否有进度调]</p>
-
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[timeout]</code>
-                                    <span class="type">Number</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    <p>[进度自动关闭时间默认3000,取消则为0]</p>
-
-                                </div>
-
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[replace]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
-
-                                <div class="param-description">
-                                    <p>[(1.3.0新增)是否替换当前地址]</p>
+                                    <p>[监听的按钮]</p>
 
                                 </div>
 
@@ -415,7 +378,7 @@
                 <p> html:</p>
 <pre class="code prettyprint"><code>  &lt;div id=&quot;page&quot;&gt;
       &lt;div class=&quot;bui-btn&quot; href=&quot;btn.html&quot;&gt;首页&lt;/div&gt;
-      &lt;div class=&quot;bui-btn&quot; href=&quot;btn.html&quot; param=&#39;{&quot;id&quot;:&quot;222&quot;}&#39;&gt;新闻&lt;/div&gt;
+      &lt;div class=&quot;bui-btn&quot; href=&quot;btn.html?id=222&quot;&gt;新闻&lt;/div&gt;
   &lt;/div&gt;</code></pre>
 <p> js:</p>
 <p>  var uiBtn = bui.btn({ 
@@ -524,7 +487,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.btn.js.html#l90"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.btn.js:90</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l87"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:87</code></a>
         
         </p>
 
@@ -600,7 +563,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.btn.js.html#l231"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.btn.js:231</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l231"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:231</code></a>
         
         </p>
 
@@ -680,7 +643,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_ui_bui.btn.js.html#l189"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;ui&#x2F;bui.btn.js:189</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l185"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:185</code></a>
         
         </p>
 

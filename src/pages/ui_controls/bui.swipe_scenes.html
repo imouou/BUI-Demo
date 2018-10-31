@@ -1,81 +1,21 @@
-
+<style>
+    #sidebarWrap img{
+        width: 100%;
+    }
+</style>
 <!-- 侧滑栏的父层, -->
 <div id="sidebarWrap" class="wrap">
-    <div class="swipedown">swipedown</div>
-    <div class="swipeup">swipeup</div>
+    <!-- 顶部 -->
+    <div class="swipedown" data-moving="325"><img src="images/placeholder-app.jpg" alt="占位图"></div>
+    <!-- 底部 -->
+    <div class="swipeup" data-moving="516"><img src="images/placeholder-keyboard.jpg" alt="占位图"></div>
     <!-- 侧滑菜单 -->
-    <div class="swipeleft" data-moving="200">
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
-        右边内容滚动 <br>
+    <div class="swipeleft" data-moving="644">
+        <img src="images/placeholder-filter.jpg" alt="占位图">
     </div>
-    <div class="swiperight" >
+    <div class="swiperight" data-moving="644">
         
-        <ul id="list2" class="listview">
-                <li>
-                    <div class="swipeleft" data-moving="200" style="background: #ff3300">
-                    swipeleft
-                    </div>
-                    <div class="swiperight" >
-                    swiperight
-                    </div>
-                    <div class="bui-btn handle" style="height:50px;">
-                        左滑右滑都触发自己,不能触发父级
-                    </div>
-                </li>
-                <li>
-                    <div class="swipeleft" style="background: #ff3300">
-                    swipeleft
-                    </div>
-                    <div class="bui-btn bui-box handle" style="height:80px;">
-                        <div class="span1">左滑触发自己,右滑触发父级</div>
-                        <i class="icon-listright"></i>
-                    </div>
-                </li>
-            </ul>
+        <img src="images/placeholder-sidebar.jpg" alt="占位图">
     </div>
     <!-- 正文内容 -->
     <div id="swipePage" class="bui-page" style="background:#ff3300;">
@@ -88,166 +28,57 @@
             </div>
         </header>
         <main>
-            <!-- <ul id="list" class="bui-listview large">
-                <li>
-                    <div class="swipeleft" data-moving="200" style="background: #ff3300">
-                    swipeleft
-                    </div>
-                    <div class="swiperight" >
-                    swiperight
-                    </div>
-                    <div class="bui-btn bui-box handle" href="bui.listview.html" param='{"id":"123"}'>
-                        <div class="span1">左滑动出现菜单</div>
-                        <i class="icon-listright"></i>
-                    </div>
-                </li>
-                设置status属性可以避免渲染菜单
-                <li status="1">
-                    <div class="bui-btn bui-box handle" href="bui.listview.html" param='{"id":"123"}'>
-                        <div class="span1">手动渲染</div>
-                        <i class="icon-listright"></i>
-                    </div>
-                    <div class="bui-listview-menu" data-moving="300">
-                        <div class="bui-btn btn-blue">置顶</div>
-                        <div class="bui-btn btn-blue">修改</div>
-                        <div class="bui-btn btn-red">删除</div>
-                    </div>
-                </li>
-            </ul> -->
+            <!-- 焦点图结构 -->
             <div id="slide" class="bui-slide">
                 <div id="slidemain" class="bui-slide-main">
                     <ul>
                         <li>
-                            <div style="background: yellow;height: 100%;"></div>
-                            <div class="bui-slide-title">我是图片标题1</div>
+                            <img src="images/banner01.png" alt="">
                         </li>
                         <li>
-                            <div style="background: orange;height: 100%;"></div>
-                            <div class="bui-slide-title">我是图片标题2</div>
+                            <img src="images/banner02.png" alt="">
                         </li>
                         <li>
-                            <div style="background: red;height: 100%;"></div>
-                            <div class="bui-slide-title">我是图片标题3</div>
+                            <img src="images/banner03.png" alt="">
                         </li>
-                    </ul>
-                </div>
-                <div class="bui-slide-head">
-                    <ul >
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="container-xy">
+            <div class="bui-tips">
                 小提示: 该例子可以在手机中拖动
             </div>  
-            <ul id="list" class="listview">
-                <li>
-                    <div class="swipeleft" data-moving="200" style="background: #ff3300">
-                    swipeleft
+            <!-- 侧滑列表控件 -->
+            <ul id="uiListview" class="bui-listview">
+                <li status="1">
+                    <div class="bui-btn bui-box">
+                        <div class="span1">左滑右滑都触发自己,不能触发父级</div>
+                        <i class="icon-listright"></i>
                     </div>
-                    <div class="swiperight" >
-                    swiperight
+                    <div class="bui-listview-menu swipeleft" data-moving="200">
+                        <div class="bui-btn primary">置顶</div>
+                        <div class="bui-btn danger">删除</div>
                     </div>
-                    <div class="bui-btn handle" style="height:50px;">
-                        左滑右滑都触发自己,不能触发父级
+                    <div class="bui-listview-menu swiperight" data-moving="100">
+                        <div class="bui-btn primary">置顶</div>
                     </div>
                 </li>
-                <li>
-                    <div class="swipeleft" style="background: #ff3300">
-                    swipeleft
-                    </div>
-                    <div class="bui-btn bui-box handle" style="height:80px;">
+                <li status="1">
+                    <div class="bui-btn bui-box">
                         <div class="span1">左滑触发自己,右滑触发父级</div>
                         <i class="icon-listright"></i>
                     </div>
+                    <div class="bui-listview-menu swipeleft" data-moving="100">
+                        <div class="bui-btn danger">删除</div>
+                    </div>
                 </li>
             </ul>
-    
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            123
-            
+            <p class="bui-box-center">
+                <img src="images/swipeall.png" alt="占位图" style="width:2rem">
+            </p>
+             <div class="placeholder-text">
+                    <h3>上下左右滑动,并且控件与控件之间不会相互干扰</h3>
+                    <p class="warning-reverse">(提示：该事件请在手机操作！)</p>
+                </div>
          </main>
         
     </div>

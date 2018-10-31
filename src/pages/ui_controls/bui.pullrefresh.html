@@ -1,10 +1,4 @@
 ﻿
-<style>
-    .bui-list .bui-btn i {
-        font-size: 0.4rem;
-        margin-right: 0.2rem;
-    }
-</style>
 <div class="bui-page">
 	<header class="bui-bar">
 		<div class="bui-bar-left">
@@ -23,39 +17,5 @@
 			</div>
 		</div>
 
-        <div class="container-xy">
-            小提示: 该例子可以在手机中拖动
-        </div>  
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-				<h4>html:</h4>
-				<xmp>
-<div id="pullrefresh" class="bui-scroll">
-  <div class="bui-scroll-head"></div>
-  <div class="bui-scroll-main">
-    <ul id="scrollList" class="bui-list">
-    </ul>
-  </div>
-</div>
-			 	</xmp>
-				<h4>js:</h4>
-				<xmp>
-var uiPullRefresh = bui.pullrefresh({
-    id: "#pullrefresh",
-    onRefresh: getData
-})
-
-//请求数据
-function getData(){
-    var _self = this;   
-    //还原刷新前状态
-    _self.reverse();
-}
-			 	</xmp>
-				</div>
-			</div>
-		</div>
 	</main>
 </div>

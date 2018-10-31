@@ -10,26 +10,9 @@
     var uiSwipe = bui.swipe({
         id: "#sidebarWrap",
         handle: ".bui-page",
-        movingDistance: 200,
+        zoom: true,
         direction: "xy",
     });
-
-
-    var uiSwipe2 = bui.swipe({
-        id: "#list",
-        handle:".handle",
-        movingDistance: 100,
-        hasChild:true,
-        direction: "x",
-    })
-    var uiSwipe3 = bui.swipe({
-        id: "#list2",
-        handle:".handle",
-        movingDistance: 100,
-        hasChild:true,
-        width:200,
-        direction: "x"
-    })
 
     uiSwipe.on("open",function (e,touch) {
         uiMask.show();
@@ -38,17 +21,24 @@
         uiMask.hide();
     })
 
-    // uiSwipe.open();
-    // pc 点击遮罩没阻止冒泡
-    $(".handle").on("click",function (e) {
-        alert("12");
-        e.stopPropagation();
-    })
-
-    // 快速初始化
+    // 侧滑列表
+    var uiListview = bui.listview({
+        id: "#uiListview",
+        callback: function (e,ui) {
+            // this 滑动出来的操作按钮
+            var text = $(this).text();
+            if( text == "删除" ){
+                //do something
+            }
+            ui.close();
+        }
+    });
+    
+    // 焦点图
     var uiSlide = bui.slide({
         id:"#slide",
-        height:200,
+        height:380,
+        autopage: true,
         // 如果焦点图的高度要保持跟设计稿一致,需要设置zoom:true
         zoom: true,
         // autoplay: true

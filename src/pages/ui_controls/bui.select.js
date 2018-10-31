@@ -1,30 +1,37 @@
 ﻿loader.define(function(require,exports,module) {
 
     //动态绑定
-    uiSelectCustom = bui.select({
+    var uiSelectCustom = bui.select({
             id:"#selectCustom",
             popup: false,
             type:"checkbox",
+            direction: "right",
             data: [{
                 "name":"广东",
-                "value":"11"
+                "image":"images/face.png",
+                "value":"11",
             },{"name":"广西",
+                "image":"images/face.png",
                 "value":"22"
             },{
                 "name":"上海",
+                "image":"images/face.png",
                 "value":"33"
             },{"name":"北京",
+                "image":"images/face.png",
                 "value":"44"
             },{
                 "name":"深圳",
+                "image":"images/face.png",
                 "value":"55"
             },{"name":"南京",
+                "image":"images/face.png",
                 "value":"66"
             }],
-            onChange: function (module,index) {
-                // console.log($(this).val())
+            onChange: function (e) {
+                
             }
-        });
+        })
 
     $("#selectAll").on("click",function (argument) {
         uiSelectCustom.selectAll();
@@ -40,27 +47,16 @@
 
     $("#queding").on("click",function (argument) {
 
-        console.log(uiSelectCustom.value() );
+        console.log(uiSelectCustom.text() );
     })
 
-    uiSelectCustom.on("change",function (e) {
-        console.log(uiSelectCustom.value())
-    })
-
-
-    // uiSelectCustom.value("广东");
-    // uiSelectCustom.active("0");
-    // uiSelectCustom.value("广东");
-
-    // console.log(uiSelectCustom.value())
-
-    //多选 静态态绑定
+    //静态态绑定
     var uiSelectCustom2 = bui.select({
             id:"#selectCustom2",
             popup: false,
             type:"checkbox",
-            onChange: function (module,index) {
-                // console.log($(this).val())
+            onChange: function (e) {
+                
             }
         });
 

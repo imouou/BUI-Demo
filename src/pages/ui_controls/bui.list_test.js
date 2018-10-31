@@ -37,7 +37,6 @@ loader.define(function(require,exports,module) {
                 // 解决zepto的事件委托冲突 bui-btn 为整行的样式
                 // if( $(e.target).hasClass("bui-btn") ){
                     // 点击整行的时候执行
-                    console.log(this)
                 // }
             }
         });

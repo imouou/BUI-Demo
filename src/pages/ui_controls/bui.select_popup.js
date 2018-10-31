@@ -21,12 +21,13 @@
             },{"name":"南京",
                 "value":"66"
             }],
+            value: ["广东","上海"],
             //如果需要点击再进行操作,增加按钮
             buttons: [{name:"重置",className:""},{name:"确定",className:"primary-reverse"}],
-            callback: function () {
+            callback: function (e) {
 
-                var index = $(this).parent().index();
-                if( index == 0 ){
+                var text = $(e.target).text();
+                if( text == "重置" ){
                     uiSelect.selectNone();
                 }else{
                     uiSelect.hide();
@@ -35,9 +36,7 @@
             onChange: function (argument) {
                 console.log("312312")
             }
-        }).on("show",function (e) {
-            console.log(e)
-        });
+        })
 
     //静态自定义绑定
     var uiSelect2 = bui.select({
@@ -50,7 +49,6 @@
             mask: false,
             buttons: []
         });
-
 
 // 自定义确定按钮事件
 router.$("#makeSure").on("click",function () {

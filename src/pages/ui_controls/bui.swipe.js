@@ -10,7 +10,7 @@
         var uiSwipe = bui.swipe({
             id: "#uiSwipe",
             handle: ".bui-page",
-            movingDistance: 200,
+            zoom: true,
             direction: "x",
         });
 
@@ -19,6 +19,10 @@
         })
         uiSwipe.on("close",function (argument) {
             uiMask.hide();
+        })
+
+        uiSwipe.on("swipeleft",function (argument) {
+            console.log("swipeleft")
         })
 
 })

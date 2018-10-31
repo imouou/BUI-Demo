@@ -1,10 +1,11 @@
 ﻿loader.define(function(require,exports,module) {
 
-    // 快速初始化
+    // 通知
     var uiSlide = bui.slide({
         id:"#slideNote",
-        height:60,
+        height:100,
         autoplay: true,
+        loop: true,
         zoom: true,
         direction: "y"
     })

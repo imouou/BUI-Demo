@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.4.6 20180801</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -93,6 +95,8 @@
             
                 <li><a href="../classes/bui.init.html">bui.init</a></li>
             
+                <li><a href="../classes/bui.input.html">bui.input</a></li>
+            
                 <li><a href="../classes/bui.levelselect.html">bui.levelselect</a></li>
             
                 <li><a href="../classes/bui.list.html">bui.list</a></li>
@@ -141,7 +145,11 @@
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
             
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
+            
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
+            
+                <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
                 <li><a href="../classes/bui.timer.html">bui.timer</a></li>
             
@@ -214,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:8</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:8</code></a>
         </div>
     
 
@@ -259,6 +267,27 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_delKey">delKey</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getKeyObj">getKeyObj</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getKeyValue">getKeyValue</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_mailto">mailto</a>
 
                                 
@@ -281,6 +310,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_remToPx">remToPx</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setKeyValue">setKeyValue</a>
 
                                 
                                 
@@ -314,6 +350,432 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_delKey" class="method item">
+    <h3 class="name"><code>delKey</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>data</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l675"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:675</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>根据 page.name 删除某个字段的数据</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[&quot;page.name&quot;]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[删除的字段在哪个对象]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>[返回  删除以后的对象 ]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var data = { page: { name: &quot;123&quot;, tel: 456 }}
+       bui.unit.delKey(&quot;page.name&quot;,data);
+     console.log(data)   // { page: { tel: 456 }}</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_getKeyObj" class="method item">
+    <h3 class="name"><code>getKeyObj</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>data</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l642"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:642</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>根据 page.name 字符串获取数据的对象, 用于field配置的映射</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[&quot;page.name&quot;]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">data</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[设置的值]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>[返回  对象 ]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var data = { page: { name: &quot;123&quot; }}
+   var n = bui.unit.getKeyObj(&quot;page.name&quot;,data);
+     console.log(n)   // {name:123}</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_getKeyValue" class="method item">
+    <h3 class="name"><code>getKeyValue</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>data</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l604"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:604</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>根据 page.name 字符串获取数据的值, 用于field配置的映射</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[&quot;page.name&quot;]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">data</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[设置的值]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>[返回对象 ]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var data = { page: { name: &quot;123&quot; }}
+     var n = bui.unit.getKeyValue(&quot;page.name&quot;,data);
+     console.log(n)   // 123</code></pre>
+
+            </div>
+        </div>
+    
+</div>
 
                 
                     <div id="method_mailto" class="method item">
@@ -358,7 +820,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l215"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:215</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l227"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:227</code></a>
         
         </p>
 
@@ -519,7 +981,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l35"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:35</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l35"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:35</code></a>
         
         </p>
 
@@ -617,7 +1079,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l54"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:54</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l54"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:54</code></a>
         
         </p>
 
@@ -715,7 +1177,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l15"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:15</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l15"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:15</code></a>
         
         </p>
 
@@ -771,6 +1233,176 @@
 </div>
 
                 
+                    <div id="method_setKeyValue" class="method item">
+    <h3 class="name"><code>setKeyValue</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[value]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[targetObj]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l554"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:554</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>一维数组逐层转json, 把 page.name 转换成 { page: { name: {} }}</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[&quot;page.name&quot;]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[value]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[设置的值]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[targetObj]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[要在哪个对象上设置]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>[返回对象 ]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   // 新建一个对象
+     var data2 = bui.unit.setKeyValue(&quot;page.name&quot;,&quot;test&quot;);
+     console.log(data2)   // { page: { name: &quot;test&quot; }}
+   // 修改一个对象
+   var obj = { page: { name: &quot;&quot;, tel: 123 }}
+       bui.unit.setKeyValue(&quot;page.name&quot;,&quot;test&quot;,obj);
+     console.log(data2)   // { page: { name: &quot;test&quot;, tel: 123 }}</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_sms" class="method item">
     <h3 class="name"><code>sms</code></h3>
 
@@ -819,7 +1451,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l190"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:190</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l202"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:202</code></a>
         
         </p>
 
@@ -934,7 +1566,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_method_bui.unit.js.html#l163"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;method&#x2F;bui.unit.js:163</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.unit.js.html#l169"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.unit.js:169</code></a>
         
         </p>
 

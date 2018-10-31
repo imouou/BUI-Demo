@@ -579,9 +579,12 @@
 			this.focus(targetElement);
 			this.sendClick(targetElement, event);
 
+			var _isTextInput = function(){
+                return targetTagName === 'textarea' || (targetTagName === 'input' && targetElement.type === 'text');
+            };
 			// Select elements need the event to go through on iOS 4, otherwise the selector menu won't open.
 			// Also this breaks opening selects when VoiceOver is active on iOS6, iOS7 (and possibly others)
-			if (!deviceIsIOS || targetTagName !== 'select') {
+			if (!deviceIsIOS || targetTagName !== 'select' && !_isTextInput() ) {
 				this.targetElement = null;
 				event.preventDefault();
 			}

@@ -29,7 +29,9 @@
                 
                 </h1>
             
-            <p class="off-left" style="font-size:12px;">API for BUI 1.4.6 20180801</p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -93,6 +95,8 @@
             
                 <li><a href="../classes/bui.init.html">bui.init</a></li>
             
+                <li><a href="../classes/bui.input.html">bui.input</a></li>
+            
                 <li><a href="../classes/bui.levelselect.html">bui.levelselect</a></li>
             
                 <li><a href="../classes/bui.list.html">bui.list</a></li>
@@ -141,7 +145,11 @@
             
                 <li><a href="../classes/bui.storage.html">bui.storage</a></li>
             
+                <li><a href="../classes/bui.store.html">bui.store</a></li>
+            
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
+            
+                <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
                 <li><a href="../classes/bui.timer.html">bui.timer</a></li>
             
@@ -214,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
         </div>
     
 
@@ -289,7 +297,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:6</code></a>
         
         </p>
 
@@ -387,6 +395,36 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[mediaType]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.4.7新增, 文件的类型, 原生只支持图片上传,webapp部分机型不支持 默认: picture | allmedia  | video | audio ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[from]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.4.7新增, 默认 &quot;&quot; 从相册选 | &quot;camera&quot; 相机拍照 | &quot;camcorder&quot; 录像, 需要配合 mediaType  参数 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[showProgress]</code>
                                     <span class="type">Boolean</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -447,6 +485,36 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[autoClose]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5新增, 是否允许关闭进度条 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[onMask]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5新增, 点击默认进度条的回调,默认停止上传并关闭显示 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[onFail]</code>
                                     <span class="type">Function</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -484,16 +552,26 @@
        // 2. 选择文件
        uiUpload.add({
            onSuccess: function(file){
-               // console.log(this)
+               // 展示本地图片
+               var url = window.URL.createObjectURL(files[0]);
+               document.querySelector(&#39;img&#39;).src = window.URL.createObjectURL(url);
+
+               // 展示base64本地图片
+               // this.toBase64({
+               //     onSuccess: function (url) {
+               //         document.querySelector(&#39;img&#39;).src = url;
+
+               //     }
+               // });
                // 3. 上传文件 选择以后直接上传到服务器
-               uiUpload.start({
-                   onSuccess:function(data){
-                       // 成功
-                   },
-                   onFail: function(res,status){
-                       // 失败 status = &quot;timeout&quot; || &quot;error&quot; || &quot;abort&quot;, &quot;parsererror&quot;
-                   }
-               });
+               // uiUpload.start({
+               //     onSuccess:function(data){
+               //         // 成功
+               //     },
+               //     onFail: function(res,status){
+               //         // 失败 status = &quot;timeout&quot; || &quot;error&quot; || &quot;abort&quot;, &quot;parsererror&quot;
+               //     }
+               // });
            }
        })
 
@@ -648,7 +726,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l152"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:152</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l169"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:169</code></a>
         
         </p>
 
@@ -733,13 +811,28 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[mediaType]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 文件的类型, 原生只支持图片上传  picture | video | allmedia ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[from]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
-                                    <p>[ 图片来源, 默认来自 photo(相册) | camera(相机) | savephoto(来自保存的相册) ]</p>
+                                    <p>[ 1.4.7新增, 默认 &quot;&quot; 从相册选 | &quot;camera&quot; 相机拍照 | &quot;camcorder&quot; 录像, 需要配合 mediaType  参数 原生: 默认来自 photo(相册) | camera(相机) | savephoto(来自保存的相册) ]</p>
 
                                 </div>
 
@@ -852,7 +945,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l201"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:201</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l219"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:219</code></a>
         
         </p>
 
@@ -916,7 +1009,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l237"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:237</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l255"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:255</code></a>
         
         </p>
 
@@ -984,7 +1077,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l182"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:182</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l200"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:200</code></a>
         
         </p>
 
@@ -1060,7 +1153,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l251"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:251</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l269"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:269</code></a>
         
         </p>
 
@@ -1159,7 +1252,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l310"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:310</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l328"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:328</code></a>
         
         </p>
 
@@ -1235,7 +1328,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l215"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:215</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l233"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:233</code></a>
         
         </p>
 
@@ -1387,7 +1480,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_BUI_src_lib_mix_web_bui.upload.js.html#l430"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;BUI&#x2F;src&#x2F;lib&#x2F;mix&#x2F;web&#x2F;bui.upload.js:430</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l445"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:445</code></a>
         
         </p>
 

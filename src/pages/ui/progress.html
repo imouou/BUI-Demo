@@ -10,56 +10,39 @@
 		</div>
 	</header>
 	<main>
-		<div class="section-title">进度条</div>
-		<div class="container">
-			<div class="bui-progress active">
-				<div class="bui-progress-cell" style="width:30%;"></div>
-			</div>
-		</div>
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-				<h4>html:</h4>
-				<xmp>
-<div class="bui-progress">
-  <div class="bui-progress-cell" style="width:30%;"></div>
-</div>
-			 	</xmp>
-				</div>
-			</div>
-		</div>
-		<div class="section-title">进度条文本提醒</div>
-		<div class="container">
-			<div class="bui-box-center">
+		<ul class="bui-list">
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">当前进度</div>
 				<div class="span1">
-					<div class="bui-progress">
-						<div class="bui-progress-cell" style="width:30%;"></div>
-					</div>
+					<progress class="bui-progress" max="100" value="30"></progress>
+				</div>
+			</li>
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">当前进度</div>
+				<div class="span1">
+					<progress class="bui-progress success" max="100" value="40"></progress>
+				</div>
+			</li>
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">当前进度</div>
+				<div class="span1">
+					<progress class="bui-progress warning" max="100" value="50"></progress>
+				</div>
+			</li>
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">当前进度</div>
+				<div class="span1">
+					<progress class="bui-progress danger" max="100" value="60"></progress>
+				</div>
+			</li>
+			<li class="bui-btn bui-box clearactive">
+				<div class="bui-label">当前进度</div>
+				<div class="span1">
+					<progress class="bui-progress" max="100" value="30"></progress>
 				</div>
 				<div class="bui-progress-text">30%</div>
-			</div>
-		</div>
-
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-				<h4>html:</h4>
-				<xmp>
-<div class="bui-box-center">
-  <div class="span1">
-    <div class="bui-progress">
-      <div class="bui-progress-cell" style="width:30%;"></div>
-    </div>
-  </div>
-  <div class="bui-progress-text">30%</div>
-</div>
-			 	</xmp>
-				</div>
-			</div>
-		</div>
-		
+			</li>
+		</ul>
 		
 		
 	</main>

@@ -11,23 +11,21 @@ loader.define(function() {
         var pageVue = new Vue({
           el: pageDom,
           data: {
+            uiSlide : null,
             slideItems: []
           },
           methods: {
             slide: function (data) {
                 var slideDom = router.$(".slide-vue")[0];
-
                 // 渲染数据
                 this.slideItems = data;
-                
+               
                 // dom 渲染完成以后执行
                 this.$nextTick(function(){
-                    // 初始化焦点图
-                    var uiSlideVue = bui.slide({
-                          id: slideDom,
-                          height:200,
-                          autopage: true
-                      })
+                    this.uiSlide = bui.slide({
+                      id: router.$(".slide-vue"),
+                      height:300
+                  })
                 })
             }
           }

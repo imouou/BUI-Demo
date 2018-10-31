@@ -9,6 +9,7 @@
         var uiDialogNav = bui.dialog({
             id: "#uiDialogNav",
             position: "bottom",
+            effect: "fadeInUp",
             mask: false
         });
 

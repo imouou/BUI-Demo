@@ -1,5 +1,11 @@
+<style>
+    /*vue*/
+    [v-cloak] {
+      display: none;
+    }
+</style>
 <div class="bui-page">
-    <header class="bui-bar">
+            <header class="bui-bar">
         <div class="bui-bar-left">
             <a class="bui-btn btn-back"><i class="icon-back"></i></a>
         </div>
@@ -12,10 +18,11 @@
             <div class="bui-scroll-head"></div>
             <div class="bui-scroll-main">
                 <ul class="bui-list">
-                    <li v-for="item in datas" class="bui-btn" href="pages/router/vuejs/vuejs.html" ><i class="icon-facefill"></i>{{item.name}}</li>
+                    <li v-for="item in datas" class="bui-btn" href="pages/router/vuejs/vuejs.html" v-on:click="test"><i class="icon-facefill"></i>{{item.name}}</li>
                 </ul>
             </div>
             <div class="bui-scroll-foot"></div>
         </div>
     </main>
+
 </div>

@@ -1,4 +1,11 @@
-﻿
+﻿<style>
+	.bui-select-form {
+		margin-bottom: .2rem;
+	}
+	.bui-select-form .bui-input {
+		text-align: right;
+	}
+</style>
 <div class="bui-page">
 	<header class="bui-bar">
 		<div class="bui-bar-left">
@@ -9,60 +16,28 @@
 		</div>
 	</header>
 	<main>
-		<h3 class="section-title">1. 弹窗日期带按钮</h3>
-		<input type="text" id="datepicker_input" readonly class="bui-input">
+		<ul class="bui-list bui-select-form">
+            <li class="bui-btn bui-box" id="select" >
+                <label>请选择日期</label>
+                <div class="span1"><input type="text" id="datepicker_input" readonly class="bui-input"></div>
+                <i class="icon-listright"></i>
+            </li>
+        </ul>
 
-		<div class="bui-box">
+		<div class="bui-fluid-2">
 			<div class="span1">
-		<div id="show1" class="bui-btn">显示年月日时分秒</div>
+				<div id="show1" class="bui-btn">显示年月日时分秒</div>
 			</div>
 			<div class="span1">
-		<div id="show2" class="bui-btn">显示个位不要零</div>
+				<div id="show2" class="bui-btn">显示个位不要零</div>
+			</div>
+			<div class="span1">
+				<div id="show3" class="bui-btn">显示日期</div>
+			</div>
+			<div class="span1">
+				<div id="show4" class="bui-btn">显示固定分秒</div>
 			</div>
 		</div>
-		<div class="bui-box">
-			<div class="span1">
-		<div id="show3" class="bui-btn">显示日期</div>
-			</div>
-			<div class="span1">
-		<div id="show4" class="bui-btn">显示固定分秒</div>
-			</div>
-		</div>
 
-		<h3 class="section-title">2. 没有弹窗的日期</h3>
-		<input type="text" id="datepicker_input2" readonly class="bui-input">
-
-		<!-- 没有弹窗的日期 -->
-		<div id="datepicker"></div>
-		<div class="bui-panel">
-			<div class="bui-panel-head"><strong>示例:</strong></div>
-			<div class="bui-panel-main">
-				<div class="container">
-				<h4>html:</h4>
-				<xmp>
-<input type="text" id="datepicker_input" readonly>
-			 	</xmp>
-				<h4>js:</h4>
-				<xmp>
-// 1. 弹窗带按钮
-var input = $("#datepicker_input");
-var uiPickerdate = bui.pickerdate({
-	handle:"#datepicker_input",
-	onChange: function(value) {
-		input.val(value);
-	}
-});
-// 2. 不弹窗
-var input2 = $("#datepicker_input2");
-var uiPickerdate = bui.pickerdate({
-	id:"#datepicker_input2",
-	onChange: function(value) {
-		input2.val(value);
-	}
-});
-			 	</xmp>
-				</div>
-			</div>
-		</div>
 	</main>
 </div>

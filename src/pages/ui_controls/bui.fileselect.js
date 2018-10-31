@@ -2,7 +2,7 @@
 
     var $output = $("#output");
 
-    loader.import(["js/plugins/cordova.js","js/plugins/bingotouch.js"],function(){
+    loader.import(["js/platform/cordova.js","js/platform/bingotouch.js"],function(){
     
         var uiFileSelect = bui.fileselect();
         

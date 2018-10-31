@@ -1,29 +1,4 @@
-﻿<style>
-    .bui-slide-note .bui-slide-main ul li{
-        padding-left: .5rem;
-    }
-    .bui-slide-note .bui-slide-main .note-item{
-        line-height: 40px;
-    }
-    .bui-slide-note:before {
-        font-family: "icon" !important;
-        display: inline-block;
-        content: "\e63f";
-        font-size: .3rem;
-        position: absolute;
-        top: 50%;
-        left: .1rem;
-        margin-top: -.17rem;
-    }
-    .bui-slide-note .icon-listright {
-        margin-right: .2rem;
-    }
-    .note-item .span1{
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-</style>
+﻿
 <div class="bui-page">
 	<header class="bui-bar">
 		<div class="bui-bar-left">
@@ -34,96 +9,26 @@
 		</div>
 	</header>
 	<main>
-
-		<div id="slideNote" class="bui-slide bui-slide-note">
-			<div class="bui-slide-main">
+        <div id="slideNote" class="bui-slide bui-slide-notice">
+            <div class="bui-slide-main">
                 <ul>
                     <li>
-                        <div class="note-item bui-box">
-                            <div class="span1">我是新闻标题1我是新闻标题1我是新闻标题1我是新闻标题1</div>
-                            <i class="icon-listright"></i>
+                        <div class="notice-item">
+                            <div class="span1">2017年11月1日 河南分省党支部第17期党课</div>
                         </div>
                     </li>
                     <li>
-                        <div class="note-item bui-box">
-                            <div class="span1">我是新闻标题2</div>
-                            <i class="icon-listright"></i>
+                        <div class="notice-item">
+                            <div class="span1">2017年11月1日 河南分省党支部第17期党课</div>
                         </div>
                     </li>
                     <li>
-                        <div class="note-item bui-box">
-                            <div class="span1">我是新闻标题3</div>
-                            <i class="icon-listright"></i>
+                        <div class="notice-item">
+                            <div class="span1">2017年11月1日 河南分省党支部第17期党课</div>
                         </div>
                     </li>
                 </ul>
             </div>
-		</div>
-
-		<div class="bui-panel">
-			<div class="bui-panel-head">示例:</div>
-			<div class="bui-panel-main">
-				<div class="container">
-					<h4>html:</h4>
-						
-					<xmp>
-<div id="slideNote" class="bui-slide bui-slide-note">
-<div class="bui-slide-main">
-    <ul>
-        <li>
-            <div class="note-item bui-box-align-middle">我是新闻标题1</div>
-        </li>
-        <li>
-            <div class="note-item bui-box-align-middle">我是新闻标题2</div>
-        </li>
-        <li>
-            <div class="note-item bui-box-align-middle">我是新闻标题3</div>
-        </li>
-    </ul>
-</div>
-</div>				
-                    </xmp>  
-                    <xmp>
-<style>
-.bui-slide-note .bui-slide-main ul li{
-    padding-left: .5rem;
-}
-.bui-slide-note .bui-slide-main .note-item{
-    line-height: 40px;
-}
-.bui-slide-note:before {
-    font-family: "icon" !important;
-    display: inline-block;
-    content: "\e63f";
-    font-size: .3rem;
-    position: absolute;
-    top: 50%;
-    left: .1rem;
-    margin-top: -.17rem;
-}
-.bui-slide-note .icon-listright {
-    margin-right: .2rem;
-}
-.note-item .span1{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-</style>  
-					</xmp>	
-					<h4>js:</h4>
-					<xmp>
-// 快速初始化
-var uiSlide = bui.slide({
-    id:"#slideNote",
-    height:40,
-    autoplay: true,
-    direction: "y"
-})
-			 		</xmp>
-					
-				</div>
-			</div>
-		</div>
+        </div>
 	</main>
 </div>

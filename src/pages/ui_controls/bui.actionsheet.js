@@ -7,21 +7,11 @@
         callback: todo
     })
 
-    // 也可以通过监听click 事件的方式处理回调
-    // uiActionsheet.on("click",todo)
-
     function todo(e) {
-            
         var val = $(e.target).attr("value");
 
-        console.log(val);
         if( val == "cancel"){
-            uiActionsheet.hide();
+            this.hide();
         }
     }
-    uiActionsheet.on("click",function (e) {
-        console.log(e)
-    })
-    // uiActionsheet.show();
-    // uiActionsheet.hide();
 })

@@ -1,33 +1,88 @@
 ﻿loader.define(function(require,exports,module) {
 
-    var $output = $("#output");
-
+    // 拍照上传
+    var $facePhoto = $("#buiPhoto");
     var uiUpload = bui.upload();
     
-    // 选择图片文件
-    $("#btnSelect").on("click",function () {
 
-        uiUpload.add({
-            "onSuccess": function (val,data) {
-                // $output.text(val);
-                console.log(val);
-                // 展示本地图片
-                this.toBase64({
-                    onSuccess: function (url) {
-                    $("#output").append('<img src="'+url+'" alt="" style="width:100%;"/>')
-                   
-                    }
-                });
+    // 上拉菜单 js 初始化: 
+    var uiActionsheet = bui.actionsheet({
+      trigger: "#btnUpload",
+      buttons: [{ name:"拍照上传",value:"camera" },{ name:"从相册选取",value:"photo" }],
+      callback: function (e) {
+        var ui = this;
+        var val = $(e.target).attr("value");
+        switch( val ){
+            case "camera":
+            ui.hide();
+            uiUpload.add({
+                "from": "camera",
+                "onSuccess": function (val,data) {
+                    var url = window.URL.createObjectURL(val[0]);
+                    $facePhoto.prepend(templatePhoto(url))
+                    // 展示base64本地图片
+                    // this.toBase64({
+                    //     onSuccess: function (url) {
+                    //         $facePhoto.prepend(templatePhoto(url))
+                       
+                    //     }
+                    // });
 
-                // 也可以直接调用start上传图片
-            }
-        })
 
+                    // 也可以直接调用start上传图片
+                }
+            })
+            
+            break;
+            case "photo":
+            ui.hide();
+            uiUpload.add({
+                "from": "",
+                "onSuccess": function (val,data) {
+                    var url = window.URL.createObjectURL(val[0]);
+                    $facePhoto.prepend(templatePhoto(url))
+                    // 展示base64本地图片
+                    // this.toBase64({
+                    //     onSuccess: function (url) {
+                    //         $facePhoto.prepend(templatePhoto(url))
+                       
+                    //     }
+                    // });
+
+
+                    // 也可以直接调用start上传图片
+                }
+            })
+
+            break;
+            case "cancel":
+            ui.hide();
+            break;
+        }
+      }
     })
+    
+    function templatePhoto(url) {
+        return `<div class="span1">
+                <div class="bui-upload-thumbnail"><img src="${url}" alt="" /><i class="icon-removefill"></i></div>
+            </div>`
+    }
+
+
+    
     // 选择图片文件
     $("#getSelect").on("click",function (argument) {
 
         bui.alert( uiUpload.data() );
+
+    })
+    
+    // 选择图片文件
+    $facePhoto.on("click",".icon-removefill",function (e) {
+        uiUpload.clear();
+
+        $(this).parents(".span1").remove();
+        e.stopPropagation();
 
     })
 
@@ -53,7 +108,6 @@
             onSuccess:function (data) {
                 console.log(data)
                 //显示上传以后的图片
-                // $output.append('<img src="http://eid.bingosoft.net:83'+data.detail[0].path+'" alt="" style="width:100%;"/>')
             },
             onFail:function (data) {
                 bui.alert(data)
@@ -67,5 +121,6 @@
         uiUpload.stop();
 
     })
+
 
 })

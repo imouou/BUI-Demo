@@ -11,10 +11,8 @@
     })
     
     // 2: 监听加载后的事件, load 只加载一次
-    tab.on("to",function (res) {
-        console.log($(this).index(),"to")
-    })
-
-    tab.to(0)
+    tab.on("to",function (index) {
+        console.log(index,"to")
+    }).to(0)
 
 })
