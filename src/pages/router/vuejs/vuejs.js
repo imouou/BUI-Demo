@@ -21,7 +21,7 @@ loader.define(function() {
                 
                     this.uiList = bui.list({
                         id: scrollVue,
-                        url: siteDir+"userlist.json",
+                        url: "http://www.easybui.com/demo/json/userlist.json",
                         page:1,
                         pageSize:5,
                         //如果分页的字段名不一样,通过field重新定义

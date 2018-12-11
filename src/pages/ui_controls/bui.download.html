@@ -1,31 +1,34 @@
-﻿
-<style>
+﻿<style>
     /*示例样式*/
+    
     .bui-btn {
         padding-left: .1rem;
         padding-right: .1rem;
     }
+    
     .bui-list .bui-btn i {
         font-size: 0.4rem;
         margin-right: 0.2rem;
     }
+    
     output {
         word-break: break-all;
     }
+    
     .bui-box-space {
         margin-bottom: .2rem;
     }
 </style>
 <div class="bui-page">
-	<header class="bui-bar">
-		<div class="bui-bar-left">
-			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
-		</div>
-		<div class="bui-bar-main">文件下载</div>
-		<div class="bui-bar-right">
-		</div>
-	</header>
-	<main>
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">文件下载</div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <main>
         <div class="section-title">
             下载: 支持安卓,ios不支持, web不支持
         </div>
@@ -50,7 +53,7 @@
             <div class="span1">
                 <div class="bui-btn" id="stopDownload">停止下载</div>
             </div>
-            
+
         </div>
         <div class="bui-box-space">
             <div class="span1">
@@ -67,48 +70,5 @@
             <output id="output">
             </output>
         </div>
-        <div class="bui-panel">
-            <div class="bui-panel-head">代码示例:</div>
-            <div class="bui-panel-main">
-                <div class="container">
-                    <h4>js:</h4>
-                    <xmp>
-// 初始化控件
-var uiDownload = bui.download();
-
-// 方法1: 直接下载图片
-$("#downloadImage").on("click",function (argument) {
-    // 开始下载
-    uiDownload.start({
-        url: "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1208/24/c2/13179846_1345796441964.jpg",
-        fileName: "customName.jpg",
-        onSuccess: function (url,file) {
-            // 下载成功
-        },
-        onFail: function (data) {
-            // bui.alert(data)
-        }
-    })
-})
-
-// 方法2: 先找本地文件,找不到再下载
-$("#getDownloadOpen").on("click",function (argument) {
-    uiDownload.getFile({
-        url: "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1208/24/c2/13179846_1345796441964.jpg",
-        fileName: "customName.jpg",
-        onSuccess: function (url) {
-            // 下载成功
-        }
-    })
-})
-                    </xmp>
-                    <h4>html:</h4>
-                    <xmp>
-<div class="bui-btn" id="downloadImage">下载图片</div>
-<div class="bui-btn" id="getDownloadOpen">打开图片</div>
-                    </xmp>
-                </div>
-            </div>
-        </div>
-	</main>
+    </main>
 </div>

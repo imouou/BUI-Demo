@@ -11,7 +11,7 @@
 
         var uiList = bui.list({
             id: "#scrollVue",
-            url: siteDir+"userlist.json",
+            url: "http://www.easybui.com/demo/json/userlist.json",
             page:1,
             pageSize:5,
             height:300,

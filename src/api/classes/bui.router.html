@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
             
         </div>
     </div>
@@ -483,6 +483,36 @@
                                 
                             </li>
                             
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[beforeBack]</code>
+                                    <span class="type">Function |  | Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1默认: null 每次后退前触发, 如果返回 false 则不后退, 不返回或者返回true 都会后退. ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[beforeLoad]</code>
+                                    <span class="type">Function |  | Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1默认: null 每次跳转前触发, 如果返回 false 则不跳转, 不返回或者返回true 都会跳转. ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
                         </ul>
                     
                 </li>
@@ -499,17 +529,17 @@
 
             <div class="example-content">
                 <p> html: </p>
-<pre class="code prettyprint"><code>&lt;div id=&quot;bui-router&quot;&gt;&lt;/div&gt;</code></pre>
+<pre class="code prettyprint"><code>  &lt;div id=&quot;bui-router&quot;&gt;&lt;/div&gt;</code></pre>
 <p> js: </p>
-<pre class="code prettyprint"><code>// 把路由实例化给 window.router
-window.router = bui.router();
+<pre class="code prettyprint"><code>  // 把路由实例化给 window.router
+  window.router = bui.router();
 
-bui.ready(function(){
-  // 路由初始化
-  router.init({
-      id: &quot;#bui-router&quot;
-  })
-})</code></pre>
+  bui.ready(function(){
+    // 路由初始化
+    router.init({
+        id: &quot;#bui-router&quot;
+    })
+  })</code></pre>
 
             </div>
         </div>
@@ -664,6 +694,13 @@ bui.ready(function(){
                                 
                             </li>
                         
+                            <li class="index-item method">
+                                <a href="#method_resize">resize</a>
+
+                                
+                                
+                            </li>
+                        
                     </ul>
                 </div>
             
@@ -738,7 +775,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2098"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2098</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2139"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2139</code></a>
         
         </p>
 
@@ -778,15 +815,15 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   // 比方当前页的事件绑定
-   router.$(&quot;#id&quot;).on(&quot;click&quot;,function (argument) {
+                <pre class="code prettyprint"><code>       // 比方当前页的事件绑定
+       router.$(&quot;#id&quot;).on(&quot;click&quot;,function (argument) {
 
-   })
+       })
 
-   // 比方第三方vue所在的页面需要重复加载
-   var vue = new Vue({
-       el: router.$(&quot;#id&quot;)[0]
-   })</code></pre>
+       // 比方第三方vue所在的页面需要重复加载
+       var vue = new Vue({
+           el: router.$(&quot;#id&quot;)[0]
+       })</code></pre>
 
             </div>
         </div>
@@ -838,7 +875,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1513"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1513</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1540"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1540</code></a>
         
         </p>
 
@@ -907,6 +944,21 @@ bui.ready(function(){
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[beforeBack]</code>
+                                    <span class="type">Function |  | Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1默认: null 每次后退前触发, 如果返回 false 则不后退, 不返回或者返回true 都会后退. ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[callback]</code>
                                     <span class="type">Function</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -935,38 +987,38 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   方法1: 
+                <pre class="code prettyprint"><code>       方法1: 
 
-   router.back();
+       router.back();
 
-   方法2: 后退上2页
+       方法2: 后退上2页
 
-   router.back({ index: -2 });
+       router.back({ index: -2 });
 
-   方法3: 后退以后刷新
+       方法3: 后退以后刷新
 
-   router.back({ 
-     callback: function() {
-       router.refresh();
-     } 
-   });
+       router.back({ 
+         callback: function() {
+           router.refresh();
+         } 
+       });
 
-   方法4: 后退以后执行当前模块的方法
+       方法4: 后退以后执行当前模块的方法
 
-   router.back({ 
-     callback: function(mod) {
-       mod.init();
-     } 
-   });
+       router.back({ 
+         callback: function(mod) {
+           mod.init();
+         } 
+       });
 
-   方法5: 全局监听后退事件
-   router.on(&quot;back&quot;,function (e) {
-       // 如果回退到首页则刷新页面
-         loader.require([&quot;main&quot;],function(main){
-           // 刷新main
-           main.init()
-         })
-   })</code></pre>
+       方法5: 全局监听后退事件
+       router.on(&quot;back&quot;,function (e) {
+           // 如果回退到首页则刷新页面
+             loader.require([&quot;main&quot;],function(main){
+               // 刷新main
+               main.init()
+             })
+       })</code></pre>
 
             </div>
         </div>
@@ -1010,7 +1062,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2056"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2056</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2095"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2095</code></a>
         
         </p>
 
@@ -1050,7 +1102,7 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var currentModule = router.currentModule();</code></pre>
+                <pre class="code prettyprint"><code>       var currentModule = router.currentModule();</code></pre>
 
             </div>
         </div>
@@ -1094,7 +1146,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2070"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2070</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2110"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2110</code></a>
         
         </p>
 
@@ -1135,18 +1187,18 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var currentPage = router.currentPage();
+                <pre class="code prettyprint"><code>       var currentPage = router.currentPage();
 
-   // 绑定当前区域的按钮
-   $(currentPage).on(&quot;click&quot;,&quot;.btn&quot;,function (e) {
-     console.log(this);
-   })
+       // 绑定当前区域的按钮
+       $(currentPage).on(&quot;click&quot;,&quot;.btn&quot;,function (e) {
+         console.log(this);
+       })
 
-   // 当前区域的控件初始化
-   var currentAccordion = $(&quot;.bui-accordion&quot;,currentPage);
-   var uiAccordion = bui.accordion({
-       id: currentAccordion
-   });</code></pre>
+       // 当前区域的控件初始化
+       var currentAccordion = $(&quot;.bui-accordion&quot;,currentPage);
+       var uiAccordion = bui.accordion({
+           id: currentAccordion
+       });</code></pre>
 
             </div>
         </div>
@@ -1198,7 +1250,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1658"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1658</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1694"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1694</code></a>
         
         </p>
 
@@ -1246,9 +1298,9 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   方法1: 
+                <pre class="code prettyprint"><code>       方法1: 
 
-   router.destroy(&quot;page&quot;);</code></pre>
+       router.destroy(&quot;page&quot;);</code></pre>
 
             </div>
         </div>
@@ -1292,7 +1344,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1796"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1796</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1835"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1835</code></a>
         
         </p>
 
@@ -1331,7 +1383,7 @@ bui.ready(function(){
 
             <div class="example-content">
                 <p> 方法: </p>
-<pre class="code prettyprint"><code>   var params = router.getPageParams();</code></pre>
+<pre class="code prettyprint"><code>       var params = router.getPageParams();</code></pre>
 
             </div>
         </div>
@@ -1348,7 +1400,7 @@ bui.ready(function(){
             
                 <li class="arg">
                     
-                        <code>pid</code>
+                        <code>id</code>
                     
                 </li>
             
@@ -1385,7 +1437,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1817"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1817</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1856"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1856</code></a>
         
         </p>
 
@@ -1410,14 +1462,14 @@ bui.ready(function(){
             
                 <li class="param">
                     
-                        <code class="param-name">pid</code>
+                        <code class="param-name">id</code>
                         <span class="type">string</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[可以通过loader.define的module参数获取到]</p>
+                        <p>[loadPart 局部加载的id]</p>
 
                     </div>
 
@@ -1449,12 +1501,12 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   loader.define(function(require,exports,module) {
+                <pre class="code prettyprint"><code>       loader.define(function(require,exports,module) {
 
-     var pid = module.moduleName,
-         params = router.getPartParams(pid);
+         var pid = module.moduleName,
+             params = router.getPartParams(pid);
 
-   })</code></pre>
+       })</code></pre>
 
             </div>
         </div>
@@ -1500,7 +1552,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l202"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:202</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l211"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:211</code></a>
         
         </p>
 
@@ -1542,7 +1594,7 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var _history = router.history.get();</code></pre>
+                <pre class="code prettyprint"><code>       var _history = router.history.get();</code></pre>
 
             </div>
         </div>
@@ -1594,7 +1646,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l417"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:417</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l427"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:427</code></a>
         
         </p>
 
@@ -1642,10 +1694,10 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  // 路由初始化, 默认会加载main模块
-   router.init({
-       id: &quot;#bui-router&quot;
-   })</code></pre>
+                <pre class="code prettyprint"><code>      // 路由初始化, 默认会加载main模块
+       router.init({
+           id: &quot;#bui-router&quot;
+       })</code></pre>
 
             </div>
         </div>
@@ -1689,7 +1741,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2127"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2127</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2169"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2169</code></a>
         
         </p>
 
@@ -1729,18 +1781,18 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var currentPage = router.currentPage();
+                <pre class="code prettyprint"><code>       var currentPage = router.currentPage();
 
-   // 例如, 按钮点击的时候,需要显示底部隐藏
-   $(&quot;.btn&quot;).on(&quot;click&quot;,function (e) {
+       // 例如, 按钮点击的时候,需要显示底部隐藏
+       $(&quot;.btn&quot;).on(&quot;click&quot;,function (e) {
 
-     // 获取当前页的底部
-     $(&quot;footer&quot;,currentPage).hide();
+         // 获取当前页的底部
+         $(&quot;footer&quot;,currentPage).hide();
 
-     // 执行一次滚动初始化
-     router.initScroll();
+         // 执行一次滚动初始化
+         router.initScroll();
 
-   })</code></pre>
+       })</code></pre>
 
             </div>
         </div>
@@ -1794,7 +1846,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1851"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1851</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1890"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1890</code></a>
         
         </p>
 
@@ -1855,7 +1907,7 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var isLoad = router.isLoad(&quot;main&quot;);</code></pre>
+                <pre class="code prettyprint"><code>       var isLoad = router.isLoad(&quot;main&quot;);</code></pre>
 
             </div>
         </div>
@@ -1907,7 +1959,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l853"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:853</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l868"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:868</code></a>
         
         </p>
 
@@ -2014,6 +2066,21 @@ bui.ready(function(){
                                 
                             </li>
                             
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[beforeLoad]</code>
+                                    <span class="type">Function |  | Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1默认: null 跳转前触发, 如果全局有,默认使用全局判断, 返回true 则忽略全局判断. ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
                         </ul>
                     
                 </li>
@@ -2029,9 +2096,9 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code> // 方法: 模块名为: pages/page2/page2 
+                <pre class="code prettyprint"><code>     // 方法: 模块名为: pages/page2/page2 
 
-   router.load({ url: &quot;pages/page2/page2.html&quot;, param: {} });</code></pre>
+       router.load({ url: &quot;pages/page2/page2.html&quot;, param: {} });</code></pre>
 
             </div>
         </div>
@@ -2087,7 +2154,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1441"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1441</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1468"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1468</code></a>
         
         </p>
 
@@ -2197,16 +2264,16 @@ bui.ready(function(){
 
             <div class="example-content">
                 <p> 方法1: 加载某个模块到页面的id=part2, 模块名为: pages/page2/page2</p>
-<pre class="code prettyprint"><code>   router.loadPart({ id:&quot;#part2&quot;, url: &quot;pages/page2/page2.html &quot;});
+<pre class="code prettyprint"><code>       router.loadPart({ id:&quot;#part2&quot;, url: &quot;pages/page2/page2.html &quot;});
 
-   // 方法2: 新增回调
+       // 方法2: 新增回调
 
-   router.loadPart({ 
-         url: &quot;pages/page2/page2.html&quot;, 
-         param: {} 
-   }).then(function (module) {
-     // 加载模块以后执行
-   });</code></pre>
+       router.loadPart({ 
+             url: &quot;pages/page2/page2.html&quot;, 
+             param: {} 
+       }).then(function (module) {
+         // 加载模块以后执行
+       });</code></pre>
 
             </div>
         </div>
@@ -2264,7 +2331,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1982"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1982</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2021"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2021</code></a>
         
         </p>
 
@@ -2330,17 +2397,17 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   //获取所有参数
-   var option = router.option();
+                <pre class="code prettyprint"><code>       //获取所有参数
+       var option = router.option();
 
-   //获取某个参数
-   var effect = router.option( &quot;effect&quot; );
+       //获取某个参数
+       var effect = router.option( &quot;effect&quot; );
 
-   //修改一个参数
-   router.option( &quot;effect&quot;,&quot;cover&quot; );
+       //修改一个参数
+       router.option( &quot;effect&quot;,&quot;cover&quot; );
 
-   //修改多个参数
-   router.option( {&quot;effect&quot;:&quot;cover&quot;} );</code></pre>
+       //修改多个参数
+       router.option( {&quot;effect&quot;:&quot;cover&quot;} );</code></pre>
 
             </div>
         </div>
@@ -2394,7 +2461,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l725"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:725</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l766"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:766</code></a>
         
         </p>
 
@@ -2506,17 +2573,17 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   // 预加载一个页面
-   router.preload({ url: &quot;pages/page2/page2.html &quot; });
+                <pre class="code prettyprint"><code>       // 预加载一个页面
+       router.preload({ url: &quot;pages/page2/page2.html &quot; });
 
-   // 预加载多个页面
-   router.preload([{
-       url: &quot;pages/about/index.html&quot;
-     },{
-       url: &quot;pages/router/index.html&quot;
-   }]).then(function () {
-       // 全部加载以后执行
-   })</code></pre>
+       // 预加载多个页面
+       router.preload([{
+           url: &quot;pages/about/index.html&quot;
+         },{
+           url: &quot;pages/router/index.html&quot;
+       }]).then(function () {
+           // 全部加载以后执行
+       })</code></pre>
 
             </div>
         </div>
@@ -2556,7 +2623,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1740"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1740</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1779"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1779</code></a>
         
         </p>
 
@@ -2580,8 +2647,8 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   // 方法: 
-   router.refresh();</code></pre>
+                <pre class="code prettyprint"><code>       // 方法: 
+       router.refresh();</code></pre>
 
             </div>
         </div>
@@ -2635,7 +2702,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1767"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1767</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1806"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1806</code></a>
         
         </p>
 
@@ -2728,9 +2795,76 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   router.replace({
-       url: &quot;pages/page3/page3.html&quot;
-   });</code></pre>
+                <pre class="code prettyprint"><code>       router.replace({
+           url: &quot;pages/page3/page3.html&quot;
+       });</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_resize" class="method item">
+    <h3 class="name"><code>resize</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l514"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:514</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>[重新设置路由宽高 ]</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 重新设置路由宽高
+       router.resize();</code></pre>
 
             </div>
         </div>
@@ -2773,7 +2907,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2030"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2030</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2069"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2069</code></a>
         
         </p>
 
@@ -2805,7 +2939,7 @@ bui.ready(function(){
                     
 
                     <div class="param-description">
-                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候  ]</p>
+                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候 | &quot;resize&quot; 改变窗口的时候 ]</p>
 
                     </div>
 
@@ -2839,7 +2973,7 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   router.off(&quot;refresh&quot;);</code></pre>
+                <pre class="code prettyprint"><code>       router.off(&quot;refresh&quot;);</code></pre>
 
             </div>
         </div>
@@ -2870,7 +3004,7 @@ bui.ready(function(){
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2008"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2008</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2047"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2047</code></a>
         
         </p>
 
@@ -2903,7 +3037,7 @@ bui.ready(function(){
                     
 
                     <div class="param-description">
-                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候  ]</p>
+                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候  | &quot;resize&quot; 改变窗口的时候 ]</p>
 
                     </div>
 
@@ -2937,10 +3071,10 @@ bui.ready(function(){
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>     router.on(&quot;refresh&quot;,function () {
-         // 点击的菜单
-         console.log(this);
-     });</code></pre>
+                <pre class="code prettyprint"><code>         router.on(&quot;refresh&quot;,function () {
+             // 点击的菜单
+             console.log(this);
+         });</code></pre>
 
             </div>
         </div>

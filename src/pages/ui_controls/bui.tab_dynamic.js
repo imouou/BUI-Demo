@@ -10,7 +10,7 @@
     
     // 2: 监听加载后的事件
     tab.on("to",function (index) {
-        
+        console.log(index,"parent")
         switch(index){
             case 0:
             loader.require(["pages/ui_controls/bui.tab_dynamic_page1"],function (mod) {

@@ -8,7 +8,7 @@
 
         var uiList = bui.list({
             id: "#tabListScroll",
-            url: siteDir + "userlist.json",
+            url: "http://www.easybui.com/demo/json/userlist.json",
             data: {},
             page:1,
             pageSize:5,
@@ -22,7 +22,7 @@
         });
         var uiList2 = bui.list({
             id: "#tabListScroll2",
-            url: siteDir+"userlist.json",
+            url: "http://www.easybui.com/demo/json/userlist.json",
             data: {},
             page:1,
             pageSize:5,

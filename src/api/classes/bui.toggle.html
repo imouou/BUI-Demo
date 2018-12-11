@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
             
         </div>
     </div>
@@ -222,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l7"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:7</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:8</code></a>
         </div>
     
 
@@ -307,7 +307,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l7"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:7</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:8</code></a>
         
         </p>
 
@@ -352,7 +352,7 @@
                     
 
                     <div class="param-description">
-                        <p>[内置的效果, none (无动画) | showIn | fadeIn | fadeInLeft | fadeInRight | fadeInDown | fadeInUp | zoomIn | bounceIn | rotateIn | flipInX | flipInY]</p>
+                        <p>[内置的效果, none (无动画) | showIn(无动画) | fadeIn | fadeInLeft | fadeInRight | fadeInDown | fadeInUp | zoomIn | bounceIn | rotateIn | flipInX | flipInY]</p>
 
                     </div>
 
@@ -386,23 +386,28 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>   方法1: </p>
-<pre class="code prettyprint"><code>       //初始化page对象
-   var uiToggle = bui.toggle(&quot;#page&quot;);
+                <pre class="code prettyprint"><code> 方法1: 
 
-       //显示动画
-       uiToggle.show();
+         //初始化page对象
+     var uiToggle = bui.toggle(&quot;#page&quot;);
 
-       //隐藏动画
-       uiToggle.hide();</code></pre>
-<p>   方法2:</p>
-<pre class="code prettyprint"><code>   var uiToggle = bui.toggle({ id:&quot;#page&quot; ,effect:&quot;fadeInLeft&quot;});
-       uiToggle.show();
-       uiToggle.hide();</code></pre>
-<p>   方法3: 自定义动画库里面没有的动画</p>
-<pre class="code prettyprint"><code>   var uiToggle = bui.toggle(&quot;#page&quot;);
-       uiToggle.show(&quot;fadeInLeft&quot;);
-       uiToggle.hide(&quot;fadeOutLeft&quot;);</code></pre>
+         //显示动画
+         uiToggle.show();
+
+         //隐藏动画
+         uiToggle.hide();
+
+ 方法2:
+
+     var uiToggle = bui.toggle({ id:&quot;#page&quot; ,effect:&quot;fadeInLeft&quot;});
+         uiToggle.show();
+         uiToggle.hide();
+
+ 方法3: 自定义动画库里面没有的动画
+
+     var uiToggle = bui.toggle(&quot;#page&quot;);
+         uiToggle.show(&quot;fadeInLeft&quot;);
+         uiToggle.hide(&quot;fadeOutLeft&quot;);</code></pre>
 
             </div>
         </div>
@@ -541,7 +546,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l311"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:311</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l310"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:310</code></a>
         
         </p>
 
@@ -608,13 +613,13 @@
             
                 <li class="arg">
                     
-                        <code class="optional">[effect]</code>
+                        <code class="optional">[callback|effect]</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code class="optional">[callback]</code>
+                        <code class="optional">[effect]</code>
                     
                 </li>
             
@@ -649,7 +654,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l230"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:230</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l227"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:227</code></a>
         
         </p>
 
@@ -672,15 +677,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[effect]</code>
-                        <span class="type">String</span>
+                        <code class="param-name optional">[callback|effect]</code>
+                        <span class="type">Function | String</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>指定单次隐藏动画效果</p>
+                        <p>[1.5.1回调]</p>
 
                     </div>
 
@@ -689,15 +694,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[callback]</code>
-                        <span class="type">Function</span>
+                        <code class="param-name optional">[effect]</code>
+                        <span class="type">String</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>回调</p>
+                        <p>[1.5.1 指定单次隐藏动画效果]</p>
 
                     </div>
 
@@ -756,7 +761,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l149"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:149</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l144"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:144</code></a>
         
         </p>
 
@@ -841,7 +846,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l344"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:344</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l343"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:343</code></a>
         
         </p>
 
@@ -960,7 +965,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l296"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:296</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l295"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:295</code></a>
         
         </p>
 
@@ -1002,13 +1007,13 @@
             
                 <li class="arg">
                     
-                        <code class="optional">[effect]</code>
+                        <code class="optional">[callback]</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code class="optional">[callback]</code>
+                        <code class="optional">[effect]</code>
                     
                 </li>
             
@@ -1043,7 +1048,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l161"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:161</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l156"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:156</code></a>
         
         </p>
 
@@ -1066,15 +1071,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[effect]</code>
-                        <span class="type">String</span>
+                        <code class="param-name optional">[callback]</code>
+                        <span class="type">Function | String</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>指定单次显示动画效果</p>
+                        <p>[1.5.1 回调]</p>
 
                     </div>
 
@@ -1083,15 +1088,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[callback]</code>
-                        <span class="type">Function</span>
+                        <code class="param-name optional">[effect]</code>
+                        <span class="type">String</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>回调</p>
+                        <p>[1.5.1 指定单次显示动画效果]</p>
 
                     </div>
 
@@ -1160,7 +1165,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l329"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:329</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_animate_bui.toggle.js.html#l328"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;animate&#x2F;bui.toggle.js:328</code></a>
         
         </p>
 

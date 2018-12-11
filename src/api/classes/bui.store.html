@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
             
         </div>
     </div>
@@ -222,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l9"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:9</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l10"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:10</code></a>
         </div>
     
 
@@ -298,7 +298,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l9"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:9</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l10"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:10</code></a>
         
         </p>
 
@@ -441,27 +441,36 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>   var store = bui.store({
+                <pre class="code prettyprint"><code>   var store = bui.store({
      scope: &quot;app&quot;,
      data: {
        page: 1
      }
-   });</p>
-<p>   // 这样就会设置内容为1
-   <div b-text="app:page"></div></p>
-<p>   你还可以监听该对象改变的时候,做些其它事情
+   });
+
+   // 这样就会设置内容为1
+   &lt;div b-text=&quot;app:page&quot;&gt;&lt;/div&gt;
+
+   你还可以监听该对象改变的时候,做些其它事情
    // 监听 page 改变的时候触发
-   store.on(&quot;page&quot;,function(2){</p>
-<p>   })</p>
-<p>   // 设置以后就会触发
-   store.page = 2;</p>
-<p> 方法2: </p>
-<p>   // 监听 page 下 name 改变的时候触发
-   store.on(&quot;page.name&quot;,function(2){</p>
-<p>   })</p>
-<p>   // 修改 page 数据
-   store.set(&quot;page.name&quot;,1321);</p>
-<p>   // page.name = 1321;</p>
+   store.on(&quot;page&quot;,function(2){
+
+   })
+
+   // 设置以后就会触发
+   store.page = 2;
+
+ 方法2: 
+
+   // 监听 page 下 name 改变的时候触发
+   store.on(&quot;page.name&quot;,function(2){
+
+   })
+
+   // 修改 page 数据
+   store.set(&quot;page.name&quot;,1321);
+
+   // page.name = 1321;</code></pre>
 
             </div>
         </div>
@@ -602,7 +611,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l747"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:747</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l771"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:771</code></a>
         
         </p>
 
@@ -651,12 +660,12 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  方法1: 
-  var page = store.del(&quot;page&quot;);
-  // { page: 1}
+                <pre class="code prettyprint"><code>      方法1: 
+      var page = store.del(&quot;page&quot;);
+      // { page: 1}
 
-  方法2: 指定字段层级
-  var page = store.del(&quot;page.name&quot;);</code></pre>
+      方法2: 指定字段层级
+      var page = store.del(&quot;page.name&quot;);</code></pre>
 
             </div>
         </div>
@@ -708,7 +717,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l583"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:583</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l607"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:607</code></a>
         
         </p>
 
@@ -757,7 +766,7 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  var page = store.get(&quot;page&quot;);</code></pre>
+                <pre class="code prettyprint"><code>      var page = store.get(&quot;page&quot;);</code></pre>
 
             </div>
         </div>
@@ -815,7 +824,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l849"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:849</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l873"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:873</code></a>
         
         </p>
 
@@ -881,17 +890,17 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  var log = function(val){
-     console.log(val)  // 2
-   }
-   // 监听 page 改变的时候触发
-   store.on(&quot;page&quot;,log)
+                <pre class="code prettyprint"><code>      var log = function(val){
+         console.log(val)  // 2
+       }
+       // 监听 page 改变的时候触发
+       store.on(&quot;page&quot;,log)
 
-   // 取消
-   store.off(&quot;page&quot;,log)
+       // 取消
+       store.off(&quot;page&quot;,log)
 
-   // 修改 page 数据
-   store.set(&quot;page&quot;,2);</code></pre>
+       // 修改 page 数据
+       store.set(&quot;page&quot;,2);</code></pre>
 
             </div>
         </div>
@@ -949,7 +958,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l786"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:786</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l810"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:810</code></a>
         
         </p>
 
@@ -1015,21 +1024,21 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  // 监听 page 改变的时候触发
-   store.on(&quot;page&quot;,function(val){
-     console.log(val)  // 2
-   })
+                <pre class="code prettyprint"><code>      // 监听 page 改变的时候触发
+       store.on(&quot;page&quot;,function(val){
+         console.log(val)  // 2
+       })
 
-   // 监听 page 下 name 改变的时候触发
-   store.on(&quot;page.name&quot;,function(val){
-     console.log(val)  // 3
-   })
+       // 监听 page 下 name 改变的时候触发
+       store.on(&quot;page.name&quot;,function(val){
+         console.log(val)  // 3
+       })
 
-   // 修改 page 数据
-   store.set(&quot;page&quot;,2);
+       // 修改 page 数据
+       store.set(&quot;page&quot;,2);
 
-   // 修改 page.name 数据
-   store.set(&quot;page.name&quot;,3);</code></pre>
+       // 修改 page.name 数据
+       store.set(&quot;page.name&quot;,3);</code></pre>
 
             </div>
         </div>
@@ -1087,7 +1096,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l817"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:817</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l841"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:841</code></a>
         
         </p>
 
@@ -1153,21 +1162,21 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  // 监听 page 改变的时候触发
-   store.one(&quot;page&quot;,function(val){
-     console.log(val)  // 2
-   })
+                <pre class="code prettyprint"><code>      // 监听 page 改变的时候触发
+       store.one(&quot;page&quot;,function(val){
+         console.log(val)  // 2
+       })
 
-   // 监听 page 下 name 改变的时候触发
-   store.one(&quot;page.name&quot;,function(val){
-     console.log(val)  // 3
-   })
+       // 监听 page 下 name 改变的时候触发
+       store.one(&quot;page.name&quot;,function(val){
+         console.log(val)  // 3
+       })
 
-   // 修改 page 数据
-   store.set(&quot;page&quot;,2);
+       // 修改 page 数据
+       store.set(&quot;page&quot;,2);
 
-   // 修改 page.name 数据
-   store.set(&quot;page.name&quot;,3);</code></pre>
+       // 修改 page.name 数据
+       store.set(&quot;page.name&quot;,3);</code></pre>
 
             </div>
         </div>
@@ -1225,7 +1234,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l606"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:606</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l630"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:630</code></a>
         
         </p>
 
@@ -1291,13 +1300,13 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  方法1: 
-  var page = store.set(&quot;page&quot;,1);
-  // { page: 1}
+                <pre class="code prettyprint"><code>      方法1: 
+      var page = store.set(&quot;page&quot;,1);
+      // { page: 1}
 
-  方法2: 指定字段层级
-  var page = store.set(&quot;page.name&quot;,1);
-  // { page: { name: 1 }}</code></pre>
+      方法2: 指定字段层级
+      var page = store.set(&quot;page.name&quot;,1);
+      // { page: { name: 1 }}</code></pre>
 
             </div>
         </div>
@@ -1349,7 +1358,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l878"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:878</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l902"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:902</code></a>
         
         </p>
 
@@ -1398,8 +1407,8 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>  // 触发 2 为传过去的参数
-  store.trigger(&quot;page&quot;,&quot;2&quot;)</code></pre>
+                <pre class="code prettyprint"><code>      // 触发 2 为传过去的参数
+      store.trigger(&quot;page&quot;,&quot;2&quot;)</code></pre>
 
             </div>
         </div>

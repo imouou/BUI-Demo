@@ -32,7 +32,7 @@ loader.define(function() {
         });
 
         bui.ajax({
-            url: siteDir+"chuangyi/article-list.json"
+            url: "http://www.easybui.com/demo/json/chuangyi/article-list.json"
         }).then(function (data) {
             // 限制渲染的条数
             data.length = 3;

@@ -2,7 +2,7 @@
 
     var uiList = bui.list({
             id: "#scrollNews",
-            url: siteDir+"chuangyi/article-list.json",
+            url: "http://www.easybui.com/demo/json/chuangyi/article-list.json",
             page:1,
             pageSize:9,
             //height:300,

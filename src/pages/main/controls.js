@@ -3,7 +3,7 @@ loader.define(function(require, exports, module) {
 
     var pageview = {};
     var uiAccordion = null;
-    pageview.init = function (argument) {
+    pageview.init = function(argument) {
         var accordionHeight = $(window).height() - $(".intro").height() - $("#tabDynamic > .bui-tab-head").height();
         // 初始化折叠菜单
         uiAccordion = bui.accordion({
@@ -14,13 +14,13 @@ loader.define(function(require, exports, module) {
                 controls.scrollTop = e.target.offsetTop - 5;
             }
         });
-        
+
         uiAccordion.showFirst()
     }
-    
+
 
     pageview.init();
 
     return pageview;
-    
+
 })

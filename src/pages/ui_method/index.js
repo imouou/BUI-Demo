@@ -4,9 +4,9 @@
     // 检测版本更新
     bui.checkVersion({
         id: "#checkVersion",
-        url: siteDir+"versionUpdate.json",
-        currentVersion: "1.3.6",
-        currentVersionCode: "20180113"
+        url: "http://www.easybui.com/demo/json/versionUpdate.json",
+        currentVersion: "1.4.8",
+        currentVersionCode: "201800901"
     });
     
 })

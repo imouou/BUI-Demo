@@ -1,25 +1,17 @@
 ﻿loader.define(function(require,exports,module) {
 
     // pullRefresh 初始化
-    var uiPullRefresh;
-        uiPullRefresh = bui.pullrefresh({
+    var uiPullRefresh = bui.pullrefresh({
             id: "#pullrefresh",
             onRefresh : getData
         });
 
-        // uiPullRefresh.refresh();
-        // 监听刷新事件
-        // uiPullRefresh.on("refresh",function (argument) {
-        //     console.log("12")
-        // })
-        
-        // uiPullRefresh.option("lastUpdated",false)
 //刷新数据
     function getData () {
         var _self = this;
 
         bui.ajax({
-            url: siteDir+"shop.json",
+            url: "http://www.easybui.com/demo/json/shop.json",
             data: {
                 pageindex:1,
                 pagesize:4

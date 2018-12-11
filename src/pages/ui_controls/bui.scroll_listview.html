@@ -1,90 +1,26 @@
-﻿
-<style>
-    .bui-listview .bui-btn i {
-        font-size: 0.4rem;
-        margin-right: 0.2rem;
+﻿<style>
+    .btn-blue {
+        background: #ccc;
     }
-	.btn-blue {
-		background: #ccc;
-	}
 </style>
 <div class="bui-page">
-	<header class="bui-bar">
-		<div class="bui-bar-left">
-			<a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
-		</div>
-		<div class="bui-bar-main">滚动加载及列表侧滑组合</div>
-		<div class="bui-bar-right">
-		</div>
-	</header>
-	<main>
-		<div id="scrollListview" class="bui-scroll">
-			<div class="bui-scroll-head"></div>
-			<div class="bui-scroll-main">
-				<ul id="scrollList" class="bui-listview">
-				</ul>
-			</div>
-			<div class="bui-scroll-foot"></div>
-		</div>
-
-        <div class="bui-panel">
-            <div class="bui-panel-head"><strong>示例:</strong></div>
-            <div class="bui-panel-main">
-                <div class="container">
-                <h4>html:</h4>
-                <xmp>
-<div id="scroll" class="bui-scroll">
-  <div class="bui-scroll-head"></div>
-  <div class="bui-scroll-main">
-    <ul id="scrollList" class="bui-list">
-    </ul>
-  </div>
-  <div class="bui-scroll-foot"></div>
-</div>
-                </xmp>
-                <h4>js:</h4>
-                <xmp>
-//初始化scroll
-var uiScroll = bui.scroll({
-    id: "#scroll",
-    children: ".bui-list li",
-    page:1,
-    pageSize:5,
-    loadUp: refresh,
-    loadDown: getData
-})
-
-//刷新数据
-function refresh () {
-    var page = 1;
-    var pagesize = 5;
-    getData(page,pagesize,"html");
-}
-
-//新增下一页数据
-function getData(start,pagesize,command){
-  var command = command || "append";
-  
-  //请求数据成功以后更新分页信息
-  uiScroll.updateCache(start,data);
-  //刷新成功以后还原刷新前状态
-  uiScroll.reverse();
-
-
-  //数据渲染以后初始化列表控件
-  var listView = bui.listview({
-    id: "#scrollList",
-    menu: [{ 
-        "text": "修改", 
-        "classname":"btn-blue"
-    }],
-    callback: function (menu) {
-    }
-  });
-}
-                </xmp>
-                </div>
-            </div>
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
         </div>
-	</main>
+        <div class="bui-bar-main">滚动加载及列表侧滑组合</div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <main>
+        <div id="scrollListview" class="bui-scroll">
+            <div class="bui-scroll-head"></div>
+            <div class="bui-scroll-main">
+                <ul id="scrollList" class="bui-listview">
+                </ul>
+            </div>
+            <div class="bui-scroll-foot"></div>
+        </div>
+
+    </main>
 </div>

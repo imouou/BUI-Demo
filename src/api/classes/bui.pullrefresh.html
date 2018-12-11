@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
             
         </div>
     </div>
@@ -222,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:8</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l9"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:9</code></a>
         </div>
     
 
@@ -303,7 +303,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l8"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:8</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l9"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:9</code></a>
         
         </p>
 
@@ -524,47 +524,50 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p> html:</p>
-<pre class="code prettyprint"><code>    &lt;div id=&quot;scroll&quot; class=&quot;bui-scroll&quot;&gt;
-        &lt;div class=&quot;bui-scroll-head&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;bui-scroll-main&quot;&gt;
-            &lt;ul class=&quot;bui-list&quot;&gt;
-                &lt;li class=&quot;bui-btn&quot;&gt;这里是循环的内容&lt;/li&gt;
-            &lt;/ul&gt; 
+                <pre class="code prettyprint"><code> html:
+
+        &lt;div id=&quot;scroll&quot; class=&quot;bui-scroll&quot;&gt;
+            &lt;div class=&quot;bui-scroll-head&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;bui-scroll-main&quot;&gt;
+                &lt;ul class=&quot;bui-list&quot;&gt;
+                    &lt;li class=&quot;bui-btn&quot;&gt;这里是循环的内容&lt;/li&gt;
+                &lt;/ul&gt; 
+            &lt;/div&gt;
+            &lt;div class=&quot;bui-scroll-foot&quot;&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;bui-scroll-foot&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-<p> js: </p>
-<pre class="code prettyprint"><code>    // 初始化
-    var uiPullRefresh = bui.pullrefresh({
-        id: &quot;#scroll&quot;,
-        onRefresh: getData
-    })
 
-    //数据请求示例
-    var start = 1;
-    var pagesize = 4;
-    function getData (start,pagesize) {
-        var _self = this;
-        bui.ajax({
-            url: &quot;http://localhost/mysite/yumeng/index.php/API/Usercenter/getUserList&quot;,
-            data: {
-                pageindex:start,
-                pagesize:pagesize
-            }
-        }).done(function(res) {
+ js: 
 
-            console.log(res);
-
-            //请求成功以后还原位置
-            uiPullRefresh.reverse();
-
-        }).fail(function (res) {
-            //请求失败以后改为点击加载
-            uiPullRefresh.fail();
-
+        // 初始化
+        var uiPullRefresh = bui.pullrefresh({
+            id: &quot;#scroll&quot;,
+            onRefresh: getData
         })
-    }</code></pre>
+
+        //数据请求示例
+        var start = 1;
+        var pagesize = 4;
+        function getData (start,pagesize) {
+            var _self = this;
+            bui.ajax({
+                url: &quot;http://localhost/mysite/yumeng/index.php/API/Usercenter/getUserList&quot;,
+                data: {
+                    pageindex:start,
+                    pagesize:pagesize
+                }
+            }).done(function(res) {
+
+                console.log(res);
+
+                //请求成功以后还原位置
+                uiPullRefresh.reverse();
+
+            }).fail(function (res) {
+                //请求失败以后改为点击加载
+                uiPullRefresh.fail();
+
+            })
+        }</code></pre>
 
             </div>
         </div>
@@ -748,7 +751,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l783"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:783</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l785"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:785</code></a>
         
         </p>
 
@@ -852,7 +855,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l713"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:713</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l715"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:715</code></a>
         
         </p>
 
@@ -953,7 +956,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l185"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:185</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l186"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:186</code></a>
         
         </p>
 
@@ -1045,7 +1048,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l549"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:549</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l551"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:551</code></a>
         
         </p>
 
@@ -1153,7 +1156,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l824"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:824</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l826"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:826</code></a>
         
         </p>
 
@@ -1272,7 +1275,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l734"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:734</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l736"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:736</code></a>
         
         </p>
 
@@ -1361,7 +1364,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l607"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:607</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l609"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:609</code></a>
         
         </p>
 
@@ -1497,7 +1500,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l756"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:756</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l758"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:758</code></a>
         
         </p>
 
@@ -1599,7 +1602,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l579"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:579</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l581"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:581</code></a>
         
         </p>
 
@@ -1699,7 +1702,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l809"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:809</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l811"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:811</code></a>
         
         </p>
 
@@ -1792,7 +1795,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l872"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:872</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l874"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:874</code></a>
         
         </p>
 
@@ -1889,7 +1892,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l852"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:852</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pullrefresh.js.html#l854"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pullrefresh.js:854</code></a>
         
         </p>
 

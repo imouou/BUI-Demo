@@ -4,7 +4,7 @@
 
     page.init = function (e) {
         console.log("这里是动态加载的页面")
-        // body...
+
     }
     return page;
 })

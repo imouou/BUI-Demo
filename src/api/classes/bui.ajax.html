@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.0 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
             
         </div>
     </div>
@@ -222,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.ajax.js.html#l21"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.ajax.js:21</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.ajax.js.html#l22"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.ajax.js:22</code></a>
         </div>
     
 
@@ -288,7 +288,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.ajax.js.html#l21"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.ajax.js:21</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.ajax.js.html#l22"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.ajax.js:22</code></a>
         
         </p>
 
@@ -419,7 +419,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[默认 &#39;text/html;charset=UTF-8&#39; | &#39;application/x-www-form-urlencoded&#39;(表单) | &#39;multipart/form-data&#39;(表单里有file文件) | &#39;application/json&#39;(后端要用@requestbody接收) ]&#39;</p>
+                                    <p>[默认 &#39;text/html;charset=UTF-8&#39; | &#39;application/x-www-form-urlencoded&#39;(表单,接口跨域需要设置这个) | &#39;multipart/form-data&#39;(表单里有file文件) | &#39;application/json&#39;(后端要用@requestbody接收) ]&#39;</p>
 
                                 </div>
 
@@ -449,7 +449,22 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[1.4.6新增,默认 true|false. true时当contentType=&quot;application/json&quot;并且data是对象的话,会尝试把数据转换为string. ]</p>
+                                    <p>[1.4.6新增,默认 false|true. true时会尝试把数据转换为string. 这个主要配合list控件的特殊请求使用,正常都是一个对象 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[needNative]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1新增,默认 false 使用webajax | true 使用原生, 大部分打包以后支持跨域,如果不支持,再手动切换成原生, 前提是你的bui.js是支持原生版 ]</p>
 
                                 </div>
 

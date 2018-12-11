@@ -1,34 +1,34 @@
-﻿loader.define(function(require,exports,module) {
+﻿loader.define(function(require, exports, module) {
 
     // 快速初始化
-      
+
     var uiSlide = bui.slide({
-        id:"#slide",
-        height:380,
+        id: "#slide",
+        height: 380,
         autopage: true,
         loop: true,
     })
-    
 
-    router.$("#prev").on("click",function () {
+
+    router.$("#prev").on("click", function() {
         uiSlide.prev();
     })
-    router.$("#next").on("click",function () {
+    router.$("#next").on("click", function() {
         uiSlide.next();
     })
-    router.$("#autoplay").on("change",function () {
+    router.$("#autoplay").on("change", function() {
         var isChecked = $(this).is(":checked");
-        if( isChecked ){
+        if (isChecked) {
             uiSlide.start();
-        }else{
+        } else {
             uiSlide.stop();
         }
     })
-    router.$("#unlock").on("change",function () {
+    router.$("#unlock").on("change", function() {
         var isChecked = $(this).is(":checked");
-        if( isChecked ){
+        if (isChecked) {
             uiSlide.unlock();
-        }else{
+        } else {
             uiSlide.lock();
         }
     })

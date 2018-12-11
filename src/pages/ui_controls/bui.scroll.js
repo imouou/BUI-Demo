@@ -31,7 +31,7 @@ loader.define(function(require,exports,module) {
         var command = command || "append";
 
         bui.ajax({
-            url: siteDir+"shop.json",
+            url: "http://www.easybui.com/demo/json/shop.json",
             data: {
                 pageindex:page,
                 pagesize:pagesize

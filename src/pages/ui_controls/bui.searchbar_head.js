@@ -41,7 +41,7 @@
                 // 列表初始化
                 uiList = bui.list({
                     id: "#scrollSearch",
-                    url: siteDir + "shop.json",
+                    url: "http://www.easybui.com/demo/json/shop.json",
                     field: {
                         data:"data"
                     },
