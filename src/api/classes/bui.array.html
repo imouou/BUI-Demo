@@ -281,6 +281,20 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_delete">delete</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_empty">empty</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_excess">excess</a>
 
                                 
@@ -309,7 +323,35 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_merge">merge</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_remove">remove</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_replace">replace</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_set">set</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_uniq">uniq</a>
 
                                 
                                 
@@ -340,7 +382,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>value</code>
                     
                 </li>
             
@@ -412,14 +454,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
+                        <code class="param-name">value</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[字符串]</p>
+                        <p>[要比对的值值]</p>
 
                     </div>
 
@@ -516,7 +558,7 @@
             
                 <li class="arg">
                     
-                        <code>from</code>
+                        <code class="optional">[from]</code>
                     
                 </li>
             
@@ -559,7 +601,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l309"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:309</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l355"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:355</code></a>
         
         </p>
 
@@ -598,14 +640,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name">from</code>
+                        <code class="param-name optional">[from]</code>
                         <span class="type">Number</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[从第几个复制]</p>
+                        <p>[从第几个复制,默认为0,复制整个数组则不用传]</p>
 
                     </div>
 
@@ -667,6 +710,297 @@
 </div>
 
                 
+                    <div id="method_delete" class="method item">
+    <h3 class="name"><code>delete</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[key]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l519"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:519</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>跟remove的区别在于这个接口跟set一致,先数组</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String | Number | Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[要删除的数据,值,或者索引]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[key]</code>
+                        <span class="type">String | Number</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[object的键名,非object可以不用传]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>[返回删除后的数组]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   //普通数组:
+   var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;bui&quot;];
+   var newArr = bui.array.delete(arr , &quot;bui&quot; );
+
+   // console.log(newArr) //结果: [&quot;hello&quot;,&quot;hi&quot;]
+
+   //JSON数组: 
+   var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;}];
+   var newArr = bui.array.delete( arr, &quot;bui&quot;, &quot;value&quot; );
+   // console.log(newArr) //结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;}] </code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_empty" class="method item">
+    <h3 class="name"><code>empty</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l391"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:391</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>清空数组</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>[空数组]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;easybui&quot;];
+   var newArr = bui.array.empty( arr );</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_excess" class="method item">
     <h3 class="name"><code>excess</code></h3>
 
@@ -676,7 +1010,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>value</code>
                     
                 </li>
             
@@ -725,7 +1059,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l254"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:254</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l262"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:262</code></a>
         
         </p>
 
@@ -736,7 +1070,7 @@
     </div>
 
     <div class="description">
-        <p>去除数组的多余数据,支持普通数组及JSON数组</p>
+        <p>1.5.1废弃,使用 bui.array.uniq(arr) 替代. 去除数组的某个多余数据,支持普通数组及JSON数组</p>
 
     </div>
 
@@ -748,14 +1082,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
+                        <code class="param-name">value</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[字符串]</p>
+                        <p>[要匹配的值]</p>
 
                     </div>
 
@@ -846,7 +1180,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>value</code>
                     
                 </li>
             
@@ -895,7 +1229,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l154"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:154</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l162"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:162</code></a>
         
         </p>
 
@@ -918,14 +1252,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
+                        <code class="param-name">value</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[字符串]</p>
+                        <p>[要查找的值]</p>
 
                     </div>
 
@@ -1016,7 +1350,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>value</code>
                     
                 </li>
             
@@ -1088,14 +1422,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
+                        <code class="param-name">value</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[字符串]</p>
+                        <p>[要检测的值]</p>
 
                     </div>
 
@@ -1186,7 +1520,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>value</code>
                     
                 </li>
             
@@ -1235,7 +1569,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l208"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:208</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l216"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:216</code></a>
         
         </p>
 
@@ -1258,14 +1592,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
+                        <code class="param-name">value</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[字符串]</p>
+                        <p>[要匹配的值]</p>
 
                     </div>
 
@@ -1347,6 +1681,148 @@
 </div>
 
                 
+                    <div id="method_merge" class="method item">
+    <h3 class="name"><code>merge</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>arrA</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l439"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:439</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>合并2个数组, A数组+B数组+C数组 并会触发 A数组的更新</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">arrA</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[支持多个数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>[空数组]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
+   var newArr = bui.array.merge( arr, [&quot;new&quot;,&quot;bui&quot;]);
+   // [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;, &quot;new&quot;,&quot;bui&quot;]</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_remove" class="method item">
     <h3 class="name"><code>remove</code></h3>
 
@@ -1356,7 +1832,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>value</code>
                     
                 </li>
             
@@ -1416,7 +1892,7 @@
     </div>
 
     <div class="description">
-        <p>删除数组的某个值或者对象,支持普通数组及JSON数组</p>
+        <p>删除数组的某个值或者对象,支持普通数组及JSON数组,并且1.5.1支持删除多个数据</p>
 
     </div>
 
@@ -1428,19 +1904,450 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
-                        <span class="type">String</span>
+                        <code class="param-name">value</code>
+                        <span class="type">String | Array</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[字符串]</p>
+                        <p>[要删除的值或数组]</p>
 
                     </div>
 
                     
                 </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[key]</code>
+                        <span class="type">String | Number</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[object的键名,或者数组的索引]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>[返回删除后的数组]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   //普通数组:
+   var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;bui&quot;];
+   var newArr = bui.array.remove( &quot;bui&quot;, arr );
+
+   // console.log(newArr) //结果: [&quot;hello&quot;,&quot;hi&quot;]
+
+   //JSON数组: 
+   var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;}];
+   var newArr = bui.array.remove( &quot;bui&quot;, arr, &quot;value&quot; );
+   // console.log(newArr) //结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;}] </code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_replace" class="method item">
+    <h3 class="name"><code>replace</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l413"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:413</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>替换数组</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>[空数组]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
+   var newArr = bui.array.replace( arr, [&quot;new&quot;,&quot;bui&quot;]);
+   // [&quot;new&quot;,&quot;bui&quot;]</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_set" class="method item">
+    <h3 class="name"><code>set</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>key</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l467"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:467</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>修改数组及数组对象,结合store触发数据变更</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[数组]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">key</code>
+                        <span class="type">Number | String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>[空数组]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   例子1: 修改索引值
+   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
+   bui.array.set( arr, 1, &quot;new hi&quot;);
+   // [&quot;hello&quot;,&quot;new hi&quot;,&quot;easybui&quot;]
+
+   例子2: 修改值
+   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
+   bui.array.set( arr, &quot;hi&quot;, &quot;new hi&quot;);
+   // [&quot;hello&quot;,&quot;new hi&quot;,&quot;easybui&quot;]
+
+
+   例子3: 修改对象值
+   var arr = [{name:&quot;hello&quot;},{name:&quot;hi&quot;},{name:&quot;easybui&quot;}];
+   bui.array.set( arr, 1, {name:&quot;new hi&quot;} );
+   // [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]
+
+   例子4: 修改对象某个字段值, 需要传多一个唯一值的字段名
+
+   var arr = [{name:&quot;hello&quot;},{name:&quot;hi&quot;},{name:&quot;easybui&quot;}];
+   bui.array.set( arr, &quot;hi&quot;, {name:&quot;new hi&quot;}, &quot;name&quot; );
+
+   // [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_uniq" class="method item">
+    <h3 class="name"><code>uniq</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[key]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l317"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:317</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.1</p>
+        
+    </div>
+
+    <div class="description">
+        <p>数组去重,支持普通数组及JSON数组</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
             
                 <li class="param">
                     
@@ -1488,7 +2395,7 @@
                     
                         <span class="type">Array</span>:
                     
-                    <p>[返回删除后的数组]</p>
+                    <p>[返回一个没有重复数据的数组]</p>
 
                 
             </div>
@@ -1500,16 +2407,16 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   //普通数组:
-   var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;bui&quot;];
-   var newArr = bui.array.remove( &quot;bui&quot;, arr );
+                <pre class="code prettyprint"><code>    //普通数组:
+    var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;bui&quot;];
+    var newArr = bui.array.uniq( arr );
 
-   // console.log(newArr) //结果: [&quot;hello&quot;,&quot;hi&quot;]
+    // console.log(newArr) //结果: [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;]
 
-   //JSON数组: 
-   var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;}];
-   var newArr = bui.array.remove( &quot;bui&quot;, arr, &quot;value&quot; );
-   // console.log(newArr) //结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;}] </code></pre>
+    //JSON数组: 
+    var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;},{ &quot;id&quot;:3,value:&quot;bui&quot;}];
+    var newArr = bui.array.uniq( arr, &quot;value&quot; );
+    // console.log(newArr) //结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;}] </code></pre>
 
             </div>
         </div>

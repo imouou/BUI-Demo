@@ -31,4 +31,7 @@
         }
     }).to(0);
 
+    tab.on("last",function(){
+        console.log("last")
+    })
 })

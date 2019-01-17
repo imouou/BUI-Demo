@@ -239,6 +239,7 @@
 
 <div class="box intro">
     <p>数据请求, $.ajax 跟 app.ajax 有的参数, bui.ajax 都有, 这里只列了简单的几个参数.
+可以全局配置所有请求的默认参数: bui.config.ajax = { needJsonString: true }
  <h3>预览地址: <a href="../../index.html#pages/ui_method/bui.ajax.html" target="_blank">demo</a></h3></p>
 
 </div>
@@ -449,7 +450,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[1.4.6新增,默认 false|true. true时会尝试把数据转换为string. 这个主要配合list控件的特殊请求使用,正常都是一个对象 ]</p>
+                                    <p>[1.4.6新增,默认 false|true. true时会尝试把数据转换为string. 这个主要配合list控件的特殊请求使用,正常都是一个对象, 如果为true,后台一般以@requestBody 接收,postman的body 是raw 的形式 ]</p>
 
                                 </div>
 

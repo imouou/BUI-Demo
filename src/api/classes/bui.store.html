@@ -240,17 +240,9 @@
 
 
 <div class="box intro">
-    <p><h2>数据存储订阅器</h2></p>
-<p><p>在数据更改的时候,会触发数据更改事件. 公共数据在 index.js 只要初始化一次, 类似vuejs的用法,但又不完全一致. </p></p>
-<p><h3>预览地址: <a href="../../index.html#pages/ui_controls/bui.store.html" target="_blank">demo</a></h3></p>
-<p><h3>方法说明:</h3>
-<a href="../classes/bui.store.html#method_get" class="crosslink">get</a>: 获取所有数据或者某个字段数据<br>
-<a href="../classes/bui.store.html#method_set" class="crosslink">set</a>: 保存某个字段数据,并触发相关事件<br>
-<a href="../classes/bui.store.html#method_del" class="crosslink">del</a>: 删除某个字段,并触发相关事件<br>
-<a href="../classes/bui.store.html#method_on" class="crosslink">on</a>: 绑定事件,事件名为数据的字段名<br>
-<a href="../classes/bui.store.html#method_off" class="crosslink">off</a>: 取消绑定事件,事件名及回调需要跟on保持一致<br>
-<a href="../classes/bui.store.html#method_trigger" class="crosslink">trigger</a>: 手动触发事件变更<br></p>
-
+    <p><h2>数据行为存储器 Data Behavior Store</h2></p>
+<p><p>按vue接口设计的数据驱动开发,但这不是vue,具体使用请查看<a href="/guide/#/store/about" target="_blank">教程</a>或示例</p></p>
+<h3>预览地址: <a href="../../index.html#pages/store/index.html" target="_blank">demo</a></h3>
 </div>
 
 
@@ -338,13 +330,27 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name optional">[scope]</code>
+                                    <code class="param-name optional">[el]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
-                                    <p>[数据的范围唯一标识]</p>
+                                    <p>[最外层的选择器, 默认: &quot;.bui-page&quot; ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">scope</code>
+                                    <span class="type">String</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[数据的范围唯一标识, 比方公共数据可以用app, 模块的数据可以用page 或者其它自定义名称]</p>
 
                                 </div>
 
@@ -360,6 +366,36 @@
 
                                 <div class="param-description">
                                     <p>[是否作为公共数据, 默认: false ( 在模块里面使用) | true (在index.js 路由初始化以后使用)]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[needStatic]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1 静态解析{{page.title}}, 默认 false | true, 注意: isPublic:true 以后, needStatic不能为true, 在index.js把store挂载到路由,才能解析{{}},  ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[needCompile]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.1 默认编译对应的解析器 ]</p>
 
                                 </div>
 
@@ -413,13 +449,73 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name optional">[method]</code>
+                                    <code class="param-name optional">[methods]</code>
                                     <span class="type">Object</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
                                     <p>[定义的方法,便于拿取相关数据]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[templates]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[定义的模板方法]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[beforeMount]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[数据解析前处理]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[mounted]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[数据解析完成以后处理]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[modelEvent]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[默认: &quot;input&quot; | &quot;change&quot;]</p>
 
                                 </div>
 
@@ -441,36 +537,18 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var store = bui.store({
+                <pre class="code prettyprint"><code>   var bs = bui.store({
      scope: &quot;app&quot;,
      data: {
-       page: 1
+       size: 1
      }
    });
 
    // 这样就会设置内容为1
-   &lt;div b-text=&quot;app:page&quot;&gt;&lt;/div&gt;
+   &lt;b b-text=&quot;app.size&quot;&gt;&lt;/b&gt;
 
-   你还可以监听该对象改变的时候,做些其它事情
-   // 监听 page 改变的时候触发
-   store.on(&quot;page&quot;,function(2){
-
-   })
-
-   // 设置以后就会触发
-   store.page = 2;
-
- 方法2: 
-
-   // 监听 page 下 name 改变的时候触发
-   store.on(&quot;page.name&quot;,function(2){
-
-   })
-
-   // 修改 page 数据
-   store.set(&quot;page.name&quot;,1321);
-
-   // page.name = 1321;</code></pre>
+   // 设置以后就会触发dom 的变更
+   bs.size = 2;</code></pre>
 
             </div>
         </div>
@@ -503,7 +581,42 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_del">del</a>
+                                <a href="#method_$children">$children</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_$el">$el</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_$parent">$parent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_compile">compile</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_compileHtml">compileHtml</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_delete">delete</a>
 
                                 
                                 
@@ -511,6 +624,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_get">get</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_nextTick">nextTick</a>
 
                                 
                                 
@@ -538,6 +658,13 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_oneTick">oneTick</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_set">set</a>
 
                                 
@@ -546,6 +673,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_trigger">trigger</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_watch">watch</a>
 
                                 
                                 
@@ -567,8 +701,405 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_del" class="method item">
-    <h3 class="name"><code>del</code></h3>
+                    <div id="method_$children" class="method item">
+    <h3 class="name"><code>$children</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l274"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:274</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[$children 返回当前 el选项的缓存子集, 子集新增删除这个值还是不会改变]</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 
+       console.log( bs.$children )</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_$el" class="method item">
+    <h3 class="name"><code>$el</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l256"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:256</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[$el 返回当前 el选项的$dom, 可以直接使用jquery的操作方式]</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 
+       console.log( bs.$el )</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_$parent" class="method item">
+    <h3 class="name"><code>$parent</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l265"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:265</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[$parent 返回当前 el选项的父层$dom, 可以直接使用jquery的操作方式]</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 
+       console.log( bs.$parent )</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_compile" class="method item">
+    <h3 class="name"><code>compile</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>el</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l462"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:462</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[compile 解析模板里面的数据选择器, 一般是 needCompile: false 才需要手动调用]</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">el</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[选择器]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 重新解析
+       bs.compile(&quot;.bui-page&quot;)</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_compileHtml" class="method item">
+    <h3 class="name"><code>compileHtml</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>el</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l501"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:501</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[解析模板里面的{{}}, 通过这种方式的设置,值不会动态变更]</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">el</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[选择器]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 解析模板里面的{{}}
+       var html = bs.compileHtml(&quot;&lt;div title=&quot;{{app.name}}&quot;&gt;{{app.name}}&lt;/div&gt;&quot;);</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_delete" class="method item">
+    <h3 class="name"><code>delete</code></h3>
 
     
         <div class="args">
@@ -611,7 +1142,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l771"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:771</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1823"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1823</code></a>
         
         </p>
 
@@ -661,11 +1192,11 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>      方法1: 
-      var page = store.del(&quot;page&quot;);
-      // { page: 1}
+      var page = bs.delete(&quot;size&quot;);
+      // { size: 1}
 
       方法2: 指定字段层级
-      var page = store.del(&quot;page.name&quot;);</code></pre>
+      var page = bs.delete(&quot;size.num&quot;);</code></pre>
 
             </div>
         </div>
@@ -717,7 +1248,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l607"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:607</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1654"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1654</code></a>
         
         </p>
 
@@ -766,7 +1297,110 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>      var page = store.get(&quot;page&quot;);</code></pre>
+                <pre class="code prettyprint"><code>      var page = bs.get(&quot;size&quot;);</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_nextTick" class="method item">
+    <h3 class="name"><code>nextTick</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>callback</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l284"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:284</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[dom每次更新以后都会处理回调,多次调用会有多个处理的&quot;nexttick&quot;回调 ]</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 回调, 数据更新以后的在这个回调里面的方法再进行执行 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 监听a变量变更的时候,触发回调
+       bs.nextTick(function () {
+           // 执行控件的初始化
+       })</code></pre>
 
             </div>
         </div>
@@ -824,7 +1458,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l873"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:873</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1933"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1933</code></a>
         
         </p>
 
@@ -894,13 +1528,13 @@
          console.log(val)  // 2
        }
        // 监听 page 改变的时候触发
-       store.on(&quot;page&quot;,log)
+       bs.on(&quot;size&quot;,log)
 
        // 取消
-       store.off(&quot;page&quot;,log)
+       bs.off(&quot;page&quot;,log)
 
        // 修改 page 数据
-       store.set(&quot;page&quot;,2);</code></pre>
+       bs.set(&quot;page&quot;,2);</code></pre>
 
             </div>
         </div>
@@ -958,7 +1592,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l810"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:810</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1864"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1864</code></a>
         
         </p>
 
@@ -1024,21 +1658,21 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>      // 监听 page 改变的时候触发
-       store.on(&quot;page&quot;,function(val){
+                <pre class="code prettyprint"><code>      // 监听 size 改变的时候触发
+       bs.on(&quot;size&quot;,function(val){
          console.log(val)  // 2
        })
 
-       // 监听 page 下 name 改变的时候触发
-       store.on(&quot;page.name&quot;,function(val){
+       // 监听 size 下 name 改变的时候触发
+       bs.on(&quot;size.num&quot;,function(val){
          console.log(val)  // 3
        })
 
-       // 修改 page 数据
-       store.set(&quot;page&quot;,2);
+       // 修改 size 数据
+       bs.set(&quot;size&quot;,2);
 
-       // 修改 page.name 数据
-       store.set(&quot;page.name&quot;,3);</code></pre>
+       // 修改 size.num 数据
+       bs.set(&quot;size.num&quot;,3);</code></pre>
 
             </div>
         </div>
@@ -1096,7 +1730,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l841"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:841</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1895"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1895</code></a>
         
         </p>
 
@@ -1107,7 +1741,7 @@
     </div>
 
     <div class="description">
-        <p>监听数据的修改, 只触发一次, one事件监听必须在 set 数据修改之前.</p>
+        <p>监听数据的修改, 只监听一次, one事件监听必须在 set 数据修改之前.</p>
 
     </div>
 
@@ -1163,20 +1797,145 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>      // 监听 page 改变的时候触发
-       store.one(&quot;page&quot;,function(val){
+       bs.one(&quot;page&quot;,function(val){
          console.log(val)  // 2
        })
 
        // 监听 page 下 name 改变的时候触发
-       store.one(&quot;page.name&quot;,function(val){
+       bs.one(&quot;page.name&quot;,function(val){
          console.log(val)  // 3
        })
 
        // 修改 page 数据
-       store.set(&quot;page&quot;,2);
+       bs.set(&quot;page&quot;,2);
 
        // 修改 page.name 数据
-       store.set(&quot;page.name&quot;,3);</code></pre>
+       bs.set(&quot;page.name&quot;,3);</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_oneTick" class="method item">
+    <h3 class="name"><code>oneTick</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>keyname</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>callback</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l308"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:308</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[只在某个keyname的数据更新,触发dom更新以后再处理回调,并且只监听一次 ]</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">keyname</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 监听某个值更新的时候触发一次 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 回调, 数据更新以后的在这个回调里面的方法再进行执行 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 监听a变量变更的时候,触发回调
+       bs.oneTick(&quot;size&quot;,function () {
+           // 执行控件的初始化
+       })</code></pre>
 
             </div>
         </div>
@@ -1234,7 +1993,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l630"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:630</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1677"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1677</code></a>
         
         </p>
 
@@ -1245,7 +2004,7 @@
     </div>
 
     <div class="description">
-        <p>保存数据,并会触发 通过 store.on 监听的事件.</p>
+        <p>保存数据,并会触发 通过 bs.on 监听的事件.</p>
 
     </div>
 
@@ -1301,12 +2060,18 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>      方法1: 
-      var page = store.set(&quot;page&quot;,1);
-      // { page: 1}
+      var page = bs.set(&quot;size&quot;,1);
+      // { size: 1}
+
+      会触发以下dom的变更
+      &lt;b b-text=&quot;page.size&quot;&gt;&lt;/b&gt;
 
       方法2: 指定字段层级
-      var page = store.set(&quot;page.name&quot;,1);
-      // { page: { name: 1 }}</code></pre>
+      var page = bs.set(&quot;size.num&quot;,1);
+      // { size: { name: 1 }}
+
+      会触发以下dom的变更
+      &lt;b b-text=&quot;page.size.num&quot;&gt;&lt;/b&gt;</code></pre>
 
             </div>
         </div>
@@ -1358,7 +2123,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l902"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:902</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1962"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1962</code></a>
         
         </p>
 
@@ -1408,7 +2173,133 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>      // 触发 2 为传过去的参数
-      store.trigger(&quot;page&quot;,&quot;2&quot;)</code></pre>
+      bs.trigger(&quot;page&quot;,&quot;2&quot;)</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_watch" class="method item">
+    <h3 class="name"><code>watch</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>keyname</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>callback</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l340"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:340</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>[ watch方法跟选项的watch 表现一致,数据更新的时候执行, 还没到dom更新,这个主要是为了分离式监听]</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">keyname</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 这个的值是 data 选项里面的值, 监听该值改变的时候, 触发这里的回调. ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 回调, 回调里面的参数可以拿到新值跟上一个值 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 监听a变量变更的时候,触发回调
+       bs.watch(&quot;a&quot;,function (newVal,oldVal) {
+           console.log(newVal);
+           console.log(oldVal);
+       })</code></pre>
 
             </div>
         </div>

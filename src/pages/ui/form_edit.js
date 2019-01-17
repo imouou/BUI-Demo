@@ -124,12 +124,13 @@
     });
 
     // 评论字数
-    bui.input({
+    var comment = bui.input({
         id: "#commentContent",
         showLength: true,
         showIcon: false,
         maxLength: 100
     })
+
 
     // $('.bui-input').on('click', function () {
     //        var target = this;

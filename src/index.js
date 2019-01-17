@@ -3,6 +3,7 @@ var sitePath = "http://www.easybui.com",
     siteDir = sitePath + "/demo/json/";
 // 设置当前应用模式
 bui.isWebapp = true;
+
 // 去除微信调试模块缓存
 // window.loader = bui.loader({
 //     cache: false
@@ -12,13 +13,22 @@ window.router = bui.router();
 
 bui.ready(function() {
 
+    // 数据行为存储器
+    var store = bui.store({
+        scope: "app",
+        isPublic: true, // 在模块里面默认是false, 在index.js 需要改为true
+        data: {
+            message2: "Hello",
+            firstName: "Img"
+        }
+    })
     // 第3步: 初始化路由
     router.init({
         id: "#bui-router",
         progress: true,
-        // firstAnimate: true,
-        // webapp部署的时候改为true, 这样物理刷新缓存还在
-        reloadCache: false
+        hash: true,
+        // 挂载公共 store 可以解析公共数据的 {{app.firstName}} 之类的数据, 可以使用 router.store.firstName 读取跟修改
+        store: store,
     })
 
 

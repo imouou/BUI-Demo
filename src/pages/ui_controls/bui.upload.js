@@ -128,8 +128,9 @@
 
     // 上传图片
     $("#upload").on("click", function(argument) {
-            uiUpload.start({
-                url: "http://eid.bingosoft.net:83/share/apis/upload/image",
+            uiUpload.startAll({
+                // url: "http://eid.bingosoft.net:83/share/apis/upload/image",
+                url: "http://10.201.76.223:8060/comservice/psbNewsReport/uploadPictureFile.do",
                 // url: "https://www.swla.com.cn/demo/upload.asp",
                 // url:"http://10.201.78.23:81/dataservice.ashx?CommandName=Atd$ImgUpLoad",
                 onSuccess: function(data) {
