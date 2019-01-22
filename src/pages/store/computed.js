@@ -4,8 +4,8 @@
     var bs = bui.store({
             scope: "page", // 用于区分公共数据及当前数据的唯一值
             data: {
-                firstName: "Hello",
-                lastName: "BUI",
+                firstName: "",
+                lastName: "",
                 a: 2,
             },
             methods: {
@@ -15,6 +15,16 @@
             },
             watch: {},
             computed: {
+                disabled: function () {
+                  // 先缓存相关联的依赖值
+                  var firstName = this.firstName,
+                      lastName = this.lastName;
+                  if( firstName !== "" && lastName !== "" ){
+                    return false;
+                  }else{
+                    return true;
+                  }
+                },
                 aDouble: function () {
                   return this.a * 2
                 },

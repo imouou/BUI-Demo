@@ -34,6 +34,9 @@ loader.define(function(require, exports, module) {
                     loader.require(["pages/main/form"])
                     break;
                 case 2:
+                    loader.require(["pages/main/store"])
+                    break;
+                case 3:
                     loader.require(["pages/main/method"])
                     break;
             }

@@ -74,7 +74,7 @@
                     return html;
                 },
                 tplList2: function (data,e) {
-                    
+
                     var html = template("tpl-list",{ listData: data});
 
                     return html;
@@ -118,11 +118,9 @@
 
     router.$(".btn-reverse").on("click", function(e) {
 
-        console.log(bs.message)
-        var a = bs.message.split(' ').reverse().join(' ')
-        bs.message = a;
+        var a = store.message.split(' ').reverse().join(' ')
+        store.message = a;
 
-        console.log(bs.$children)
     })
 
 

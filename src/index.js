@@ -11,18 +11,49 @@ bui.isWebapp = true;
 // 路由初始化给全局变量,必须是router
 window.router = bui.router();
 
-bui.ready(function() {
-
-    // 数据行为存储器
-    var store = bui.store({
+// 数据行为存储器
+window.store = bui.store({
         scope: "app",
         isPublic: true, // 在模块里面默认是false, 在index.js 需要改为true
         data: {
+            message: "Hello bui.js",
             message2: "Hello",
-            firstName: "Img"
+            firstName: "Img",
+            lists: ["12"],
+            attrs: {
+                title: "这是动态标题",
+            },
+            objSource: {
+                title: "我的对象的标题",
+                datas: {
+                    aa: [1312]
+                },
+                data: [11]
+            },
+            showName: true,
+            tabClass: {
+                active: true,
+                hasActive: true,
+            },
+            styles: {
+                color: "red"
+            }
+        },
+        // log: true,
+        templates: {
+            tplLists: function (data) {
+                var html = "";
+                data.forEach((item)=>{
+                  html += "<li>"+item+"</li>";
+                })
+                return html;
+            }
         }
     })
-    // 第3步: 初始化路由
+
+bui.ready(function() {
+
+        // 第3步: 初始化路由
     router.init({
         id: "#bui-router",
         progress: true,

@@ -8,9 +8,21 @@
             templates: {
                 tplList: function (data) {
                     var html = "";
-                    data.forEach(function (item,i) {
-                        html += `<li class="bui-btn"><i class="icon-facefill"></i>${item.name}</li>`;
-                    })
+                    data.map(function(el, index) {
+                        // 演示传参,标准JSON才能转换
+                        var param = {"id":index,"title":el.name};
+                        var paramStr = JSON.stringify(param);
+
+                        html += `<li class="bui-btn bui-box" href="pages/ui/article.html" param='${paramStr}'>
+                            <div class="bui-thumbnail" ><img src="${el.image}" alt=""></div>
+                            <div class="span1">
+                                <h3 class="item-title">${el.name}</h3>
+                                <p class="item-text">${el.address}</p>
+                                <p class="item-text">${el.distance}公里</p>
+                            </div>
+                            <span class="price"><i>￥</i>${el.price}</span>
+                        </li>`
+                    });
                     return html;
                 }
             },
@@ -19,7 +31,7 @@
 
                 this.list = bui.list({
                     id: "#listStore",
-                    url: "json/userlist.json",
+                    url: "http://www.easybui.com/demo/json/shop.json",
                     page:1,
                     pageSize:9,
                     height:0,
