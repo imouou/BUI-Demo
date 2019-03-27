@@ -9,7 +9,7 @@
             if (text == "确定") {
                 console.log("你点击了" + $(e.target).text())
             }
-            // this.close()
+            this.close()
         });
 
     })

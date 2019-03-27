@@ -2,7 +2,7 @@
 
 
     // 可以在路由init以后,作为整个应用的联动数据处理
-    window.bs = bui.store({
+    var bs = bui.store({
             scope: "page", // 用于区分公共数据及当前数据的唯一值
             isPublic: false, // 在模块里面默认是false, 在index.js 需要改为true
             // log: true,

@@ -79,7 +79,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Event",
             "name": "Event",
-            "description": "<h3>全局事件: </h3> \n<p>依次加载顺序, 所有事件均在 dom 加载以后处理.</p>\n<p>pagebefore(dom准备完毕,但bui还未初始化) -  pageinit(dom准备完毕,bui初始化完成) - pageready(dom+原生能力都已经准备完毕) - onload(图片及资源都加载完毕以后触发)</p>"
+            "description": "<h3>全局事件: </h3>\n<p>依次加载顺序, 所有事件均在 dom 加载以后处理.</p>\n<p>pagebefore(dom准备完毕,但bui还未初始化) -  pageinit(dom准备完毕,bui初始化完成) - pageready(dom+原生能力都已经准备完毕) - onload(图片及资源都加载完毕以后触发)</p>"
         },
         {
             "displayName": "Method",
@@ -89,7 +89,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Native",
             "name": "Native",
-            "description": "<h3>原生方法库</h3> \n原生方法库是采用原生及普通方法的一个混合,便于在debug中随时切换\n<h5>数据交互</h5>\n{{#crossLink \"bui.ajax\"}}{{/crossLink}}: 数据请求 <br>\n{{#crossLink \"bui.upload\"}}{{/crossLink}}: 上传文件 <br>\n{{#crossLink \"bui.download\"}}{{/crossLink}}: 下载文件 <br>\n{{#crossLink \"bui.file\"}}{{/crossLink}}: 文件管理 <br>\n{{#crossLink \"bui.fileselect\"}}{{/crossLink}}: 文件选择 <br>\n<h5>页面交互</h5>\n{{#crossLink \"bui.load\"}}{{/crossLink}}: 页面跳转及传参 <br>\n{{#crossLink \"bui.getPageParams\"}}{{/crossLink}}: 页面获取参数 <br>\n{{#crossLink \"bui.back\"}}{{/crossLink}}: 页面后退 <br>\n{{#crossLink \"bui.refresh\"}}{{/crossLink}}: 页面刷新 <br>"
+            "description": "<h3>原生方法库</h3>\n原生方法库是采用原生及普通方法的一个混合,便于在debug中随时切换\n<h5>数据交互</h5>\n{{#crossLink \"bui.ajax\"}}{{/crossLink}}: 数据请求 <br>\n{{#crossLink \"bui.upload\"}}{{/crossLink}}: 上传文件 <br>\n{{#crossLink \"bui.download\"}}{{/crossLink}}: 下载文件 <br>\n{{#crossLink \"bui.file\"}}{{/crossLink}}: 文件管理 <br>\n{{#crossLink \"bui.fileselect\"}}{{/crossLink}}: 文件选择 <br>\n<h5>页面交互</h5>\n{{#crossLink \"bui.load\"}}{{/crossLink}}: 页面跳转及传参 <br>\n{{#crossLink \"bui.getPageParams\"}}{{/crossLink}}: 页面获取参数 <br>\n{{#crossLink \"bui.back\"}}{{/crossLink}}: 页面后退 <br>\n{{#crossLink \"bui.refresh\"}}{{/crossLink}}: 页面刷新 <br>"
         },
         {
             "displayName": "UI",

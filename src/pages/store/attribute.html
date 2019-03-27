@@ -1,4 +1,4 @@
-﻿<div class="bui-page page-store">
+﻿<div class="bui-page">
     <header class="bui-bar">
         <div class="bui-bar-left">
             <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
@@ -15,9 +15,11 @@
         <div class="section-title">绑定1个</div>
         <p b-bind="page.title">绑定title属性,及自定义属性</p>
 
-        <div class="section-title">示例2: {{}}这种渲染只渲染一次,并且需要设置, needStatic: true才会解析,会多做一次渲染, 所以建议尽量不开启.</div>
+        <div class="section-title">示例2: {{}}这种渲染只渲染一次,不会动态改变,并且需要设置, needStatic: true才会解析,会多做一次渲染, 所以建议尽量不开启.</div>
         <div title="{{page.attrs.title}}">{{page.attrs.title}}</div>
 
-        
+        <input b-bind="page.disabled" placeholder="不可以输入" type="text">
+        <input b-bind="page.prop.disabled" type="checkbox" b-model="page.prop.checked">
+        <img src="images/applogo.png" b-src="page.image">
     </main>
 </div>

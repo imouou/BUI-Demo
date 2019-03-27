@@ -4,10 +4,10 @@
     var tab = bui.tab({
         id:"#tabDynamic",
         menu:"#tabDynamicNav",
-        // 1: 声明是动态加载的tab
+        // 1: 声明是动态加载模块的tab, 菜单那里会有href 
         autoload: true,
     })
-    
+
     // 2: 监听加载后的事件
     tab.on("to",function (index) {
         console.log(index,"parent")
@@ -31,7 +31,4 @@
         }
     }).to(0);
 
-    tab.on("last",function(){
-        console.log("last")
-    })
 })

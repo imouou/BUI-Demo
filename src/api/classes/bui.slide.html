@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -446,6 +446,21 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[data]</code>
+                                    <span class="type">Array</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.2新增, 默认: null || [{id:&quot;&quot;,title:&quot;&quot;,url:&quot;&quot;,image:&quot;img.png&quot;,background:&quot;img.png&quot;}] , image 或者 background 只需要一个,其它字段都不是必须 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[direction]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -789,17 +804,24 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>  html:</p>
+                <p>  // 示例1: 静态结构初始化, 固定结构, li里面的内容自定义
+  html:</p>
 <pre class="code prettyprint"><code>         &lt;div id=&quot;slide&quot; class=&quot;bui-slide&quot;&gt;
            &lt;div class=&quot;bui-slide-main&quot;&gt;
              &lt;ul&gt;
                &lt;li&gt;
+                 &lt;!-- 从这里开始,可以自定义 start --&gt;
                  &lt;img src=&quot;../images/slideshow.png&quot; alt=&quot;&quot;&gt;
+                 &lt;!-- 从这里开始,可以自定义 end --&gt;
+               &lt;/li&gt;
+               &lt;li style=&quot;display:none&quot;&gt;
+                 &lt;!-- 第2个内容, 先设置样式不可见,避免渲染闪跳 --&gt;
+                 &lt;img src=&quot;../images/slideshow2.png&quot; alt=&quot;&quot;&gt;
                &lt;/li&gt;
              &lt;/ul&gt;
            &lt;/div&gt;
          &lt;/div&gt;</code></pre>
-<p>  js: </p>
+<p>  js:</p>
 <pre class="code prettyprint"><code>         // 初始化
          var uiSlide = bui.slide({
                      id:&quot;#slide&quot;,
@@ -807,39 +829,71 @@
                      autopage:true
                    })
 
-     1.5.0 动态渲染:
-     html: 
+     // 示例2: 1.5.2 新增动态渲染: 有data,无template参数时,采用默认模板渲染数据
+     html:
 
      &lt;div id=&quot;slide&quot; class=&quot;bui-slide&quot;&gt;&lt;/div&gt;
 
-     // 先初始化,后面再调用 init 方法则不会重新绑定事件
+     js:
+     // 先初始化
      var uiSlide = bui.slide({
         id:&quot;#slide&quot;,
         height:380,
-        autopage:true
+        autopage:true,
+        data: []
       })
-     // 请求成功以后渲染
+
+     // 请求成功以后修改值
       bui.ajax({
           url: &quot;http://www.easybui.com/demo/json/shop.json&quot;,
           data: {},//接口请求的参数
           // 可选参数
           method: &quot;GET&quot;
       }).then(function(result){
+         var data = [{
+           image: &quot;images/banner01.png&quot;
+         }]
+          // 修改动态值
+          uiSlide.option(&quot;data&quot;,data)
+      });
 
-          // 初始化
-          uiSlide.init({
-            template: function () {
-                var html = `&lt;div class=&quot;bui-slide-main&quot;&gt;
-                              &lt;ul&gt;${result.data.map((item,index)=&gt;`
-                                    &lt;li&gt;&lt;img src=&quot;images/banner01.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;`
-                                ).join(&#39;&#39;) }
-                              &lt;/ul&gt;
-                            &lt;/div&gt;`
+      示例3: 1.5.2 有自定义模板时, template,里需要自己加好静态的结构
 
-                return html;
-            }
-          })
-      });</code></pre>
+      html:
+
+      &lt;div id=&quot;slideNote&quot; class=&quot;bui-slide bui-slide-notice&quot;&gt;&lt;/div&gt;
+
+      js:
+      // 通知公告, 初始化
+      var uiSlide = bui.slide({
+          id:&quot;#slideNote&quot;,
+          height:100,
+          autoplay: true,
+          loop: true,
+          direction: &quot;y&quot;,
+          data: [{
+            title: &quot;2017年11月1日 河南分省党支部第18期党课&quot;,
+            url: &quot;pages/ui/article.html&quot;
+          },{
+            title: &quot;2017年11月1日 河南分省党支部第19期党课&quot;,
+            url: &quot;pages/ui/article.html&quot;
+          }],
+          template: function (data) {
+            // 有数据有模板时,需要自己全部渲染结构
+            var html = &quot;&quot;;
+            html +=<code>&amp;lt;div class=&amp;quot;bui-slide-main&amp;quot;&amp;gt;&amp;lt;ul&amp;gt;</code>
+            data.forEach(function (item,i) {
+              html +=`&lt;li href=&quot;${item.url}&quot;&gt;
+                  &lt;div class=&quot;notice-item&quot;&gt;
+                      &lt;div class=&quot;span1&quot;&gt;${item.title||&quot;&quot;}&lt;/div&gt;
+                  &lt;/div&gt;
+              &lt;/li&gt;`
+            })
+            html +=<code>&amp;lt;&#x2F;ul&amp;gt;&amp;lt;&#x2F;div&amp;gt;</code>
+
+            return html;
+          },
+      })</code></pre>
 
             </div>
         </div>
@@ -875,6 +929,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_destroy">destroy</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getPages">getPages</a>
 
                                 
                                 
@@ -1044,7 +1105,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1451"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1451</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1564"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1564</code></a>
         
         </p>
 
@@ -1104,6 +1165,83 @@
 </div>
 
                 
+                    <div id="method_getPages" class="method item">
+    <h3 class="name"><code>getPages</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l677"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:677</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.2</p>
+        
+    </div>
+
+    <div class="description">
+        <p>获取有多少个子元素</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Number</span>:
+                    
+                    <p>[返回多少个]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_index" class="method item">
     <h3 class="name"><code>index</code></h3>
 
@@ -1138,7 +1276,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1102"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1102</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1186"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1186</code></a>
         
         </p>
 
@@ -1216,7 +1354,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l262"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:262</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l307"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:307</code></a>
         
         </p>
 
@@ -1306,7 +1444,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1315"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1315</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1399"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1399</code></a>
         
         </p>
 
@@ -1484,7 +1622,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1171"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1171</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1255"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1255</code></a>
         
         </p>
 
@@ -1550,7 +1688,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1138"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1138</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1222"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1222</code></a>
         
         </p>
 
@@ -1632,7 +1770,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1498"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1498</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1611"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1611</code></a>
         
         </p>
 
@@ -1751,7 +1889,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1116"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1116</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1200"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1200</code></a>
         
         </p>
 
@@ -1827,7 +1965,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1087"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1087</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1171"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1171</code></a>
         
         </p>
 
@@ -1918,7 +2056,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1059"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1059</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1143"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1143</code></a>
         
         </p>
 
@@ -2001,7 +2139,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l953"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:953</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1037"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1037</code></a>
         
         </p>
 
@@ -2109,7 +2247,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1196"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1196</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1280"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1280</code></a>
         
         </p>
 
@@ -2183,7 +2321,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1483"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1483</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1596"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1596</code></a>
         
         </p>
 
@@ -2276,7 +2414,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1546"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1546</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1659"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1659</code></a>
         
         </p>
 
@@ -2373,7 +2511,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1526"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1526</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.slide.js.html#l1639"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.slide.js:1639</code></a>
         
         </p>
 

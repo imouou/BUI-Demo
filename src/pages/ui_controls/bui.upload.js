@@ -6,14 +6,14 @@
 
     var uiUpload = bui.upload();
 
-
-    // 上拉菜单 js 初始化: 
+    // 上拉菜单 js 初始化:
     var uiActionsheet = bui.actionsheet({
         trigger: "#btnUpload",
         buttons: [{ name: "拍照上传", value: "camera" }, { name: "从相册选取", value: "photo" }],
         callback: function(e) {
             var ui = this;
             var val = $(e.target).attr("value");
+
             switch (val) {
                 case "camera":
                     ui.hide();
@@ -90,7 +90,7 @@
     })
 
     function templatePhoto(url) {
-        return `<div class="span1">
+        return `<div class="span1" data-index="${uiUpload.currentIndex()}" data-name="${uiUpload.currentName()}">
                 <div class="bui-upload-thumbnail"><img src="${url}" alt="" /><i class="icon-removefill"></i></div>
             </div>`
     }
@@ -106,18 +106,20 @@
 
     // 选择图片文件
     $facePhoto.on("click", ".icon-removefill", function(e) {
-        uiUpload.clear();
-
-        $(this).parents(".span1").remove();
+        var $item = $(this).parents(".span1");
+        var index = $item.attr("data-index");
+        // 删除对应的上传数据
+        uiUpload.remove(index);
+        // 删除dom显示
+        $item.remove();
         e.stopPropagation();
 
     })
 
-    // 删除选择的文件
+    // 删除第一个选择的文件
     $("#removeSelect").on("click", function(argument) {
-
-            uiUpload.remove("resize.jpg");
-
+            $facePhoto.find(".span1").eq(0).remove();
+            uiUpload.remove(0);
         })
         // 删除选择的文件
     $("#removeAllSelect").on("click", function(argument) {

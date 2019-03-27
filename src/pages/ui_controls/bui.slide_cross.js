@@ -6,9 +6,19 @@
         height:300,
         autopage: true,
         loop: true,
-        cross: true
+        cross: true,
+        data: [{
+          image: "images/banner01.png",
+          url: "pages/ui/article.html",
+        },{
+          image: "images/banner02.png",
+          url: "pages/ui/article.html",
+        },{
+          image: "images/banner03.png",
+          url: "pages/ui/article.html",
+        }]
     })
-    
+
     router.$("#prev").on("click",function () {
         uiSlide.prev();
     })

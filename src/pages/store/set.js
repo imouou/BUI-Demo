@@ -7,6 +7,9 @@
                 value: "Hello bui.js",
                 attrs: {
                     title: "这是动态标题",
+                    test: {
+                        title: "这是动态标题22",
+                    }
                 },
                 title: "<h1>html标题</h1>",
             },

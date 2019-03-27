@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -420,9 +420,9 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>  js: </p>
+                <p>  js:</p>
 <pre class="code prettyprint"><code>       // 1. 初始化, 这里如果有 onSuccess,onFail 则为公共处理方法,添加只需要 uiFileSelect.add();
-       var uiFileSelect = bui.fileselect();  
+       var uiFileSelect = bui.fileselect();
 
        // 2. 调用 添加文件方法
        uiFileSelect.add({
@@ -481,6 +481,20 @@
                         
                             <li class="index-item method">
                                 <a href="#method_clear">clear</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_currentIndex">currentIndex</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_currentName">currentName</a>
 
                                 
                                 
@@ -574,7 +588,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l130"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:130</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l133"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:133</code></a>
         
         </p>
 
@@ -792,7 +806,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l403"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:403</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l411"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:411</code></a>
         
         </p>
 
@@ -817,6 +831,138 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>       uiFileSelect.clear();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_currentIndex" class="method item">
+    <h3 class="name"><code>currentIndex</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l490"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:490</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.2</p>
+        
+    </div>
+
+    <div class="description">
+        <p>获取最后选择的文件名,删除的时候</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       var currentIndex = uiFileSelect.currentIndex();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_currentName" class="method item">
+    <h3 class="name"><code>currentName</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l472"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:472</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.2</p>
+        
+    </div>
+
+    <div class="description">
+        <p>获取最后选择的文件名,删除的时候</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       var currentName = uiFileSelect.currentName();</code></pre>
 
             </div>
         </div>
@@ -856,7 +1002,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l425"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:425</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l434"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:434</code></a>
         
         </p>
 
@@ -940,7 +1086,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l370"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:370</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l375"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:375</code></a>
         
         </p>
 
@@ -1057,7 +1203,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l223"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:223</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l229"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:229</code></a>
         
         </p>
 
@@ -1230,7 +1376,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l445"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:445</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.fileselect.js.html#l454"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.fileselect.js:454</code></a>
         
         </p>
 

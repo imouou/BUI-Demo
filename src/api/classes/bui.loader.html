@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -516,7 +516,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l761"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:761</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l767"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:767</code></a>
         
         </p>
 
@@ -653,7 +653,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l232"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:232</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l233"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:233</code></a>
         
         </p>
 
@@ -767,7 +767,7 @@
                 <pre class="code prettyprint"><code>   例子1: 注册首页的回调 pages/main/main.js
    提示: pages/main/main.js 文件, 定义了一个匿名模块,匿名模块的模块名取.js前面的路径名,确保唯一
 
-   // 最简单的匿名定义 loader.define 
+   // 最简单的匿名定义 loader.define
    loader.define(function(require,exports,module){
 
        // require : 相当于 loader.require, 获取依赖的模块
@@ -864,7 +864,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l183"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:183</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l184"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:184</code></a>
         
         </p>
 
@@ -976,7 +976,7 @@
                 <pre class="code prettyprint"><code>   例子1: 注册首页的回调 pages/main/main.js
    提示: pages/main/main.js 文件, 定义了一个匿名模块,匿名模块的模块名取.js前面的路径名,确保唯一
 
-   // 最简单的匿名定义 loader.define 
+   // 最简单的匿名定义 loader.define
    loader.define(function(require,exports,module){
 
        // require : 相当于 loader.require, 获取依赖的模块
@@ -1040,7 +1040,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l817"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:817</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l823"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:823</code></a>
         
         </p>
 
@@ -1051,7 +1051,7 @@
     </div>
 
     <div class="description">
-        <p>动态加载脚本资源,或者css资源</p>
+        <p>动态加载脚本资源,或者css资源,1.5.2 新增html的加载</p>
     </div>
 
     
@@ -1151,6 +1151,12 @@
 
        loader.import([&quot;js/plugins/baiduTemplate.js&quot;,&quot;js/plugins/map.js&quot;],function(src){
          // 创建成功以后执行回调
+       });
+
+       例子4: 动态加载模板
+
+       loader.import(&quot;pages/ui/list.html&quot;,function(res){
+         // 拿到模板信息
        });</code></pre>
 
             </div>
@@ -1201,7 +1207,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l77"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:77</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l78"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:78</code></a>
         
         </p>
 
@@ -1432,7 +1438,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l498"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:498</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l500"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:500</code></a>
         
         </p>
 

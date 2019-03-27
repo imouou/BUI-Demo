@@ -21,7 +21,7 @@
       },
       watch: {
         // 示例1的方法
-        firstName: function (val) {
+        firstName: function (val,old) {
           this.fullName = val + ' ' + this.lastName
         },
         lastName: function (val) {

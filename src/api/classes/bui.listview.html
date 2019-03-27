@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -222,7 +222,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:6</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l7"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:7</code></a>
         </div>
     
 
@@ -302,7 +302,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l6"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:6</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l7"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:7</code></a>
         
         </p>
 
@@ -391,6 +391,21 @@
                                         </li>
                                         
                                     </ul>
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[template]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.2新增, 默认null, 模板不满意,可以通过此方法返回新的模板,第一个参数为data的数据]</p>
+
+                                </div>
+
                                 
                             </li>
                             
@@ -589,60 +604,80 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>   html:</p>
-<pre class="code prettyprint"><code> 示例结构1: 动态渲染
-      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
-            &lt;li&gt;
-                &lt;div class=&quot;bui-btn&quot;&gt;
-                    菜单
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-
-示例结构2: 禁止渲染
-      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
-        &lt;!-- 设置status属性可以避免渲染菜单 --&gt;
-        &lt;li status=&quot;1&quot;&gt;
-          &lt;div class=&quot;bui-btn bui-box&quot;&gt;
-            &lt;div class=&quot;span1&quot;&gt;不渲染&lt;/div&gt;
-            &lt;i class=&quot;icon-listright&quot;&gt;&lt;/i&gt;
-          &lt;/div&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-
-示例结构3: 静态渲染,可以允许左右都有按钮
-      &lt;ul id=&quot;listview&quot; class=&quot;bui-listview&quot;&gt;
-        &lt;li status=&quot;1&quot;&gt;
-          &lt;div class=&quot;bui-btn bui-box&quot; href=&quot;pages/ui_controls/bui.listview.html&quot; param=&#39;{&quot;id&quot;:&quot;123&quot;}&#39;&gt;
-            &lt;div class=&quot;span1&quot;&gt;静态渲染-左右菜单&lt;/div&gt;
-            &lt;span class=&quot;bui-badges&quot;&gt;荐&lt;/span&gt;
-            &lt;i class=&quot;icon-listright&quot;&gt;&lt;/i&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;bui-listview-menu swipeleft&quot; data-moving=&quot;240&quot;&gt;
-              &lt;div class=&quot;bui-btn primary&quot;&gt;置顶&lt;/div&gt;
-              &lt;div class=&quot;bui-btn primary&quot;&gt;修改&lt;/div&gt;
-              &lt;div class=&quot;bui-btn danger&quot;&gt;删除&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;bui-listview-menu swiperight&quot;&gt;
-              &lt;div class=&quot;bui-btn primary&quot;&gt;修改&lt;/div&gt;
-              &lt;div class=&quot;bui-btn danger&quot;&gt;删除&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;</code></pre>
-<p>   js: </p>
-<pre class="code prettyprint"><code>    // 初始化
-    var uiListview = bui.listview({ 
-            id: &quot;#listview&quot;,
-            data: [{ &quot;text&quot;: &quot;修改&quot;, &quot;classname&quot;:&quot;btn-blue&quot;},
-                    { &quot;text&quot;: &quot;删除&quot;, &quot;classname&quot;:&quot;btn-red&quot;}],
-            callback: function (e) {
-              var index = $(e.target).text();
-                  if( index == &quot;修改&quot; ){
-                      //do something
+                <p>   html:
+      示例结构1: 动态渲染
+            <ul id="listview" class="bui-listview">
+                  <li>
+                      <div class="bui-btn">
+                          菜单
+                      </div>
+                  </li>
+              </ul>
+     示例结构2: 禁止渲染
+            <ul id="listview" class="bui-listview">
+              <!-- 设置status属性可以避免渲染菜单 -->
+              <li status="1">
+                <div class="bui-btn bui-box">
+                  <div class="span1">不渲染</div>
+                  <i class="icon-listright"></i>
+                </div>
+              </li>
+            </ul>
+     示例结构3: 静态渲染,可以允许左右都有按钮
+            <ul id="listview" class="bui-listview">
+              <li status="1">
+                <div class="bui-btn bui-box" href="pages/ui_controls/bui.listview.html" param='{"id":"123"}'>
+                  <div class="span1">静态渲染-左右菜单</div>
+                  <span class="bui-badges">荐</span>
+                  <i class="icon-listright"></i>
+                </div>
+                <div class="bui-listview-menu swipeleft" data-moving="240">
+                    <div class="bui-btn primary">置顶</div>
+                    <div class="bui-btn primary">修改</div>
+                    <div class="bui-btn danger">删除</div>
+                </div>
+                <div class="bui-listview-menu swiperight">
+                    <div class="bui-btn primary">修改</div>
+                    <div class="bui-btn danger">删除</div>
+                </div>
+              </li>
+            </ul>
+  js:
+         // 初始化
+          var uiListview = bui.listview({
+                  id: &quot;#listview&quot;,
+                  data: [{ &quot;text&quot;: &quot;修改&quot;, &quot;classname&quot;:&quot;btn-blue&quot;},
+                          { &quot;text&quot;: &quot;删除&quot;, &quot;classname&quot;:&quot;btn-red&quot;}],
+                  callback: function (e) {
+                    var index = $(e.target).text();
+                        if( index == &quot;修改&quot; ){
+                            //do something
+                        }
+                        this.close();
                   }
-                  this.close();
-            }
-        });</code></pre>
+              });</p>
+<pre class="code prettyprint"><code>      // 自定义模板初始化
+      var uiListview = bui.listview({
+              id: &quot;#listview&quot;,
+              data: [{ &quot;text&quot;: &quot;修改&quot;, &quot;classname&quot;:&quot;btn-blue&quot;},
+                      { &quot;text&quot;: &quot;删除&quot;, &quot;classname&quot;:&quot;btn-red&quot;}],
+              callback: function (e) {
+                var index = $(e.target).text();
+                    if( index == &quot;修改&quot; ){
+                        //do something
+                    }
+                    this.close();
+              },
+              template: function(data) {
+                  var html = &#39;&#39;;
+                  html += &#39;&lt;div class=&quot;bui-listview-menu swipeleft&quot;&gt;&#39;;
+                  data &amp;&amp; data.forEach(function(el, i) {
+                      html += &#39;&lt;div class=&quot;bui-btn danger&quot;&gt;&#39; + el.text + &#39;&lt;/div&gt;&#39;;
+                  })
+                  html += &#39;&lt;/div&gt;&#39;;
+                  return html;
+              }
+          });</code></pre>
 
             </div>
         </div>
@@ -806,7 +841,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l285"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:285</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l313"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:313</code></a>
         
         </p>
 
@@ -846,8 +881,8 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>       //是否打开
-       var activeUI = uiListview.active();</code></pre>
+                <pre class="code prettyprint"><code>      //是否打开
+      var activeUI = uiListview.active();</code></pre>
 
             </div>
         </div>
@@ -889,7 +924,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l326"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:326</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l354"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:354</code></a>
         
         </p>
 
@@ -966,7 +1001,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l384"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:384</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l412"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:412</code></a>
         
         </p>
 
@@ -1017,8 +1052,8 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>       //销毁
-       uiListview.destroy();</code></pre>
+                <pre class="code prettyprint"><code>      //销毁
+      uiListview.destroy();</code></pre>
 
             </div>
         </div>
@@ -1070,7 +1105,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l154"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:154</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l182"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:182</code></a>
         
         </p>
 
@@ -1152,7 +1187,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l344"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:344</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l372"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:372</code></a>
         
         </p>
 
@@ -1237,7 +1272,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l431"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:431</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l459"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:459</code></a>
         
         </p>
 
@@ -1356,7 +1391,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l364"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:364</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l392"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:392</code></a>
         
         </p>
 
@@ -1382,8 +1417,8 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>       //关闭菜单
-       uiListview.unlock();</code></pre>
+                <pre class="code prettyprint"><code>      //关闭菜单
+      uiListview.unlock();</code></pre>
 
             </div>
         </div>
@@ -1433,7 +1468,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l416"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:416</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l444"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:444</code></a>
         
         </p>
 
@@ -1526,7 +1561,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l479"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:479</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l507"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:507</code></a>
         
         </p>
 
@@ -1592,7 +1627,7 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>         uiListview.off(&quot;lock&quot;);</code></pre>
+                <pre class="code prettyprint"><code>       uiListview.off(&quot;lock&quot;);</code></pre>
 
             </div>
         </div>
@@ -1623,7 +1658,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l459"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:459</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.listview.js.html#l487"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.listview.js:487</code></a>
         
         </p>
 

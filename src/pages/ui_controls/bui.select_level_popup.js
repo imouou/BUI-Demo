@@ -1,15 +1,17 @@
 ﻿loader.define(function(require,exports,module) {
 
+
     // 多级联动
     levelSelect();
 
     // bui.select 的多级联动
       function levelSelect() {
         var uiMask = bui.mask();
-      /* 一, 初始化控件 */  
+      /* 一, 初始化控件 */
 
         // 城市的数据
         var chineseCities = {};
+        var uiLoading = bui.loading();
 
         // 省份
         var provinceSelect = bui.select({
@@ -50,16 +52,16 @@
                 data: []
             });
 
-      /* 二, 监听控件的事件变化 */  
+      /* 二, 监听控件的事件变化 */
 
         // 选择省份以后
         provinceSelect.on("change",function () {
             var index = provinceSelect.index() || 0;
-                
+
                 // 激活第一个城市
                 chineseCities.city = chineseCities.province[index]["city"];
                 citySelect.option("data",chineseCities.city);
-                
+
                 // 显示城市选择
                 citySelect.show("none");
         })
@@ -68,7 +70,7 @@
         citySelect.on("change",function () {
 
             var index = citySelect.index() || 0;
-                      
+
                 //设置选择的区域数据
                 chineseCities.area = chineseCities.city[index]["area"] || [];
                 areaSelect.option("data",chineseCities.area)
@@ -80,7 +82,7 @@
         });
         // 选择地区以后
         areaSelect.on("change",function () {
-            
+
             var province = provinceSelect.text(),
                     city = citySelect.text(),
                     area = areaSelect.text(),
@@ -96,15 +98,19 @@
 
         })
 
-      /* 三, 填充省份的第一个列表 */  
+      /* 三, 填充省份的第一个列表 */
+
+        uiLoading.show();
 
         // 获取中国省份的数据
-        bui.ajax({url:"http://www.easybui.com/demo/json/chineseCities.json"}).done(function (datas) {
+        bui.ajax({url:"http://www.easybui.com/demo/json/chineseCities.json"}).then(function (datas) {
             //省份数据
             chineseCities.province = datas.data;
             //初始化省份的select
             provinceSelect.option("data",datas.data);
+
+            uiLoading.hide();
         })
-         
+
       }
 })

@@ -18,11 +18,8 @@ loader.define(function(require, exports, module) {
         },
         template: function(data) {
             var html = "";
-            data.map(function(el, index) {
-                // 演示传参,标准JSON才能转换
-                var param = {"id":index,"title":el.name};
-                var paramStr = JSON.stringify(param);
-                
+            data.forEach(function(el, index) {
+
                 // 处理角标状态
                 var sub = '',
                     subClass = '';
@@ -41,7 +38,7 @@ loader.define(function(require, exports, module) {
                         break;
                 }
 
-                html += `<li class="bui-btn bui-box" href="pages/ui/article.html" param='${paramStr}'>
+                html += `<li class="bui-btn bui-box" href="pages/ui/article.html?id=${index}&title=${el.name}">
                     <div class="bui-thumbnail ${subClass}" data-sub="${sub}" ><img src="${el.image}" alt=""></div>
                     <div class="span1">
                         <h3 class="item-title">${el.name}</h3>

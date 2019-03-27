@@ -4,7 +4,7 @@
  * @return {[object]}  [ 返回一个对象 ]
  */
 loader.define(function(require, exports, module) {
-
+  console.log("main")
     var pageview = {};
     // 模块初始化定义
     pageview.init = function() {

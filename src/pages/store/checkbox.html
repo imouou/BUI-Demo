@@ -1,5 +1,4 @@
-﻿
-<div class="bui-page page-store">
+﻿<div class="bui-page page-store page-checkbox">
     <header class="bui-bar">
         <div class="bui-bar-left">
             <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
@@ -11,8 +10,13 @@
     <main>
 
         <div class="section-title">控制状态显示隐藏</div>
+
+
         <p b-show="page.show">我是A,被控制的内容</p>
+        <div b-show="page.show" class="bui-box">
+            <div class="span1">我是C,被控制的内容,支持box布局</div><i class="icon-listright"></i></div>
         <p b-show="!page.show">我是B,跟A相反的状态</p>
+
         <label><input type="checkbox" b-model="page.show" />点击可以控制A和B: <span b-text="page.show"></span></label>
 
 
@@ -27,6 +31,6 @@
         <div class="section-title">单选: 性别: <span b-text="page.sex"></span> </div>
         <label><input type="radio" name="sex" value="男" b-model="page.sex">男</label>
         <label><input type="radio" name="sex" value="女" b-model="page.sex">女</label>
-        
+
     </main>
 </div>

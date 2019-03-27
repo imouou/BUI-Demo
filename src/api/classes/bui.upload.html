@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -558,6 +558,36 @@
                                 
                             </li>
                             
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[currentName]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.2新增,获取当前选择的文件名称,常用于配合删除 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[currentIndex]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.2新增,获取当前选择的文件索引,常用于配合删除 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
                         </ul>
                     
                 </li>
@@ -573,11 +603,11 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>  js: </p>
+                <p>  js:</p>
 <pre class="code prettyprint"><code>       // 1. 初始化 这里如果传url初始化,则url作为公共上传地址,start不再需要传url
        var uiUpload = bui.upload({
            url: &quot;http://&quot;
-       });  
+       });
 
        // 2. 选择文件
        uiUpload.add({
@@ -608,7 +638,7 @@
        // 3. 也可以选择后再单独上传
        uiUpload.start({
            data: null
-       }) </code></pre>
+       })</code></pre>
 
             </div>
         </div>
@@ -649,6 +679,20 @@
                         
                             <li class="index-item method">
                                 <a href="#method_clear">clear</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_currentIndex">currentIndex</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_currentName">currentName</a>
 
                                 
                                 
@@ -763,7 +807,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l177"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:177</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l182"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:182</code></a>
         
         </p>
 
@@ -982,7 +1026,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l227"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:227</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l240"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:240</code></a>
         
         </p>
 
@@ -1007,6 +1051,138 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>       uiUpload.clear();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_currentIndex" class="method item">
+    <h3 class="name"><code>currentIndex</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l520"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:520</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.2</p>
+        
+    </div>
+
+    <div class="description">
+        <p>获取最后选择的文件名,删除的时候</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       var currentIndex = uiUpload.currentIndex();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_currentName" class="method item">
+    <h3 class="name"><code>currentName</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l506"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:506</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.2</p>
+        
+    </div>
+
+    <div class="description">
+        <p>获取最后选择的文件名,删除的时候</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       var currentName = uiUpload.currentName();</code></pre>
 
             </div>
         </div>
@@ -1046,7 +1222,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l265"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:265</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l278"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:278</code></a>
         
         </p>
 
@@ -1084,7 +1260,17 @@
     <h3 class="name"><code>remove</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code class="optional">[name]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
     
@@ -1114,7 +1300,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l208"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:208</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l213"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:213</code></a>
         
         </p>
 
@@ -1122,13 +1308,40 @@
         
 
         
+            <p>Available since 1.5.2</p>
+        
     </div>
 
     <div class="description">
-        <p>删除最后选择的文件</p>
+        <p>删除某个文件,支持索引,图片名称,需要先把 currentIndex,currentName 之类的存在选择后的图片上,供删除调用, 建议拿索引去比对, 因为原生选择的图片默认都命名为 resize.jpg 所以不方便通过名称删除.</p>
 
     </div>
 
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[name]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[图片索引|图片名称]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
     
 
     
@@ -1190,7 +1403,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l279"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:279</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l292"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:292</code></a>
         
         </p>
 
@@ -1299,7 +1512,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l341"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:341</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l354"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:354</code></a>
         
         </p>
 
@@ -1398,7 +1611,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l374"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:374</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l388"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:388</code></a>
         
         </p>
 
@@ -1474,7 +1687,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l241"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:241</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l254"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:254</code></a>
         
         </p>
 
@@ -1656,7 +1869,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l492"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:492</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_mix_web_bui.upload.js.html#l534"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;mix&#x2F;web&#x2F;bui.upload.js:534</code></a>
         
         </p>
 

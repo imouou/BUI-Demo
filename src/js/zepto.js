@@ -1048,13 +1048,11 @@ var Zepto = (function() {
             var callback = handler.del || fn
             handler.proxy = function(e) {
                 var result = callback.apply(element, [e].concat(e.data))
-
                 if (result === false) e.preventDefault(), e.stopPropagation()
                 return result
             }
             handler.i = set.length
             set.push(handler)
-
             element.addEventListener(realEvent(handler.e), handler.proxy, eventCapture(handler, capture))
         })
     }
@@ -1162,7 +1160,6 @@ var Zepto = (function() {
                             currentTarget: match,
                             liveFired: element
                         })
-
                         return fn.apply(match, [evt].concat([].slice.call(arguments, 1)))
                     }
                 }

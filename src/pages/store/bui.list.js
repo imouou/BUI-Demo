@@ -8,7 +8,8 @@
             templates: {
                 tplList: function (data) {
                     var html = "";
-                    data.map(function(el, index) {
+                    if( data && data.length ){
+                      data.forEach(function (el,index) {
                         // 演示传参,标准JSON才能转换
                         var param = {"id":index,"title":el.name};
                         var paramStr = JSON.stringify(param);
@@ -22,7 +23,9 @@
                             </div>
                             <span class="price"><i>￥</i>${el.price}</span>
                         </li>`
-                    });
+                      })
+                    }
+
                     return html;
                 }
             },
@@ -48,7 +51,6 @@
                         bui.array.merge(_self.lists,datas.data);
                     },
                     onLoad: function (scroll,datas) {
-                        
                         bui.array.merge(_self.lists,datas.data)
                     }
                 });

@@ -41,6 +41,9 @@
         }
     })
 
+    // 清空数据
+    // uiSelect.option("data", [])
+
     //静态自定义绑定
     var uiSelect2 = bui.select({
         id: "#select-dialog",
@@ -58,4 +61,5 @@
         console.log(uiSelect2.value())
         uiSelect2.hide();
     });
+
 })

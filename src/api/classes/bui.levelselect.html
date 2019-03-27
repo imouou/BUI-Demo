@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -348,6 +348,21 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[template]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.2新增, 默认null, 模板不满意,可以通过此方法返回新的模板,第一个参数为data的数据]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[appendTo]</code>
                                     <span class="type">String | Object</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -442,7 +457,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[按钮的提示文本]</p>
+                                    <p>[占位符: 默认:&quot;请选择&quot;]</p>
 
                                 </div>
 
@@ -676,6 +691,29 @@
            data: [&quot;c&quot;,&quot;a&quot;],
        },
        value: [&quot;广东&quot;,&quot;广州市&quot;,&quot;天河区&quot;]
+   })
+
+   // 3. 自定义模板
+   var citySelect2 = bui.levelselect({
+       data: citys,
+       title: &quot;所在地区&quot;,
+       trigger: &quot;.selected-vals&quot;,
+       level: 3,
+       template: function(data) {
+           var html = &#39;&#39;;
+           html += &#39;&lt;div class=&quot;bui-list bui-list-select&quot;&gt;&#39;;
+           data.forEach(function(item, i) {
+               var name = typeof item === &quot;string&quot; ? item : item.n;
+               html += `
+               &lt;div class=&quot;bui-btn bui-box bui-btn-line&quot;&gt;
+                   &lt;div class=&quot;span1&quot;&gt;${ name}&lt;/div&gt;
+                   &lt;input value=&quot;${name}&quot; text=&quot;${name}&quot; index=&quot;${i}&quot; type=&quot;radio&quot; class=&quot;bui-choose&quot;&gt;
+               &lt;/div&gt;`
+           })
+           html += &#39;&lt;/div&gt;&#39;;
+
+           return html;
+       }
    })</code></pre>
 
             </div>
@@ -831,7 +869,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l403"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:403</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l438"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:438</code></a>
         
         </p>
 
@@ -898,7 +936,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l363"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:363</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l398"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:398</code></a>
         
         </p>
 
@@ -965,7 +1003,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l349"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:349</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l384"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:384</code></a>
         
         </p>
 
@@ -1032,7 +1070,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l378"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:378</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l413"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:413</code></a>
         
         </p>
 
@@ -1099,7 +1137,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l334"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:334</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l369"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:369</code></a>
         
         </p>
 
@@ -1166,7 +1204,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l453"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:453</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l489"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:489</code></a>
         
         </p>
 
@@ -1248,7 +1286,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l600"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:600</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l636"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:636</code></a>
         
         </p>
 
@@ -1343,7 +1381,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l573"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:573</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l609"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:609</code></a>
         
         </p>
 
@@ -1440,7 +1478,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l553"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:553</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.levelselect.js.html#l589"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.levelselect.js:589</code></a>
         
         </p>
 

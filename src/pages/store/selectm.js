@@ -28,6 +28,7 @@
                 ],
                 selectB: [],
             },
+            // log: true,
             methods: {
                 setStatus: function (target,index,checked) {
 
@@ -55,7 +56,7 @@
 
                     // 修改按钮状态
                     var btn = checked == "selectBChecked" ? "canDel" : "canAdd";
-                    
+
                     if( this[btn].disabled ){ return; }
 
                     // 移动过去以后,不需要选中状态

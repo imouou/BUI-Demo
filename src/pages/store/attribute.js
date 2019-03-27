@@ -8,23 +8,28 @@ loader.define(function(require, exports, module) {
             data: {
                 title: "自动绑定标题",
                 attrs: {
+                    "test": "123",
                     "title": "这是动态标题",
                     "data-title": "自定义标题",
-                }
+                    "obj": {
+                      "test": 123
+                    }
+                },
+                prop: {
+                  checked: true,
+                  disabled: true,
+                },
+                image: "images/face.png",
+                disabled: true,
             },
-            needStatic: true,
+            // needStatic: true,
             methods: {},
             watch: {},
             computed: {},
             templates: {},
             mounted: function () {
-                // 加载后执行
-                // 通过控制属性的修改,则可以修改属性标题
-                // this.attrs.title = "修改的标题";
+
             }
         })
-    
-
-   
 
 })

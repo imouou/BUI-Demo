@@ -1,5 +1,5 @@
 ﻿
-<div class="bui-page page-store">
+<div class="bui-page">
     <header class="bui-bar">
         <div class="bui-bar-left">
             <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
@@ -13,8 +13,8 @@
         <div id="listStore" class="bui-scroll">
             <div class="bui-scroll-head"></div>
             <div class="bui-scroll-main">
-                <ul class="bui-list" b-template="page.tplList(page.lists)">
-                    
+                <ul class="bui-list" b-template="page.tplList(page.lists)" b-command="html">
+
                 </ul>
             </div>
             <div class="bui-scroll-foot"></div>

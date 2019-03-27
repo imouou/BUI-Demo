@@ -30,7 +30,7 @@
                 </h1>
             
             <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.1 </p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
             
         </div>
     </div>
@@ -363,6 +363,21 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[template]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.2新增, 默认null, 按钮模板不满意,可以通过此方法返回新的模板,第一个参数为button的数据]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[handle]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -528,7 +543,7 @@
             <div class="example-content">
                 <p>  html:</p>
 <pre class="code prettyprint"><code>       &lt;div id=&quot;btnOpen&quot; class=&quot;bui-btn&quot;&gt;actionsheet&lt;/div&gt;</code></pre>
-<p>  js: </p>
+<p>  js:</p>
 <pre class="code prettyprint"><code>       // 初始化
        var uiActionsheet = bui.actionsheet({
            trigger: &quot;#btnOpen&quot;,
@@ -541,6 +556,36 @@
                if( val == &quot;cancel&quot;){
                    this.hide();
                }
+           }
+       })
+
+       // 自定义模板初始化
+       var uiActionsheet = bui.actionsheet({
+           trigger: &quot;#btnOpen&quot;,
+           buttons: [{ name: &quot;分享到微博&quot;, value: &quot;weibo&quot; }, { name: &quot;分享到微信&quot;, value: &quot;weixin&quot; }],
+           callback: function(e) {
+
+               var val = $(e.target).attr(&quot;value&quot;);
+
+               console.log(val);
+               if (val == &quot;cancel&quot;) {
+                   this.hide();
+               }
+           },
+           template: function(data) {
+
+               var html = &#39;&#39;;
+               if (data &amp;&amp; data.length) {
+                   // this.config.id 为对话框生成的唯一id
+                   html += &#39;&lt;div id=&quot;&#39; + this.config.id + &#39;&quot; class=&quot;bui-actionsheet&quot;&gt;&#39;;
+                   html += &#39;    &lt;ul class=&quot;bui-list&quot;&gt;&#39;;
+                   html += &#39;        &lt;li class=&quot;bui-btn&quot; value=&quot;按钮的值&quot;&gt;按钮名&lt;/li&gt;&#39;;
+                   html += &#39;    &lt;/ul&gt;&#39;;
+                   html += &#39;    &lt;div class=&quot;bui-btn&quot; value=&quot;cancel&quot;&gt;&#39; + this.config.cancelText + &#39;&lt;/div&gt;&#39;;
+                   html += &#39;&lt;/div&gt;&#39;;
+               }
+
+               return html;
            }
        })</code></pre>
 
@@ -712,7 +757,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l298"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:298</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l335"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:335</code></a>
         
         </p>
 
@@ -806,7 +851,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l264"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:264</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l301"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:301</code></a>
         
         </p>
 
@@ -874,7 +919,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l281"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:281</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l318"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:318</code></a>
         
         </p>
 
@@ -940,7 +985,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l210"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:210</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l247"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:247</code></a>
         
         </p>
 
@@ -1017,7 +1062,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l114"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:114</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l148"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:148</code></a>
         
         </p>
 
@@ -1115,7 +1160,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l337"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:337</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l374"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:374</code></a>
         
         </p>
 
@@ -1231,7 +1276,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l237"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:237</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l274"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:274</code></a>
         
         </p>
 
@@ -1306,7 +1351,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l322"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:322</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l359"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:359</code></a>
         
         </p>
 
@@ -1399,7 +1444,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l397"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:397</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l434"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:434</code></a>
         
         </p>
 
@@ -1496,7 +1541,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l377"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:377</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.actionsheet.js.html#l414"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.actionsheet.js:414</code></a>
         
         </p>
 
