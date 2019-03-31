@@ -48,7 +48,7 @@
     var uiSelect2 = bui.select({
         id: "#select-dialog",
         trigger: "#select2",
-        type: "checkbox",
+        type: "radio",
         effect: "fadeInRight",
         position: "right",
         fullscreen: true,

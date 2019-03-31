@@ -7,12 +7,17 @@ loader.define(function(require,exports,module) {
             children: ".bui-list",//循环遍历的数据的父层,如果不对,会出现无限滚动的情况
             page:1,
             pageSize:5,
-            // autoNext: false,
+            onBeforeRefresh : function () {
+              console.log("brefore refresh")
+            },
+            onBeforeLoad : function () {
+              console.log("brefore load")
+            },
             onRefresh: refresh,
             onLoad: getData,
 
             callback: function (argument) {
-                
+
             }
         });
 
@@ -41,7 +46,7 @@ loader.define(function(require,exports,module) {
 
             //生成html
             var html = template( res.data );
-                
+
             router.$("#scrollList")[command](html);
 
             // 更新分页信息,如果高度不足会自动请求下一页
@@ -65,7 +70,7 @@ loader.define(function(require,exports,module) {
             // 演示传参,标准JSON才能转换
             var param = {"id":index,"title":el.name};
             var paramStr = JSON.stringify(param);
-            
+
             // 处理角标状态
             var sub = '',
                 subClass = '';

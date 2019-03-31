@@ -3,7 +3,7 @@ loader.define(function(require, exports, module) {
     var uiList = bui.list({
         id: "#scrollList",
         url: "http://www.easybui.com/demo/json/shop.json",
-        pageSize: 5,
+        pageSize: 6,  // 当pageSize 小于返回的数据大小的时候,则认为是最后一页,接口返回的数据最好能返回空数组,而不是null
         data: {},
         //如果分页的字段名不一样,通过field重新定义
         field: {
@@ -50,8 +50,22 @@ loader.define(function(require, exports, module) {
             });
 
             return html;
+        },
+        onBeforeRefresh : function () {
+          console.log("brefore refresh")
+        },
+        onBeforeLoad : function () {
+          console.log("brefore load")
+        },
+        onRefresh: function() {
+            // 刷新以后执行
+            console.log("refreshed")
+        },
+        onLoad: function() {
+            // 刷新以后执行
+            console.log("loaded")
         }
-    });
+    })
 
 
 

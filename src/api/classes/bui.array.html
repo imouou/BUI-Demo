@@ -784,7 +784,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l621"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:621</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l656"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:656</code></a>
         
         </p>
 
@@ -792,12 +792,12 @@
         
 
         
-            <p>Available since 1.5.1</p>
+            <p>Available since 1.5.2</p>
         
     </div>
 
     <div class="description">
-        <p>跟remove的区别在于这个接口跟set一致,先数组</p>
+        <p>跟remove的区别在于这个接口返回删除前的所在索引, 便于两个相同数据进行比对</p>
 
     </div>
 
@@ -869,7 +869,7 @@
                     
                         <span class="type">Array</span>:
                     
-                    <p>[返回删除后的数组]</p>
+                    <p>[返回删除前的所在位置]</p>
 
                 
             </div>
@@ -883,13 +883,13 @@
             <div class="example-content">
                 <pre class="code prettyprint"><code>   //普通数组:
    var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;bui&quot;];
-   var newArr = bui.array.delete(arr , &quot;bui&quot; );
+   var indexs = bui.array.delete(arr , &quot;bui&quot; );
 
    // console.log(newArr) //结果: [&quot;hello&quot;,&quot;hi&quot;]
 
    //JSON数组:
    var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;}];
-   var newArr = bui.array.delete( arr, &quot;bui&quot;, &quot;value&quot; );
+   var indexs = bui.array.delete( arr, &quot;bui&quot;, &quot;value&quot; );
    // console.log(newArr) //结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;}]</code></pre>
 
             </div>
@@ -1417,7 +1417,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l486"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:486</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l521"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:521</code></a>
         
         </p>
 
@@ -1589,7 +1589,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l528"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:528</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l563"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:563</code></a>
         
         </p>
 
@@ -2181,8 +2181,9 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
-   var newArr = bui.array.merge( arr, [&quot;new&quot;,&quot;bui&quot;]);
-   // [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;, &quot;new&quot;,&quot;bui&quot;]</code></pre>
+
+   bui.array.merge( arr, [&quot;new&quot;,&quot;bui&quot;]);
+   // console.log(arr) [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;, &quot;new&quot;,&quot;bui&quot;]</code></pre>
 
             </div>
         </div>
@@ -2534,7 +2535,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l569"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:569</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l604"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:604</code></a>
         
         </p>
 

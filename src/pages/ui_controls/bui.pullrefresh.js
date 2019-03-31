@@ -3,6 +3,9 @@
     // pullRefresh 初始化
     var uiPullRefresh = bui.pullrefresh({
             id: "#pullrefresh",
+            onBeforeRefresh : function () {
+              console.log("brefore")
+            },
             onRefresh : getData
         });
 

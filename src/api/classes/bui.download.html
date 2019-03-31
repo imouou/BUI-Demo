@@ -427,7 +427,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[ 1.5.1新增, 是否使用原生上传, 不受bui.isWebapp状态决定 默认 false|true 通过这个切换对应的效果,可以通过全局配置 bui.config.download = {needNative:true} ]</p>
+                                    <p>[ 1.5.1新增, 是否使用原生下载, 不受bui.isWebapp状态决定 默认 false|true 通过这个切换对应的效果,可以通过全局配置 bui.config.download = {needNative:true} ]</p>
 
                                 </div>
 
@@ -918,13 +918,13 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>        uiDownload.open({
-            url: &quot;file://&quot;,
-            onSuccess: function(url){
-                // 文件的地址
-                console.log(url)
-            }
-        })</code></pre>
+                <pre class="code prettyprint"><code>       uiDownload.open({
+           url: &quot;file://&quot;,
+           onSuccess: function(url){
+               // 文件的地址
+               console.log(url)
+           }
+       })</code></pre>
 
             </div>
         </div>
