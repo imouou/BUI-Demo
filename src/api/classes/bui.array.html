@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.4 </p>
             
         </div>
     </div>
@@ -68,8 +68,6 @@
                 <li><a href="../classes/bui.back.html">bui.back</a></li>
             
                 <li><a href="../classes/bui.btn.html">bui.btn</a></li>
-            
-                <li><a href="../classes/bui.checkVersion.html">bui.checkVersion</a></li>
             
                 <li><a href="../classes/bui.config.html">bui.config</a></li>
             
@@ -151,10 +149,6 @@
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
             
-                <li><a href="../classes/bui.timer.html">bui.timer</a></li>
-            
-                <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
-            
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
             
                 <li><a href="../classes/bui.unit.html">bui.unit</a></li>
@@ -222,7 +216,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l13"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:13</code></a>
+            Defined in: <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l14"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:14</code></a>
         </div>
     
 
@@ -445,7 +439,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l73"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:73</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l79"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:79</code></a>
         
         </p>
 
@@ -617,7 +611,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l374"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:374</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l384"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:384</code></a>
         
         </p>
 
@@ -628,7 +622,7 @@
     </div>
 
     <div class="description">
-        <p>复制数组某一部分</p>
+        <p>1.5.3 后废弃, 复制数组某一部分, 建议使用数组的 slice 方法处理</p>
 
     </div>
 
@@ -784,7 +778,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l656"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:656</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l790"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:790</code></a>
         
         </p>
 
@@ -881,16 +875,22 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   //普通数组:
+                <pre class="code prettyprint"><code>   //例子1: 删除值或索引:
    var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;bui&quot;];
-   var indexs = bui.array.delete(arr , &quot;bui&quot; );
+   bui.array.delete(arr , &quot;bui&quot; );
 
-   // console.log(newArr) //结果: [&quot;hello&quot;,&quot;hi&quot;]
+    1.5.3 版本以后可以这样
+   arr.$delete(&quot;hi&quot;);
+   // arr 结果: [&quot;hello&quot;,&quot;hi&quot;]
 
-   //JSON数组:
+
+   // 例子2: 删除值在哪个字段:
    var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;}];
-   var indexs = bui.array.delete( arr, &quot;bui&quot;, &quot;value&quot; );
-   // console.log(newArr) //结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;}]</code></pre>
+   bui.array.delete( arr, &quot;bui&quot;, &quot;value&quot; );
+
+    1.5.3 版本以后可以这样
+   arr.$delete(&quot;bui&quot;, &quot;value&quot;);
+   // arr 结果: [{ &quot;id&quot;:1,value:&quot;hello&quot;}]</code></pre>
 
             </div>
         </div>
@@ -944,7 +944,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l410"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:410</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l420"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:420</code></a>
         
         </p>
 
@@ -1009,7 +1009,13 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;easybui&quot;];
-   var newArr = bui.array.empty( arr );</code></pre>
+   bui.array.empty( arr );
+
+   1.5.3 版本以后可以这样
+
+   arr.$empty();
+
+   结果 arr: []</code></pre>
 
             </div>
         </div>
@@ -1075,7 +1081,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l284"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:284</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l294"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:294</code></a>
         
         </p>
 
@@ -1245,7 +1251,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l182"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:182</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l192"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:192</code></a>
         
         </p>
 
@@ -1417,7 +1423,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l521"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:521</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l563"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:563</code></a>
         
         </p>
 
@@ -1518,12 +1524,18 @@
     var arr = [&quot;hello&quot;,&quot;bui&quot;,&quot;hi&quot;,&quot;easybui&quot;];
     var item = bui.array.get( arr,&quot;bui&quot; );
 
-    // console.log(item) //结果: bui
+    1.5.3 版本以后可以这样
+   var item = arr.$get(&quot;bui&quot; );
+   // 结果: bui 如果没有则是 undefined 
 
     //JSON数组:
     var arr = [{ &quot;id&quot;:1,value:&quot;hello&quot;},{ &quot;id&quot;:2,value:&quot;bui&quot;},{ &quot;id&quot;:3,value:&quot;easybui&quot;}];
     var item = bui.array.get( arr, &quot;bui&quot;, &quot;value&quot; );
-    // console.log(newArr) //结果: { &quot;id&quot;:2,value:&quot;bui&quot;}</code></pre>
+    // console.log(newArr) //结果: { &quot;id&quot;:2,value:&quot;bui&quot;}
+
+   1.5.3 版本以后可以这样
+   var item = arr.$get(&quot;bui&quot;, &quot;value&quot;);
+   // 结果: { &quot;id&quot;:2,value:&quot;bui&quot;} 如果没有则是 undefined </code></pre>
 
             </div>
         </div>
@@ -1589,7 +1601,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l563"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:563</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l618"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:618</code></a>
         
         </p>
 
@@ -1631,13 +1643,13 @@
                 <li class="param">
                     
                         <code class="param-name">value</code>
-                        <span class="type">String</span>
+                        <span class="type">String | Array</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[要查找的值]</p>
+                        <p>[要查找的值,1.5.2 20190402 以后版本支持数组,匹配多个]</p>
 
                     </div>
 
@@ -1761,7 +1773,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l20"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:20</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l21"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:21</code></a>
         
         </p>
 
@@ -1934,7 +1946,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l235"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:235</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l245"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:245</code></a>
         
         </p>
 
@@ -2100,7 +2112,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l458"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:458</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l486"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:486</code></a>
         
         </p>
 
@@ -2183,7 +2195,16 @@
                 <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
 
    bui.array.merge( arr, [&quot;new&quot;,&quot;bui&quot;]);
-   // console.log(arr) [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;, &quot;new&quot;,&quot;bui&quot;]</code></pre>
+
+   1.5.3 版本以后可以这样
+
+   arr.$merge([&quot;new&quot;,&quot;bui&quot;],[&quot;easy&quot;]);
+
+   // 结果 arr: [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;,&quot;new&quot;,&quot;bui&quot;,&quot;easy&quot;]
+
+   // 支持对象合并相同字段,不同字段的则会新增
+   var arr = [{id:&quot;1&quot;,name:&quot;test1&quot;},{id:&quot;2&quot;,name:&quot;test2&quot;}];
+   arr.$merge([{id:&quot;1&quot;,sex:&quot;男&quot;},{id:&quot;3&quot;,name:&quot;test3&quot;}],&quot;id&quot;)</code></pre>
 
             </div>
         </div>
@@ -2249,7 +2270,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l123"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:123</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l133"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:133</code></a>
         
         </p>
 
@@ -2409,7 +2430,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l432"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:432</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l450"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:450</code></a>
         
         </p>
 
@@ -2474,8 +2495,13 @@
 
             <div class="example-content">
                 <pre class="code prettyprint"><code>   var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
-   var newArr = bui.array.replace( arr, [&quot;new&quot;,&quot;bui&quot;]);
-   // [&quot;new&quot;,&quot;bui&quot;]</code></pre>
+   bui.array.replace( arr, [&quot;new&quot;,&quot;bui&quot;]);
+
+   1.5.3 版本以后可以这样
+
+   arr.$replace([&quot;new&quot;,&quot;bui&quot;]);
+
+   // 结果 arr: [&quot;new&quot;,&quot;bui&quot;]</code></pre>
 
             </div>
         </div>
@@ -2498,7 +2524,19 @@
             
                 <li class="arg">
                     
-                        <code>key</code>
+                        <code>key|value</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[value]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[keyname]</code>
                     
                 </li>
             
@@ -2535,7 +2573,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l604"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:604</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l673"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:673</code></a>
         
         </p>
 
@@ -2543,12 +2581,12 @@
         
 
         
-            <p>Available since 1.5.1</p>
+            <p>Available since 1.5.2</p>
         
     </div>
 
     <div class="description">
-        <p>修改数组及数组对象,结合store触发数据变更</p>
+        <p>修改数组或数组对象里面的某个值,结合store触发数据变更, 有3个参数时,第2个是索引值或者数组某个值, 如果是对象,需要第4个参数</p>
 
     </div>
 
@@ -2576,14 +2614,48 @@
             
                 <li class="param">
                     
-                        <code class="param-name">key</code>
-                        <span class="type">Number | String</span>
+                        <code class="param-name">key|value</code>
+                        <span class="type">Number | String | Object | Array</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>[]</p>
+                        <p>[ 数字索引值,或者是值, 如果是数字,设置索引, 如果是其它值则比对值 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[value]</code>
+                        <span class="type">Number | String | Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 修改的值 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[keyname]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[如果比对的是对象,则需要这个键值]</p>
 
                     </div>
 
@@ -2615,28 +2687,45 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   例子1: 修改索引值
+                <pre class="code prettyprint"><code>   例子1: 修改第几个
    var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
    bui.array.set( arr, 1, &quot;new hi&quot;);
    // [&quot;hello&quot;,&quot;new hi&quot;,&quot;easybui&quot;]
 
-   例子2: 修改值
+    1.5.3 版本以后可以这样
+   arr.$set(1, &quot;new hi&quot;);
+   // arr 结果: [&quot;hello&quot;,&quot;new hi&quot;,&quot;easybui&quot;]
+
+   例子2: 修改值等于 hi 为新值 new hi
    var arr = [&quot;hello&quot;,&quot;hi&quot;,&quot;easybui&quot;];
    bui.array.set( arr, &quot;hi&quot;, &quot;new hi&quot;);
    // [&quot;hello&quot;,&quot;new hi&quot;,&quot;easybui&quot;]
 
+    1.5.3 版本以后可以这样
+   arr.$set(&quot;hi&quot;, &quot;new hi&quot;);
+   // arr 结果: [&quot;hello&quot;,&quot;new hi&quot;,&quot;easybui&quot;]
 
    例子3: 修改对象值
    var arr = [{name:&quot;hello&quot;},{name:&quot;hi&quot;},{name:&quot;easybui&quot;}];
    bui.array.set( arr, 1, {name:&quot;new hi&quot;} );
    // [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]
 
+    1.5.3 版本以后可以这样
+   arr.$set(1, {name:&quot;new hi&quot;});
+   // arr 结果: [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]
+
    例子4: 修改对象某个字段值, 需要传多一个唯一值的字段名
 
    var arr = [{name:&quot;hello&quot;},{name:&quot;hi&quot;},{name:&quot;easybui&quot;}];
    bui.array.set( arr, &quot;hi&quot;, {name:&quot;new hi&quot;}, &quot;name&quot; );
+   // [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]
 
-   // [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]</code></pre>
+    1.5.3 版本以后可以这样
+    // 单独修改某个值
+   arr.$set(&quot;hello&quot;, &quot;hi bui&quot;, &quot;name&quot;);
+   // 修改整个对象,不同的key值则会一起合并过去
+   arr.$set(&quot;hi&quot;, {name:&quot;new hi&quot;}, &quot;name&quot;);
+   // arr 结果: [{name:&quot;hello&quot;},{name:&quot;new hi&quot;},{name:&quot;easybui&quot;}]</code></pre>
 
             </div>
         </div>
@@ -2696,7 +2785,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l336"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:336</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.array.js.html#l346"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.array.js:346</code></a>
         
         </p>
 
@@ -2822,12 +2911,12 @@
 <!-- 百度统计 -->
 <script>
 var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?50f5631d37bf0ccb2034e80da6eb2972";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e19beda5d47048a31939f0f67d9b1f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 
 

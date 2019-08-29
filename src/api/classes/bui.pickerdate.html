@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.4 </p>
             
         </div>
     </div>
@@ -68,8 +68,6 @@
                 <li><a href="../classes/bui.back.html">bui.back</a></li>
             
                 <li><a href="../classes/bui.btn.html">bui.btn</a></li>
-            
-                <li><a href="../classes/bui.checkVersion.html">bui.checkVersion</a></li>
             
                 <li><a href="../classes/bui.config.html">bui.config</a></li>
             
@@ -150,10 +148,6 @@
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
-            
-                <li><a href="../classes/bui.timer.html">bui.timer</a></li>
-            
-                <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
             
@@ -354,8 +348,39 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">popup</code>
+                                    <code class="param-name optional">[handle]</code>
                                     <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 触发弹窗的选择器, 1.5.3支持样式选择器,多个日期,只需要初始化一个 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[bindValue]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[ 1.5.3 新增, 默认:false|true, 修改的值会自动绑定到 handle, 不再需要自己去绑定 ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[popup]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -368,8 +393,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">mask</code>
+                                    <code class="param-name optional">[mask]</code>
                                     <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -382,8 +408,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">buttons</code>
+                                    <code class="param-name optional">[buttons]</code>
                                     <span class="type">Array</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -396,8 +423,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">value</code>
+                                    <code class="param-name optional">[value]</code>
                                     <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -410,8 +438,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">min</code>
+                                    <code class="param-name optional">[min]</code>
                                     <span class="type">String | Date</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -424,8 +453,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">max</code>
+                                    <code class="param-name optional">[max]</code>
                                     <span class="type">String | Date</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -438,8 +468,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">formatValue</code>
+                                    <code class="param-name optional">[formatValue]</code>
                                     <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -452,8 +483,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">cols</code>
+                                    <code class="param-name optional">[cols]</code>
                                     <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -581,8 +613,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">rotateEffect</code>
+                                    <code class="param-name optional">[rotateEffect]</code>
                                     <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -595,8 +628,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">onChange</code>
+                                    <code class="param-name optional">[onChange]</code>
                                     <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -609,8 +643,9 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name">callback</code>
+                                    <code class="param-name optional">[callback]</code>
                                     <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
@@ -636,41 +671,25 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p> // 1. 无底部按钮初始化</p>
-<pre class="code prettyprint"><code>   var input = $(&quot;#datepicker_input&quot;);
-   var uiPickerdate = bui.pickerdate({
-       handle:&quot;#datepicker_input&quot;,
-       value: &#39;2015/8/10 9:00&#39;,
-       min: &#39;2014/4/5 9:00&#39;,
-       max: &#39;2016/4/5 10:00&#39;,
-       onChange: function(value) {
-           input.val(value);
-       }
-   });</code></pre>
-<p>   // 2. 带底部按钮的初始化</p>
-<pre class="code prettyprint"><code>   var datePrevVal;
-   var input = $(&quot;#datepicker_input&quot;);
-   var uiPickerdate = bui.pickerdate({
-       // id: &quot;#datepicker_contanier&quot;,
-       handle:&quot;#datepicker_input&quot;,
-       value: &#39;2015/8/10 9:00&#39;,
-       onChange: function(value) {
-           input.val(value);
-       },
-       // 如果需要按钮,需要自己写callback
-       buttons: [&quot;取消&quot;,&quot;确定&quot;],
-       callback: function (e) {
-           // 取消返回上一个值
-           if( $(e.target).text().trim() == &quot;取消&quot;){
-               uiPickerdate.value(datePrevVal);
-           }else{
-               datePrevVal = uiPickerdate.value();
-           }
-       }
-   });
+                <pre class="code prettyprint"><code>       // 1. 简单初始化
+       //1.5.3 新增 bindValue, 设置 true, 会自动把值绑定到指定的handle.
 
-   // 获取上一个值
-   datePrevVal = uiPickerdate.value();</code></pre>
+       var uiPickerdate = bui.pickerdate({
+           handle:&quot;#datepicker_input&quot;,
+           bindValue: true,
+           onChange: function(value) {
+               console.log(value);
+           }
+       });
+
+   // 2. 分离式初始化: 需要自己指定value设置到哪里.
+       var input = $(&quot;#datepicker_input&quot;);
+       var uiPickerdate = bui.pickerdate({
+           handle:&quot;#datepicker_input&quot;,
+           onChange: function(value) {
+               input.val(value);
+           }
+       });</code></pre>
 
             </div>
         </div>
@@ -703,6 +722,13 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
+                        
+                            <li class="index-item method">
+                                <a href="#method_close">close</a>
+
+                                
+                                
+                            </li>
                         
                             <li class="index-item method">
                                 <a href="#method_cols">cols</a>
@@ -740,6 +766,13 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_isOpen">isOpen</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_max">max</a>
 
                                 
@@ -755,6 +788,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_onChange">onChange</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_open">open</a>
 
                                 
                                 
@@ -819,6 +859,74 @@
                 <h2 class="off-left">Methods</h2>
 
                 
+                    <div id="method_close" class="method item">
+    <h3 class="name"><code>close</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l872"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:872</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.3</p>
+        
+    </div>
+
+    <div class="description">
+        <p>关闭窗口</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>           uiPickerdate.close();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_cols" class="method item">
     <h3 class="name"><code>cols</code></h3>
 
@@ -861,7 +969,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l262"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:262</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l248"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:248</code></a>
         
         </p>
 
@@ -1216,7 +1324,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l838"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:838</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l907"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:907</code></a>
         
         </p>
 
@@ -1310,7 +1418,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l803"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:803</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l821"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:821</code></a>
         
         </p>
 
@@ -1378,7 +1486,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l821"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:821</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l890"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:890</code></a>
         
         </p>
 
@@ -1454,7 +1562,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l457"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:457</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l453"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:453</code></a>
         
         </p>
 
@@ -1512,6 +1620,74 @@
 </div>
 
                 
+                    <div id="method_isOpen" class="method item">
+    <h3 class="name"><code>isOpen</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l856"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:856</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.3</p>
+        
+    </div>
+
+    <div class="description">
+        <p>是否打开状态</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>           uiPickerdate.isOpen();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_max" class="method item">
     <h3 class="name"><code>max</code></h3>
 
@@ -1554,7 +1730,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l394"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:394</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l380"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:380</code></a>
         
         </p>
 
@@ -1654,7 +1830,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l378"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:378</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l364"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:364</code></a>
         
         </p>
 
@@ -1754,7 +1930,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l509"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:509</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l505"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:505</code></a>
         
         </p>
 
@@ -1814,6 +1990,74 @@
 </div>
 
                 
+                    <div id="method_open" class="method item">
+    <h3 class="name"><code>open</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l839"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:839</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.3</p>
+        
+    </div>
+
+    <div class="description">
+        <p>打开窗口</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>           uiPickerdate.open();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_reset" class="method item">
     <h3 class="name"><code>reset</code></h3>
 
@@ -1846,7 +2090,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l360"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:360</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l346"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:346</code></a>
         
         </p>
 
@@ -1921,7 +2165,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l410"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:410</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l396"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:396</code></a>
         
         </p>
 
@@ -2021,7 +2265,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l860"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:860</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l929"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:929</code></a>
         
         </p>
 
@@ -2070,8 +2314,8 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>           //获取依赖控件
-           var uiPickerdateWidget = uiPickerdate.widget();</code></pre>
+                <pre class="code prettyprint"><code>               //获取依赖控件
+               var uiPickerdateWidget = uiPickerdate.widget();</code></pre>
 
             </div>
         </div>
@@ -2114,7 +2358,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l898"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:898</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l967"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:967</code></a>
         
         </p>
 
@@ -2211,7 +2455,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l878"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:878</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.pickerdate.js.html#l947"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.pickerdate.js:947</code></a>
         
         </p>
 
@@ -2310,12 +2554,12 @@
 <!-- 百度统计 -->
 <script>
 var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?50f5631d37bf0ccb2034e80da6eb2972";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e19beda5d47048a31939f0f67d9b1f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 
 

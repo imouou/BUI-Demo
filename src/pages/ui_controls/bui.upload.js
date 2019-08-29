@@ -4,7 +4,9 @@
     var $facePhoto = router.$("#buiPhoto");
     var $uploadBtn = router.$("#btnUpload").parent();
 
-    var uiUpload = bui.upload();
+    var uiUpload = bui.upload({
+        showProgress: false
+    });
 
     // 上拉菜单 js 初始化:
     var uiActionsheet = bui.actionsheet({
@@ -19,22 +21,21 @@
                     ui.hide();
                     uiUpload.add({
                         "from": "camera",
+                        "needCompress": true, // 1.5.3新增压缩
+                        "width": 300,
+                        "destinationType": "file", //  file | blob | data 
                         "onSuccess": function(val, data) {
                             // 展示base64本地图片 建议直接调用start方法上传以后再展示远程地址,避免应用崩溃
                             this.toBase64({
                                 onSuccess: function(url) {
                                     $uploadBtn.before(templatePhoto(url))
-
                                 }
                             });
-                            // 新的展示本地图片方式,部分手机不支持
-                            // var url = window.URL.createObjectURL(val[0]);
-                            // $uploadBtn.before(templatePhoto(url))
-
                             // 直接调用start上传图片
+
                             // this.start({
                             //     header: {},
-                            //     url: "http://easybui.com/images/",
+                            //     url: "http://10.201.76.223:8060/comservice/psbNewsReport/uploadPictureFile.do",
                             //     onSuccess: function(data) {
                             //         console.log(data, "success");
                             //         // 成功
@@ -61,10 +62,6 @@
 
                                 }
                             });
-                            // 新的展示本地图片方式,部分手机不支持
-                            // var url = window.URL.createObjectURL(val[0]);
-                            // $uploadBtn.before(templatePhoto(url))
-
                             // 直接调用start上传图片
                             // this.start({
                             //     header: {},
@@ -118,7 +115,9 @@
 
     // 删除第一个选择的文件
     $("#removeSelect").on("click", function(argument) {
-            $facePhoto.find(".span1").eq(0).remove();
+            if ($facePhoto.find(".span1").length > 1) {
+                $facePhoto.find(".span1").eq(0).remove();
+            }
             uiUpload.remove(0);
         })
         // 删除选择的文件
@@ -138,6 +137,7 @@
                 onSuccess: function(data) {
                     console.log(data)
                         //显示上传以后的图片
+                        //清空已经选择的图片
                 },
                 onFail: function(data) {
                     bui.alert(data)

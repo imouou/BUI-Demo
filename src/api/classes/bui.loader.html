@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.4 </p>
             
         </div>
     </div>
@@ -68,8 +68,6 @@
                 <li><a href="../classes/bui.back.html">bui.back</a></li>
             
                 <li><a href="../classes/bui.btn.html">bui.btn</a></li>
-            
-                <li><a href="../classes/bui.checkVersion.html">bui.checkVersion</a></li>
             
                 <li><a href="../classes/bui.config.html">bui.config</a></li>
             
@@ -150,10 +148,6 @@
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
-            
-                <li><a href="../classes/bui.timer.html">bui.timer</a></li>
-            
-                <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
             
@@ -379,7 +373,7 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   // 默认已经初始化,无需再次初始化
+                <pre class="code prettyprint"><code>   // 默认已经初始化,无需再次初始化, 如果要修改,应该在 window.router 前面.
    window.loader = bui.loader();</code></pre>
 
             </div>
@@ -399,6 +393,8 @@
         
         
         
+        
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
         
     </ul>
 
@@ -434,6 +430,13 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_get">get</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_import">import</a>
 
                                 
@@ -454,6 +457,13 @@
                                 
                             </li>
                         
+                            <li class="index-item method">
+                                <a href="#method_set">set</a>
+
+                                
+                                
+                            </li>
+                        
                     </ul>
                 </div>
             
@@ -462,6 +472,35 @@
 
             
 
+            
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events">
+                        
+                            <li class="index-item event">
+                                <a href="#event_off">off</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_on">on</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_trigger">trigger</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
             
         </div>
 
@@ -516,7 +555,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l767"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:767</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l846"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:846</code></a>
         
         </p>
 
@@ -616,7 +655,19 @@
             
                 <li class="arg">
                     
-                        <code class="optional">[option]</code>
+                        <code class="optional">[moduleName]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[depend]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>callback</code>
                     
                 </li>
             
@@ -653,7 +704,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l233"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:233</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l269"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:269</code></a>
         
         </p>
 
@@ -664,7 +715,7 @@
     </div>
 
     <div class="description">
-        <p>define是bui.loader实例的一个方法,用于定义模块</p>
+        <p>define是bui.loader实例的一个方法,用于定义模块, 1.5.3新增定义页面的生命周期</p>
 <p>一个js对应一个 define ,可以定义一个匿名的模块,或者自定义依赖的模块,用法跟requirejs类似,</p>
 <p>自定义模块名以后,需要用map声明该模块的script属性,或者callback方法</p>
     </div>
@@ -677,65 +728,51 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[option]</code>
-                        <span class="type">Object</span>
+                        <code class="param-name optional">[moduleName]</code>
+                        <span class="type">String | Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                         
+                        <p>[模块的自定义名称,可以省略, 如果是定义该模块的生命周期,参考例子5. 1.5.3新增. ]</p>
+
                     </div>
 
                     
-                        <ul class="params-list">
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[name]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[depend]</code>
+                        <span class="type">Array</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
 
-                                <div class="param-description">
-                                    <p>[模块的自定义名称,可以省略,自定义模块名以后,需要用map声明该模块的script属性,或者callback方法 ]</p>
+                    
 
-                                </div>
+                    <div class="param-description">
+                        <p>[模块的依赖模块,可以省略, 模块名不含.js ]</p>
 
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name optional">[depend]</code>
-                                    <span class="type">Array</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
+                    </div>
 
-                                <div class="param-description">
-                                    <p>[模块的依赖模块,可以省略, 模块名不含.js ]</p>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+                    
 
-                                </div>
+                    
 
-                                
-                            </li>
-                            
-                            <li class="param">
-                                
-                                    <code class="param-name">callback</code>
-                                    <span class="type">Function</span>
-                                
+                    <div class="param-description">
+                        <p>[注册回调,如果有return值, 可以抛出给其它模块调用 ]</p>
 
-                                <div class="param-description">
-                                    <p>[注册回调,如果有return值, 可以抛出给其它模块调用 ]</p>
+                    </div>
 
-                                </div>
-
-                                
-                            </li>
-                            
-                        </ul>
                     
                 </li>
             
@@ -810,6 +847,45 @@
        moduleName: &quot;page2&quot;,
        template: &quot;pages/page2/page2.html&quot;,
        script: &quot;pages/page2/page2.js&quot;
+   })
+
+   例子5: 1.5.3新增 定义页面的生命周期
+   loader.define({
+       moduleName: &quot;&quot;,     // 是否是自定义的模块名, 没有则不要这个参数
+       depend: [],         // 是否有依赖的模块, 没有则不要这个参数
+       beforeCreate: function(){
+           // 只在第一次创建的时候执行
+           console.log(&quot;beforeCreate&quot;)
+       },
+       created: function(){
+           // 只在第一次创建的时候执行
+           console.log(&quot;beforeCreate&quot;)
+       },
+       beforeLoad: function(){
+           // 每次跳转前执行, 注意:这里return false 并不能阻止页面跳转及执行, 如果要阻止应该在 bui.load({beforeLoad:function(){ return false; }})
+           console.log(&quot;beforeCreate&quot;)
+       },
+       loaded: function(require,export,module){
+           // 每次跳转时执行, loader.require 要加载当前模块,需要在这里抛出方法.
+           console.log(&quot;loaded&quot;)
+       },
+       show: function(e){
+
+           // 每次跳转,后退后执行
+           console.log(e.type ,&quot;show&quot;)
+       },
+       hide: function(){
+           // 每次跳转,后退后执行上一个页面的hide
+           console.log(&quot;hide&quot;)
+       },
+       beforeDestroy: function(){
+           // 每次后退前执行
+           console.log(&quot;beforeDestroy&quot;)
+       },
+       destroyed: function(){
+           // 每次后退后执行
+           console.log(&quot;destroyed&quot;)
+       }
    })</code></pre>
 
             </div>
@@ -864,7 +940,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l184"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:184</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l234"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:234</code></a>
         
         </p>
 
@@ -973,20 +1049,121 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   例子1: 注册首页的回调 pages/main/main.js
-   提示: pages/main/main.js 文件, 定义了一个匿名模块,匿名模块的模块名取.js前面的路径名,确保唯一
+                
+            </div>
+        </div>
+    
+</div>
 
-   // 最简单的匿名定义 loader.define
-   loader.define(function(require,exports,module){
+                
+                    <div id="method_get" class="method item">
+    <h3 class="name"><code>get</code></h3>
 
-       // require : 相当于 loader.require, 获取依赖的模块
-       // module : 拿到当前模块信息
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
 
-       // 可以通过 return 把希望给其它页面调用的方法抛出来
-       return {
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
 
-       }
-   })</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l145"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:145</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>获取模块</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[通过模块名称,获取模块信息]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>[description]</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       var main = loader.get(&quot;main&quot;)</code></pre>
 
             </div>
         </div>
@@ -1040,7 +1217,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l823"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:823</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l902"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:902</code></a>
         
         </p>
 
@@ -1084,7 +1261,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[ 脚本或者样式路径,可以是数组 ]</p>
+                                    <p>[ html,脚本或者样式路径,也可以是数组 ]</p>
 
                                 </div>
 
@@ -1099,7 +1276,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[ 加载成功以后执行,如果是数组,只在最后一个执行 ]</p>
+                                    <p>[ 1.5.4新增对ID的支持,结合html使用,查看例子5, 加载成功以后执行,如果是数组,只在最后一个执行 ]</p>
 
                                 </div>
 
@@ -1153,10 +1330,16 @@
          // 创建成功以后执行回调
        });
 
-       例子4: 动态加载模板
+       例子4: 1.5.2新增, 动态加载模板,回调每次都执行, 如果放在 loader.require 里面执行,则默认只初始化一次;
 
        loader.import(&quot;pages/ui/list.html&quot;,function(res){
          // 拿到模板信息
+       });
+
+       例子5: 1.5.4新增, 把html,渲染到某个id下,只渲染一次. 有回调也只执行一次
+
+       loader.import(&quot;pages/ui/list.html&quot;,&quot;#id&quot;,function(res){
+           // 在渲染模板到#id以后,回调只执行一次
        });</code></pre>
 
             </div>
@@ -1207,7 +1390,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l78"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:78</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l82"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:82</code></a>
         
         </p>
 
@@ -1438,7 +1621,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l500"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:500</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l577"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:577</code></a>
         
         </p>
 
@@ -1549,6 +1732,129 @@
 </div>
 
                 
+                    <div id="method_set" class="method item">
+    <h3 class="name"><code>set</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>value</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l160"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:160</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>设置模块</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 模块名 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 模块的路径 {template:&quot;&quot;,script:&quot;&quot;}]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       // 修改首页为登录页, 需要在window.router 后面
+       loader.set(&quot;main&quot;,{
+           template: &quot;pages/login/login.html&quot;,
+           script: &quot;pages/login/login.html&quot;
+       })</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
             </div>
         
 
@@ -1556,6 +1862,310 @@
 
         
 
+        
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
+
+                
+                    <div id="event_off" class="events item">
+    <h3 class="name"><code>off</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l1145"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:1145</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 1.5.3</p>
+        
+    </div>
+
+    <div class="description">
+        <p>为控件取消绑定事件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[type]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[关闭订阅事件 例如: success]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[callback]</code>
+                        <span class="type">Function</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 监听事件以后执行 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       loader.off(&quot;success&quot;);</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="event_on" class="events item">
+    <h3 class="name"><code>on</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l1124"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:1124</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 1.5.3</p>
+        
+    </div>
+
+    <div class="description">
+        <p>为模块绑定事件,比方依赖的模块是异步的,这个时候可以监听该数据请求结束以后再执行.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[type]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[关闭订阅事件 例如: success ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[callback]</code>
+                        <span class="type">Function</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[ 监听事件以后执行 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>         loader.on(&quot;success&quot;,function () {
+             // 点击的菜单
+             console.log(this);
+         });</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="event_trigger" class="events item">
+    <h3 class="name"><code>trigger</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.loader.js.html#l1162"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.loader.js:1162</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 1.5.3</p>
+        
+    </div>
+
+    <div class="description">
+        <p>触发自定义事件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[type]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[自定义事件, 例如: &quot;success&quot;]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[args]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[传过去的参数,可以有多个 ]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       bui.ajax({
+           url: &quot;&quot;
+       }).then(function(result){
+           loader.trigger(&quot;success&quot;,result);
+       })</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+            </div>
         
     </div>
 </div>
@@ -1577,12 +2187,12 @@
 <!-- 百度统计 -->
 <script>
 var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?50f5631d37bf0ccb2034e80da6eb2972";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e19beda5d47048a31939f0f67d9b1f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 
 

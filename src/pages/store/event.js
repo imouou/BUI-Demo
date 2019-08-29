@@ -13,8 +13,11 @@
                 console.log(b)
                 console.log(c)
 
-                // 事件参数
-                // console.log(event)
+                // 1.5.4新增，获取到想操作的对象
+                console.log(this.$refs["tit"])
+                event.stopPropagation()
+                    // 事件参数
+                    // console.log(event)
 
                 // router.$(".result").html(c)
 

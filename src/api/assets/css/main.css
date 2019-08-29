@@ -1800,6 +1800,10 @@ h6 {
     display: none;
 }
 
+.apidocs .meta p {
+    display: none;
+}
+
 @media screen and (max-width: 1000px) {
     #doc {
         min-width: 100%;
@@ -1993,8 +1997,4 @@ h6 {
     #docs-main {
         padding: 0 10px;
     }
-}
-
-.apidocs .meta p:first-child {
-    display: none;
 }

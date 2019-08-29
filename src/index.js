@@ -3,9 +3,11 @@ var sitePath = "http://www.easybui.com",
     siteDir = sitePath + "/demo/json/";
 // 设置当前应用模式
 bui.isWebapp = true;
+var isLogin = false;
 
 // 路由初始化给全局变量,必须是router
 window.router = bui.router();
+
 
 bui.ready(function() {
 
@@ -55,7 +57,23 @@ bui.ready(function() {
         progress: true,
         hash: true,
         // 挂载公共 store 可以解析公共数据的 {{app.firstName}} 之类的数据, 可以使用 router.store.firstName 读取跟修改
-        // store: store,
+        store: store,
+        // beforeLoad: function(e) {
+        //     console.count()
+        //     console.log(e.target)
+
+        //     if (!isLogin && e.pid !== "pages/router/index") {
+        //         console.log(e.target)
+        //         isLogin = true;
+        //         bui.load({
+        //             url: "pages/router/index.html"
+        //         })
+        //         return false;
+
+        //     }
+
+
+        // }
     })
 
 
@@ -68,7 +86,6 @@ bui.ready(function() {
  * @return {[type]} [description]
  */
 function bind() {
-
     // 绑定应用的所有按钮有href跳转, 增加多个按钮监听则在hangle加逗号分开.
     bui.btn({ id: "#bui-router", handle: ".bui-btn" }).load();
 
@@ -80,8 +97,19 @@ function bind() {
 
     // demo生成源码
     router.on("complete", function(e) {
+        var historyLength = router.history.get().length;
+        // 针对微信ios跳转以后,底部增加了原生导航,导致高度不对的处理,只在跳转到第2个页面的时候重新计算
+        if (bui.platform.isIos() && bui.platform.isWeiXin() && historyLength > 1 && historyLength < 3) {
+            // 让控件计算的时候拿新的高度
+            window.viewport = bui.viewport();
+            // 重新计算路由
+            router.resize();
+            // 重新计算页面
+            bui.init()
+        }
         $("#" + e.target.id).find(".bui-page > .bui-bar > .bui-bar-right").append('<a class="bui-btn preview-source">源码</a>')
     })
+
 
     $("#bui-router").on("click", ".preview-source", function(e) {
         var hash = window.location.hash,

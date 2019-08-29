@@ -17,9 +17,9 @@ loader.define(function(r, e, module) {
     }
 
     // 初始化
-    pageview.init();
+    // pageview.init();
     // 绑定事件
-    pageview.bind2();
+    // pageview.bind2();
 
     return pageview;
 })

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../assets/css/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/combo.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
     <!-- <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script> -->
     <script src="../assets/js/jquery-1.9.1.min.js"></script>
@@ -29,8 +30,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.x</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.3 </p>
             
         </div>
     </div>
@@ -242,14 +243,15 @@
 <p><p>需要把对应的<a href="http://www.easybui.com/demo/json/versionUpdate.json" target="_blank">versionUpdate.json</a> 放到服务器,然后通过修改里面的值来进行检测更新</p></p>
 <p><p>默认是检测BUI的版本更新,需要替换成自己业务的更新,更新有3种情况</p></p>
 <p><p>第1种,当前版本已经是最新的</p></p>
-<p><p>第2种,当前版本比新版旧,但不一定要更新</p></p>
-<p><p>第3种,当前版本比新版旧,必须更新才功能正常</p></p>
+<p><p>第2种,forced=true的情况, 当前版本比新版旧, 但比最小版本要新, 这时候会有弹窗, 但不一定要更新, 每次打开会提醒一次. </p></p>
+<p><p>第3种,forced=true的情况, 当前版本比新版旧, 并且比最小版本要小, 这样就必须更新才功能正常.</p></p>
+<p><p>第4种,forced=false的情况, 当前版本跟新版一样, 则提醒用户已经最新版, 可以通过 needTips关闭,  当前版本比新版旧, 会提醒用户,一般使用红点无干扰提醒.</p></p>
 <p><h5>versionUpdate.json 文件说明: </h5><br>
 {<br>
            &quot;versionName&quot;: &quot;1.0&quot;,          //版本名称<br>
            &quot;versionCode&quot;: 20160605,       //版本ID<br>
            &quot;minVersionCode&quot;: 20160604,    //最小版本号<br>
-           &quot;isForced&quot;: true,              //是否强制更新,如果强制更新,需要检测最小版本号<br>
+           &quot;forced&quot;: true,              //是否强制更新,如果强制更新,需要检测最小版本号<br>
            &quot;downloadUrl&quot;: &quot;<a href="http://www.easybui.com/download/bui.apk">http://www.easybui.com/download/bui.apk</a>&quot;,             //下载的地址<br>
            &quot;iosDownloadUrl&quot;: &quot;<a href="https://itunes.apple.com/cn/app/id1362470378?mt=8">https://itunes.apple.com/cn/app/id1362470378?mt=8</a>&quot;,          //下载的地址<br>
            &quot;remark&quot;: &quot;版本更新的内容&quot;        //新版本的描述,支持html<br>
@@ -387,7 +389,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[检测更新的按钮]</p>
+                                    <p>[检测更新的按钮,非必须]</p>
 
                                 </div>
 
@@ -481,6 +483,37 @@
 
                                 </div>
 
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[field]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[是否需要提醒 1.5.3 ]</p>
+
+                                </div>
+
+                                
+                                    <ul class="params-list">
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name optional">[data]</code>
+                                                <span class="type">Object</span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                                            
+
+                                            <div class="param-description">
+                                                [ 返回的数据在哪个key ]
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
                                 
                             </li>
                             

@@ -5,7 +5,7 @@
         data: {
             lists: [] // 默认是数组时,只能通过 bui.array 之类的操作触发, 如果是Null,则可以通过 等于赋值的操作
         },
-        log: true,
+        // log: true,
         templates: {
             tplList: function(data) {
                 var html = "";
@@ -53,6 +53,7 @@
                     bui.array.merge(_self.lists, datas.data)
                 }
             });
+
         }
     })
 

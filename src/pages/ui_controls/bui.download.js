@@ -3,9 +3,11 @@
     var $output = $("#output");
 
     // 初始化文件管理控件
-    var uiFile = bui.file();
     // 初始化控件
-    var uiDownload = bui.download();
+    var uiDownload = bui.download({
+        needNative: true
+    });
+
 
     // 下载图片
     $("#downloadImage").on("click", function(argument) {
@@ -79,7 +81,7 @@
                 onSuccess: function(url) {
                     $output.text(url);
                     // 打开
-                    uiFile.open({
+                    uiDownload.open({
                         url: url
                     });
                 }
@@ -107,7 +109,7 @@
         // 删除下载的文件
     $("#removeDownload").on("click", function(argument) {
             // 下载的文件默认保存在 download 目录下
-            uiFile.removeFile({
+            uiDownload.removeFile({
                 folderName: "download",
                 fileName: "customName.jpg",
                 onSuccess: function(data) {
@@ -121,7 +123,7 @@
         // 删除所有下载文件
     $("#removeAllDownload").on("click", function(argument) {
         // 下载的文件默认保存在 download 目录下
-        uiFile.removeFolder({
+        uiDownload.removeFolder({
             folderName: "download",
             onSuccess: function(data) {
                 bui.alert("删除目录成功")
@@ -132,5 +134,24 @@
         })
     })
 
+    // 下载打开pdf
+    $("#downloadpdf").on("click", function(argument) {
+        // 开始下载
+        uiDownload.getFile({
+            url: "http://www.gov.cn/zhengce/pdfFile/2019_PDF.pdf",
+            fileName: "customName.pdf",
+            onSuccess: function(url, file) {
+                // 打开
+                uiDownload.open({
+                    url: url
+                });
+                // 获得文件路径
+                $output.text(url);
+            },
+            onFail: function(data) {
+                // bui.alert(data)
+            }
+        })
+    })
 
 })

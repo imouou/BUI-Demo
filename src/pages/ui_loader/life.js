@@ -25,6 +25,10 @@ loader.define({
             })
             // loader.destroy(mod.moduleName);
     },
+    show: function() {
+        console.log("show")
+        this.actionSheet.show()
+    },
     beforeDestroy: function() {
         console.log("before destroy", this)
         this.actionSheet.destroy(true);

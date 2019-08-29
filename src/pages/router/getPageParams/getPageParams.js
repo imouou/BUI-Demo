@@ -21,7 +21,7 @@ loader.define(function() {
             bui.back({
                 // 指定后退到哪个模块, 这个页面的层级不确定在第几层,所以需要通过模块名称指定跳转
                 name: "pages/router/index",
-                // index: -4, // -4 已经超出历史记录最大值,所以会退到第一页
+                // index: -2, // -4 已经超出历史记录最大值,所以会退到第一页
                 callback: function() {
                     // 获取main模块
                     loader.require(["pages/router/index"], function(main) {

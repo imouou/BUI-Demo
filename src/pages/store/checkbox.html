@@ -1,4 +1,9 @@
-﻿<div class="bui-page page-store page-checkbox">
+﻿<style>
+    .page-checkbox .active {
+        color: red;
+    }
+</style>
+<div class="bui-page page-store page-checkbox">
     <header class="bui-bar">
         <div class="bui-bar-left">
             <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
@@ -32,5 +37,21 @@
         <label><input type="radio" name="sex" value="男" b-model="page.sex">男</label>
         <label><input type="radio" name="sex" value="女" b-model="page.sex">女</label>
 
+
+        <div class="section-title">单选: 对象: <span b-text="page.user"></span> 值: <span b-text="page.name"></span> </div>
+        <!-- 注意: value 是单引号 -->
+        <label><input type="radio" name="user" value='{"name":"bui"}' b-model="page.user">bui</label>
+        <label><input type="radio" name="user" value='{"name":"easy"}' b-model="page.user">easy</label>
+
+        <div class="section-title">多选: 对象: <span b-text="page.users"></span> 值: <span b-text="page.names"></span> </div>
+        <!-- 注意: value 是单引号 -->
+        <label><input type="checkbox" name="user2" value='{"name":"bui"}' b-model="page.users">bui</label>
+        <label><input type="checkbox" name="user2" value='{"name":"easy"}' b-model="page.users">easy</label>
+
+        <b b-class="page.active">有选中的时候,样式为激活样式</b>
+
+        <div class="section-title">checkbox 联动更改</div>
+
+        <label><input type="checkbox" name="city" value="广州" b-model="page.citys">广州</label>
     </main>
 </div>

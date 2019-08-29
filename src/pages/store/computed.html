@@ -1,4 +1,9 @@
-﻿<div class="bui-page page-store">
+﻿<style>
+    .page-store .hasList {
+        color: red;
+    }
+</style>
+<div class="bui-page page-store">
     <header class="bui-bar">
         <div class="bui-bar-left">
             <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
@@ -24,20 +29,23 @@
             </li>
         </ul>
         <div class="container-xy">
-          <div b-class="page.disabled" class="bui-btn primary round disabled">登录</div>
+            <div b-class="page.disabled" class="bui-btn primary round disabled">登录</div>
         </div>
         <!-- firstName,lastName改变就会触发 fullName 的绑定 -->
         <div class="container-xy">
-        结果: <b b-text="page.fullName"></b>
+            结果: <b b-text="page.fullName"></b>
         </div>
 
         <div class="section-title">示例2: 加减乘除</div>
         <div class="bui-btn" b-click="page.changeA">点击1次,a+1,结果乘以2</div>
 
         <div class="container-xy">
-        a: <b b-text="page.a" ></b>
-        结果: <b b-text="page.aDouble"></b>
+            a: <b b-text="page.a"></b> 结果: <b b-text="page.aDouble"></b>
         </div>
+
+        <div class="section-title">示例3: 数组样式关联</div>
+        <b b-class="page.hasList">数组关联需要通过赋值触发computed</b>
+
 
     </main>
 </div>

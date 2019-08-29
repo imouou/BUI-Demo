@@ -1,24 +1,24 @@
 // console.log(document.currentScript.src)
-define(function (p2,p3,module) {
-    
+define(function(p2, p3, module) {
+
     // console.log(this)
     // console.log(p2)
     // console.log(p3)
-    // loader.require(["pages/page2/page2","pages/page3/page3"],function (p3,p3d) {
-    //     console.log(p3)
-    //     console.log(p3d)
-    // })
-    // console.trace()
     console.log("main was load")
+    loader.require(["pages/page2/page2", "pages/page3/page3"], function(p3, p3d) {
+            console.log(p3)
+            console.log(p3d)
+        })
+        // console.trace()
 
     // loader.load("pages/page2/page2")
     var uiSidebar = bui.sidebar({
-            id: "#sidebarWrap", //菜单的ID(必须)
-            width:400,
-            trigger: "#menu"
-        });
+        id: "#sidebarWrap", //菜单的ID(必须)
+        width: 400,
+        trigger: "#menu"
+    });
 
-    $("#gopage2").on("click",function () {
+    $("#gopage2").on("click", function() {
         bui.load({
             url: "pages/page2/page2.html",
             param: {
@@ -28,17 +28,17 @@ define(function (p2,p3,module) {
             // effect: "zoomin"
         })
     })
-    $("#gopage3").on("click",function () {
+    $("#gopage3").on("click", function() {
         bui.load({
             url: "../demo/index.html#pages/about/index",
-            reload:true,
+            reload: true,
             param: {
                 "eid": 123
             }
         })
     })
 
-    $("#loadpage").on("click",function (argument) {
+    $("#loadpage").on("click", function(argument) {
         router.loadPart({
             id: "#pages-2",
             url: "pages/page2/page2.html",
@@ -59,6 +59,6 @@ define(function (p2,p3,module) {
     // mainRouter.init({
     //     id: "#main-router"
     // })
-    
+
     return uiSidebar;
 })

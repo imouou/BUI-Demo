@@ -18,14 +18,17 @@
             g: 4,
             d: {
                 e: {
-                    f: 3
+                    f: 4
                 }
             },
             f: {
                 g: 3
             },
-            g: {
-                a: 55
+            q: {
+                w: []
+            },
+            e: {
+                r: []
             }
         },
         log: true,
@@ -43,29 +46,30 @@
         templates: {},
         mounted: function() {
             // 判断或者比对,使用这种
-            if (this.$data.c == 3) {
-                // 设置使用这种
-                this.a.b.c = 123;
-            }
-
-            this.a.b.c = 456;
+            // if (this.$data.c == 3) {
+            //     // 设置使用这种
+            //     this.a.b.c = 123;
+            // }
+            // console.log(this.$data.a.b)
+            // console.log(this.$data.g)
+            // this.a.b.c = 456;
             // this.h.push("tes")
-            // 1级
-            // this.b = 12;
+            //     // 1级
+            this.b = 12;
 
-            // // 2级
+            // // // 2级
             // this.a.b = 12;
 
-            // // 3级
+            // // // 3级
             // this.a.b.c = 12;
 
-            // // 1对1
+            // // // 1对1
             // this.a = this.b
 
-            // // 1对2
+            // // // // 1对2
             // this.b = this.f.g
 
-            // // 1对3
+            // // // // 1对3
             // this.b = this.d.e.f
 
             // 2对1
@@ -74,7 +78,10 @@
             //     // 2对2
             // this.a.b = this.f.g
 
+            // this.set("a.b", this.f.g)
 
+
+            // this.b = this.a.b
 
             // 2对3
             // this.a.b = this.$data.d.e.f
@@ -98,8 +105,13 @@
             // this.$data.a = this.$data.f.g
 
             // ### 场景5:
-            // this.a.b = this.$data.f.g
-            // this.a.b = this.$data.g.a
+            // this.a.b = this.f.g
+
+
+            // this.q.w.push("123")
+            // console.log(this.$data.a.b)
+            //     // bui.array.merge(this.h, [12444, 22]);
+            // this.q.w.$merge([34, 22]);
 
         }
     })

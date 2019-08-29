@@ -7,14 +7,14 @@
         height: 380,
         autopage: true,
         data: [{
-          image: "images/banner01.png",
-          url: "pages/ui_controls/bui.slide_title.html",
-        },{
-          image: "images/banner02.png",
-          url: "pages/ui_controls/bui.slide_title.html",
-        },{
-          image: "images/banner03.png",
-          url: "pages/ui_controls/bui.slide_title.html",
+            image: "images/banner01.png",
+            url: "pages/ui_controls/bui.slide_title.html",
+        }, {
+            image: "images/banner02.png",
+            url: "pages/ui_controls/bui.slide_title.html",
+        }, {
+            image: "images/banner03.png",
+            url: "pages/ui_controls/bui.slide_title.html",
         }],
         loop: true,
     })

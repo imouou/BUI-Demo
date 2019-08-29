@@ -1,4 +1,3 @@
-
 <div class="bui-page page-store">
     <header class="bui-bar">
         <div class="bui-bar-left">
@@ -15,6 +14,10 @@
         <ul b-template="page.tplList(list)" class="bui-list">
         </ul>
 
+        <div class="section-title">渲染table</div>
+        <table class="bui-table bui-table-even" b-template="page.tplTable(list)">
+        </table>
+
         <div class="section-title">数据是对象时</div>
         <div b-template="page.tplObject(page.obj)">
         </div>
@@ -26,13 +29,16 @@
         <div class="section-title">当前选中: <b b-text="page.citysCheck"></b></div>
         <ul id="test" b-template="page.tplListCheck(page.citys)" class="bui-list">
         </ul>
+        <div class="section-title">关联列表</div>
+        <ul id="test2" b-template="page.tplListCheck(page.citys)" class="bui-list">
+        </ul>
 
         <div class="section-title">使用artTemplate模板</div>
         <ul b-template="page.artTplList(page.list)" class="bui-list">
         </ul>
         <script id="tpl-list" type="text/html">
             {{each listData item index}}
-                <li class="bui-btn" href="pages/store/index.html" >{{item}}</li>
+            <li class="bui-btn" href="pages/store/index.html">{{item}}</li>
             {{/each}}
         </script>
     </main>

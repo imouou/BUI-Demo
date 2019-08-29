@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.4 </p>
             
         </div>
     </div>
@@ -68,8 +68,6 @@
                 <li><a href="../classes/bui.back.html">bui.back</a></li>
             
                 <li><a href="../classes/bui.btn.html">bui.btn</a></li>
-            
-                <li><a href="../classes/bui.checkVersion.html">bui.checkVersion</a></li>
             
                 <li><a href="../classes/bui.config.html">bui.config</a></li>
             
@@ -150,10 +148,6 @@
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
-            
-                <li><a href="../classes/bui.timer.html">bui.timer</a></li>
-            
-                <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
             
@@ -543,17 +537,38 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <p>html:
-     <div id="bui-router"></div>
-js:
-     // 把路由实例化给 window.router
-      window.router = bui.router();
-     bui.ready(function(){
-        // 路由初始化
-        router.init({
-            id: &quot;#bui-router&quot;
-        })
-      })</p>
+                <p>  html: 
+     <xmp>
+        <div id="bui-router"></div>
+     </xmp>
+   js:</p>
+<pre class="code prettyprint"><code> // 把路由实例化给 window.router
+
+  window.router = bui.router();
+ bui.ready(function(){
+    // 路由初始化
+    router.init({
+        id: &quot;#bui-router&quot;,
+        hash:true
+    })
+  })
+ js: 路由权限拦截
+  // 判断示例,正常用户信息应该使用 bui.storage 来操作. 
+  var userinfo = null;
+  bui.ready(function(){
+    router.init({
+        id: &quot;#bui-router&quot;,
+        beforeLoad: function(e) {
+            // 如果没有登录,并且当前页面不是登录页面,则执行跳转, 并且要return false; 这样没有历史记录,不能使用后退.
+            if( !userinfo &amp;&amp; e.target.pid !== &quot;pages/login/login&quot;){
+                router.load({
+                    url:&quot;pages/login/login.html&quot;
+                })
+                return false;
+            }
+        }
+    })
+  })</code></pre>
 
             </div>
         </div>
@@ -789,7 +804,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2216"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2216</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2417"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2417</code></a>
         
         </p>
 
@@ -889,7 +904,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1608"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1608</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1779"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1779</code></a>
         
         </p>
 
@@ -1076,7 +1091,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2172"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2172</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2373"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2373</code></a>
         
         </p>
 
@@ -1160,7 +1175,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2187"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2187</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2388"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2388</code></a>
         
         </p>
 
@@ -1173,8 +1188,8 @@ js:
     </div>
 
     <div class="description">
-        <p>获取当前页面下的DOM对象, 常用于当前模块事件绑定,
-防止重复加载相同模块,导致事件重复绑定, 也适用于控件的重复</p>
+        <p><del>获取当前页面下的DOM对象, 常用于当前模块事件绑定,
+防止重复加载相同模块,导致事件重复绑定, 也适用于控件的重复,</del> 1.5以后，直接使用 router.$ 替换 $ 选择器就可以了</p>
 
     </div>
 
@@ -1264,7 +1279,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1769"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1769</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1961"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1961</code></a>
         
         </p>
 
@@ -1358,7 +1373,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1910"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1910</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2111"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2111</code></a>
         
         </p>
 
@@ -1451,7 +1466,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1931"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1931</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2132"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2132</code></a>
         
         </p>
 
@@ -1567,7 +1582,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l214"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:214</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l236"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:236</code></a>
         
         </p>
 
@@ -1597,7 +1612,8 @@ js:
                     
                     <p>[option]
          {object.get} [获取历史记录]
-         {object.getLast} [获取最后一个历史记录]</p>
+         {object.getLast} [获取最后一个历史记录]
+         {object.check} [ 1.5.4新增, 检测有没有当前页面的历史记录]</p>
 
                 
             </div>
@@ -1661,7 +1677,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l436"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:436</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l480"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:480</code></a>
         
         </p>
 
@@ -1756,7 +1772,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2246"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2246</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2447"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2447</code></a>
         
         </p>
 
@@ -1861,7 +1877,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1965"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1965</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2166"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2166</code></a>
         
         </p>
 
@@ -1974,7 +1990,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l906"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:906</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l970"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:970</code></a>
         
         </p>
 
@@ -2183,7 +2199,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1536"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1536</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1680"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1680</code></a>
         
         </p>
 
@@ -2360,7 +2376,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2098"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2098</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2299"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2299</code></a>
         
         </p>
 
@@ -2490,7 +2506,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l804"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:804</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l868"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:868</code></a>
         
         </p>
 
@@ -2652,7 +2668,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1854"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1854</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2055"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2055</code></a>
         
         </p>
 
@@ -2731,7 +2747,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l1881"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:1881</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2082"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2082</code></a>
         
         </p>
 
@@ -2866,7 +2882,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l525"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:525</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l575"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:575</code></a>
         
         </p>
 
@@ -2936,7 +2952,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2146"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2146</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2347"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2347</code></a>
         
         </p>
 
@@ -2968,7 +2984,7 @@ js:
                     
 
                     <div class="param-description">
-                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候 | &quot;resize&quot; 改变窗口的时候 ]</p>
+                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候 | &quot;resize&quot; 改变窗口的时候 | 1.5.3 新增监听某个页面显示的时候触发 &quot;pageshow-main&quot; main为首页模块名,其它页面默认是路径]</p>
 
                     </div>
 
@@ -3033,7 +3049,7 @@ js:
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2124"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2124</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.router.js.html#l2325"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.router.js:2325</code></a>
         
         </p>
 
@@ -3066,7 +3082,7 @@ js:
                     
 
                     <div class="param-description">
-                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候  | &quot;resize&quot; 改变窗口的时候 ]</p>
+                        <p>[事件类型: &quot;init&quot; | &quot;refresh&quot;(刷新后触发) | &quot;loadfail&quot;(加载页面失败触发) | &quot;beforeload&quot;<del>&quot;loadbefore&quot;</del>(页面加载之前) | &quot;load&quot;(模块加载成功后触发,相同模板只加载一次) | &quot;loadpart&quot;(局部加载模块触发,相同模板只加载一次) | &quot;back&quot;(后退以后触发) | &quot;beforeback&quot; <del>&quot;backbefore&quot;</del>(后退前触发) | &quot;complete&quot;(页面完成时触发,load的时候就会触发) | &quot;pageshow&quot; 页面显示的时候 |&quot;pagehide&quot; 页面切换的时候  | &quot;resize&quot; 改变窗口的时候 | 1.5.3 新增监听某个页面显示的时候触发 &quot;pageshow-main&quot; main为首页模块名,其它页面默认是路径]</p>
 
                     </div>
 
@@ -3133,12 +3149,12 @@ js:
 <!-- 百度统计 -->
 <script>
 var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?50f5631d37bf0ccb2034e80da6eb2972";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e19beda5d47048a31939f0f67d9b1f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 
 

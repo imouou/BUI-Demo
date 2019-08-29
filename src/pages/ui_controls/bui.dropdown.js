@@ -13,10 +13,13 @@
         //设置relative为false,二级菜单继承父层宽度
         relative: false,
         value: "广东",
+        onChange: function(e) {
+            console.log(this.value(), "change")
+        },
         callback: function(e) {
-            console.log(this.value())
-            console.log(this.text())
-            console.log(this.values())
+            console.log(this.value(), "click")
+            console.log(this.text(), "click")
+            console.log(this.values(), "click")
         }
     })
 

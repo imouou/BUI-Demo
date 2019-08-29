@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.4 </p>
             
         </div>
     </div>
@@ -68,8 +68,6 @@
                 <li><a href="../classes/bui.back.html">bui.back</a></li>
             
                 <li><a href="../classes/bui.btn.html">bui.btn</a></li>
-            
-                <li><a href="../classes/bui.checkVersion.html">bui.checkVersion</a></li>
             
                 <li><a href="../classes/bui.config.html">bui.config</a></li>
             
@@ -150,10 +148,6 @@
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
-            
-                <li><a href="../classes/bui.timer.html">bui.timer</a></li>
-            
-                <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
             
@@ -410,7 +404,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[动态监听的对象,当变更会自动触发相关联的选择器,需要提前定义]</p>
+                                    <p>[ 动态监听的对象,当变更会自动触发相关联的选择器,需要提前定义]</p>
 
                                 </div>
 
@@ -440,7 +434,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[监听的数据字段,在数据改变的时候,做对应的其它事情]</p>
+                                    <p>[ 监听的数据字段,在数据改变的时候,做对应的其它事情]</p>
 
                                 </div>
 
@@ -455,7 +449,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[定义的方法,便于拿取相关数据]</p>
+                                    <p>[ 定义的方法,便于拿取相关数据]</p>
 
                                 </div>
 
@@ -470,7 +464,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[定义的模板方法]</p>
+                                    <p>[ 定义的模板方法]</p>
 
                                 </div>
 
@@ -485,7 +479,37 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[数据解析前处理]</p>
+                                    <p>[ 数据解析前处理]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[beforeCompile]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.3 新增 模板解析前处理]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[compiled]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.3 新增 模板解析后处理]</p>
 
                                 </div>
 
@@ -500,7 +524,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[数据解析完成以后处理]</p>
+                                    <p>[ 数据解析完成以后处理]</p>
 
                                 </div>
 
@@ -567,6 +591,8 @@
         
         
         
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+        
         
     </ul>
 
@@ -581,21 +607,7 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_$children">$children</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
                                 <a href="#method_$el">$el</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_$parent">$parent</a>
 
                                 
                                 
@@ -624,6 +636,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_delete">delete</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_destroy">destroy</a>
 
                                 
                                 
@@ -699,6 +718,22 @@
             
 
             
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_$children">$children</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_$parent">$parent</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
 
             
         </div>
@@ -706,71 +741,6 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_$children" class="method item">
-    <h3 class="name"><code>$children</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l362"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:362</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>[$children 返回当前 el选项的缓存子集, 子集新增删除这个值还是不会改变]</p>
-
-    </div>
-
-    
-
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>       //
-       console.log( bs.$children )</code></pre>
-
-            </div>
-        </div>
-    
-</div>
 
                 
                     <div id="method_$el" class="method item">
@@ -805,13 +775,15 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l344"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:344</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l426"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:426</code></a>
         
         </p>
 
 
         
 
+        
+            <p>Available since 1.5.4</p>
         
     </div>
 
@@ -831,71 +803,6 @@
             <div class="example-content">
                 <pre class="code prettyprint"><code>       //
        console.log( bs.$el )</code></pre>
-
-            </div>
-        </div>
-    
-</div>
-
-                
-                    <div id="method_$parent" class="method item">
-    <h3 class="name"><code>$parent</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l353"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:353</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>[$parent 返回当前 el选项的父层$dom, 可以直接使用jquery的操作方式]</p>
-
-    </div>
-
-    
-
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>       //
-       console.log( bs.$parent )</code></pre>
 
             </div>
         </div>
@@ -937,7 +844,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2330"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2330</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2682"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2682</code></a>
         
         </p>
 
@@ -1015,7 +922,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l560"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:560</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l656"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:656</code></a>
         
         </p>
 
@@ -1116,7 +1023,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l601"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:601</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l751"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:751</code></a>
         
         </p>
 
@@ -1217,7 +1124,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2159"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2159</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2510"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2510</code></a>
         
         </p>
 
@@ -1279,6 +1186,74 @@
 </div>
 
                 
+                    <div id="method_destroy" class="method item">
+    <h3 class="name"><code>destroy</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2705"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2705</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.4</p>
+        
+    </div>
+
+    <div class="description">
+        <p>销毁实例，不再支持双向绑定</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>      bs.destroy()</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_get" class="method item">
     <h3 class="name"><code>get</code></h3>
 
@@ -1323,7 +1298,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l1987"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:1987</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2324"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2324</code></a>
         
         </p>
 
@@ -1424,7 +1399,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l372"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:372</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l457"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:457</code></a>
         
         </p>
 
@@ -1435,7 +1410,7 @@
     </div>
 
     <div class="description">
-        <p>[dom每次更新以后都会处理回调,多次调用会有多个处理的&quot;nexttick&quot;回调 ]</p>
+        <p>[ 监听模板的数据字段,在dom每次更新以后都会处理回调,多次调用会有多个处理的&quot;nexttick&quot;回调 ]</p>
 
     </div>
 
@@ -1533,7 +1508,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2269"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2269</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2620"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2620</code></a>
         
         </p>
 
@@ -1667,7 +1642,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2200"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2200</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2551"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2551</code></a>
         
         </p>
 
@@ -1805,7 +1780,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2231"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2231</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2582"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2582</code></a>
         
         </p>
 
@@ -1943,7 +1918,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l396"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:396</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l481"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:481</code></a>
         
         </p>
 
@@ -1954,7 +1929,7 @@
     </div>
 
     <div class="description">
-        <p>[只在某个keyname的数据更新,触发dom更新以后再处理回调,并且只监听一次 ]</p>
+        <p>[只在某个keyname的数据更新,触发dom更新以后再处理回调,并且只监听一次,调用一次 ]</p>
 
     </div>
 
@@ -2007,7 +1982,12 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>       // 监听a变量变更的时候,触发回调
+                <pre class="code prettyprint"><code>       // 监听a变量变更的时候,触发回调, 当模板上有多个size数据的时候, 会触发多次.
+       bs.oneTick(&quot;size&quot;,function () {
+           // 执行控件的初始化
+       })
+
+       // 相同键值 size ,以第一个为主, 以下函数不会执行.
        bs.oneTick(&quot;size&quot;,function () {
            // 执行控件的初始化
        })</code></pre>
@@ -2068,7 +2048,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2010"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2010</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2347"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2347</code></a>
         
         </p>
 
@@ -2198,7 +2178,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2303"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2303</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l2654"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:2654</code></a>
         
         </p>
 
@@ -2306,7 +2286,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l428"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:428</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l524"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:524</code></a>
         
         </p>
 
@@ -2388,6 +2368,140 @@
         
 
         
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                
+                    <div id="attr_$children" class="attr item">
+    <a name="config_$children"></a> 
+    <h3 class="name"><code>$children</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l446"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:446</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 1.5.4</p>
+        
+    </div>
+
+    <div class="description">
+        <p>[$children 返回当前 el选项的缓存子集, 子集新增删除这个值还是不会改变]</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       //
+       console.log( bs.$children )</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="attr_$parent" class="attr item">
+    <a name="config_$parent"></a> 
+    <h3 class="name"><code>$parent</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_core_bui.store.js.html#l436"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;core&#x2F;bui.store.js:436</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 1.5.4</p>
+        
+    </div>
+
+    <div class="description">
+        <p>[$parent 返回当前 el选项的父层$dom, 可以直接使用jquery的操作方式]</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       //
+       console.log( bs.$parent )</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+            </div>
+        
 
         
     </div>
@@ -2410,12 +2524,12 @@
 <!-- 百度统计 -->
 <script>
 var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?50f5631d37bf0ccb2034e80da6eb2972";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e19beda5d47048a31939f0f67d9b1f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 
 

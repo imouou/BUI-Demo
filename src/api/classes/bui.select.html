@@ -29,8 +29,8 @@
                 
                 </h1>
             
-            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="/demo/api/index.html" selected>1.5.0</option><option value="/demo/api-1.4.8/index.html">1.4.8</option></select></p>
-            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.2 </p>
+            <p class="off-left">其它版本:<select name="" id="" onchange="window.location.href=this.value"><option value="../api/index.html" selected>1.5.0</option><option value="../api-1.4.8/index.html">1.4.8</option></select></p>
+            <p class="off-left" style="font-size:12px;margin-right: 15px;">API for BUI 1.5.4 </p>
             
         </div>
     </div>
@@ -68,8 +68,6 @@
                 <li><a href="../classes/bui.back.html">bui.back</a></li>
             
                 <li><a href="../classes/bui.btn.html">bui.btn</a></li>
-            
-                <li><a href="../classes/bui.checkVersion.html">bui.checkVersion</a></li>
             
                 <li><a href="../classes/bui.config.html">bui.config</a></li>
             
@@ -150,10 +148,6 @@
                 <li><a href="../classes/bui.swipe.html">bui.swipe</a></li>
             
                 <li><a href="../classes/bui.tab.html">bui.tab</a></li>
-            
-                <li><a href="../classes/bui.timer.html">bui.timer</a></li>
-            
-                <li><a href="../classes/bui.toggle.html">bui.toggle</a></li>
             
                 <li><a href="../classes/bui.typeof.html">bui.typeof</a></li>
             
@@ -508,7 +502,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[ 默认: &quot;.bui-list .bui-btn&quot; 会从id 查找, 如果是自定义模板,则需要注意下]</p>
+                                    <p>[ 默认: &quot;.bui-list .bui-btn&quot; 会从id 查找, 如果是自定义模板,则需要注意下索引变更,比方分组标题,不要bui-btn,或者这里改个样式,指定可以选择的是哪个样式.]</p>
 
                                 </div>
 
@@ -673,7 +667,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[出现的效果,更多参考<a href="../classes/bui.toggle.html" class="crosslink">bui.toggle</a>]</p>
+                                    <p>[出现的效果,更多参考bui.toggle]</p>
 
                                 </div>
 
@@ -915,40 +909,65 @@
                &quot;value&quot;:&quot;66&quot;
            }]
        })</code></pre>
-<p> 例子2: 自定义模板</p>
+<p> 例子2: 自定义模板分组</p>
 <p>  html:</p>
 <pre class="code prettyprint"><code>       &lt;div id=&quot;select&quot; class=&quot;bui-select&quot;&gt;请选择&lt;/div&gt;</code></pre>
 <p>  js:</p>
-<pre class="code prettyprint"><code>       // 动态绑定初始化
-       var uiSelect = bui.select({
+<pre class="code prettyprint"><code>       var uiSelect = bui.select({
            trigger: &quot;#select&quot;,
-           type:&quot;checkbox&quot;,
+           title: &quot;请选择区域&quot;,
+           type: &quot;checkbox&quot;,
            data: [{
-               &quot;name&quot;:&quot;广东&quot;,
-               &quot;value&quot;:&quot;11&quot;
-           },{&quot;name&quot;:&quot;广西&quot;,
-               &quot;value&quot;:&quot;22&quot;
-           },{
-               &quot;name&quot;:&quot;上海&quot;,
-               &quot;value&quot;:&quot;33&quot;
-           },{&quot;name&quot;:&quot;北京&quot;,
-               &quot;value&quot;:&quot;44&quot;
-           },{
-               &quot;name&quot;:&quot;深圳&quot;,
-               &quot;value&quot;:&quot;55&quot;
-           },{&quot;name&quot;:&quot;南京&quot;,
-               &quot;value&quot;:&quot;66&quot;
+               &quot;name&quot;: &quot;南方&quot;,
+               &quot;type&quot;: &quot;group&quot;
+           }, {
+               &quot;name&quot;: &quot;广州&quot;,
+               &quot;value&quot;: &quot;11&quot;
+           }, {
+               &quot;name&quot;: &quot;深圳&quot;,
+               &quot;value&quot;: &quot;22&quot;
+           }, {
+               &quot;name&quot;: &quot;东莞&quot;,
+               &quot;value&quot;: &quot;55&quot;
+           }, {
+               &quot;name&quot;: &quot;北方&quot;,
+               &quot;type&quot;: &quot;group&quot;
+           }, {
+               &quot;name&quot;: &quot;北京&quot;,
+               &quot;value&quot;: &quot;44&quot;
+           }, {
+               &quot;name&quot;: &quot;上海&quot;,
+               &quot;value&quot;: &quot;33&quot;
+           }, {
+               &quot;name&quot;: &quot;郑州&quot;,
+               &quot;value&quot;: &quot;66&quot;
            }],
+           value: [&quot;广州&quot;, &quot;上海&quot;],
+           //如果需要点击再进行操作,增加按钮
+           buttons: [{ name: &quot;重置&quot;, className: &quot;&quot; }, { name: &quot;确定&quot;, className: &quot;primary-reverse&quot; }],
+           callback: function(e) {
+
+               var text = $(e.target).text();
+               if (text == &quot;重置&quot;) {
+                   uiSelect.selectNone();
+               } else {
+                   uiSelect.hide();
+               }
+           },
            template: function(data) {
                var html = &#39;&#39;;
                // 1.5.2 需要加这行, 1.5.2 以前,这行是不需要的, 正常不需要自己自定义模板. 
                html += &#39;&lt;div class=&quot;bui-list bui-list-select&quot;&gt;&#39;;
                data.forEach(function(item, i) {
-                   html += &#39;&lt;div class=&quot;bui-btn bui-btn-line bui-box&quot;&gt;&#39;;
-                   html += &#39;    &lt;i class=&quot;icon-face&quot;&gt;&lt;/i&gt;&#39;;
-                   html += &#39;&lt;div class=&quot;span1&quot;&gt;&#39; + item.name + &#39;&lt;/div&gt;&#39;;
-                   html += &#39;&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; class=&quot;bui-choose&quot; value=&quot;&#39; + item.value + &#39;&quot; text=&quot;&#39; + item.name + &#39;&quot;&gt;&#39;;
-                   html += &#39;&lt;/div&gt;&#39;;
+                   if (item.type) {
+                       html += <code>&amp;lt;div class=&amp;quot;bui-btn bui-btn-title&amp;quot;&amp;gt;${item.name}&amp;lt;&#x2F;div&amp;gt;</code>
+                   } else {
+                       html += `&lt;div class=&quot;bui-btn bui-btn-line bui-box&quot;&gt;
+                                   &lt;i class=&quot;icon-face&quot;&gt;&lt;/i&gt;
+                                   &lt;div class=&quot;span1&quot;&gt;${item.name}&lt;/div&gt;
+                                   &lt;input type=&quot;checkbox&quot; name=&quot;test&quot; class=&quot;bui-choose&quot; value=&quot;${item.value}&quot; text=&quot;${item.name}&quot;&gt;
+                               &lt;/div&gt;`
+                   }
                })
                html += &#39;&lt;/div&gt;&#39;;
 
@@ -1261,7 +1280,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1003"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1003</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1033"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1033</code></a>
         
         </p>
 
@@ -1363,7 +1382,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1303"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1303</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1333"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1333</code></a>
         
         </p>
 
@@ -1457,7 +1476,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1214"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1214</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1244"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1244</code></a>
         
         </p>
 
@@ -1536,7 +1555,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1251"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1251</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1281"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1281</code></a>
         
         </p>
 
@@ -1630,7 +1649,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l777"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:777</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l807"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:807</code></a>
         
         </p>
 
@@ -1699,7 +1718,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1233"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1233</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1263"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1263</code></a>
         
         </p>
 
@@ -1778,7 +1797,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1277"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1277</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1307"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1307</code></a>
         
         </p>
 
@@ -1872,7 +1891,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l795"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:795</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l825"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:825</code></a>
         
         </p>
 
@@ -1937,7 +1956,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l836"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:836</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l866"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:866</code></a>
         
         </p>
 
@@ -2015,7 +2034,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l306"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:306</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l332"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:332</code></a>
         
         </p>
 
@@ -2113,7 +2132,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1353"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1353</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1383"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1383</code></a>
         
         </p>
 
@@ -2230,7 +2249,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1079"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1079</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1109"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1109</code></a>
         
         </p>
 
@@ -2295,7 +2314,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1103"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1103</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1133"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1133</code></a>
         
         </p>
 
@@ -2362,7 +2381,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l739"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:739</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l769"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:769</code></a>
         
         </p>
 
@@ -2437,7 +2456,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l974"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:974</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1004"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1004</code></a>
         
         </p>
 
@@ -2537,7 +2556,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1043"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1043</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1073"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1073</code></a>
         
         </p>
 
@@ -2629,7 +2648,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1127"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1127</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1157"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1157</code></a>
         
         </p>
 
@@ -2704,7 +2723,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1171"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1171</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1201"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1201</code></a>
         
         </p>
 
@@ -2804,7 +2823,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l849"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:849</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l879"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:879</code></a>
         
         </p>
 
@@ -2907,7 +2926,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l949"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:949</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l979"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:979</code></a>
         
         </p>
 
@@ -3008,7 +3027,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1338"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1338</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1368"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1368</code></a>
         
         </p>
 
@@ -3101,7 +3120,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1399"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1399</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1429"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1429</code></a>
         
         </p>
 
@@ -3198,7 +3217,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1379"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1379</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.select.js.html#l1409"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.select.js:1409</code></a>
         
         </p>
 
@@ -3297,12 +3316,12 @@
 <!-- 百度统计 -->
 <script>
 var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?50f5631d37bf0ccb2034e80da6eb2972";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e19beda5d47048a31939f0f67d9b1f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 
 
