@@ -105,8 +105,10 @@
     $facePhoto.on("click", ".icon-removefill", function(e) {
         var $item = $(this).parents(".span1");
         var index = $item.attr("data-index");
+        var name = $item.attr("data-name");
+
         // 删除对应的上传数据
-        uiUpload.remove(index);
+        uiUpload.remove(name);
         // 删除dom显示
         $item.remove();
         e.stopPropagation();

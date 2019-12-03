@@ -11,11 +11,11 @@
 
         <div class="section-title">使用es6模板</div>
         <!-- 模板里面的数据,可以不用加 page -->
-        <ul b-template="page.tplList(list)" class="bui-list">
+        <ul b-template="page.tplList(page.list)" class="bui-list">
         </ul>
 
         <div class="section-title">渲染table</div>
-        <table class="bui-table bui-table-even" b-template="page.tplTable(list)">
+        <table class="bui-table bui-table-even" b-template="page.tplTable(page.list,page.citys)">
         </table>
 
         <div class="section-title">数据是对象时</div>

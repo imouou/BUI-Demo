@@ -4,6 +4,9 @@
     // 多级联动
     levelSelect();
 
+    // 初始化状态值
+    var cityFirstInit = true,
+        areaFirstInit = true;
     // bui.select 的多级联动
     function levelSelect() {
         var uiMask = bui.mask();
@@ -62,8 +65,16 @@
             chineseCities.city = chineseCities.province[index]["city"];
             citySelect.option("data", chineseCities.city);
 
-            // 显示城市选择
-            citySelect.show("none");
+            if (!cityFirstInit) {
+                // 显示城市选择
+                citySelect.show("none");
+            }
+
+            // 第一次初始值
+            if (cityFirstInit) {
+                citySelect.active(0);
+                cityFirstInit = false;
+            }
         })
 
         // 选择城市以后
@@ -77,7 +88,17 @@
                 // 激活第一个区域
                 // areaSelect.active(0);
                 // 显示地区选择
-            areaSelect.show("none");
+
+            if (!areaFirstInit) {
+                // 显示城市选择
+                areaSelect.show("none");
+            }
+
+            // 第一次初始值
+            if (areaFirstInit) {
+                areaSelect.active(0);
+                areaFirstInit = false;
+            }
 
         });
         // 选择地区以后
@@ -93,6 +114,7 @@
             } else {
                 address = province + city + area;
             }
+
             // 输出地址
             console.log(address);
 
@@ -108,6 +130,9 @@
             chineseCities.province = datas.data;
             //初始化省份的select
             provinceSelect.option("data", datas.data);
+
+            // 初始化省的第一个数据,触发change事件,再设置城市初始值
+            provinceSelect.active(0);
 
             uiLoading.hide();
         })

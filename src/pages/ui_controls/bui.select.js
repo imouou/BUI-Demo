@@ -49,6 +49,7 @@
     })
 
     $("#queding").on("click", function(argument) {
+        console.log(uiSelectCustom.allValues());
 
         console.log(uiSelectCustom.text());
     })

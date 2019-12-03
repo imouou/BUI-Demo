@@ -61,6 +61,8 @@
             
                 <li><a href="../classes/bui.alert.html">bui.alert</a></li>
             
+                <li><a href="../classes/bui.all.html">bui.all</a></li>
+            
                 <li><a href="../classes/bui.animate.html">bui.animate</a></li>
             
                 <li><a href="../classes/bui.array.html">bui.array</a></li>
@@ -73,6 +75,8 @@
             
                 <li><a href="../classes/bui.confirm.html">bui.confirm</a></li>
             
+                <li><a href="../classes/bui.delete.html">bui.delete</a></li>
+            
                 <li><a href="../classes/bui.dialog.html">bui.dialog</a></li>
             
                 <li><a href="../classes/bui.download.html">bui.download</a></li>
@@ -84,6 +88,8 @@
                 <li><a href="../classes/bui.file.html">bui.file</a></li>
             
                 <li><a href="../classes/bui.fileselect.html">bui.fileselect</a></li>
+            
+                <li><a href="../classes/bui.get.html">bui.get</a></li>
             
                 <li><a href="../classes/bui.getPageParams.html">bui.getPageParams</a></li>
             
@@ -115,9 +121,13 @@
             
                 <li><a href="../classes/bui.platform.html">bui.platform</a></li>
             
+                <li><a href="../classes/bui.post.html">bui.post</a></li>
+            
                 <li><a href="../classes/bui.prompt.html">bui.prompt</a></li>
             
                 <li><a href="../classes/bui.pullrefresh.html">bui.pullrefresh</a></li>
+            
+                <li><a href="../classes/bui.put.html">bui.put</a></li>
             
                 <li><a href="../classes/bui.rating.html">bui.rating</a></li>
             
@@ -428,6 +438,13 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_click">click</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_load">load</a>
 
                                 
@@ -464,6 +481,109 @@
                 <h2 class="off-left">Methods</h2>
 
                 
+                    <div id="method_click" class="method item">
+    <h3 class="name"><code>click</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>callback</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l272"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:272</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 1.5.4</p>
+        
+    </div>
+
+    <div class="description">
+        <p>绑定按钮提交数据,提交数据成功以后需要在回调里面关闭进度条</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>[提交的回调]</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>       bui.btn(&quot;#btn&quot;).click(function(e){
+            //关闭进度条
+            loading.stop();
+        });</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_load" class="method item">
     <h3 class="name"><code>load</code></h3>
 
@@ -496,7 +616,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l98"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:98</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l99"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:99</code></a>
         
         </p>
 
@@ -572,7 +692,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l256"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:256</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l320"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:320</code></a>
         
         </p>
 
@@ -652,7 +772,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l201"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:201</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_ui_bui.btn.js.html#l202"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;ui&#x2F;bui.btn.js:202</code></a>
         
         </p>
 

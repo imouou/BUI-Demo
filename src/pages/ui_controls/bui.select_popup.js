@@ -5,84 +5,11 @@
         trigger: "#select",
         title: "请选择区域",
         type: "checkbox",
+
+        needSearch: true,
         data: [{
             "name": "广东",
             "value": "11"
-        }, {
-            "name": "广西",
-            "value": "22"
-        }, {
-            "name": "上海",
-            "value": "33"
-        }, {
-            "name": "北京",
-            "value": "44"
-        }, {
-            "name": "深圳",
-            "value": "55"
-        }, {
-            "name": "南京",
-            "value": "66"
-        }, {
-            "name": "广西",
-            "value": "22"
-        }, {
-            "name": "上海",
-            "value": "33"
-        }, {
-            "name": "北京",
-            "value": "44"
-        }, {
-            "name": "深圳",
-            "value": "55"
-        }, {
-            "name": "南京",
-            "value": "66"
-        }, {
-            "name": "广西",
-            "value": "22"
-        }, {
-            "name": "上海",
-            "value": "33"
-        }, {
-            "name": "北京",
-            "value": "44"
-        }, {
-            "name": "深圳",
-            "value": "55"
-        }, {
-            "name": "南京",
-            "value": "66"
-        }, {
-            "name": "广西",
-            "value": "22"
-        }, {
-            "name": "上海",
-            "value": "33"
-        }, {
-            "name": "北京",
-            "value": "44"
-        }, {
-            "name": "深圳",
-            "value": "55"
-        }, {
-            "name": "南京",
-            "value": "66"
-        }, {
-            "name": "广西",
-            "value": "22"
-        }, {
-            "name": "上海",
-            "value": "33"
-        }, {
-            "name": "北京",
-            "value": "44"
-        }, {
-            "name": "深圳",
-            "value": "55"
-        }, {
-            "name": "南京",
-            "value": "66"
         }, {
             "name": "广西",
             "value": "22"

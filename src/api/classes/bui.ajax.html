@@ -61,6 +61,8 @@
             
                 <li><a href="../classes/bui.alert.html">bui.alert</a></li>
             
+                <li><a href="../classes/bui.all.html">bui.all</a></li>
+            
                 <li><a href="../classes/bui.animate.html">bui.animate</a></li>
             
                 <li><a href="../classes/bui.array.html">bui.array</a></li>
@@ -73,6 +75,8 @@
             
                 <li><a href="../classes/bui.confirm.html">bui.confirm</a></li>
             
+                <li><a href="../classes/bui.delete.html">bui.delete</a></li>
+            
                 <li><a href="../classes/bui.dialog.html">bui.dialog</a></li>
             
                 <li><a href="../classes/bui.download.html">bui.download</a></li>
@@ -84,6 +88,8 @@
                 <li><a href="../classes/bui.file.html">bui.file</a></li>
             
                 <li><a href="../classes/bui.fileselect.html">bui.fileselect</a></li>
+            
+                <li><a href="../classes/bui.get.html">bui.get</a></li>
             
                 <li><a href="../classes/bui.getPageParams.html">bui.getPageParams</a></li>
             
@@ -115,9 +121,13 @@
             
                 <li><a href="../classes/bui.platform.html">bui.platform</a></li>
             
+                <li><a href="../classes/bui.post.html">bui.post</a></li>
+            
                 <li><a href="../classes/bui.prompt.html">bui.prompt</a></li>
             
                 <li><a href="../classes/bui.pullrefresh.html">bui.pullrefresh</a></li>
+            
+                <li><a href="../classes/bui.put.html">bui.put</a></li>
             
                 <li><a href="../classes/bui.rating.html">bui.rating</a></li>
             
@@ -233,7 +243,7 @@
 
 <div class="box intro">
     <p>数据请求, $.ajax 跟 app.ajax 有的参数, bui.ajax 都有, 这里只列了简单的几个参数.
-可以全局配置所有请求的默认参数: bui.config.ajax = { needJsonString: true }
+可以全局配置所有请求的默认参数: bui.config.ajax = { headers: {} }
  <h3>预览地址: <a href="../../index.html#pages/ui_method/bui.ajax.html" target="_blank">demo</a></h3></p>
 
 </div>
@@ -339,7 +349,22 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[传输的数据对象 {} 不能是数组,原生不支持]</p>
+                                    <p>[传输的数据为json对象 {} ]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[baseUrl]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[请求的域名,可以单独配置,1.5.4新增]</p>
 
                                 </div>
 
@@ -393,6 +418,36 @@
                             
                             <li class="param">
                                 
+                                    <code class="param-name optional">[transformRequest]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.4新增,可以在数据请求前,对data做处理,需要返回]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[transformResponse]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>[1.5.4新增,可以在数据请求成功后,对data做处理,再进行返回]</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
                                     <code class="param-name optional">[dataType]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -414,7 +469,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[默认 &#39;text/html;charset=UTF-8&#39; | &#39;application/x-www-form-urlencoded&#39;(表单,接口跨域需要设置这个) | &#39;multipart/form-data&#39;(表单里有file文件) | &#39;application/json&#39;(后端要用@requestbody接收) 前端传过去的参数要用 JSON.stringify 转换下 ]&#39;</p>
+                                    <p>[get默认 &#39;text/html;charset=UTF-8&#39; | post默认: &#39;application/x-www-form-urlencoded&#39;(表单,接口跨域需要设置这个) | &#39;multipart/form-data&#39;(表单里有file文件) | &#39;application/json&#39;(后端要用@requestbody接收) 前端传过去的参数要用 JSON.stringify 转换下 ]&#39;</p>
 
                                 </div>
 
@@ -444,7 +499,7 @@
                                 
 
                                 <div class="param-description">
-                                    <p>[1.4.6新增,默认 false|true. true时会尝试把数据转换为string. 这个主要配合list控件的特殊请求使用,正常都是一个对象, 如果为true,后台一般以@requestBody 接收,postman的body 是raw 的形式 ]</p>
+                                    <p>[1.4.6新增,默认 false|true. true时会尝试把数据转换为string. 这个主要配合list控件的特殊请求使用,正常都是一个对象, 如果为true,后台一般以@requestbody 接收,postman的body 是raw 的形式 ]</p>
 
                                 </div>
 
@@ -481,15 +536,33 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>bui.ajax({
-    url: &quot;&quot;,
-    data: {}
-}).then(function(res){
-    console.log(res)
-},function(res,status){
-    console.log(status);
+                <pre class="code prettyprint"><code>    // 例子1. 简单示例:
+        bui.ajax({
+            url: &quot;&quot;,
+            data: {}
+        }).then(function(res){
+            console.log(res)
+        },function(res,status){
+            console.log(status);
           // status = &quot;timeout&quot; || &quot;error&quot; || &quot;abort&quot;, &quot;parsererror&quot;
-})</code></pre>
+        })
+
+   // 例子2. 1.5.4 新增, 通过全局配置修改所有请求, 请求的地址是: http://www.easybui.com/demo/json/shop.json 
+       // 全局配置
+       bui.config.ajax = {
+           baseUrl: &quot;http://www.easybui.com/&quot;
+           headers: {}
+       }
+
+       bui.ajax({
+           url: &quot;demo/json/shop.json&quot;,
+           data: {}
+       }).then(function(res){
+           console.log(res)
+       },function(res,status){
+           console.log(status);
+           // status = &quot;timeout&quot; || &quot;error&quot; || &quot;abort&quot;, &quot;parsererror&quot;
+       })</code></pre>
 
             </div>
         </div>

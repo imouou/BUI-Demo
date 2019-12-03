@@ -108,8 +108,8 @@
 
     });
 
-
     router.$("#btnSearchDialog").on("click", function(argument) {
+
         uiDialog.open();
     })
     router.$("#btnBack").on("click", function(argument) {

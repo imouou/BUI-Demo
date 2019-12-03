@@ -17,7 +17,7 @@
         <div class="section-title">控制状态显示隐藏</div>
 
 
-        <p b-show="page.show">我是A,被控制的内容</p>
+        <span b-show="page.show" style="display:inline-block;">我是A,被控制的内容</span>
         <div b-show="page.show" class="bui-box">
             <div class="span1">我是C,被控制的内容,支持box布局</div><i class="icon-listright"></i></div>
         <p b-show="!page.show">我是B,跟A相反的状态</p>
@@ -53,5 +53,9 @@
         <div class="section-title">checkbox 联动更改</div>
 
         <label><input type="checkbox" name="city" value="广州" b-model="page.citys">广州</label>
+
+        <div class="section-title">取check-value uncheck-value的值</div>
+        <input type="checkbox" class="bui-switch-text" name="" value="none" uncheck="无" check="有" uncheck-value="wu" check-value="you" b-model="page.has">
+        <!-- <input type="checkbox" class="bui-switch-text" name="" value="" uncheck="男" check="女" b-model="page.sex"> -->
     </main>
 </div>

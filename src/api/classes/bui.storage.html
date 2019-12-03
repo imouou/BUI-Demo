@@ -61,6 +61,8 @@
             
                 <li><a href="../classes/bui.alert.html">bui.alert</a></li>
             
+                <li><a href="../classes/bui.all.html">bui.all</a></li>
+            
                 <li><a href="../classes/bui.animate.html">bui.animate</a></li>
             
                 <li><a href="../classes/bui.array.html">bui.array</a></li>
@@ -73,6 +75,8 @@
             
                 <li><a href="../classes/bui.confirm.html">bui.confirm</a></li>
             
+                <li><a href="../classes/bui.delete.html">bui.delete</a></li>
+            
                 <li><a href="../classes/bui.dialog.html">bui.dialog</a></li>
             
                 <li><a href="../classes/bui.download.html">bui.download</a></li>
@@ -84,6 +88,8 @@
                 <li><a href="../classes/bui.file.html">bui.file</a></li>
             
                 <li><a href="../classes/bui.fileselect.html">bui.fileselect</a></li>
+            
+                <li><a href="../classes/bui.get.html">bui.get</a></li>
             
                 <li><a href="../classes/bui.getPageParams.html">bui.getPageParams</a></li>
             
@@ -115,9 +121,13 @@
             
                 <li><a href="../classes/bui.platform.html">bui.platform</a></li>
             
+                <li><a href="../classes/bui.post.html">bui.post</a></li>
+            
                 <li><a href="../classes/bui.prompt.html">bui.prompt</a></li>
             
                 <li><a href="../classes/bui.pullrefresh.html">bui.pullrefresh</a></li>
+            
+                <li><a href="../classes/bui.put.html">bui.put</a></li>
             
                 <li><a href="../classes/bui.rating.html">bui.rating</a></li>
             
@@ -432,9 +442,11 @@
 
   // 获取所有数据
   var data = storage.get(&quot;username&quot;);
+  //console.log( data ) [&quot;bui&quot;]
 
-  // 默认只存储一条数据
-  //console.log( data ) &quot;bui&quot;</code></pre>
+  // 拿到第一条数据的值
+  var val = storage.get(&quot;username&quot;,0);
+  //console.log( val ) &quot;bui&quot;</code></pre>
 <p>多条数据存储示例:</p>
 <pre class="code prettyprint"><code>   // 保存数据
    var storage = bui.storage(2);
@@ -557,7 +569,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l304"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:304</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l306"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:306</code></a>
         
         </p>
 
@@ -648,7 +660,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l178"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:178</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l180"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:180</code></a>
         
         </p>
 
@@ -819,7 +831,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l236"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:236</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l238"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:238</code></a>
         
         </p>
 
@@ -976,7 +988,7 @@
             
         
         
-        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l87"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:87</code></a>
+        <a href="../files/_Users_wilson_personal_htdocs_opensource_bui-rollup_src_scripts_method_bui.storage.js.html#l89"><code>&#x2F;Users&#x2F;wilson&#x2F;personal&#x2F;htdocs&#x2F;opensource&#x2F;bui-rollup&#x2F;src&#x2F;scripts&#x2F;method&#x2F;bui.storage.js:89</code></a>
         
         </p>
 

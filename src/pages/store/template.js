@@ -3,7 +3,7 @@
     // 引入第三方模板, 里面部分用到,作为示例,并非所有数据都要引入
     loader.import(["js/plugins/template-web.js"], function() {
 
-        var bs = bui.store({
+        window.bs = bui.store({
             scope: "page", // 用于区分公共数据及当前数据的唯一值
             data: {
                 test: "我是测试文本",
@@ -21,8 +21,15 @@
                     data: ["我是复杂数据列表1"]
                 }
             },
+            watch: {
+                citys: function(a) {
+                    var html = this.tplTable(a);
+                    console.log(html)
+                }
+            },
             templates: {
-                tplList: function(data) {
+                tplList: function(data, dd) {
+                    // console.log(dd)
                     var html = "";
                     if (data.length) {
                         data.forEach(function(item, i) {
@@ -68,7 +75,8 @@
                     })
                     return html;
                 },
-                tplTable: function(data) {
+                tplTable: function(data, dd) {
+                    console.log(dd)
                     var html = "";
                     data.forEach(function(item, i) {
                         html += `<tr><td>${item}</td></tr>`;

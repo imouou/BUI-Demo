@@ -9,11 +9,11 @@
     //提交
     bui.btn("#submit").submit(function(loading) {
         // 模拟请求,2秒后关闭
-        setTimeout(function(argument) {
-            bui.alert("数据已经提交成功!", function() {
-                //关闭进度条,放在ajax的成功回调里面
-                loading.stop();
-            })
-        }, 1000)
+        // setTimeout(function(argument) {
+        //     bui.alert("数据已经提交成功!", function() {
+        //         //关闭进度条,放在ajax的成功回调里面
+        //         loading.stop();
+        //     })
+        // }, 1000)
     })
 })

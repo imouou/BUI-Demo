@@ -3,21 +3,27 @@
     var bs = bui.store({
         scope: "page", // 用于区分公共数据及当前数据的唯一值
         data: {
-            a: 1
+            a: 1,
+            b: { id: 123 }
         },
         methods: {
-            getMessage: function(a, b, c) {
+            getMessage: function(a, b, c, d) {
                 // 参数的最后一个为上下文关系
                 // console.log(event)
                 console.log(a)
                 console.log(b)
                 console.log(c)
+                console.log(d)
 
                 // 1.5.4新增，获取到想操作的对象
                 console.log(this.$refs["tit"])
-                event.stopPropagation()
-                    // 事件参数
-                    // console.log(event)
+                    // 阻止冒泡
+                event.stopPropagation();
+
+                // 阻止默认事件
+                event.preventDefault();
+                // 事件参数
+                // console.log(event)
 
                 // router.$(".result").html(c)
 

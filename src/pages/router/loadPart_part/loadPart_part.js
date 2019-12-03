@@ -2,8 +2,8 @@
 loader.define(function(r, e, module) {
 
     var pageview = {};
-    var getParams = router.getPartParams("loadPart");
-    console.log(getParams);
+    var getParams = router.getPartParams();
+    console.log(getParams, 111);
     // 主要业务初始化
     pageview.init = function() {
         // 这里写main模块的业务
