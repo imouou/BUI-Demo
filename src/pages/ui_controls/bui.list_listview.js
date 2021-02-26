@@ -1,4 +1,4 @@
-﻿loader.define(function(require, exports, module) {
+﻿loader.define(function (require, exports, module) {
 
     var uiList = bui.list({
         id: "#scrollListview",
@@ -6,13 +6,13 @@
         children: ".bui-listview",
         handle: "li",
         pageSize: 9,
-        template: function(data) {
+        template: function (data) {
             var html = "";
-            $.each(data, function(index, el) {
+            $.each(data, function (index, el) {
                 // status=1 手动拼接侧滑菜单,这样可以避免再次dom操作
                 // 设置高度可以少遍历一次
-                html += `<li status="1" style="height:46px;">
-                            <div class="bui-btn bui-box" href="pages/ui_controls/bui.list_listview.html?id=11">
+                html += `<li class="listitem" status="1" style="height:46px;">
+                            <div class="bui-btn bui-box">
                                 <div class="span1">${el.name} </div>
                                 <i class="icon-listright"></i>
                             </div>
@@ -31,20 +31,21 @@
             size: "pageSize",
             data: "data"
         },
-        onRefresh: function(scroll) {
+        onRefresh: function (scroll) {
             //初始化listview
             // uiListviewInit();
             console.log(this.option("page"));
 
         },
-        onLoad: function(scroll) {
+        onLoad: function (scroll) {
             console.log(this.option("page"));
             //初始化listview
         },
-        callback: function(e) {
+        callback: function (e) {
+
             // 找到整行li
             var $line = $(e.target).closest("li")
-            console.log("点击整行", $line)
+            console.log("点击整行", $line);
         }
     });
 
@@ -52,10 +53,11 @@
     var uiListview = bui.listview({
         id: "#scrollList2",
         //data: [{ "text": "修改", "classname":"primary"}],
-        callback: function(e, menu) {
+        stopPropagation: true,
+        callback: function (e, menu) {
             // 输出点击的按钮
             console.log(e.target)
-                //关闭菜单
+            //关闭菜单
             menu.close();
             // 阻止冒泡
             e.stopPropagation();

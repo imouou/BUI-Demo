@@ -22,15 +22,16 @@
             title: "项目立项",
             subtitle: "2016-05-21 10:30",
             content: "&nbsp;"
-        }]
+        }],
+        value: 1
     });
 
-    //激活第2步
-    uiStepbar.value(0);
+    //激活第2步, 并且提示错误
+    // uiStepbar.value(1, "error");
 
     uiStepbar.on("change", function(i) {
-        console.log(i)
-    })
-    var index = uiStepbar.next();
+            console.log(i)
+        })
+        // var index = uiStepbar.next();
 
 })

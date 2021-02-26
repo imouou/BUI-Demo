@@ -1,4 +1,6 @@
-﻿loader.define(function(require, exports, module) {
+﻿loader.define(function (require, exports, module) {
+
+    var a = [];
 
     //动态绑定
     var uiSelectCustom = bui.select({
@@ -31,24 +33,32 @@
             "image": "images/face.png",
             "value": "66"
         }],
-        onChange: function(e) {
-
+        onChange: function (e) {
+            console.log("111")
         }
     })
 
-    $("#selectAll").on("click", function(argument) {
+    uiSelectCustom.on("check", function () {
+        var val = uiSelectCustom.value()
+        console.log(val)
+        bui.alert(val)
+    })
+
+
+    $("#selectAll").on("click", function (argument) {
+
         uiSelectCustom.selectAll();
     })
 
-    $("#selectNone").on("click", function(argument) {
+    $("#selectNone").on("click", function (argument) {
         uiSelectCustom.selectNone();
     })
 
-    $("#unselect").on("click", function(argument) {
+    $("#unselect").on("click", function (argument) {
         uiSelectCustom.unselect();
     })
 
-    $("#queding").on("click", function(argument) {
+    $("#queding").on("click", function (argument) {
         console.log(uiSelectCustom.allValues());
 
         console.log(uiSelectCustom.text());
@@ -59,24 +69,24 @@
         id: "#selectCustom2",
         popup: false,
         type: "checkbox",
-        onChange: function(e) {
-
+        onChange: function (e) {
+            console.log("222")
         }
     });
 
-    $("#selectAll2").on("click", function(argument) {
+    $("#selectAll2").on("click", function (argument) {
         uiSelectCustom2.selectAll();
     })
 
-    $("#selectNone2").on("click", function(argument) {
+    $("#selectNone2").on("click", function (argument) {
         uiSelectCustom2.selectNone();
     })
 
-    $("#unselect2").on("click", function(argument) {
+    $("#unselect2").on("click", function (argument) {
         uiSelectCustom2.unselect();
     })
 
-    $("#queding2").on("click", function(argument) {
+    $("#queding2").on("click", function (argument) {
 
         console.log(uiSelectCustom2.text());
     })

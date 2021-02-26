@@ -2,7 +2,6 @@
 
     var tab = bui.tab({
         id: "#tabList",
-        menu: "#tabListNav",
         scroll: false,
         onBeforeTo: function(e) {
             console.log(e)
@@ -12,7 +11,7 @@
 
     var uiList = bui.list({
         id: "#tabListScroll",
-        url: "http://www.easybui.com/demo/json/userlist.json",
+        url: "json/userlist.json",
         data: {},
         page: 1,
         pageSize: 5,
@@ -27,7 +26,7 @@
     });
     var uiList2 = bui.list({
         id: "#tabListScroll2",
-        url: "http://www.easybui.com/demo/json/userlist.json",
+        url: "json/userlist.json",
         data: {},
         page: 1,
         pageSize: 5,

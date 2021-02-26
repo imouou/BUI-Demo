@@ -5,7 +5,8 @@
     var $uploadBtn = router.$("#btnUpload").parent();
 
     var uiUpload = bui.upload({
-        showProgress: false
+        showProgress: true,
+        // needNative: false
     });
 
     // 上拉菜单 js 初始化:
@@ -21,23 +22,31 @@
                     ui.hide();
                     uiUpload.add({
                         "from": "camera",
-                        "needCompress": true, // 1.5.3新增压缩
-                        "width": 300,
+                        // "needCompress": true, // 1.5.3新增压缩
+                        // "width": 300,
                         "destinationType": "file", //  file | blob | data 
                         "onSuccess": function(val, data) {
+                            // bui.alert(val)
                             // 展示base64本地图片 建议直接调用start方法上传以后再展示远程地址,避免应用崩溃
                             this.toBase64({
                                 onSuccess: function(url) {
                                     $uploadBtn.before(templatePhoto(url))
+                                },
+                                onFail: function(url) {
+                                    bui.alert(url)
+                                        // $uploadBtn.before(templatePhoto(url))
                                 }
                             });
                             // 直接调用start上传图片
 
                             // this.start({
-                            //     header: {},
-                            //     url: "http://10.201.76.223:8060/comservice/psbNewsReport/uploadPictureFile.do",
+                            //     url: "https://imgurl.org/upload/ftp",
+                            //     data: {
+                            //         test: 111,
+                            //         file: this.data().file
+                            //     },
                             //     onSuccess: function(data) {
-                            //         console.log(data, "success");
+                            //         bui.alert(data);
                             //         // 成功
                             //     },
                             //     onFail: function(data) {
@@ -45,6 +54,7 @@
                             //         // 失败
                             //     },
                             // })
+
                         }
                     })
 
@@ -62,12 +72,12 @@
 
                                 }
                             });
-                            // 直接调用start上传图片
+                            // bui.alert(val)
                             // this.start({
                             //     header: {},
-                            //     url: "http://easybui.com/images/",
+                            //     url: "https://imgurl.org/upload/ftp",
                             //     onSuccess: function(data) {
-                            //         console.log(data, "success");
+                            //         bui.alert(data);
                             //         // 成功
                             //     },
                             //     onFail: function(data) {
@@ -75,6 +85,7 @@
                             //         // 失败
                             //     },
                             // })
+
                         }
                     })
 
@@ -133,16 +144,20 @@
     $("#upload").on("click", function(argument) {
             uiUpload.startAll({
                 // url: "http://eid.bingosoft.net:83/share/apis/upload/image",
-                url: "http://10.201.76.223:8060/comservice/psbNewsReport/uploadPictureFile.do",
+                url: "https://imgurl.org/upload/ftp",
                 // url: "https://www.swla.com.cn/demo/upload.asp",
                 // url:"http://10.201.78.23:81/dataservice.ashx?CommandName=Atd$ImgUpLoad",
                 onSuccess: function(data) {
-                    console.log(data)
+                    bui.alert(data)
                         //显示上传以后的图片
                         //清空已经选择的图片
                 },
                 onFail: function(data) {
                     bui.alert(data)
+                },
+                onEnd: function(res) {
+                    console.log(res)
+                    console.log(res.length)
                 }
             })
 

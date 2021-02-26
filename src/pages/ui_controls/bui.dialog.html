@@ -4,11 +4,6 @@
     }
     /*右边全屏可以控制距离左边位置*/
     
-    #dialogRight {
-        left: 10%;
-    }
-    /*右边全屏可以控制距离左边位置*/
-    
     #dialogLeft {
         right: 10%;
     }
@@ -39,6 +34,11 @@
                 <div id="btnOpenFilter" class="bui-btn">打开右边对话框</div>
             </div>
         </div>
+        <div class="bui-box-space container-y">
+            <div class="span1">
+                <div id="btnOpenFull" class="bui-btn">打开全屏对话框</div>
+            </div>
+        </div>
         <img src="images/placeholder-page.png" alt="占位图">
 
     </main>
@@ -56,7 +56,7 @@
 </div>
 
 <!-- 左边自定义对话框结构 -->
-<div id="dialogLeft" class="bui-dialog bui-box-vertical" style="display:none;">
+<div id="dialogLeft" class="bui-dialog" style="display:none;">
     <div class="bui-dialog-head bui-box-align-middle">
         <div class="span1">请选择区域</div>
         <div id="makeSure2" class="bui-btn primary round">确定</div>
@@ -89,6 +89,35 @@
     <div class="bui-dialog-head">隐私说明</div>
     <div class="bui-dialog-main">
         <img src="images/placeholder-page.png" alt="占位图">
+    </div>
+    <div class="bui-dialog-foot">
+        <div class="bui-box">
+            <div class="span1">
+                <div class="bui-btn">取消</div>
+            </div>
+            <div class="span1">
+                <div class="bui-btn blue">确定</div>
+            </div>
+        </div>
+    </div>
+    <div class="bui-dialog-close"><i class="icon-close"></i></div>
+</div>
+<!-- 全屏弹出框	 -->
+<div id="dialogFull" class="bui-dialog" style="display: none;">
+    <div class="bui-dialog-head">隐私说明</div>
+    <div class="bui-dialog-main">
+        <img src="images/placeholder-page.png" alt="占位图">
+        <img src="images/placeholder-page.png" alt="占位图">
+    </div>
+    <div class="bui-dialog-foot">
+        <div class="bui-box">
+            <div class="span1">
+                <div class="bui-btn">取消</div>
+            </div>
+            <div class="span1">
+                <div class="bui-btn blue">确定</div>
+            </div>
+        </div>
     </div>
     <div class="bui-dialog-close"><i class="icon-close"></i></div>
 </div>

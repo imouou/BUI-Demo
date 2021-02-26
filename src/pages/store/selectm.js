@@ -1,15 +1,5 @@
 ﻿loader.define(function(require, exports, module) {
-    /**
-     * 设计思路说明:
-     * 左边列表A: selectA
-     * 右边列表B: selectB
-     * 左边选中列表暂存区A: selectAChecked
-     * 右边选中列表暂存区B: selectBChecked
-     * 点击列表, 往暂存区存放对应的数据, 并且通过watch 暂存区的数据变更,把按钮的状态变成能够操作.
-     * 点击按钮添加到B, 则把右边列表数据,合并A选中的暂存区, 并删除选中状态, 清空A暂存区数据
-     * 点击按钮添加到A, 则把左边列表数据,合并B选中的暂存区, 并删除选中状态, 清空B暂存区数据
-     */
-
+    
     var bs = bui.store({
             scope: "page", // 用于区分公共数据及当前数据的唯一值
             data: {
@@ -30,48 +20,81 @@
             },
             // log: true,
             methods: {
-                setStatus: function (target,index,checked) {
+                setStatusA: function (index) {
 
-                    var selectedItem = this[target][index],
-                        selecteds = this[checked],
+                    var selectedItem = this.selectA[index],
+                        selecteds = this.selectAChecked,
                         // 判断是否唯一
-                        indexs = bui.array.index(this[target][index].value,selecteds,"value");
+                        indexs = bui.array.index(selecteds,selectedItem.value,"value");
 
+                    // 修改数组选中状态
+                    selectedItem.selected=!selectedItem.selected;
                     // 选中暂存区的增加或减少
                     if( indexs > -1 ){
                         // 删除
-                        selecteds.splice(indexs,1);
-                    }else{
+                        selecteds.$deleteIndex(indexs);
+                    } else {
+                        var selectedItem2=$.extend(true, {},selectedItem, {selected:false});
                         // 增加
-                        selecteds.push(selectedItem);
+                        selecteds.push(selectedItem2);
                     }
 
-
-                    // 修改选中状态
-                    this[target][index].selected = !this[target][index].selected;
-                    // 替换第几条数据并触发数据this[target] 的dom变更
-                    bui.array.set(this[target],index,this[target][index]);
+                    // 替换整组数据
+                    // this.selectA.$replace(this.selectA)
+                    // 修改某一条数据
+                    this.selectA.$set(index, selectedItem)
+                    
                 },
-                moveSelect: function (target,checked,targetB) {
+                setStatusB: function (index) {
 
-                    // 修改按钮状态
-                    var btn = checked == "selectBChecked" ? "canDel" : "canAdd";
+                    var selectedItem = this.selectB[index],
+                        selecteds = this.selectBChecked,
+                        // 判断是否唯一
+                        indexs = bui.array.index(selecteds,selectedItem.value,"value");
 
-                    if( this[btn].disabled ){ return; }
+                    // 修改数组选中状态
+                    selectedItem.selected=!selectedItem.selected;
+                    // 选中暂存区的增加或减少
+                    if( indexs > -1 ){
+                        // 删除
+                        selecteds.$deleteIndex(indexs);
+                    } else {
+                        var selectedItem2=$.extend(true, {},selectedItem, {selected:false});
+                        // 增加
+                        selecteds.push(selectedItem2);
+                    }
 
-                    // 移动过去以后,不需要选中状态
-                    this[checked].forEach(function (item) {
-                        item.selected = false;
-                    })
+                    // 替换整组数据
+                    // this.selectB.$replace(this.selectB)
+                    
+                    // 修改某一条数据
+                    this.selectB.$set(index, selectedItem)
+                },
+                moveSelectA: function () {
 
-                    // 合并并触发 this.selectB
-                    bui.array.merge(this[target],this[checked]);
+                    if( this.canAdd.disabled ){ return; }
 
-                    // 删除this.selectA选中数据,通过value字段比对,支持多个
-                    bui.array.delete(this[targetB],this[checked],"value");
+                    // 合并selectB的数据
+                    this.selectB.$merge(this.selectAChecked)
 
-                    // // 清空暂存区数据
-                    bui.array.empty(this[checked]);
+                    // 删除多条选中的数据
+                    this.selectA.$delete(this.selectAChecked, "value");
+
+                    // 清空暂存区
+                    this.selectAChecked.$empty();
+                },
+                moveSelectB: function () {
+
+                    if( this.canDel.disabled ){ return; }
+
+                    // 合并selectB的数据
+                    this.selectA.$merge(this.selectBChecked)
+
+                    // 删除选中的数据
+                    this.selectB.$delete(this.selectBChecked, "value");
+
+                    // 清空暂存区
+                    this.selectBChecked.$empty();
                 },
             },
             watch: {
@@ -87,13 +110,25 @@
             computed: {},
             templates: {
                 // 联动的示例,增加了事件绑定
-                tplSelect: function (data,target,targetChecked) {
+                tplSelectA: function (data,target,targetChecked) {
 
                     var html ='';
                     data.forEach(function (item,i) {
-                        var active = item.selected ? "active" : "";
+                        var active=item.selected? "active":""
+                        
                         // $index 为内置的动态索引, i 不一定等于 $index
-                        html +=`<li b-click='page.setStatus(${target},$index,${targetChecked})' class="bui-btn ${active}">${item.text}</li>`;
+                        html +=`<li b-click='page.setStatusA($index)' class="bui-btn ${active}">${item.text}</li>`;
+                    })
+                    return html;
+                },
+                // 联动的示例,增加了事件绑定
+                tplSelectB: function (data) {
+
+                    var html ='';
+                    data.forEach(function (item,i) {
+                        var active=item.selected? "active":""
+                        // $index 为内置的动态索引, i 不一定等于 $index
+                        html +=`<li b-click='page.setStatusB($index)' class="bui-btn ${active}">${item.text}</li>`;
                     })
                     return html;
                 }

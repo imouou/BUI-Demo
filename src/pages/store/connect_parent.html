@@ -1,0 +1,23 @@
+﻿<style>
+    input:disabled {
+        background: #efefef;
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="bui-page">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">关联实例</div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <main class="container-xy">
+        <div class="scope2">
+            <ul id="testApl" b-template="page.tplA(arr)" class="bui-list"></ul>
+        </div>
+        <div class="section-title">子组件同步</div>
+        <component id="part" name="pages/store/connect_part"></component>
+    </main>
+</div>

@@ -1,4 +1,4 @@
-﻿loader.define(function(require, exports, module) {
+﻿loader.define(function (require, exports, module) {
 
     var tabWidth = $(window).width() - $("#tabSideNav").width();
 

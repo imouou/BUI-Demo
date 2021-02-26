@@ -3,45 +3,47 @@
  * 默认模块名: main
  * @return {[object]}  [ 返回一个对象 ]
  */
-loader.define(function(require, exports, module) {
+loader.define(function (require, exports, module) {
 
+    // bui.page({ url: "index.html#pages/components/list/index.html", iframe: true })
     var pageview = {};
+    // 存储tab实例
+    var distance = [];
     // 模块初始化定义
-    pageview.init = function() {
-        navTab();
-    }
+    pageview.init = function () {
 
-    // 底部导航
-    function navTab() {
-
-        //menu在tab外层,menu需要传id
-        var tab = bui.tab({
+        // html:
+        // <div id="uiTabHead" class="bui-tab"></div>
+        var uiTabHead = bui.tab({
             id: "#tabDynamic",
-            animate: false,
-            // 1: 声明是动态加载的tab
-            autoload: true,
+            position: "top",
+            data: [{
+                id: "uiTabHead0",
+                title: "控件",
+                name: "pages/main/controls",
+                param: {}
+            }, {
+                id: "uiTabHead1",
+                title: "表单",
+                name: "pages/main/form",
+                param: {}
+            }, {
+                id: "uiTabHead2",
+                title: "数据驱动",
+                name: "pages/main/store",
+                param: {}
+            }, {
+                id: "uiTabHead3",
+                title: "方法",
+                name: "pages/main/method",
+                param: {}
+            }]
         })
 
-        tab.lock();
 
-        // 2: 监听加载后的事件
-        tab.on("to", function(index) {
-            switch (index) {
-                case 0:
-                    loader.require(["pages/main/controls"])
-                    break;
-                case 1:
-                    loader.require(["pages/main/form"])
-                    break;
-                case 2:
-                    loader.require(["pages/main/store"])
-                    break;
-                case 3:
-                    loader.require(["pages/main/method"])
-                    break;
-            }
-
-        }).to(0);
+        if (bui.platform.isPC()) {
+            uiTabHead.lock();
+        }
 
     }
 

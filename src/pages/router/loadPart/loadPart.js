@@ -16,7 +16,7 @@ loader.define(function() {
         router.$("#btnLoadPart").on("click", function() {
             router.loadPart({
                 id: "#loadPart",
-                url: "pages/router/loadPart_part/loadPart_part.html?id=345",
+                url: "pages/router/loadPart_part/index.html?id=345",
                 param: {
                     test: 123
                 }
@@ -26,18 +26,7 @@ loader.define(function() {
                 console.log(res)
             })
 
-            router.loadPart({
-                    id: "#loadPart2",
-                    url: "pages/router/loadPart_part/loadPart_part.html?id=345",
-                    param: {
-                        test: 234
-                    }
-                }).then(function(res) {
-                    // 在外部执行里面的方法,意味着可以分离式加载
-                    // res.init()
-                    console.log(res)
-                })
-                // console.log(router.$(".bui-page"))
+            // console.log(router.$(".bui-page"))
         })
 
         // 事件委托去绑定异步加载进来的模块的dom

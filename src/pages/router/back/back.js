@@ -19,16 +19,16 @@ loader.define(function() {
                     // console.log(mod)
                     // 全局刷新
                     // router.refresh();
-                    // 局部刷新, 拿到上级模块抛出的方法,执行加减操作
-                    loader.require(["pages/router/index"], function(main) {
-                        badges--;
+                    // 局部刷新, 拿到指定模块抛出的方法,执行加减操作
+                    // loader.require(["pages/router/index"], function(main) {
+                    window.badges--;
 
-                        // 更新面包屑
-                        main.setBadges(badges);
+                    // 更新面包屑
+                    mod.setBadges(badges);
 
-                        bui.hint("更新成功")
+                    bui.hint("更新成功")
 
-                    })
+                    // })
                 }
             })
         })

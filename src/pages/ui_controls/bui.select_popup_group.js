@@ -30,6 +30,7 @@
             "name": "郑州",
             "value": "66"
         }],
+        needSearch: true,
         value: ["广州", "上海"],
         //如果需要点击再进行操作,增加按钮
         buttons: [{ name: "重置", className: "" }, { name: "确定", className: "primary-reverse" }],

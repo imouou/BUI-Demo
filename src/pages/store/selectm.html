@@ -2,6 +2,9 @@
     .bui-select .active {
         color: red;
     }
+    .bui-list .selected {
+        background-color: #f1f1f1;
+    }
     .btn-controls {
         width: 1rem;
         margin:0 .1rem;
@@ -27,20 +30,20 @@
                     <div class="span1">列表1</div>
                     <b b-text="page.selectAChecked.length"></b>/<b b-text="page.selectA.length"></b>
                 </div>
-                <div class="bui-list" b-template="page.tplSelect(page.selectA,selectA,selectAChecked)">
+                <div class="bui-list" b-template="page.tplSelectA(page.selectA)">
                 </div>
             </div>
             <div class="btn-controls">
                 <!-- 如果传多个数据,()里面不要使用 page. -->
-                <div class="bui-btn round" b-click="page.moveSelect(selectB,selectAChecked,selectA)" b-class="page.canAdd.disabled">&gt;&gt;</div>
-                <div class="bui-btn round" b-click="page.moveSelect(selectA,selectBChecked,selectB)" b-class="page.canDel.disabled">&lt;&lt;</div>
+                <div class="bui-btn round" b-click="page.moveSelectA()" b-class="page.canAdd.disabled">&gt;&gt;</div>
+                <div class="bui-btn round" b-click="page.moveSelectB()" b-class="page.canDel.disabled">&lt;&lt;</div>
             </div>
             <div class="span1">
                 <div class="subtitle bui-box">
                     <div class="span1">列表2</div>
                     <b b-text="page.selectBChecked.length"></b>/<b b-text="page.selectB.length"></b>
                 </div>
-                <div class="bui-list" b-template="page.tplSelect(page.selectB,selectB,selectBChecked)">
+                <div class="bui-list" b-template="page.tplSelectB(page.selectB)">
                 </div>
             </div>
         </div>

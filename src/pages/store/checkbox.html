@@ -34,8 +34,8 @@
 
 
         <div class="section-title">单选: 性别: <span b-text="page.sex"></span> </div>
-        <label><input type="radio" name="sex" value="男" b-model="page.sex">男</label>
-        <label><input type="radio" name="sex" value="女" b-model="page.sex">女</label>
+        <label><input type="radio" name="sex" value="男" b-model="page.sex" b-change="page.change(page.sex)">男</label>
+        <label><input type="radio" name="sex" value="女" b-model="page.sex" b-change="page.change(page.sex)">女</label>
 
 
         <div class="section-title">单选: 对象: <span b-text="page.user"></span> 值: <span b-text="page.name"></span> </div>
@@ -53,9 +53,12 @@
         <div class="section-title">checkbox 联动更改</div>
 
         <label><input type="checkbox" name="city" value="广州" b-model="page.citys">广州</label>
+        <label><input type="checkbox" name="city2" b-model="page.test.hasCheck">对象字段</label>
 
         <div class="section-title">取check-value uncheck-value的值</div>
-        <input type="checkbox" class="bui-switch-text" name="" value="none" uncheck="无" check="有" uncheck-value="wu" check-value="you" b-model="page.has">
-        <!-- <input type="checkbox" class="bui-switch-text" name="" value="" uncheck="男" check="女" b-model="page.sex"> -->
+        <!-- value 保持跟 check一致 -->
+        <input type="checkbox" class="bui-switch-text" name="" value="ON" uncheck="OFF" check="ON" b-model="page.hascheck">
+        <input type="checkbox" class="bui-switch-text" name="" value="you" uncheck="无" check="有" uncheck-value="wu" check-value="you" b-model="page.has">
+
     </main>
 </div>

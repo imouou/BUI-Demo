@@ -1,0 +1,38 @@
+﻿<style>
+    input:disabled {
+        background: #efefef;
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="bui-page">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">关联实例</div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <main class="container-xy">
+        <div class="scope2">
+            第一个实例的数据: <input b-model="page.attrs.test" placeholder="" type="text">
+        </div>
+        <div class="scope2">
+            <ul id="testApl" b-template="page.tplA(arr)" class="bui-list"></ul>
+        </div>
+        <h3 class="bui-text-select">关联1: 关联相同字段, 执行: bs.connect(bs2); 可以看到第1个示例同步成123</h3>
+        <h3 class="bui-text-select">关联2: 关联到不同字段 执行: bs.connect(bs2, "attrs", "props"); 可以看到第2个示例同步成123</h3>
+        <h3 class="bui-text-select">关联3: 关联到根路径 执行: bs.connect(bs2, "attrs", ""); 可以看到第3个示例同步成123</h3>
+
+        <div class="scope1">
+            <p>关联1: page1.attrs.test: <input b-model="page1.attrs.test" placeholder="" type="text"> </p>
+            <p>关联2: page1.props.test: <input b-model="page1.props.test" placeholder="" type="text"> </p>
+            <p>关联3:page1.test: <input b-model="page1.test" placeholder="" type="text"></p>
+            <p>关联4:page1.testValue: <input b-model="page1.testValue" placeholder="" type="text"></p>
+        </div>
+        <div class="scope1">
+            <ul id="testApl2" b-template="page1.tplA(arr)" class="bui-list"></ul>
+            <ul id="testApl2" b-template="page1.tplA(arr2)" class="bui-list"></ul>
+        </div>
+    </main>
+</div>

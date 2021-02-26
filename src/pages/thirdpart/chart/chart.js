@@ -1,10 +1,9 @@
 // 默认已经定义了main模块
-loader.define(function() {
+loader.define(function () {
 
     var pageview = {};
-
     // 主要内容
-    pageview.init = function() {
+    pageview.init = function () {
         // 这里写main模块的业务
         Highcharts.chart('charts', {
             chart: {
@@ -58,14 +57,14 @@ loader.define(function() {
                 }]
             }]
         });
-        
+
     }
 
-    loader.import(["js/plugins/highcharts.js"],function(){
-      // 初始化
+    loader.import(["js/plugins/highcharts.js"], function () {
+        // 初始化
         pageview.init();
     });
-    
-    
+
+
     return pageview;
 })

@@ -1,7 +1,6 @@
 ﻿<style>
     /* 以内容自适应,无切换动画 */
-    
-    .bui-slide-autoheight .bui-tab-main {
+    /* .bui-slide-autoheight .bui-tab-main {
         width: 100% !important;
         transform: translate(0, 0px) !important;
     }
@@ -12,7 +11,7 @@
     
     .bui-slide-autoheight .bui-tab-main>ul>li.active {
         display: block !important;
-    }
+    } */
 </style>
 <div class="bui-page">
     <header class="bui-bar">
@@ -20,12 +19,13 @@
             <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
         </div>
         <div class="bui-bar-main">
-            固定选项卡
+            自动高度选项卡
         </div>
         <div class="bui-bar-right">
         </div>
     </header>
     <main>
+        <!-- 不能有动画切换效果 -->
         <div id="uiTab" class="bui-tab">
             <div class="bui-tab-head">
                 <ul class="bui-nav">
@@ -38,7 +38,7 @@
             <div class="bui-tab-main">
                 <ul>
                     <!-- 内容必须在li里面 -->
-                    <li>无滚动内容</li>
+                    <li>无滚动内容,第2个有滚动条</li>
                     <li style="display: none;">滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br>滚动内容<br></li>
                     <li style="display: none;"><img src="images/placeholder-list.png" alt=""></li>
                     <li style="display: none;"><img src="images/placeholder-page.png" alt=""></li>

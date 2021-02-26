@@ -1,0 +1,92 @@
+<style>
+    .page-addressbook main {
+        background: #fff;
+    }
+    .addressbook>dt {
+        font-weight: bold;
+        color: #000;
+    }
+    .addressbook>[class*=bui-btn]+dd,
+    .addressbook>dt+dd,
+    .addressbook>dd {
+        display: block;
+    }
+    
+    .addressbook-bar {
+        position: absolute;
+        right: .2rem;
+        top: 50%;
+        height: 11rem;
+        margin-top: -5.5rem;
+        z-index: 21;
+    }
+    
+    .addressbook-bar .letter-list li {
+        font-size: .24rem;
+        color: #ccc;
+        text-align: center;
+        padding: .01rem .1rem;
+    }
+    
+    .addressbook-bar .letter-list li.active {
+        background: #eee;
+    }
+</style>
+<div class="page-addressbook">
+        <div class="bui-floor-head">
+            热
+        </div>
+        <div class="bui-floor">
+            <div class="bui-floor-main">
+                <dl class="bui-accordion addressbook" b-template="city.tplCity(city.cityData)">
+                    <!-- <dt class="bui-btn bui-box bui-floor-item">
+                        <div class="span1">A</div>
+                    </dt>
+                    <dd>
+                        <ul class="bui-list">
+                            <li class="bui-btn bui-box">
+                                <div class="bui-icon primary">
+                                    王
+                                </div>
+                                <div class="span1">王某某</div>
+                            </li>
+                        </ul>
+                    </dd> -->
+                    
+                </dl>
+            </div>
+            <div class="bui-floor-foot"></div>
+        </div>
+        <!-- 字母导航条 -->
+        <div class="addressbook-bar bui-box-center">
+            <ul class="letter-list" b-template="city.tplCityLetter(city.cityData)">
+                <!-- <li>热</li>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>I</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+                <li>N</li>
+                <li>O</li>
+                <li>P</li>
+                <li>Q</li>
+                <li>R</li>
+                <li>S</li>
+                <li>T</li>
+                <li>U</li>
+                <li>V</li>
+                <li>W</li>
+                <li>X</li>
+                <li>Y</li>
+                <li>Z</li> -->
+            </ul>
+        </div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>BUI官网-Demo控件演示</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="BUI框架Demo,BUI Demo,BUI演示,BUI控件">
+    <meta name="description" content="BUI 有着丰富的控件,通过demo便可以了解到各个控件的效果及使用方法">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bui.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="bui-page">
+        <header class="bui-bar">
+            <div class="bui-bar-left">
+                <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+            </div>
+            <div class="bui-bar-main">页面标题</div>
+            <div class="bui-bar-right">
+                <!-- 右边按钮 -->
+            </div>
+        </header>
+        <main>
+
+            <div id="target" style="background-color: green;position:relative;width: 100px;height:100px; z-index: 10;">
+                <div class="children"  style="width: 50%;height:100%;background-color: green;position:absolute; left:0;top:0;z-index: 10;">
+                    <div class="other2"  style="width: 100%;height:50%;background-color: black;position:absolute; left:0;top:0;z-index: 10;">
+
+                    </div>
+                </div>
+                
+                <div class="other"  style="width: 50%;height:100%;background-color: red;position:absolute; left:50%;top:0;z-index: 10;">
+
+                </div>
+
+            </div>
+        </main>
+        <footer>
+            <!-- 底部内容 -->
+        </footer>
+    </div>
+    <script src="js/zepto.js"></script>
+    <script src="js/bui.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> -->
+
+    <!-- 初始化单页 -->
+    <script src="touch.js"></script>
+</body>
+
+</html>

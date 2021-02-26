@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>示例工程</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--BUI依赖（一个移动UI框架，可以不使用，http://www.easybui.com/）-->
+    <link rel="stylesheet" href="css/bui.css" />
+    <script src="js/zepto.js"></script>
+    <script src="js/bui.js"></script>
+    <!--BingoTouch依赖, 使用原生接口需要引入以下三个依赖-->
+    <script src="js/cordova.js"></script>
+    <script src="js/bingotouch.js"></script>
+    <script src="js/linkplugins.js"></script>
+
+    <style>
+    </style>
+    <script type="text/javascript">
+    var download = function(){
+                    //获取应用相关的目录,android和ios的目录结构不同
+                    //android下可以存储在 /sdcard/download下面
+                    //ios只能存储在应用里面
+                    var savePath;
+            app.getAppDirectoryEntry(function (res) {
+                alert(res)
+                //区分平台，并将相应的目录保存到全局,方便下面下载的时候使用
+                if (device.platform == "android") {
+                    savePath = res.sdcard;
+                } else if (device.platform == "iOS") {
+                    savePath = res.documents;
+                }
+
+                bui.alert(savePath)
+                var uri = encodeURI("http://dev.bingocc.cc:8060/bingotouch-fileserver/com.bingo.btlink_1.apk");
+                var filePath = savePath + "/com.bingo.btlink_1.apk";
+                app.progress.start("温馨提示", "文件下载中...");
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(
+                    uri,
+                    filePath,
+                    function (entry) {
+                        app.progress.stop();
+                        app.hint("下载完成!");
+                        //将文件路径保存起来，方便后面调用
+                        window.appFileUri = entry.fullPath;
+                        app.install(filePath);
+                    },
+                    function (error) {
+                        app.progress.stop();
+                        app.hint("下载失败: " + JSON.stringify(error));
+                    }
+                );
+            });
+        }
+        //相当于deviceReady事件
+        bui.isWebapp = false;
+        var uiReady = bui.ready(function(){
+            // 原生事件初始化
+            $('#sing1').on('click', function () {
+                download()
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <div class="bui-btn btn-back" onclick="app.back();"><i class="icon-back"></i></div>
+        </div>
+        <div class="bui-bar-main"></div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <div id='sing1' class="bui-btn">下载</div>
+    <footer>
+    </footer>
+</body>
+
+</html>

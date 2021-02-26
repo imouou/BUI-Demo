@@ -16,11 +16,11 @@
         onChange: function(e) {
             console.log(this.value(), "change")
         },
-        callback: function(e) {
-            console.log(this.value(), "click")
-            console.log(this.text(), "click")
-            console.log(this.values(), "click")
-        }
+        // callback: function(e) {
+        //     console.log(this.value(), "click")
+        //     console.log(this.text(), "click")
+        //     console.log(this.values(), "click")
+        // }
     })
 
     //静态渲染, 选中激活在列表的active样式

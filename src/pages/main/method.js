@@ -1,6 +1,7 @@
-loader.define(function(require, exports, module) {
+loader.define(function (require, exports, module) {
     bui.accordion({
-        id: "#method"
-    });
+        id: "#method",
+        single: true
+    }).showFirst();
 
 })

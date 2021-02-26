@@ -3,13 +3,17 @@
     // 倒计时
     var timer = bui.timer({
         target: ".timedown",
+        onProcess: function(param) {
+            console.log(param)
+        },
         onEnd: function(e) {
             $(e.target).text("同意");
             $(e.target).parent().click(function() {
                 uiDialog.close();
             })
         },
-        times: 5
+        // type: "second",
+        time: 5
     })
 
     // 自定义居中弹出框

@@ -9,6 +9,7 @@
     <meta name="description" content="BUI 有着丰富的控件,通过demo便可以了解到各个控件的效果及使用方法">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/bui.css" />
+    <!-- <link rel="stylesheet" href="css/bui-skin.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -16,9 +17,18 @@
     <!-- 第1步: 开启单页路由 -->
     <div id="bui-router"></div>
     <script src="js/zepto.js"></script>
+    <!-- link4.3.6及以下内置cordova 2.6.0  device-cordova == "2.6.0" -->
+    <script src="js/platform/cordova.js"></script>
+    <script src="js/platform/bingotouch.js"></script>
+    <!-- 新的bingotouch独立打包,内置cordova 8.1, 之间的一些方法是不一样的
+    <script src="local://cordova.js"></script>
+    <script src="local://bingotouch.js"></script> -->
+    <script src="js/platform/linkplugins.js"></script> 
     <script src="js/bui.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/buijs/lib/latest/bui.js"></script> -->
     <!-- 初始化单页 -->
     <script src="index.js"></script>
+
 </body>
 
 </html>

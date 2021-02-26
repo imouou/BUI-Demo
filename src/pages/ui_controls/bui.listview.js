@@ -36,4 +36,5 @@
         uiListview.close()
     }, 1000)
 
+    return uiListview
 })

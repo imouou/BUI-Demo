@@ -1,6 +1,7 @@
 ﻿loader.define(function(require, exports, module) {
 
-    var bs = bui.store({
+    window.bs = bui.store({
+        el: `#${module.id}`,
         scope: "page", // 用于区分公共数据及当前数据的唯一值
         data: {
             todo: [{
@@ -17,12 +18,12 @@
             nextTodoId: 4
         },
         methods: {
-            addTodo: function(e) {
-
-                if (this.todoText) {
+            addTodo: function(text) {
+                var title = typeof text == "string" ? text : this.todoText;
+                if (title) {
                     this.todo.push({
                         id: this.nextTodoId++,
-                        title: this.todoText
+                        title: title
                     })
                     this.todoText = "";
                 } else {
@@ -46,7 +47,7 @@
             tplTodo: function(data, e) {
                 var _self = this;
                 var html = "";
-                // console.log(e)
+
                 data.forEach(function(item, i) {
                     // $index: 当前索引
                     // $parentIndex: 父层索引,只能取一层
@@ -67,4 +68,6 @@
             // 加载后执行
         }
     })
+
+    return bs;
 })

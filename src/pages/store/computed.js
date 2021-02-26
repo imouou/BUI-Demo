@@ -27,8 +27,11 @@
                 return val;
             },
             hasList: function() {
-                console.trace(11)
-                    // return this.list.length
+                // console.log(this.list)
+                return this.list.length
+            },
+            withList: function() {
+                return this.hasList;
             },
 
             // 2. 双向联动 fullName 改变,会触发各自改变 firstName,lastName,

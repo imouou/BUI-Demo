@@ -1,8 +1,7 @@
-﻿loader.define(function(require, exports, module) {
-
+﻿loader.define(function (require, exports, module) {
 
     // 可以在路由init以后,作为整个应用的联动数据处理
-    var bs = bui.store({
+    window.bs = bui.store({
         scope: "page", // 用于区分公共数据及当前数据的唯一值
         data: {
             title: "自动绑定标题",
@@ -12,7 +11,9 @@
                 "data-title": "自定义标题",
                 "obj": {
                     "test": 123
-                }
+                },
+
+                image: "images/face.png",
             },
             prop: {
                 checked: true,
@@ -26,7 +27,7 @@
         watch: {},
         computed: {},
         templates: {},
-        mounted: function() {
+        mounted: function () {
 
         }
     })

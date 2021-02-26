@@ -1,4 +1,4 @@
-var badges = 9;
+window.badges = 9;
 // 默认已经定义了main模块
 loader.define(function(require, exports, module) {
     var pageview = {};

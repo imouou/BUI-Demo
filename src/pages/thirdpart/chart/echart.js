@@ -1,17 +1,17 @@
 // 默认已经定义了main模块
-loader.define(function() {
+loader.define(function () {
 
     var pageview = {};
 
     // 主要内容
-    pageview.init = function() {
-        var dom = document.getElementById("container");
+    pageview.init = function () {
+        var dom = document.getElementById("containerchart");
         var myChart = echarts.init(dom);
         var app = {};
         option = null;
         app.title = '环形图';
 
-        option = {
+        var option = {
             tooltip: {
                 trigger: 'item',
                 formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -44,12 +44,26 @@ loader.define(function() {
                         show: false
                     }
                 },
-                data: [
-                    { value: 335, name: '直接访问' },
-                    { value: 310, name: '邮件营销' },
-                    { value: 234, name: '联盟广告' },
-                    { value: 135, name: '视频广告' },
-                    { value: 1548, name: '搜索引擎' }
+                data: [{
+                        value: 335,
+                        name: '直接访问'
+                    },
+                    {
+                        value: 310,
+                        name: '邮件营销'
+                    },
+                    {
+                        value: 234,
+                        name: '联盟广告'
+                    },
+                    {
+                        value: 135,
+                        name: '视频广告'
+                    },
+                    {
+                        value: 1548,
+                        name: '搜索引擎'
+                    }
                 ]
             }]
         };;
@@ -59,7 +73,7 @@ loader.define(function() {
 
     }
 
-    loader.import(["http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"], function() {
+    loader.import(["js/plugins/echarts.min.js"], function () {
         // 初始化
         pageview.init();
     });

@@ -15,6 +15,7 @@
     $('#setValue').on("click", function(argument) {
 
         var val = uiNumber.value(9);
+
     })
 
 

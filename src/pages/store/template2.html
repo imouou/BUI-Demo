@@ -1,0 +1,16 @@
+<div class="bui-page page-store">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back();"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">模板</div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <main>
+        <div class="section-title">结合b-command="append" 不删除占位</div>
+        <ul b-template="page.tplList(page.list)" b-command="append" class="bui-list">
+            <li class="bui-btn">占位第一行</li>
+        </ul>
+    </main>
+</div>

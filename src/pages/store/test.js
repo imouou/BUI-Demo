@@ -4,7 +4,11 @@
     window.bs = bui.store({
         scope: "page", // 用于区分公共数据及当前数据的唯一值
         data: {
+            // user: null,
+            // showuser: true,
+            // userlist: [{ name: "发发大水", show: false }, { name: "发呃呃发大水", show: true }],
             a: {
+                f: 5,
                 b: {
                     c: 1,
                     d: {
@@ -12,24 +16,24 @@
                     }
                 }
             },
-            b: 2,
-            h: [],
-            c: 3,
-            g: 4,
-            d: {
-                e: {
-                    f: 4
-                }
-            },
-            f: {
-                g: 3
-            },
-            q: {
-                w: []
-            },
-            e: {
-                r: []
-            }
+            // b: 2,
+            // h: [],
+            // c: 3,
+            // g: 4,
+            // d: {
+            //     e: {
+            //         f: 4
+            //     }
+            // },
+            // f: {
+            //     g: 3
+            // },
+            // q: {
+            //     w: []
+            // },
+            // e: {
+            //     r: []
+            // }
         },
         log: true,
         methods: {
@@ -43,19 +47,38 @@
             }
         },
         computed: {},
-        templates: {},
-        mounted: function() {
+        templates: {
+            usertpl: function(data) {
+                var html = '';
+                data.forEach(function(item, i) {
+                    html += `<li b-show="page.userlist.$index.show" class="bui-btn">${item.name}</li>`
+
+                })
+                return html
+            }
+        },
+        mounted: function () {
+            
             // 判断或者比对,使用这种
-            // if (this.$data.c == 3) {
-            //     // 设置使用这种
-            //     this.a.b.c = 123;
-            // }
-            // console.log(this.$data.a.b)
-            // console.log(this.$data.g)
+            if (this.a.f == 5) {
+                // 设置使用这种
+                this.a.b.c = 123;
+            }
+
+
+            console.log(this.a.b.d.e)
+            console.log(this.a.b.d)
+            console.log(this.a.b)
+            // // console.log(this.$data.g)
+
             // this.a.b.c = 456;
+            // this.a.b.c = 4631;
+            this.a.b.c=5769;
+            
+            this.a.f=123;
             // this.h.push("tes")
             //     // 1级
-            this.b = 12;
+            // this.b = 12;
 
             // // // 2级
             // this.a.b = 12;
@@ -112,6 +135,10 @@
             // console.log(this.$data.a.b)
             //     // bui.array.merge(this.h, [12444, 22]);
             // this.q.w.$merge([34, 22]);
+            // var that = this;
+            // setTimeout(function() {
+            //     that.set("f", { g: "345" })
+            // }, 500)
 
         }
     })

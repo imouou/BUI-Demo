@@ -1,8 +1,8 @@
-﻿loader.define(function(require, exports, module) {
+﻿loader.define(function (require, exports, module) {
 
     // 文字提醒
-    $('#btnTop').on("click", function() {
-        bui.confirm("消息确认框", function(e) {
+    $('#btnTop').on("click", function () {
+        bui.confirm("消息确认框", function (e) {
             //this 是指点击的按钮
             var text = $(e.target).text();
 
@@ -15,12 +15,15 @@
     })
 
     // 图标提醒
-    $('#success').on("click", function(argument) {
+    $('#success').on("click", function (argument) {
         bui.confirm({
             "title": "",
             "height": 460,
             "content": '<div class="bui-box-center"><div><i class="icon-successfill success"></i><h3>预约成功</h3><p>请前往办证中心取号办理</p></div></div>',
-            "buttons": [{ name: "我知道了", className: "primary-reverse" }]
+            "buttons": [{
+                name: "我知道了",
+                className: "primary-reverse"
+            }]
         });
     })
 

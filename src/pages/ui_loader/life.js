@@ -1,39 +1,59 @@
 loader.define({
-    beforeCreate: function() {
+    beforeCreate: function () {
         console.log("before create", this)
     },
-    created: function() {
+    created: function () {
         console.log("created", this)
     },
-    beforeLoad: function() {
+    beforeLoad: function () {
         console.log("before load", this)
     },
-    loaded: function(e, ex, mod) {
-        console.log("loaded")
-        this.actionSheet = bui.actionsheet({
-                trigger: "#btnOpen",
-                appendTo: ".bui-page",
-                buttons: [{ name: "分享到微博", value: "weibo" }, { name: "分享到微信", value: "weixin" }, { name: "分享到QQ", value: "QQ" }],
-                callback: function(e) {
+    loaded: function (e, ex, mod) {
+        console.log("loaded", this.id)
+        this.actionsheet = bui.actionsheet({
+            trigger: "#btnOpen",
+            appendTo: ".bui-page",
+            buttons: [{
+                name: "分享到微博",
+                value: "weibo"
+            }, {
+                name: "分享到微信",
+                value: "weixin"
+            }, {
+                name: "分享到QQ",
+                value: "QQ"
+            }],
+            callback: function (e) {
 
-                    var val = $(e.target).attr("value");
+                var val = $(e.target).attr("value");
 
-                    if (val == "cancel") {
-                        this.hide();
-                    }
+                if (val == "cancel") {
+                    this.hide();
                 }
-            })
-            // loader.destroy(mod.moduleName);
+            }
+        })
+        return {
+            actionsheet: this.actionsheet
+        }
+        // loader.destroy(mod.moduleName);
     },
-    show: function() {
-        console.log("show")
-        this.actionSheet.show()
+    show: function (mod) {
+        console.log("show", this.id)
+
+        var params = bui.history.getParams("url");
+
+        console.log(params)
+        this.actionsheet.show()
     },
-    beforeDestroy: function() {
+    hide: function () {
+        console.log("hide")
+        this.actionsheet.hide()
+    },
+    beforeDestroy: function () {
         console.log("before destroy", this)
-        this.actionSheet.destroy(true);
+        this.actionsheet.destroy(true);
     },
-    destroyed: function() {
+    destroyed: function () {
         console.log("destroyed", this)
     }
 })

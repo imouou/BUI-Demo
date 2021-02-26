@@ -56,7 +56,7 @@
             var valWithZero = e.count < 10 ? "0" + e.count : e.count;
             $btnSend.text(valWithZero + "后重新获取");
         },
-        times: 10
+        time: 10
     });
 
     $btnSend.on("click", function(argument) {

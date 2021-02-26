@@ -17,6 +17,7 @@
 
         <div class="section-title">示例1: page.attrs.title 改变会改变属性</div>
         <div class="section-title">绑定多个</div>
+        <p b-title="page.attrs.title">绑定data属性</p>
         <p b-bind="page.attrs">绑定title属性,及自定义属性</p>
         <div class="section-title">绑定1个</div>
         <p b-bind="page.title">绑定title属性,及自定义属性</p>
@@ -27,6 +28,7 @@
         <input b-bind="page.disabled" placeholder="" type="text">
         <!-- <input b-bind="page.prop.disabled" type="checkbox" b-model="page.prop.checked"> -->
         <input type="checkbox" b-model="page.disabled" b-checked="page.disabled">左边不可以输入
-        <img src="images/applogo.png" b-src="page.image">
+        <img src="images/applogo.png" b-src="page.attrs.image">
+
     </main>
 </div>

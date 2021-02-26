@@ -1,62 +1,38 @@
 {
-    "distServer": {
-        "livereload": true,
-        "port": 4949
-    },
-    "devServer": {
-        "livereload": false,
-        "port": 4947
-    },
-    "qrcode": "/index.html",
-    "ignored": [
-        "!src/README.md",
-        "!src/preview.png"
-    ],
-    "proxy": {
-        "/demo": {
-            "target": "http://www.easybui.com",
-            "changeOrigin": true,
-            "ssl": false
-        }
-    },
-    "sass": {
-        "outputStyle": "compressed"
-    },
-    "cleanCss": {
-        "compatibility": "ie8"
-    },
-    "autoprefixer": {
-        "browsers": [
-            "last 2 versions"
-        ],
-        "remove": false,
-        "cascade": false
-    },
-    "babel": {
-        "presets": [
-            "es2015"
-        ]
-    },
-    "uglify": {
-        "compress": {
-            "drop_debugger": false
-        },
-        "output": {
-            "max_line_len": false
-        },
-        "preserveComments": "some",
-        "mangle": true
-    },
-    "htmlmin": {
-        "removeComments": true,
-        "collapseWhitespace": false,
-        "collapseBooleanAttributes": false,
-        "removeEmptyAttributes": false,
-        "removeScriptTypeAttributes": true,
-        "removeStyleLinkTypeAttributes": true,
-        "minifyJS": true,
-        "minifyCSS": true
-    },
-    "imagemin": null,
-    "license": "ISC"
+  "distServer": {
+    "livereload": true,
+    "port": 4949
+  },
+  "devServer": {
+    "livereload": false,
+    "port": 4947
+  },
+  "qrcode": "/index.html",
+  "ignored": [
+    "!src/README.md",
+    "!src/preview.png"
+  ],
+  "proxy": {
+    "/demo": {
+      "target": "http://www.easybui.com",
+      "changeOrigin": true,
+      "ssl": false
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "package": {
+    "uglify": true,
+    "folder": "pages",
+    "main": "pages/main/main"
+  },
+  "cleancss": false,
+  "autoprefixer": true,
+  "uglify": true,
+  "htmlmin": false,
+  "imagemin": false,
+  "license": "MIT"
 }

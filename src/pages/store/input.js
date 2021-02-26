@@ -1,4 +1,4 @@
-﻿loader.define(function(require, exports, module) {
+﻿loader.define(function (require, exports, module) {
 
     var bs = bui.store({
         scope: "page", // 用于区分公共数据及当前数据的唯一值
@@ -8,15 +8,19 @@
         },
         // log: true,
         methods: {
-            reverseMessage: function(e) {
+            reverseMessage: function (e) {
                 var a = this.message.split(' ').reverse().join(' ')
                 this.message = a;
             }
         },
-        watch: {},
+        watch: {
+            message: function (val) {
+                console.log(val)
+            }
+        },
         computed: {},
         templates: {},
-        mounted: function() {
+        mounted: function () {
             // 加载后执行
         }
     })

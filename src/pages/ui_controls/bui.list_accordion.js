@@ -1,5 +1,8 @@
 loader.define(function(require, exports, module) {
-
+    //折叠菜单示例
+    var uiAccordion = bui.accordion({
+        id: "#accordion"
+    })
     var uiList = bui.list({
         id: "#scrollList",
         url: "http://www.easybui.com/demo/json/shop.json",
@@ -44,10 +47,7 @@ loader.define(function(require, exports, module) {
         onLoad: function() {
             // 刷新以后执行
             console.log("loaded")
-                //折叠菜单示例
-            var uiAccordion = bui.accordion({
-                id: "#accordion"
-            })
+
 
         }
     })

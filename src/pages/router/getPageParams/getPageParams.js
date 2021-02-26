@@ -1,6 +1,6 @@
 // 默认已经定义了main模块
 loader.define(function() {
-    var pageview = {};
+    var pageview={};
 
     // 主要业务初始化
     pageview.init = function() {

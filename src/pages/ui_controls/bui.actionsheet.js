@@ -9,7 +9,7 @@
 
     function todo(e) {
         var val = $(e.target).attr("value");
-
+        console.log(val)
         if (val == "cancel") {
             this.hide();
         }

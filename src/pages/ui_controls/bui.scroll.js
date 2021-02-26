@@ -1,7 +1,7 @@
 ﻿loader.define(function(require, exports, module) {
     var uiScroll;
 
-    uiScroll = bui.scroll({
+    window.uiScroll = bui.scroll({
         id: "#scroll",
         children: ".bui-list", //循环遍历的数据的父层,如果不对,会出现无限滚动的情况
         page: 1,
@@ -36,7 +36,8 @@
         var command = command || "append";
 
         bui.ajax({
-            url: "http://www.easybui.com/demo/json/shop.json",
+            // url: "http://www.easybui.com/demo/json/shop.json",
+            url: "json/shop.json",
             data: {
                 pageindex: page,
                 pagesize: pagesize
@@ -47,7 +48,6 @@
             var html = template(res.data);
 
             router.$("#scrollList")[command](html);
-
             // 更新分页信息,如果高度不足会自动请求下一页
             _self.updatePage(page, res.data);
 
@@ -64,7 +64,7 @@
     //生成模板
     function template(data) {
         var html = "";
-        data.map(function(el, index) {
+        data.forEach(function(el, index) {
 
             // 演示传参,标准JSON才能转换
             var param = { "id": index, "title": el.name };

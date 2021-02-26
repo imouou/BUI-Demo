@@ -53,7 +53,6 @@
                     bui.array.merge(_self.lists, datas.data)
                 }
             });
-
         }
     })
 

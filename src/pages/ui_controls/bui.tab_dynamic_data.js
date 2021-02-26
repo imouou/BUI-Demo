@@ -56,6 +56,10 @@
           title: "观点",
           image: "images/placeholder-page.png",
           url: "pages/ui_controls/bui.tab_dynamic_page2.html"
+        },{
+          title: "观点2",
+          image: "images/placeholder-page.png",
+          url: "pages/ui_controls/bui.tab_dynamic_page1.html"
         }])
         // 触发第一次的模板及脚本渲染
         uiTab.to(0);
