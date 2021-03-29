@@ -6,8 +6,15 @@
             scope: "page", // 用于区分公共数据及当前数据的唯一值
             data: {
                 test: "我是测试文本",
-                list: ["我是列表1", "我是列表2", {
-                    "name": "我是列表"
+                list: [{
+                    name: "我是列表1",
+                    active: false,
+                }, {
+                        name: "我是列表2",
+                        active: false,
+                    }, {
+                    name: "我是列表",
+                    active: false,
                 }],
                 active: ["active"],
                 listitem: "",
@@ -41,9 +48,8 @@
                     var html = "";
                     if (data.length) {
                         data.forEach(function (item, i) {
-                            var itemstr = typeof item === "object" ? JSON.stringify(item) : item;
-                            html += `<li class="bui-btn" b-class="page.active.$index" b-click='page.getClick($index)'>
-                            ${itemstr}</li>`;
+                            html += `<li class="bui-btn" b-class="page.list.$index.active" b-click='page.getClick($index)'>
+                            ${item.name}</li>`;
                         })
                     } else {
                         html = `<li class="bui-btn">暂无数据</li>`;
@@ -98,10 +104,21 @@
             methods: {
                 getClick: function (index) {
                     console.log(index)
-                    var activeindex = bui.array.index(this.$data.active, "active");
+                    // var activeindex = bui.array.index(this.$data.active, "active");
 
-                    bs.set(`active.${activeindex}`, "")
-                    bs.set(`active.${index}`, "active")
+                    // bs.set(`active.${activeindex}`, "")
+                    // bs.set(`active.${index}`, "active")
+                    this.list.forEach(function (item, i) {
+                        if (i==index) {
+                            item.active=true;
+                        } else {
+                            item.active=false;
+                        }
+                    })
+
+                    this.list.$replace(this.list);
+                    // this.list[index]["active"]=true;
+                    // this.list[index]["active"]=true;
 
                 }
             },

@@ -9,28 +9,28 @@
         // height: 300,
         data: [{
             "name": "广东",
-            "value": "11"
+            "value": "a11"
         }, {
             "name": "广西",
-            "value": "22"
+            "value": "a22"
         }, {
             "name": "上海",
-            "value": "33"
+            "value": "a33"
         }, {
             "name": "北京",
-            "value": "44"
+            "value": "a44"
         }, {
             "name": "深圳",
-            "value": "55"
+            "value": "a55"
         }, {
             "name": "南京",
-            "value": "66"
+            "value": "a66"
         }, {
             "name": "江苏",
-            "value": "77"
+            "value": "a77"
         }, {
             "name": "云南",
-            "value": "88"
+            "value": "a88"
         }],
         // value: ["广东", "上海"],
         //如果需要点击再进行操作,增加按钮

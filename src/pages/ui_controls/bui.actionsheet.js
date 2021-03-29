@@ -3,13 +3,13 @@
     // 示例
     var uiActionsheet = bui.actionsheet({
         trigger: "#btnOpen",
-        buttons: [{ name: "分享到微博", value: "weibo" }, { name: "分享到微信", value: "weixin" }, { name: "分享到QQ", value: "QQ" }],
+        buttons: [{ name: "分享到微博", value: "http://weibo.com/?id=123" }, { name: "分享到微信", value: "weixin" }, { name: "分享到QQ", value: "QQ" }],
         callback: todo
     })
 
     function todo(e) {
         var val = $(e.target).attr("value");
-        console.log(val)
+        console.log(e.target.getAttribute("value"))
         if (val == "cancel") {
             this.hide();
         }
